@@ -173,19 +173,127 @@ int 	rs232_putchar(char c)
 	return result;
 }
 
+/*------------------------------------------------------------
+ * joystick I/O
+ *------------------------------------------------------------
+ */
+#include "joystick.h"
+#define JS_DEV	"/dev/input/js0"
+
+int	axis[6];
+int	button[12];
+
+void get_joystick(int fd)
+{
+	struct js_event js;
+	while (read(fd, &js, sizeof(struct js_event)) == 
+	       			sizeof(struct js_event))  {
+
+		/* register data
+		 */
+		 fprintf(stderr,".");
+		fprintf(stderr,"%6d ",js.number);
+		switch(js.type & ~JS_EVENT_INIT) {
+			case JS_EVENT_BUTTON:
+				button[js.number] = js.value;
+				break;
+			case JS_EVENT_AXIS:
+				axis[js.number] = js.value;
+				break;
+		}
+		//for (int i = 0; i < 6; i++) {
+		//	fprintf(stderr,"%6d ",axis[i]);
+		//}
+	}
+	return;
+}
+
+/*------------------------------------------------------------
+ * control variables
+ *------------------------------------------------------------
+ */
+#define SAFE		0
+#define PANIC		1
+#define MANUAL		2
+#define CALIBRATION	3
+#define YAW		4
+#define FULL		5
+#define RAW		6
+
+int8_t k_throttle = 0, k_roll = 0, k_pitch = 0, k_yaw = 0;
+int8_t j_throttle = 0, j_roll = 0, j_pitch = 0, j_yaw = 0;
+uint8_t mode = 0;
+
+typedef struct
+{
+	uint8_t mode;
+	uint8_t throttle;
+	int8_t roll, pitch, yaw;
+	//....
+}command;
+
+void send_command(command c)
+{
+	rs232_putchar(0xFF);
+	rs232_putchar(c.mode);
+	rs232_putchar(c.throttle);
+	rs232_putchar(c.roll);
+	rs232_putchar(c.pitch);
+	rs232_putchar(c.yaw);
+}
+
+/*------------------------------------------------------------
+ * time
+ *------------------------------------------------------------
+ */
+
+#include <time.h>
+#include <assert.h>
+unsigned int    mon_time_ms(void)
+{
+        unsigned int    ms;
+        struct timeval  tv;
+        struct timezone tz;
+
+        gettimeofday(&tv, &tz);
+        ms = 1000 * (tv.tv_sec % 65); // 65 sec wrap around
+        ms = ms + tv.tv_usec / 1000;
+        return ms;
+}
+
+void    mon_delay_ms(unsigned int ms)
+{
+        struct timespec req, rem;
+
+        req.tv_sec = ms / 1000;
+        req.tv_nsec = 1000000 * (ms % 1000);
+        assert(nanosleep(&req,&rem) == 0);
+}
+
 
 /*----------------------------------------------------------------
  * main -- execute terminal
  *----------------------------------------------------------------
  */
+#include <stdbool.h>
+
 int main(int argc, char **argv)
 {
 	int	c;
+	//int	fd;
+	//struct js_event js;
 
 	term_puts("\nTerminal program - Embedded Real-Time Systems\n");
 
 	term_initio();
 	rs232_open();
+
+//	if ((fd = open(JS_DEV, O_RDONLY)) < 0) {
+//		perror("jstest");
+//		exit(1);
+//	}
+
+//	fcntl(fd, F_SETFL, O_NONBLOCK);
 
 	term_puts("Type ^C to exit\n");
 
@@ -197,15 +305,93 @@ int main(int argc, char **argv)
 	/* send & receive
 	 */
 	for (;;)
-	{       // dont get all js values
-                //convert 
-		if ((c = term_getchar_nb()) != -1)
-			rs232_putchar(c);
+	{
+		//get_joystick(fd);
+		//if ((c = term_getchar_nb()) != -1)
+		//	rs232_putchar(c);
 
-		if ((c = rs232_getchar_nb()) != -1)
-			term_p  utchar(c);
+		//if ((c = rs232_getchar_nb()) != -1)
+		//	term_putchar(c);
+		mon_delay_ms(300);
+		if ((c = term_getchar_nb()) != -1)//still need to limit the values
+		{
+			switch (c)
+			{
+				case '0':
+					mode = SAFE;
+					break;
+				case '1':
+					mode = PANIC;
+					break;
+				case '2':
+					mode = MANUAL;
+					break;
+				case '3':
+					mode = CALIBRATION;
+					break;
+				case '4':
+					mode = YAW;
+					break;
+				case '5':
+					mode = FULL;
+					break;
+				case '6':
+					mode = RAW;
+					break;
+			}
+			//if (mode == SAFE) 
+			//{
+			//	printf("safe mode!\n");
+			//	if(c == 27)
+			//	{
+			//		demo_done = true;
+			//		break;
+			//	}
+			//	continue;
+			//}
+			switch (c)
+			{
+				//still need to limit the values
+				case 'r'://lift up
+					k_throttle++;
+					break;
+				case 'f'://lift down
+					k_throttle--;
+					if (k_throttle < 0) k_throttle = 0;
+					break;
+				case 'a'://left, roll up
+					k_roll++;
+					break;
+				case 'd'://right, roll down
+					k_roll--;
+					break;
+				case 'w'://up, pitch down
+					k_pitch--;
+					break;
+				case 's'://down, pitch up
+					k_pitch++;
+					break;
+				case 'q'://yaw down
+					k_yaw--;
+					break;
+				case 'e'://yaw up
+					k_yaw++;
+					break;
+			}
+		}
 
+		//fprintf(stderr,"mode = %d\n",mode);
+		//fprintf(stderr,"from keyboard: throttle = %d roll = %d pitch = %d yaw = %d\n",k_throttle, k_roll, k_pitch, k_yaw);
+		//fprintf(stderr,"from joystick: throttle = %d roll = %d pitch = %d yaw = %d\n",j_throttle, j_roll, j_pitch, j_yaw);
+		command Command = {mode,k_throttle+j_throttle,k_roll+j_roll,k_pitch+j_roll,k_yaw+j_yaw};
+		send_command(Command);
+		while((c = rs232_getchar_nb()) != -1)
+			term_putchar(c);
 	}
+
+
+	//...
+	//packetize data and send via rs232
 
 	term_exitio();
 	rs232_close();

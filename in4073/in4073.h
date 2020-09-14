@@ -26,11 +26,30 @@
 #define GREEN		28
 #define BLUE		30
 #define INT_PIN		5
-#define PACKET_SIZE     8
+
+#define SAFE		0
+#define PANIC		1
+#define MANUAL		2
+#define CALIBRATION	3
+#define YAW		4
+#define FULL		5
+#define RAW		6
+
 bool demo_done;
 
+//Mode
+
+uint8_t mode;
+
+//Command
+typedef struct {
+	uint8_t mode;
+	uint8_t throttle;
+	int8_t roll, pitch, yaw;
+}command;
+
 // Control
-int16_t L, M, N, T;
+int16_t throttle, roll, pitch, yaw;
 int16_t motor[4],ae[4];
 void run_filters_and_control();
 
@@ -50,16 +69,26 @@ typedef struct {
 	uint8_t Data[QUEUE_SIZE];
 	uint16_t first,last;
   	uint16_t count; 
-        uint8_t index[QUEUE_SIZE];
 } queue;
+
+typedef struct {
+	command Data[QUEUE_SIZE];
+	uint16_t first,last;
+  	uint16_t count; 
+} myqueue;
+
 void init_queue(queue *q);
+void myinit_queue(myqueue *q);
 void enqueue(queue *q, char x);
 char dequeue(queue *q);
+void myenqueue(myqueue *q, command x);
+command mydequeue(myqueue *q);
 
 // UART
 #define RX_PIN_NUMBER  16
 #define TX_PIN_NUMBER  14
 queue rx_queue;
+myqueue myrx_queue;
 queue tx_queue;
 uint32_t last_correct_checksum_time;
 void uart_init(void);

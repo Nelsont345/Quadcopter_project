@@ -11,6 +11,7 @@
  */
 
 #include "in4073.h"
+#include "math.h"
 
 void update_motors(void)
 {					
@@ -26,12 +27,20 @@ void run_filters_and_control()
 	// control loops and/or filters
 
 	// ae[0] = xxx, ae[1] = yyy etc etc
-        if(L!=0 || M!=0 || N!=0 || T!=0)
-        {printf("L:%d\n", L);
-        printf("M:%d\n", M);
-        printf("N:%d\n", N);
-        printf("T:%d\n", T);
- }
-         
+	if (mode == MANUAL)
+	{
+		
+		//float A = 1/4/b, B = 1/2/b, C = 1/4/d; 
+		float A = 1, B = 1, C = 1; 
+		ae[0] = (int16_t) sqrt(A*throttle-B*pitch-C*yaw);
+		ae[1] = (int16_t) sqrt(A*throttle-B*roll+C*yaw);
+		ae[2] = (int16_t) sqrt(A*throttle+B*roll-C*yaw);
+		ae[3] = (int16_t) sqrt(A*throttle+B*roll+C*yaw);
+	}
+	else 
+	{
+		ae[0] = ae[1] = ae[2] = ae[3] = 0;
+	}
 	update_motors();
 }
+

@@ -12,7 +12,9 @@
 
 bool txd_available = true;
 bool start_flag = false;
-int8_t counter = 0;
+uint8_t b_counter = 0;
+uint16_t p_counter = 0;
+uint8_t data[10];
 
 void uart_put(uint8_t byte)
 {
@@ -37,28 +39,34 @@ int _write(int file, const char * p_char, int len)
 
 
 void UART0_IRQHandler(void)
-{      // printf("in irq\n");
+{
 	if (NRF_UART0->EVENTS_RXDRDY != 0)
-	{      
+	{
 		NRF_UART0->EVENTS_RXDRDY  = 0;
-                if(NRF_UART0->RXD == 47)
-                {   start_flag = 1;
-                    printf("setting start flag\n");
-                }
-
-                if(start_flag == 1 && counter < 18)
-                {
-                    enqueue( &rx_queue, NRF_UART0->RXD);
-                    counter++;
-                    printf("enqueueing\n");
-                    if(counter==17)
-                    { 
-                        counter = 0;
-                        start_flag = 0;
-                    }
-        
-                }  
+		//printf("get data %lu",NRF_UART0->RXD);
+		uint8_t k = NRF_UART0->RXD;
 		
+		if (k == 0xFF)
+		{
+			b_counter++;
+			//printf("get packet %u",p_counter);
+		}
+		else if (b_counter>0)
+		{
+			data[b_counter-1] = k;
+			//printf("get data%d %d",b_counter, k);
+			b_counter++;
+			if(b_counter==6)
+			{
+				command c = {data[0],data[1],data[2],data[3],data[4]};
+				myenqueue( &myrx_queue, c);
+				//printf("%d",myrx_queue.count);
+				b_counter = 0;
+				p_counter++;
+				//still need to check the packets
+				//printf("end packet\n");
+			}
+		}
 	}
 
 	if (NRF_UART0->EVENTS_TXDRDY != 0)
@@ -78,6 +86,7 @@ void UART0_IRQHandler(void)
 void uart_init(void)
 {
 	init_queue(&rx_queue); // Initialize receive queue
+	myinit_queue(&myrx_queue);
 	init_queue(&tx_queue); // Initialize transmit queue
 
 	nrf_gpio_cfg_output(TX_PIN_NUMBER);

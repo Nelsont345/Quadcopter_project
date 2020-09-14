@@ -19,69 +19,18 @@
  * process_key -- process command keys
  *------------------------------------------------------------------
  */
-void process_key(int16_t id, uint8_t c)
-{       int a = id%PACKET_SIZE;
-        switch(a)
-        {
-             case 0: 
 
-
-
-
-
-        }
-	switch (c)
-	{
-		case 'q':
-			ae[0] += 10;
-                        L = 100;
-			break;
-		case 'a':
-                        M = 100;	
-			ae[0] -= 10;
-			if (ae[0] < 0) ae[0] = 0;
-			break;
-		case 'w':
-                        //N = 100;
-			ae[1] += 10;
-			break;
-		case 's':
-                        //T = 100;
-			ae[1] -= 10;
-			if (ae[1] < 0) ae[1] = 0;
-			break;
-		case 'e':
-                        //T = 200;
-			ae[2] += 10;
-			break;
-		case 'd':
-                        //T = 200;
-			ae[2] -= 10;
-			if (ae[2] < 0) ae[2] = 0;
-			break;
-		case 'r':
-                        //T = 200;
-			ae[3] += 10;
-			break;
-		case 'f':
-                        //T = 200;
-			ae[3] -= 10;
-			if (ae[3] < 0) ae[3] = 0;
-			break;
-		case 27:
-                        //T = 200;
-			demo_done = true;
-			break; 
-
-                case 4: T = 99;
-                        break;
-
-                case 52: T = 99;
-                         break;
-		default:
-			nrf_gpio_pin_toggle(RED);
-	}
+void get_command(command c)
+{
+	//printf("get %u %d, %d, %d, %u\n", c.throttle c.roll, c.pitch, c.yaw, c.mode);
+	throttle = c.throttle;
+	roll = c.roll;
+	pitch = c.pitch;
+	yaw = c.yaw;
+	mode = c.mode;
 }
+
+
 
 /*------------------------------------------------------------------
  * main -- everything you need is here :)
@@ -89,6 +38,7 @@ void process_key(int16_t id, uint8_t c)
  */
 int main(void)
 {
+	
 	uart_init();
 	gpio_init();
 	timers_init();
@@ -99,12 +49,15 @@ int main(void)
 	spi_flash_init();
 	ble_init();
 
+	mode = SAFE;
+	throttle = roll = pitch = yaw = 0;
 	uint32_t counter = 0;
 	demo_done = false;
 
 	while (!demo_done)
 	{
-		if (rx_queue.count) process_key(rx_queue.first, dequeue(&rx_queue) );
+		//printf("%d",myrx_queue.count);
+		if (myrx_queue.count) get_command( mydequeue(&myrx_queue) );
 
 		if (check_timer_flag()) 
 		{
@@ -112,13 +65,14 @@ int main(void)
 
 			adc_request_sample();
 			read_baro();
-/*
-			printf("%10ld | ", get_time_us());
-			printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
-			printf("%6d %6d %6d | ", phi, theta, psi);
-			printf("%6d %6d %6d | ", sp, sq, sr);
-			printf("%4d | %4ld | %6ld \n", bat_volt, temperature, pressure);
-*/
+
+			//printf("%10ld | ", get_time_us());
+			//printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
+			//printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
+			//printf("%6d %6d %6d | ", phi, theta, psi);
+			//printf("%6d %6d %6d | ", sp, sq, sr);
+			//printf("%4d | %4ld | %6ld \n", bat_volt, temperature, pressure);
+
 			clear_timer_flag();
 		}
 
