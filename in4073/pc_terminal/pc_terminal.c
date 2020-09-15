@@ -385,6 +385,13 @@ int main(int argc, char **argv)
 		//fprintf(stderr,"from keyboard: throttle = %d roll = %d pitch = %d yaw = %d\n",k_throttle, k_roll, k_pitch, k_yaw);
 		//fprintf(stderr,"from joystick: throttle = %d roll = %d pitch = %d yaw = %d\n",j_throttle, j_roll, j_pitch, j_yaw);
 		command Command = {mode,k_throttle+j_throttle,k_roll+j_roll,k_pitch+j_roll,k_yaw+j_yaw};
+
+		printf("command ");
+		printf("%d ", Command.mode);
+		printf("%d ", Command.throttle);
+		printf("%d ", Command.roll);
+		printf("%d ", Command.pitch);
+		printf("%d \n", Command.yaw);
 		send_command(Command);
 		while((c = rs232_getchar_nb()) != -1)
 			term_putchar(c);

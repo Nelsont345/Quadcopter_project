@@ -46,7 +46,7 @@ void UART0_IRQHandler(void)
 		printf("get data %lu \n",NRF_UART0->RXD);
 		uint8_t k = NRF_UART0->RXD;
 		
-		if (k == 0xFF)
+		if (b_counter == 0 && k == 0xFF)
 		{
 			b_counter++;
 			//printf("get packet %u",p_counter);
@@ -54,7 +54,7 @@ void UART0_IRQHandler(void)
 		else if (b_counter>0)
 		{
 			data[b_counter-1] = k;
-			//printf("get data%d %d",b_counter, k);
+			printf("get dataff%d %d",b_counter, k);
 			b_counter++;
 			
 			if(b_counter==6)
