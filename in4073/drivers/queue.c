@@ -17,10 +17,10 @@ void init_queue(queue *q){
 	q->count = 0;
 }
 
-void myinit_queue(myqueue *q){
+void c_init_queue(c_queue *q){
 	
 	q->first = 0;
-	q->last = QUEUE_SIZE - 1;
+	q->last = C_QUEUE_SIZE - 1;
 	q->count = 0;
 }
 
@@ -40,14 +40,14 @@ char dequeue(queue *q){
 	return x;
 }
 
-void myenqueue(myqueue *q,command x){
+void c_enqueue(c_queue *q,command x){
 
 	q->last = (q->last + 1) % QUEUE_SIZE;
 	q->Data[ q->last ] = x;
 	q->count += 1;
 }
 
-command mydequeue(myqueue *q){
+command c_dequeue(c_queue *q){
 
 	command x = q->Data[ q->first ];
 	q->first = (q->first + 1) % QUEUE_SIZE;

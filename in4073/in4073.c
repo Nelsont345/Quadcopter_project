@@ -22,7 +22,7 @@
 
 void get_command(command c)
 {
-	//printf("get %u %d, %d, %d, %u\n", c.throttle c.roll, c.pitch, c.yaw, c.mode);
+	//printf("get %u, %d, %d, %d, %u, %u\n", c.throttle, c.roll, c.pitch, c.yaw, c.mode, c.frame);
 	throttle = c.throttle;
 	roll = c.roll;
 	pitch = c.pitch;
@@ -57,7 +57,7 @@ int main(void)
 	while (!demo_done)
 	{
 		//printf("%d",myrx_queue.count);
-		if (myrx_queue.count) get_command( mydequeue(&myrx_queue) );
+		if (c_rx_queue.count) get_command( c_dequeue(&c_rx_queue) );
 
 		if (check_timer_flag()) 
 		{

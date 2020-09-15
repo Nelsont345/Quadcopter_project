@@ -46,7 +46,7 @@ void UART0_IRQHandler(void)
 		//printf("get data %lu",NRF_UART0->RXD);
 		uint8_t k = NRF_UART0->RXD;
 		
-		if (k == 0xFF)
+		if (b_counter == 0 && k == 0xFF)
 		{
 			b_counter++;
 			//printf("get packet %u",p_counter);
@@ -56,13 +56,14 @@ void UART0_IRQHandler(void)
 			data[b_counter-1] = k;
 			//printf("get data%d %d",b_counter, k);
 			b_counter++;
-			if(b_counter==6)
+			if(b_counter==7)
 			{
-				command c = {data[0],data[1],data[2],data[3],data[4]};
-				myenqueue( &myrx_queue, c);
-				//printf("%d",myrx_queue.count);
+				command c = {data[0],data[1],data[2],data[3],data[4],data[5]};
+				c_enqueue( &c_rx_queue, c);
+				//printf("%d",c_rx_queue.count);
 				b_counter = 0;
 				p_counter++;
+				uart_put(c.frame);
 				//still need to check the packets
 				//printf("end packet\n");
 			}
@@ -86,7 +87,7 @@ void UART0_IRQHandler(void)
 void uart_init(void)
 {
 	init_queue(&rx_queue); // Initialize receive queue
-	myinit_queue(&myrx_queue);
+	c_init_queue(&c_rx_queue);
 	init_queue(&tx_queue); // Initialize transmit queue
 
 	nrf_gpio_cfg_output(TX_PIN_NUMBER);

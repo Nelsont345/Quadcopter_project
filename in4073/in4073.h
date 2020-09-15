@@ -43,6 +43,7 @@ uint8_t mode;
 
 //Command
 typedef struct {
+	uint8_t frame;
 	uint8_t mode;
 	uint8_t throttle;
 	int8_t roll, pitch, yaw;
@@ -65,6 +66,7 @@ void gpio_init(void);
 
 // Queue
 #define QUEUE_SIZE 256
+#define C_QUEUE_SIZE 64
 typedef struct {
 	uint8_t Data[QUEUE_SIZE];
 	uint16_t first,last;
@@ -72,23 +74,23 @@ typedef struct {
 } queue;
 
 typedef struct {
-	command Data[QUEUE_SIZE];
+	command Data[C_QUEUE_SIZE];
 	uint16_t first,last;
   	uint16_t count; 
-} myqueue;
+} c_queue;
 
 void init_queue(queue *q);
-void myinit_queue(myqueue *q);
+void c_init_queue(c_queue *q);
 void enqueue(queue *q, char x);
 char dequeue(queue *q);
-void myenqueue(myqueue *q, command x);
-command mydequeue(myqueue *q);
+void c_enqueue(c_queue *q, command x);
+command c_dequeue(c_queue *q);
 
 // UART
 #define RX_PIN_NUMBER  16
 #define TX_PIN_NUMBER  14
 queue rx_queue;
-myqueue myrx_queue;
+c_queue c_rx_queue;
 queue tx_queue;
 uint32_t last_correct_checksum_time;
 void uart_init(void);

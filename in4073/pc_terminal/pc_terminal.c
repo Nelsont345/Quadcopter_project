@@ -8,6 +8,7 @@
  */
 
 #include <stdio.h>
+#include <stdbool.h>
 #include <termios.h>
 #include <unistd.h>
 #include <string.h>
@@ -174,7 +175,80 @@ int 	rs232_putchar(char c)
 }
 
 /*------------------------------------------------------------
- * joystick I/O
+ * time
+ *------------------------------------------------------------
+ */
+unsigned int previous_time;
+unsigned int interval;
+
+#include <time.h>
+#include <sys/time.h>
+#include <assert.h>
+unsigned int mon_time_ms(void)
+{
+        unsigned int    ms;
+        struct timeval  tv;
+        struct timezone tz;
+
+        gettimeofday(&tv, &tz);
+        ms = 1000 * (tv.tv_sec % 65); // 65 sec wrap around
+        ms = ms + tv.tv_usec / 1000;
+        return ms;
+}
+
+void mon_delay_ms(unsigned int ms)
+{
+        struct timespec req, rem;
+
+        req.tv_sec = ms / 1000;
+        req.tv_nsec = 1000000 * (ms % 1000);
+
+
+
+        assert(nanosleep(&req,&rem) == 0);
+}
+
+bool sending_timer()
+{
+	unsigned int current_time = mon_time_ms();
+	if(current_time-previous_time > interval)
+	{
+		previous_time = current_time;
+		return true;
+	}
+	return false;
+}
+
+/*------------------------------------------------------------
+ * control variables
+ *------------------------------------------------------------
+ */
+#define SAFE		0
+#define PANIC		1
+#define MANUAL		2
+#define CALIBRATION	3
+#define YAW		4
+#define FULL		5
+#define RAW		6
+#define EXIT		7
+
+int8_t k_throttle = 0, k_roll = 0, k_pitch = 0, k_yaw = 0;
+int8_t j_throttle = 0, j_roll = 0, j_pitch = 0, j_yaw = 0;
+uint8_t mode = 0;
+uint8_t frame = 0;
+int last_sending_time;
+
+typedef struct
+{
+	uint8_t frame;
+	uint8_t mode;
+	uint8_t throttle;
+	int8_t roll, pitch, yaw;
+	//....
+}command;
+
+/*------------------------------------------------------------
+ * joystick and keyboard I/O
  *------------------------------------------------------------
  */
 #include "joystick.h"
@@ -183,7 +257,7 @@ int 	rs232_putchar(char c)
 int	axis[6];
 int	button[12];
 
-void get_joystick(int fd)
+bool get_joystick(int fd)
 {
 	struct js_event js;
 	while (read(fd, &js, sizeof(struct js_event)) == 
@@ -205,77 +279,144 @@ void get_joystick(int fd)
 		//	fprintf(stderr,"%6d ",axis[i]);
 		//}
 	}
-	return;
+	//if(change large enough)
+	//{
+	//	assign values
+	//	return true;
+	//}
+	
+	return false;
 }
 
+bool get_keyboard()
+{
+	int c;
+	if ((c = term_getchar_nb()) != -1)//still need to limit the values
+	{
+		switch (c)
+		{
+			case '0':
+				mode = SAFE;
+				return true;
+			case '1':
+				mode = PANIC;
+				return true;
+			case '2':
+				mode = MANUAL;
+				return true;
+			case '3':
+				mode = CALIBRATION;
+				return true;
+			case '4':
+				mode = YAW;
+				return true;
+			case '5':
+				mode = FULL;
+				return true;
+			case '6':
+				mode = RAW;
+				return true;
+			case '7':
+				mode = EXIT;
+				return true;
+		}
+		if (mode == SAFE) 
+		{
+			printf("Invalid command! It is safe mode.\n");
+			return false;
+		}
+		switch (c)
+		{
+			//still need to limit the values
+			case 'r'://lift up
+				k_throttle++;
+				return true;
+			case 'f'://lift down
+				k_throttle--;
+			if (k_throttle < 0) k_throttle = 0;
+				return true;
+			case 'a'://left, roll up
+				k_roll++;
+				return true;
+			case 'd'://right, roll down
+				k_roll--;
+				return true;
+			case 'w'://up, pitch down
+				k_pitch--;
+				return true;
+			case 's'://down, pitch up
+				k_pitch++;
+				return true;
+			case 'q'://yaw down
+				k_yaw--;
+				return true;
+			case 'e'://yaw up
+				k_yaw++;
+				return true;
+		}
+	}
+	return false;
+}
+
+
 /*------------------------------------------------------------
- * control variables
+ * send commands and receive ackonwledgements
  *------------------------------------------------------------
  */
-#define SAFE		0
-#define PANIC		1
-#define MANUAL		2
-#define CALIBRATION	3
-#define YAW		4
-#define FULL		5
-#define RAW		6
 
-int8_t k_throttle = 0, k_roll = 0, k_pitch = 0, k_yaw = 0;
-int8_t j_throttle = 0, j_roll = 0, j_pitch = 0, j_yaw = 0;
-uint8_t mode = 0;
-
-typedef struct
-{
-	uint8_t mode;
-	uint8_t throttle;
-	int8_t roll, pitch, yaw;
-	//....
-}command;
-
+int miss_count = 0;
+bool check_ack = false;
+int t_threshold = 500; 
 void send_command(command c)
 {
 	rs232_putchar(0xFF);
+	rs232_putchar(c.frame);
 	rs232_putchar(c.mode);
 	rs232_putchar(c.throttle);
 	rs232_putchar(c.roll);
 	rs232_putchar(c.pitch);
 	rs232_putchar(c.yaw);
+	last_sending_time = mon_time_ms();
+	frame++;	
+	check_ack = true;
 }
 
-/*------------------------------------------------------------
- * time
- *------------------------------------------------------------
- */
-
-#include <time.h>
-#include <assert.h>
-unsigned int    mon_time_ms(void)
+int get_ack()
 {
-        unsigned int    ms;
-        struct timeval  tv;
-        struct timezone tz;
-
-        gettimeofday(&tv, &tz);
-        ms = 1000 * (tv.tv_sec % 65); // 65 sec wrap around
-        ms = ms + tv.tv_usec / 1000;
-        return ms;
+	if (check_ack == false) return 0;
+	int c = rs232_getchar_nb(),last_c = -1;
+	
+	while(c != -1)
+	{
+		last_c = c;
+		c = rs232_getchar_nb();
+	}
+	if(last_c == frame-1)
+	{
+		miss_count = 0;
+		check_ack = false;
+		fprintf(stderr,"get ack %d\n",last_c);
+		return 0;
+	}
+	int ms = mon_time_ms();
+	if(ms > last_sending_time + t_threshold)
+	{
+		fprintf(stderr,"frame %u, ack time out\n", frame);
+		miss_count++;
+		check_ack = false;
+		return 1;
+	}
+	fprintf(stderr,"nothing");
+	return 2;
 }
 
-void    mon_delay_ms(unsigned int ms)
-{
-        struct timespec req, rem;
-
-        req.tv_sec = ms / 1000;
-        req.tv_nsec = 1000000 * (ms % 1000);
-        assert(nanosleep(&req,&rem) == 0);
-}
 
 
 /*----------------------------------------------------------------
  * main -- execute terminal
  *----------------------------------------------------------------
  */
-#include <stdbool.h>
+
 
 int main(int argc, char **argv)
 {
@@ -304,94 +445,45 @@ int main(int argc, char **argv)
 
 	/* send & receive
 	 */
-	for (;;)
+	mon_delay_ms(1000);
+	while((c = rs232_getchar_nb()) != -1)
+		term_putchar(c);
+	command Command = {SAFE,0,0,0,0,0};
+	send_command(Command);	
+	while (1)
 	{
-		//get_joystick(fd);
-		//if ((c = term_getchar_nb()) != -1)
-		//	rs232_putchar(c);
+		bool send = get_ack()==1;
+		//send = get_ack()==1;
+		//send = get_joystick(fd);
+		send = send||get_keyboard();
+		//send = send || sending_timer();
 
-		//if ((c = rs232_getchar_nb()) != -1)
-		//	term_putchar(c);
-		mon_delay_ms(300);
-		if ((c = term_getchar_nb()) != -1)//still need to limit the values
-		{
-			switch (c)
-			{
-				case '0':
-					mode = SAFE;
-					break;
-				case '1':
-					mode = PANIC;
-					break;
-				case '2':
-					mode = MANUAL;
-					break;
-				case '3':
-					mode = CALIBRATION;
-					break;
-				case '4':
-					mode = YAW;
-					break;
-				case '5':
-					mode = FULL;
-					break;
-				case '6':
-					mode = RAW;
-					break;
-			}
-			//if (mode == SAFE) 
-			//{
-			//	printf("safe mode!\n");
-			//	if(c == 27)
-			//	{
-			//		demo_done = true;
-			//		break;
-			//	}
-			//	continue;
-			//}
-			switch (c)
-			{
-				//still need to limit the values
-				case 'r'://lift up
-					k_throttle++;
-					break;
-				case 'f'://lift down
-					k_throttle--;
-					if (k_throttle < 0) k_throttle = 0;
-					break;
-				case 'a'://left, roll up
-					k_roll++;
-					break;
-				case 'd'://right, roll down
-					k_roll--;
-					break;
-				case 'w'://up, pitch down
-					k_pitch--;
-					break;
-				case 's'://down, pitch up
-					k_pitch++;
-					break;
-				case 'q'://yaw down
-					k_yaw--;
-					break;
-				case 'e'://yaw up
-					k_yaw++;
-					break;
-			}
-		}
-
+		//mon_delay_ms(300);
+		//if(miss_count>5) mode = PANIC;
+		if(mode == PANIC || mode == EXIT) break;
 		//fprintf(stderr,"mode = %d\n",mode);
-		//fprintf(stderr,"from keyboard: throttle = %d roll = %d pitch = %d yaw = %d\n",k_throttle, k_roll, k_pitch, k_yaw);
-		//fprintf(stderr,"from joystick: throttle = %d roll = %d pitch = %d yaw = %d\n",j_throttle, j_roll, j_pitch, j_yaw);
-		command Command = {mode,k_throttle+j_throttle,k_roll+j_roll,k_pitch+j_roll,k_yaw+j_yaw};
-		send_command(Command);
-		while((c = rs232_getchar_nb()) != -1)
-			term_putchar(c);
+		
+		if (send)
+		{
+			command Command = {frame, mode,k_throttle+j_throttle,k_roll+j_roll,k_pitch+j_roll,k_yaw+j_yaw};
+			fprintf(stderr,"mode = %d\n",mode);
+			fprintf(stderr,"from keyboard: throttle = %d roll = %d pitch = %d yaw = %d\n",k_throttle, k_roll, k_pitch, k_yaw);
+			//fprintf(stderr,"from joystick: throttle = %d roll = %d pitch = %d yaw = %d\n",j_throttle, j_roll, j_pitch, j_yaw);
+			send_command(Command);
+		}
+		//while((c = rs232_getchar_nb()) != -1)
+			//term_putchar(c);
+		//get_ack();
 	}
-
-
-	//...
-	//packetize data and send via rs232
+	//send PANIC or EXIT until get ack
+	Command.mode = mode;
+	Command.frame = frame;
+	send_command(Command);	
+	while(get_ack()!=0)
+	{
+		send_command(Command);
+		mon_delay_ms(t_threshold);
+	}
 
 	term_exitio();
 	rs232_close();
