@@ -10,7 +10,6 @@ parser.add_argument('-p', '--port', default = '/dev/ttyUSB0', help='default is /
 
 args = parser.parse_args()
 #print args.filename
-
 #hexFirmware = nRFHex(args.filename)
 #hexFirmware.tobinfile('converted.bin')
 

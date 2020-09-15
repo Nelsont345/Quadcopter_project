@@ -53,6 +53,7 @@ int	term_getchar_nb()
         static unsigned char 	line [2];
 
         if (read(0,line,1)) // note: destructive read
+				printf("%c \n", (char) line[0]);
         		return (int) line[0];
 
         return -1;
