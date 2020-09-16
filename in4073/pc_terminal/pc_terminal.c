@@ -15,7 +15,10 @@
 #include <inttypes.h>
 #include "math.h"
 
-/*------------------------------------------------------------
+#define LOG_SIZE 29
+int count1 = 0;
+/*-------------------------
+-----------------------------------
  * console I/O
  *------------------------------------------------------------
  */
@@ -436,7 +439,8 @@ int main(int argc, char **argv)
 	int	c;
 	int	fd;
 	//struct js_event js;
-
+        FILE *fp; 
+        fp = fopen("log.txt", "w");
 	term_puts("\nTerminal program - Embedded Real-Time Systems\n");
 
 	term_initio();
@@ -504,13 +508,31 @@ int main(int argc, char **argv)
 	//send PANIC or EXIT until get ack
 	C.mode = mode;
 	C.frame = frame;
-	send_command(C);	
+	send_command(C);
+        
+        if(C.mode == EXIT)
+        {
+              while(c = (rs232_getchar() != 0x7F));
+              while(1)
+              {    
+                     c = rs232_getchar(); 
+                     if(c == 0x7F) break;
+                     fprintf(fp, "%d ", c);
+                     count1++;
+                     if(count1 == LOG_SIZE) 
+                     {
+                            fprintf(fp, "\n");
+                            count1 = 0;
+                     }
+               }
+
+        }	
 	//while(get_ack()!=0)
 	//{
 	//	send_command(C);
 	//	mon_delay_ms(t_threshold);
 	//}
-
+        fclose(fp);
 	term_exitio();
 	rs232_close();
 	term_puts("\n<exit>\n");
