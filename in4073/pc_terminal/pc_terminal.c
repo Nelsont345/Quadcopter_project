@@ -271,6 +271,28 @@ void    mon_delay_ms(unsigned int ms)
         assert(nanosleep(&req,&rem) == 0);
 }
 
+/*----------------------------------------------------------------
+ * CRC calculation
+ *----------------------------------------------------------------
+ */
+#include "crc.h"
+
+uint8_t get_crc(uint8_t crc, void const *msg, uint8_t bufferSize)
+{
+	uint8_t const *buffer = msg;
+
+	if (buffer == NULL) return 0xff;
+
+	crc &= 0xff;
+
+	for (int i = 0; i < bufferSize; i++)
+	{
+		crc = crc8_table[ crc ^ buffer[i] ];
+	}
+
+	return crc;
+}
+
 
 /*----------------------------------------------------------------
  * main -- execute terminal
@@ -395,6 +417,10 @@ int main(int argc, char **argv)
 		send_command(Command);
 		while((c = rs232_getchar_nb()) != -1)
 			term_putchar(c);
+		const void *val = Command.mode;
+		int crc = get_crc(255, &val, 7);
+		int crc2 = get_crc(crc, &val, 7);
+		printf("crc %d crc2 %d \n",crc, crc2);
 	}
 
 
