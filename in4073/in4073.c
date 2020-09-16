@@ -71,8 +71,8 @@ int main(void)
 			//printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
 			//printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
 			//printf("%6d %6d %6d | ", phi, theta, psi);
-			printf("%6d %6d %6d | ", sp, sq, sr);
-			printf("%6d %6d %6d | \n", sax, say, saz);
+			//printf("%6d %6d %6d | ", sp, sq, sr);
+			//printf("%6d %6d %6d | \n", sax, say, saz);
 			//printf("%4d | %4ld | %6ld \n", bat_volt, temperature, pressure);
 
 			clear_timer_flag();

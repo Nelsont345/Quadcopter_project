@@ -279,7 +279,7 @@ void    mon_delay_ms(unsigned int ms)
  */
 #include "crc.h"
 //verifies if correct values have been sent
-uint8_t get_crc(uint8_t crc, void const *msg, uint8_t bufferSize)
+uint8_t get_crc(uint8_t crc, uint8_t *msg, uint8_t bufferSize)
 {
 	uint8_t const *buffer = msg;
 
@@ -418,15 +418,17 @@ int main(int argc, char **argv)
 		while((c = rs232_getchar_nb()) != -1)
 			term_putchar(c); 
 		//char data[8] = [Command.mode, Command.throttle, Command.roll, Command.pitch, Command.yaw]
-		const void *val[3];
-		val[0] = 1;
-		val[1] = 2;
-		val[2] = 1;
+		uint8_t val[7];
+		val[0] = Command.mode;
+		val[1] = Command.throttle;
+		val[2] = Command.roll;
+		val[3] = Command.yaw;
+		val[4] = Command.frame;
 
 
 		//int crc = get_crc(255, &val, 7);
-		int check = get_crc(0, &val, 7);
-		printf("crc %d val %d\n",check, val);
+		int check = get_crc(0, val, 5);
+		printf("crc %u val %d\n",check, val[0]);
 		Command.CRC = check;
 		printf("command ");
 		printf("%d ", Command.mode);
