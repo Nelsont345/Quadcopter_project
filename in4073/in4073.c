@@ -22,12 +22,19 @@
 
 void get_command(command c)
 {
-	//printf("get %u, %d, %d, %d, %u, %u\n", c.throttle, c.roll, c.pitch, c.yaw, c.mode, c.frame);
+	
 	throttle = c.throttle;
 	roll = c.roll;
 	pitch = c.pitch;
 	yaw = c.yaw;
 	mode = c.mode;
+	float A = 1, B = 1, C = 1; 
+	ae[0] = (int16_t) sqrt(A*throttle-B*pitch-C*yaw)*20;
+	ae[1] = (int16_t) sqrt(A*throttle-B*roll+C*yaw)*20;
+	ae[2] = (int16_t) sqrt(A*throttle+B*roll-C*yaw)*20;
+	ae[3] = (int16_t) sqrt(A*throttle+B*roll+C*yaw)*20;
+	printf("get %u, %d, %d, %d, %u, %u\n", c.throttle, c.roll, c.pitch, c.yaw, c.mode, c.frame);
+	printf("mode = %u, ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",mode, ae[0],ae[1],ae[2],ae[3]);
 }
 
 
@@ -56,8 +63,12 @@ int main(void)
 
 	while (!demo_done)
 	{
-		//printf("%d",myrx_queue.count);
-		if (c_rx_queue.count) get_command( c_dequeue(&c_rx_queue) );
+		//printf("count = %d\n",c_rx_queue.count);
+		if (c_rx_queue.count){
+			printf("count = %d\n",c_rx_queue.count);
+			get_command( c_dequeue(&c_rx_queue) );
+		}			
+
 
 		if (check_timer_flag()) 
 		{

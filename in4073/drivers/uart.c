@@ -65,7 +65,7 @@ void UART0_IRQHandler(void)
 				b_counter = 0;
 				p_counter++;
 				//send ack
-				uart_put(c.frame);
+				//uart_put(c.frame);
 				//still need to check the packets by CRC
 				//printf("end packet\n");
 			}
