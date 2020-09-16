@@ -40,12 +40,15 @@ bool demo_done;
 //Mode
 
 uint8_t mode;
+int8_t CRC;
 
 //Command
 typedef struct {
 	uint8_t mode;
 	uint8_t throttle;
+	int8_t CRC;
 	int8_t roll, pitch, yaw;
+	
 }command;
 
 // Control
@@ -64,7 +67,7 @@ void clear_timer_flag(void);
 void gpio_init(void);
 
 // Queue
-#define QUEUE_SIZE 256
+#define QUEUE_SIZE 64
 typedef struct {
 	uint8_t Data[QUEUE_SIZE];
 	uint16_t first,last;

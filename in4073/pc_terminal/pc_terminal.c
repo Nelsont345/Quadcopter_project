@@ -230,6 +230,7 @@ typedef struct
 	uint8_t mode;
 	uint8_t throttle;
 	int8_t roll, pitch, yaw;
+	uint8_t CRC;
 	//....
 }command;
 
@@ -241,6 +242,7 @@ void send_command(command c)
 	rs232_putchar(c.roll);
 	rs232_putchar(c.pitch);
 	rs232_putchar(c.yaw);
+	rs232_putchar(c.CRC);
 }
 
 /*------------------------------------------------------------
@@ -276,7 +278,7 @@ void    mon_delay_ms(unsigned int ms)
  *----------------------------------------------------------------
  */
 #include "crc.h"
-
+//verifies if correct values have been sent
 uint8_t get_crc(uint8_t crc, void const *msg, uint8_t bufferSize)
 {
 	uint8_t const *buffer = msg;
@@ -284,10 +286,13 @@ uint8_t get_crc(uint8_t crc, void const *msg, uint8_t bufferSize)
 	if (buffer == NULL) return 0xff;
 
 	crc &= 0xff;
+	printf("null \n");
 
 	for (int i = 0; i < bufferSize; i++)
 	{
+		printf("crc_now %d buffer_i %d \n", crc, buffer[i]);
 		crc = crc8_table[ crc ^ buffer[i] ];
+		
 	}
 
 	return crc;
@@ -406,21 +411,31 @@ int main(int argc, char **argv)
 		//fprintf(stderr,"mode = %d\n",mode);
 		//fprintf(stderr,"from keyboard: throttle = %d roll = %d pitch = %d yaw = %d\n",k_throttle, k_roll, k_pitch, k_yaw);
 		//fprintf(stderr,"from joystick: throttle = %d roll = %d pitch = %d yaw = %d\n",j_throttle, j_roll, j_pitch, j_yaw);
-		command Command = {mode,k_throttle+j_throttle,k_roll+j_roll,k_pitch+j_roll,k_yaw+j_yaw};
+		int8_t CRC=0;
+		command Command = {mode,k_throttle+j_throttle,k_roll+j_roll,k_pitch+j_roll,k_yaw+j_yaw, CRC};
 
+		
+		while((c = rs232_getchar_nb()) != -1)
+			term_putchar(c); 
+		//char data[8] = [Command.mode, Command.throttle, Command.roll, Command.pitch, Command.yaw]
+		const void *val[3];
+		val[0] = 1;
+		val[1] = 2;
+		val[2] = 1;
+
+
+		//int crc = get_crc(255, &val, 7);
+		int check = get_crc(0, &val, 7);
+		printf("crc %d val %d\n",check, val);
+		Command.CRC = check;
 		printf("command ");
 		printf("%d ", Command.mode);
 		printf("%d ", Command.throttle);
 		printf("%d ", Command.roll);
 		printf("%d ", Command.pitch);
-		printf("%d \n", Command.yaw);
+		printf("%d ", Command.yaw);
+		printf("%d \n", Command.CRC);
 		send_command(Command);
-		while((c = rs232_getchar_nb()) != -1)
-			term_putchar(c);
-		const void *val = Command.mode;
-		int crc = get_crc(255, &val, 7);
-		int crc2 = get_crc(crc, &val, 7);
-		printf("crc %d crc2 %d \n",crc, crc2);
 	}
 
 
