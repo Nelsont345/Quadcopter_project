@@ -58,13 +58,15 @@ void UART0_IRQHandler(void)
 			b_counter++;
 			if(b_counter==7)
 			{
+				//enqueue the command
 				command c = {data[0],data[1],data[2],data[3],data[4],data[5]};
 				c_enqueue( &c_rx_queue, c);
 				//printf("%d",c_rx_queue.count);
 				b_counter = 0;
 				p_counter++;
-				uart_put(c.frame);
-				//still need to check the packets
+				//send ack
+				//uart_put(c.frame);
+				//still need to check the packets by CRC
 				//printf("end packet\n");
 			}
 		}

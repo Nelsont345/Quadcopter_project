@@ -35,6 +35,10 @@
 #define FULL		5
 #define RAW		6
 
+#define DATASIZE        29
+void flash_data();
+void log_data();
+
 bool demo_done;
 
 //Mode

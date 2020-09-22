@@ -42,7 +42,7 @@ char dequeue(queue *q){
 
 void c_enqueue(c_queue *q,command x){
 
-	q->last = (q->last + 1) % QUEUE_SIZE;
+	q->last = (q->last + 1) % C_QUEUE_SIZE;
 	q->Data[ q->last ] = x;
 	q->count += 1;
 }
@@ -50,7 +50,7 @@ void c_enqueue(c_queue *q,command x){
 command c_dequeue(c_queue *q){
 
 	command x = q->Data[ q->first ];
-	q->first = (q->first + 1) % QUEUE_SIZE;
+	q->first = (q->first + 1) % C_QUEUE_SIZE;
 	q->count -= 1;
 	return x;
 }
