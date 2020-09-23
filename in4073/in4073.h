@@ -47,10 +47,12 @@ typedef struct {
 	uint8_t mode;
 	uint8_t throttle;
 	int8_t roll, pitch, yaw;
+        uint8_t P,P1,P2;
 }command;
 
 // Control
 int16_t throttle, roll, pitch, yaw;
+int16_t P, P1, P2;
 int16_t motor[4],ae[4];
 void run_filters_and_control();
 

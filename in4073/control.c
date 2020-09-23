@@ -38,6 +38,16 @@ void run_filters_and_control()
 		ae[3] = (int16_t) sqrt(A*throttle+B*roll+C*yaw)*20;
 		//printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);
 	}
+	if (mode == PANIC)
+	{
+		int panic_RPM = 180;
+		for(int i = 0; i<10; i++)
+		{
+			ae[0]=ae[1]=ae[2]=ae[3]=panic_RPM;
+			panic_RPM *=0.9; 
+			nrf_delay_ms(1000);
+		}
+	}
 	else 
 	{
 		ae[0] = ae[1] = ae[2] = ae[3] = 0;

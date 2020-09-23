@@ -236,6 +236,7 @@ bool sending_timer()//send command periodically to check the connection
 int16_t k_throttle = 0, k_roll = 0, k_pitch = 0, k_yaw = 0;
 int16_t j_throttle = 0, j_roll = 0, j_pitch = 0, j_yaw = 0;
 int16_t throttle = 0, roll = 0, pitch = 0, yaw = 0;
+int16_t P, P1, P2 = 0;
 uint8_t mode = 0;
 uint8_t frame = 0;
 int last_sending_time;
@@ -246,6 +247,7 @@ typedef struct
 	uint8_t mode;
 	uint8_t throttle;
 	int8_t roll, pitch, yaw;
+        uint8_t P, P1, P2;
 	//....
 }command;
 
@@ -346,7 +348,7 @@ bool get_keyboard()
 				return true;
 			case 'f'://lift down
 				k_throttle-=5;
-			if (k_throttle < 0) k_throttle = 0;
+			        if (k_throttle < 0) k_throttle = 0;
 				return true;
 			case 'a'://left, roll up
 				k_roll+=5;
@@ -366,6 +368,28 @@ bool get_keyboard()
 			case 'e'://yaw up
 				k_yaw+=5;
 				return true;
+			case 'u'://yaw up
+				P+=1;
+				return true;
+			case 'j'://yaw up
+				P-=1;
+                              if (P < 0) P = 0;
+				return true;
+			case 'i'://yaw up
+				P1+=1;
+				return true;
+			case 'k'://yaw up
+				P1-=1;
+				if (P1 < 0) P1 = 0;
+				return true;
+			case 'o'://yaw up
+				P2+=1;
+				return true;
+			case 'l'://yaw up
+				P2-=1;
+				if (P2 < 0) P2 = 0;
+				return true;
+
 		}
 	}
 	return false;
@@ -389,6 +413,9 @@ void send_command(command c)
 	rs232_putchar(c.roll);
 	rs232_putchar(c.pitch);
 	rs232_putchar(c.yaw);
+	rs232_putchar(c.P);
+	rs232_putchar(c.P1);
+	rs232_putchar(c.P2);
 	last_sending_time = mon_time_ms();
 	frame++;	
 	check_ack = true;
@@ -442,10 +469,10 @@ int main(int argc, char **argv)
 	term_initio();
 	rs232_open();
 
-	if ((fd = open(JS_DEV, O_RDONLY)) < 0) {
-		perror("jstest");
-		exit(1);
-	}
+	//if ((fd = open(JS_DEV, O_RDONLY)) < 0) {
+	//	perror("jstest");
+	//	exit(1);
+	//}
 
 	fcntl(fd, F_SETFL, O_NONBLOCK);
 
@@ -468,7 +495,7 @@ int main(int argc, char **argv)
 	{
 		bool send = false;
 		//send = get_ack()==1;
-		send = send || get_joystick(fd);
+		//send = send || get_joystick(fd);
 		send = send || get_keyboard();
 		//send = send || sending_timer();
 
@@ -491,7 +518,7 @@ int main(int argc, char **argv)
 			if(yaw>127) yaw = 127;
 			if(yaw<-128) yaw = -128;
 
-			command Command = {frame, mode,throttle,roll,pitch,yaw};
+			command Command = {frame, mode,throttle,roll,pitch,yaw,P,P1,P2};
 			fprintf(stderr,"mode = %d\n",mode);
 			fprintf(stderr,"from keyboard: throttle = %u roll = %d pitch = %d yaw = %d\n",k_throttle, k_roll, k_pitch, k_yaw);
 			fprintf(stderr,"from joystick: throttle = %u roll = %d pitch = %d yaw = %d\n",j_throttle, j_roll, j_pitch, j_yaw);
