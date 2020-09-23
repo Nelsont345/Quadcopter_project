@@ -38,11 +38,11 @@ void get_command(command c)
         P = c.P;
         P1 = c.P1;
         P2 = c.P2;
-	float A = 1, B = 1, C = 1; 
-	ae[0] = (int16_t) sqrt(A * throttle-B*pitch-C*yaw)*20;
-	ae[1] = (int16_t) sqrt(A*throttle-B*roll+C*yaw)*20;
-	ae[2] = (int16_t) sqrt(A*throttle+B*roll-C*yaw)*20;
-	ae[3] = (int16_t) sqrt(A*throttle+B*roll+C*yaw)*20;
+	//float A = 1, B = 1, C = 1; 
+	//ae[0] = (int16_t) sqrt(A * throttle-B*pitch-C*yaw)*20;
+	//ae[1] = (int16_t) sqrt(A*throttle-B*roll+C*yaw)*20;
+	//ae[2] = (int16_t) sqrt(A*throttle+B*roll-C*yaw)*20;
+	//ae[3] = (int16_t) sqrt(A*throttle+B*roll+C*yaw)*20;
 	//printf("get %u, %d, %d, %d, %u, %u,%u, %u,%u\n", c.throttle, c.roll, c.pitch, c.yaw, c.mode, c.frame,c.P,c.P1,c.P2);
         flash_data();
 	//printf("get %u, %d, %d, %d, %u, %u\n", c.throttle, c.roll, c.pitch, c.yaw, c.mode, c.frame);
@@ -185,7 +185,7 @@ int main(void)
 			printf("%6d %6d %6d | ", phi, theta, psi);
 			printf("%6d %6d %6d | ", sp, sq, sr);
 			//printf("%4d | %4ld | %6ld |", bat_volt, temperature, pressure);
-			printf("%6d %6d %6d %d\n",P, P1, P2, mode);
+			printf("%6d %6d %6d | %d  |   |  %d  %d|| \n",P, P1, P2, mode, y_err, cal_sr);
 }
 			clear_timer_flag();
 		}

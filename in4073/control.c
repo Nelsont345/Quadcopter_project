@@ -44,6 +44,17 @@ void run_filters_and_control()
 		ae[3] = (int16_t) sqrt(A * throttle + 2 * B * roll + C * yaw) * 20;
 		//printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);
 	}
+	else if (mode == PANIC)
+	{
+		int AE = 200;
+		for(int i = 0; i<10;i++);
+		{
+			nrf_delay_ms(200);
+			ae[0]=ae[1]=ae[2]=ae[3] = AE;
+			AE = AE- 20;
+		}
+		mode = SAFE;
+	}
 
 	else if (mode == CALIBRATION)
 	{
@@ -53,17 +64,19 @@ void run_filters_and_control()
             cal_sp = sp;
             cal_sq = sq;
             cal_sr = sr;
+	    //printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);
 	}
    
         else if(mode == YAW)
-        {  int8_t y_err, yaw_new;
+        {  int8_t yaw_new;
            //int8_t x, y;
-           int32_t A = 1, B = 1, C = 1; 
-           while(y_err > 0)
+           int32_t A = 1, B = 1, C = 1;
+           y_err = yaw - (sr - cal_sr);
+           if((y_err > 10) || (y_err < -10))
            {   
                y_err = yaw - (sr - cal_sr);
-               yaw_new = yaw + fp_mul(P, y_err, 0);
-
+               //yaw_new = yaw + fp_mul(P, y_err, 0);
+               yaw_new = yaw + P * y_err;
 	       ae[0] = (int16_t) sqrt(A * throttle + 2 * B * pitch - C * yaw_new) * 20;
 	       ae[1] = (int16_t) sqrt(A * throttle - 2 * B * roll  + C * yaw_new) * 20;
 	       ae[2] = (int16_t) sqrt(A * throttle - 2 * B * pitch - C * yaw_new) * 20;
@@ -72,7 +85,7 @@ void run_filters_and_control()
         }	
  
         else if(mode == FULL)
-        {
+        {nrf_delay_ms(100);
            int8_t p_err, r_err, prate_err, rrate_err, pitch_new, roll_new;           
 	   int32_t A = 1, B = 1, C = 1;   
            p_err = 0 - theta;
@@ -106,6 +119,7 @@ void run_filters_and_control()
         else 
 	{
 		ae[0] = ae[1] = ae[2] = ae[3] = 0;
+                cal_sp = cal_sq = cal_sr = 0;
 	}
 	update_motors();
 }
