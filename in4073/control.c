@@ -32,10 +32,18 @@ void run_filters_and_control()
 		
 		//float A = 1/4/b, B = 1/2/b, C = 1/4/d; 
 		float A = 1, B = 1, C = 1; 
+<<<<<<< HEAD
 		ae[0] = (int16_t) sqrt(A*throttle-B*pitch-C*yaw);
 		ae[1] = (int16_t) sqrt(A*throttle-B*roll+C*yaw);
 		ae[2] = (int16_t) sqrt(A*throttle+B*roll-C*yaw);
 		ae[3] = (int16_t) sqrt(A*throttle+B*roll+C*yaw);
+=======
+		ae[0] = (int16_t) sqrt(A*throttle-B*pitch-C*yaw)*20;
+		ae[1] = (int16_t) sqrt(A*throttle-B*roll+C*yaw)*20;
+		ae[2] = (int16_t) sqrt(A*throttle+B*roll-C*yaw)*20;
+		ae[3] = (int16_t) sqrt(A*throttle+B*roll+C*yaw)*20;
+		//printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);
+>>>>>>> Liang
 	}
 	else 
 	{

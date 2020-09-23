@@ -17,10 +17,17 @@ void init_queue(queue *q){
 	q->count = 0;
 }
 
+<<<<<<< HEAD
 void myinit_queue(myqueue *q){
 	
 	q->first = 0;
 	q->last = QUEUE_SIZE - 1;
+=======
+void c_init_queue(c_queue *q){
+	
+	q->first = 0;
+	q->last = C_QUEUE_SIZE - 1;
+>>>>>>> Liang
 	q->count = 0;
 }
 
@@ -40,17 +47,30 @@ char dequeue(queue *q){
 	return x;
 }
 
+<<<<<<< HEAD
 void myenqueue(myqueue *q,command x){
 
 	q->last = (q->last + 1) % QUEUE_SIZE;
+=======
+void c_enqueue(c_queue *q,command x){
+
+	q->last = (q->last + 1) % C_QUEUE_SIZE;
+>>>>>>> Liang
 	q->Data[ q->last ] = x;
 	q->count += 1;
 }
 
+<<<<<<< HEAD
 command mydequeue(myqueue *q){
 
 	command x = q->Data[ q->first ];
 	q->first = (q->first + 1) % QUEUE_SIZE;
+=======
+command c_dequeue(c_queue *q){
+
+	command x = q->Data[ q->first ];
+	q->first = (q->first + 1) % C_QUEUE_SIZE;
+>>>>>>> Liang
 	q->count -= 1;
 	return x;
 }
