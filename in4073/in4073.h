@@ -59,6 +59,7 @@ int16_t throttle, roll, pitch, yaw;
 int16_t P, P1, P2;
 int16_t motor[4],ae[4];
 void run_filters_and_control();
+int16_t cal_phi, cal_theta, cal_psi, cal_sp, cal_sq, cal_sr;
 
 // Timers
 #define TIMER_PERIOD	50 //50ms=20Hz (MAX 23bit, 4.6h)
