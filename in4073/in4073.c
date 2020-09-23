@@ -185,7 +185,7 @@ int main(void)
 			printf("%6d %6d %6d | ", phi, theta, psi);
 			printf("%6d %6d %6d | ", sp, sq, sr);
 			//printf("%4d | %4ld | %6ld |", bat_volt, temperature, pressure);
-			printf("%6d %6d %6d | %d  |   |  %d  %d|| \n",P, P1, P2, mode, y_err, cal_sr);
+			printf("%6d %6d %6d | %d  |   |  %d  %d %d %d  %d %d %d %d|| \n",P, P1, P2, mode, y_err, r_err, p_err, prate_err, rrate_err, cal_theta, cal_psi, cal_sr);
 }
 			clear_timer_flag();
 		}

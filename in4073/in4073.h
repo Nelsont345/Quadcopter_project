@@ -60,7 +60,7 @@ int16_t P, P1, P2;
 int16_t motor[4],ae[4];
 void run_filters_and_control();
 int16_t cal_phi, cal_theta, cal_psi, cal_sp, cal_sq, cal_sr;
-int8_t y_err;
+int8_t y_err, p_err, r_err, prate_err, rrate_err;
 // Timers
 #define TIMER_PERIOD	50 //50ms=20Hz (MAX 23bit, 4.6h)
 void timers_init(void);

@@ -76,7 +76,7 @@ void run_filters_and_control()
            {   
                y_err = yaw - (sr - cal_sr);
                //yaw_new = yaw + fp_mul(P, y_err, 0);
-               yaw_new = yaw + P * y_err;
+               yaw_new = yaw - P * y_err;
 	       ae[0] = (int16_t) sqrt(A * throttle + 2 * B * pitch - C * yaw_new) * 20;
 	       ae[1] = (int16_t) sqrt(A * throttle - 2 * B * roll  + C * yaw_new) * 20;
 	       ae[2] = (int16_t) sqrt(A * throttle - 2 * B * pitch - C * yaw_new) * 20;
@@ -86,15 +86,15 @@ void run_filters_and_control()
  
         else if(mode == FULL)
         {nrf_delay_ms(100);
-           int8_t p_err, r_err, prate_err, rrate_err, pitch_new, roll_new;           
+           int8_t pitch_new, roll_new;           
 	   int32_t A = 1, B = 1, C = 1;   
            p_err = 0 - theta;
            r_err = 0 - psi;
            prate_err = pitch - sq;
            rrate_err = roll - sp;
-           while(p_err > 10 || r_err > 10)
+           if(p_err > 10 || r_err > 10 || p_err < -10 || r_err < -10)
            {
-               while(prate_err > 3 || rrate_err > 3)
+               if(prate_err > 3 || rrate_err > 3 || prate_err < -3 || rrate_err < -3 )
                {
                    pitch_new = pitch + fp_mul(P2, prate_err, 0);
                    roll_new  = roll  + fp_mul(P2, rrate_err, 0);
@@ -111,8 +111,8 @@ void run_filters_and_control()
 	       ae[1] = (int16_t) sqrt(A * throttle - 2 * B * roll_new  + C * yaw) * 20;
 	       ae[2] = (int16_t) sqrt(A * throttle - 2 * B * pitch_new - C * yaw) * 20;
 	       ae[3] = (int16_t) sqrt(A * throttle + 2 * B * roll_new  + C * yaw) * 20;     
-               p_err = cal_theta - theta;
-               r_err = cal_psi - psi;          
+               p_err = cal_theta - (theta - cal_theta);
+               r_err = cal_psi - (psi - cal_psi);          
            } 
         }
 
