@@ -56,10 +56,10 @@ void UART0_IRQHandler(void)
 			data[b_counter-1] = k;
 			//printf("get data%d %d",b_counter, k);
 			b_counter++;
-			if(b_counter==7)
+			if(b_counter==10)
 			{
 				//enqueue the command
-				command c = {data[0],data[1],data[2],data[3],data[4],data[5]};
+				command c = {data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8]};
 				c_enqueue( &c_rx_queue, c);
 				//printf("%d",c_rx_queue.count);
 				b_counter = 0;

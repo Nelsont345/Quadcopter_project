@@ -35,13 +35,20 @@ void get_command(command c)
 	pitch = c.pitch;
 	yaw = c.yaw;
 	mode = c.mode;
+        P = c.P;
+        P1 = c.P1;
+        P2 = c.P2;
 	float A = 1, B = 1, C = 1; 
 	ae[0] = (int16_t) sqrt(A*throttle-B*pitch-C*yaw)*20;
 	ae[1] = (int16_t) sqrt(A*throttle-B*roll+C*yaw)*20;
 	ae[2] = (int16_t) sqrt(A*throttle+B*roll-C*yaw)*20;
 	ae[3] = (int16_t) sqrt(A*throttle+B*roll+C*yaw)*20;
+<<<<<<< HEAD
+	printf("get %u, %d, %d, %d, %u, %u,%u, %u,%u\n", c.throttle, c.roll, c.pitch, c.yaw, c.mode, c.frame,c.P,c.P1,c.P2);
+=======
         flash_data();
 	printf("get %u, %d, %d, %d, %u, %u\n", c.throttle, c.roll, c.pitch, c.yaw, c.mode, c.frame);
+>>>>>>> b0a57fb238b17f4091e304e9d76655ac2afa49ba
 	printf("mode = %u, ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",mode, ae[0],ae[1],ae[2],ae[3]);
 }
 
