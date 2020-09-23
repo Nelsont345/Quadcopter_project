@@ -39,23 +39,20 @@ void get_command(command c)
         P1 = c.P1;
         P2 = c.P2;
 	float A = 1, B = 1, C = 1; 
-	ae[0] = (int16_t) sqrt(A*throttle-B*pitch-C*yaw)*20;
+	ae[0] = (int16_t) sqrt(A * throttle-B*pitch-C*yaw)*20;
 	ae[1] = (int16_t) sqrt(A*throttle-B*roll+C*yaw)*20;
 	ae[2] = (int16_t) sqrt(A*throttle+B*roll-C*yaw)*20;
 	ae[3] = (int16_t) sqrt(A*throttle+B*roll+C*yaw)*20;
-<<<<<<< HEAD
-	printf("get %u, %d, %d, %d, %u, %u,%u, %u,%u\n", c.throttle, c.roll, c.pitch, c.yaw, c.mode, c.frame,c.P,c.P1,c.P2);
-=======
+	//printf("get %u, %d, %d, %d, %u, %u,%u, %u,%u\n", c.throttle, c.roll, c.pitch, c.yaw, c.mode, c.frame,c.P,c.P1,c.P2);
         flash_data();
-	printf("get %u, %d, %d, %d, %u, %u\n", c.throttle, c.roll, c.pitch, c.yaw, c.mode, c.frame);
->>>>>>> b0a57fb238b17f4091e304e9d76655ac2afa49ba
-	printf("mode = %u, ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",mode, ae[0],ae[1],ae[2],ae[3]);
+	//printf("get %u, %d, %d, %d, %u, %u\n", c.throttle, c.roll, c.pitch, c.yaw, c.mode, c.frame);
+	//printf("mode = %u, ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",mode, ae[0],ae[1],ae[2],ae[3]);
 }
 
 void flash_data()
 {
    cur_time = get_time_us();
-   printf("time: %10ld, M: %d, T: %d, L: %d, N: %d, phi: %6d, theta: %6d, psi: %6d, sp: %6d, sq: %6d, sr: %6d\n\n", cur_time, throttle, roll, pitch, yaw, phi, theta, psi, sp,sq, sr);
+   //printf("time: %10ld, M: %d, T: %d, L: %d, N: %d, phi: %6d, theta: %6d, psi: %6d, sp: %6d, sq: %6d, sr: %6d\n\n", cur_time, throttle, roll, pitch, yaw, phi, theta, psi, sp,sq, sr);
    data[0] = ((cur_time & 0xFFFFFFFF) >> 24);
    data[1] = ((cur_time & 0xFFFFFF) >> 16);
    data[2] = ((cur_time & 0xFFFF) >> 8);
@@ -95,20 +92,20 @@ void flash_data()
    //flash_write_bytes(uint32_t address, uint8_t *data, uint32_t count)
 
    if(!flash_write_bytes(write_address, data, DATASIZE))
-   {   printf("wrtie failed\n");
+   {   //printf("wrtie failed\n");
        write_address = 0x00000000;
        flash_write_bytes(write_address, data, DATASIZE);  
    }
 
     if(flash_read_bytes(read_address, data_r, DATASIZE))
    {       
-          printf("\ndata read:  ");
+          //printf("\ndata read:  ");
           for(int i = 0; i < DATASIZE; i++)
                 {
-                     printf("%d ", data_r[i]);
+                     //printf("%d ", data_r[i]);
                     
                 }
-         printf(" : finieshed reading\n\n");
+         //printf(" : finieshed reading\n\n");
 
    }
    read_address += (DATASIZE * 8);
@@ -180,14 +177,16 @@ int main(void)
 
 			adc_request_sample();
 			read_baro();
-
-			//printf("%10ld | ", get_time_us());
-			//printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
-			//printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
-			//printf("%6d %6d %6d | ", phi, theta, psi);
-			//printf("%6d %6d %6d | ", sp, sq, sr);
-			//printf("%4d | %4ld | %6ld \n", bat_volt, temperature, pressure);
-
+                       if(counter%8 == 0)
+                        {
+			printf("%10ld | ", get_time_us());
+			printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
+			printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
+			printf("%6d %6d %6d | ", phi, theta, psi);
+			printf("%6d %6d %6d | ", sp, sq, sr);
+			//printf("%4d | %4ld | %6ld |", bat_volt, temperature, pressure);
+			printf("%6d %6d %6d %d\n",P, P1, P2, mode);
+}
 			clear_timer_flag();
 		}
 

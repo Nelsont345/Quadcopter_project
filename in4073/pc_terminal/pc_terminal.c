@@ -15,10 +15,7 @@
 #include <inttypes.h>
 #include "math.h"
 
-#define LOG_SIZE 29
-int count1 = 0;
-/*-------------------------
------------------------------------
+/*------------------------------------------------------------
  * console I/O
  *------------------------------------------------------------
  */
@@ -466,17 +463,16 @@ int main(int argc, char **argv)
 	int	c;
 	int	fd;
 	//struct js_event js;
-        FILE *fp; 
-        fp = fopen("log.txt", "w");
+
 	term_puts("\nTerminal program - Embedded Real-Time Systems\n");
 
 	term_initio();
 	rs232_open();
 
-	//if ((fd = open(JS_DEV, O_RDONLY)) < 0) {
-	//	perror("jstest");
-	//	exit(1);
-	//}
+	if ((fd = open(JS_DEV, O_RDONLY)) < 0) {
+		perror("jstest");
+		exit(1);
+	}
 
 	fcntl(fd, F_SETFL, O_NONBLOCK);
 
@@ -499,7 +495,7 @@ int main(int argc, char **argv)
 	{
 		bool send = false;
 		//send = get_ack()==1;
-		//send = send || get_joystick(fd);
+		send = send || get_joystick(fd);
 		send = send || get_keyboard();
 		//send = send || sending_timer();
 
@@ -523,9 +519,9 @@ int main(int argc, char **argv)
 			if(yaw<-128) yaw = -128;
 
 			command Command = {frame, mode,throttle,roll,pitch,yaw,P,P1,P2};
-			fprintf(stderr,"mode = %d\n",mode);
-			fprintf(stderr,"from keyboard: throttle = %u roll = %d pitch = %d yaw = %d\n",k_throttle, k_roll, k_pitch, k_yaw);
-			fprintf(stderr,"from joystick: throttle = %u roll = %d pitch = %d yaw = %d\n",j_throttle, j_roll, j_pitch, j_yaw);
+			//fprintf(stderr,"mode = %d\n",mode);
+			//fprintf(stderr,"from keyboard: throttle = %u roll = %d pitch = %d yaw = %d\n",k_throttle, k_roll, k_pitch, k_yaw);
+			//fprintf(stderr,"from joystick: throttle = %u roll = %d pitch = %d yaw = %d\n",j_throttle, j_roll, j_pitch, j_yaw);
 			send_command(Command);
 		}
 		while((c = rs232_getchar_nb()) != -1)
@@ -535,31 +531,13 @@ int main(int argc, char **argv)
 	//send PANIC or EXIT until get ack
 	C.mode = mode;
 	C.frame = frame;
-	send_command(C);
-        
-        if(C.mode == EXIT)
-        {
-              while(c = (rs232_getchar() != 0x7F));
-              while(1)
-              {    
-                     c = rs232_getchar(); 
-                     if(c == 0x7F) break;
-                     fprintf(fp, "%d ", c);
-                     count1++;
-                     if(count1 == LOG_SIZE) 
-                     {
-                            fprintf(fp, "\n");
-                            count1 = 0;
-                     }
-               }
-
-        }	
+	send_command(C);	
 	//while(get_ack()!=0)
 	//{
 	//	send_command(C);
 	//	mon_delay_ms(t_threshold);
 	//}
-        fclose(fp);
+
 	term_exitio();
 	rs232_close();
 	term_puts("\n<exit>\n");
