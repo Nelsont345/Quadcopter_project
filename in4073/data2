@@ -1,0 +1,1722 @@
+Terminal program - Embedded Real-Time Systems
+Type ^C to exit
+mpu init result: 0
+mpu set sensors: 0
+mpu conf fifo  : 0
+
+dmp load firm  : 0
+dmp set orient : 0
+dmp en features: 0
+dmp set rate   : 0
+dmp set state  : 0
+dlpf set freq  : 0
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    1499362, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -154, theta:    198, psi:    -82, sp:    -36, sq:    -19, sr:    -11, loop_time : 1957207741
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    1648319, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -201, theta:    231, psi:    -99, sp:    -36, sq:    -18, sr:    -11, loop_time : 664066168
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    2414382, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -376, theta:    355, psi:   -181, sp:    -37, sq:    -16, sr:    -13, loop_time : 1722828486
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    2668788, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -416, theta:    384, psi:   -215, sp:    -36, sq:    -20, sr:    -13, loop_time : -1597830120
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    3756852, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -524, theta:    464, psi:   -334, sp:    -36, sq:    -17, sr:    -12, loop_time : -464805744
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    4024989, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -540, theta:    472, psi:   -365, sp:    -37, sq:    -18, sr:    -12, loop_time : -2094128074
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    4799558, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -571, theta:    492, psi:   -456, sp:    -37, sq:    -18, sr:    -11, loop_time : 409876677
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    5633315, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -598, theta:    527, psi:   -550, sp:    -36, sq:    -18, sr:    -11, loop_time : 734272404
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    5886185, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -593, theta:    528, psi:   -579, sp:    -30, sq:    -10, sr:    -12, loop_time : -1454867575
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    6979042, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -594, theta:    421, psi:   -742, sp:    -37, sq:    -20, sr:    -63, loop_time : -215094938
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    7243201, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -622, theta:    363, psi:  -1017, sp:    -82, sq:    -19, sr:   -140, loop_time : -2129299953
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 3, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    7391750, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -613, theta:    485, psi:  -1240, sp:    -34, sq:      8, sr:    -57, loop_time : 804547218
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    8059988, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -612, theta:    554, psi:  -1263, sp:    -36, sq:    -18, sr:    -11, loop_time : 1420724613
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    8852528, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -612, theta:    541, psi:  -1350, sp:    -36, sq:    -16, sr:     -8, loop_time : -1264487586
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    9108870, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -609, theta:    535, psi:  -1383, sp:    -35, sq:    -19, sr:    -12, loop_time : 146528146
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 3, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:    9987607, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -605, theta:    534, psi:  -1490, sp:    -36, sq:    -18, sr:    -10, loop_time : -865588201
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:   10136539, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -604, theta:    533, psi:  -1508, sp:    -36, sq:    -21, sr:    -15, loop_time : 652042234
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 3, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:   10390159, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -604, theta:    534, psi:  -1539, sp:    -35, sq:    -19, sr:    -12, loop_time : 2018876052
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 3, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:   10465231, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -604, theta:    534, psi:  -1549, sp:    -36, sq:    -19, sr:    -11, loop_time : 141159724
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 3, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = 0, c_sp = 0, c_sq = 0, roll_new = 0, pitch_new = 0
+time:   10611584, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -604, theta:    535, psi:  -1568, sp:    -36, sq:    -20, sr:    -11, loop_time : 1452285185
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+calibrated. return to safe mode
+mode = 3, P = 0, P1 = 0 P2 = 0 yaw_err 
+
+0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   10860857, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -603, theta:    537, psi:  -1600, sp:    -37, sq:    -19, sr:    -12, loop_time : 1898303076
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err0
+
+0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   11218360, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -601, theta:    538, psi:  -1645, sp:    -36, sq:    -18, sr:    -11, loop_time : -325834517
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err0
+
+0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   12072030, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -603, theta:    533, psi:  -1742, sp:    -37, sq:    -19, sr:    -11, loop_time : 1885805469
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err
+
+ 0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   12325523, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -603, theta:    534, psi:  -1773, sp:    -37, sq:    -18, sr:    -11, loop_time : -68610979
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   13412473, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -604, theta:    536, psi:  -1905, sp:    -37, sq:    -21, sr:    -11, loop_time : -493454957
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err 0
+
+ c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   13680517, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -605, theta:    536, psi:  -1942, sp:    -37, sq:    -17, sr:     -6, loop_time : -2100997206
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err
+
+ 0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   14454423, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -606, theta:    531, psi:  -2029, sp:    -37, sq:    -18, sr:    -10, loop_time : 219393404
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err 
+
+0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   15289992, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -600, theta:    535, psi:  -2134, sp:    -36, sq:    -19, sr:    -12, loop_time : 1000144766
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 0, P1 = 0 P2 = 0 yaw_err 0
+
+ c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   15541028, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -599, theta:    535, psi:  -2165, sp:    -36, sq:    -19, sr:    -12, loop_time : -1372643267
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   16003964, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -458, theta:    464, psi:  -2173, sp:     -1, sq:     -1, sr:     -1, loop_time : -1769487068
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err 
+
+0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   16572736, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -331, theta:    407, psi:  -2176, sp:     -5, sq:     -3, sr:     10, loop_time : 1397738022
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   16899791, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -288, theta:    384, psi:  -2160, sp:     -5, sq:     -6, sr:      3, loop_time : -983714879
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err0
+
+0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   17678611, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -813, theta:   -294, psi:  -3260, sp:   -100, sq:   -111, sr:   -393, loop_time : -626951709
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err 
+
+0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   18512440, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   2154, theta:   -276, psi:  -4874, sp:    420, sq:    207, sr:    444, loop_time : -211041636
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err 
+
+0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   18764892, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   3128, theta:   -670, psi:  -2916, sp:     13, sq:    412, sr:    723, loop_time : 1379839016
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err =
+
+ c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   19859540, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   1014, theta:    -37, psi:   5005, sp:    -70, sq:    -16, sr:     98, loop_time : -1384792874
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   20119041, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:    625, theta:   -276, psi:   4617, sp:   -626, sq:    496, sr:   -394, loop_time : 1958524109
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err 0
+
+ c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   20893828, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   1374, theta:  -1530, psi:   7345, sp:    -79, sq:    694, sr:    492, loop_time : -1500998009
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err 
+
+0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   21727572, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -825, theta:  -2148, psi:   9002, sp:    -42, sq:    -96, sr:    391, loop_time : -173402716
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err0
+
+0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   21980110, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -894, theta:  -1229, psi:   9467, sp:   -131, sq:   -447, sr:    -35, loop_time : 1054797458
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   23071945, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   1278, theta:  -1265, psi:  14443, sp:   -367, sq:    -90, sr:    309, loop_time : -1986800116
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err 
+
+0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   23336478, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:    443, theta:   -703, psi:  14570, sp:   -116, sq:   -217, sr:   -125, loop_time : 2081608935
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err 0
+
+ c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   24116229, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:    602, theta:   -494, psi:  14102, sp:     75, sq:    101, sr:   -321, loop_time : -1175303951
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err = 0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   24946194, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -705, theta:   -918, psi:   9757, sp:   -200, sq:   -113, sr:   -311, loop_time : -291448748
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err 
+ 0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   25201523, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:  -1358, theta:  -1429, psi:   8511, sp:   -206, sq:    426, sr:   -488, loop_time : 833107900
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err 0
+
+ c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   26296464, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -283, theta:  -1343, psi:   7525, sp:    258, sq:   -154, sr:     74, loop_time : -1917489378
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 2, P = 0, P1 = 0 P2 = 0 yaw_err 
+
+0 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   26557816, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:    412, theta:   -850, psi:   7719, sp:    134, sq:   -130, sr:     44, loop_time : 1988599657
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 
+ c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   27336323, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:    102, theta:   -380, psi:   7259, sp:   -103, sq:    -32, sr:    -67, loop_time : -1213986660
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err 
+
+86 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   27481529, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -126, theta:   -309, psi:   7106, sp:   -162, sq:    -46, sr:    -93, loop_time : 568797827
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err= 0
+
+8 c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   28164911, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -826, theta:     12, psi:   6679, sp:    -69, sq:     29, sr:     11, loop_time : 1326834839
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err  0
+
+ c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   28519844, throttle: 0, roll: 0, pitch: 0, yaw: 0, phi:   -741, theta:    -69, psi:   6527, sp:     30, sq:    -49, sr:    -20, loop_time : -1906344866
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 0
+
+c_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   29083462, throttle: 337, roll: 0, pitch: 0, yaw: 0, phi:   -777, theta:    -62, psi:   6277, sp:     -8, sq:    -44, sr:    -21, loop_time : 1091336469
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = = 27
+
+ = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   29229832, throttle: 5405, roll: 0, pitch: 0, yaw: 0, phi:   -777, theta:    -15, psi:   6261, sp:     19, sq:     -6, sr:    -10, loop_time : 604097784
+ae1 = 27 ae2 = 27 ae3 = 27 ae4 = 27
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =9 ae4 = 109
+
+7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   29381945, throttle: 2702, roll: 0, pitch: 0, yaw: 0, phi:   -705, theta:     16, psi:   6285, sp:     51, sq:    -17, sr:     24, loop_time : 591520575
+ae1 = 109 ae2 = 109 ae3 = 109 ae4 = 109
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =e4 = 76
+
+ = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   29534368, throttle: 7094, roll: 0, pitch: 0, yaw: 0, phi:   -605, theta:    -77, psi:   6285, sp:     29, sq:    109, sr:      5, loop_time : 641126227
+ae1 = 76 ae2 = 76 ae3 = 76 ae4 = 76
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =26 ae4 = 126
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   29687347, throttle: 10810, roll: 0, pitch: 0, yaw: 0, phi:   -655, theta:   -152, psi:   6340, sp:    -61, sq:    -42, sr:     33, loop_time : 625735315
+ae1 = 126 ae2 = 126 ae3 = 126 ae4 = 126
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =4 ae4 = 154
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   29775007, throttle: 10810, roll: 0, pitch: 0, yaw: 0, phi:   -687, theta:   -111, psi:   6347, sp:     -9, sq:    -30, sr:    -19, loop_time : 188026273
+ae1 = 154 ae2 = 154 ae3 = 154 ae4 = 154
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = -4 ae4 = 154
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   29924891, throttle: 14863, roll: 0, pitch: 0, yaw: 0, phi:   -698, theta:    -95, psi:   6334, sp:     20, sq:     -6, sr:     15, loop_time : 1473825804
+ae1 = 154 ae2 = 154 ae3 = 154 ae4 = 154
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =81 ae4 = 181
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   30077831, throttle: 15877, roll: 0, pitch: 0, yaw: 0, phi:   -633, theta:   -118, psi:   6359, sp:     37, sq:     44, sr:      3, loop_time : 619863533
+ae1 = 181 ae2 = 181 ae3 = 181 ae4 = 181
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =9 ae4 = 189
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   30230503, throttle: 17228, roll: 0, pitch: 0, yaw: 0, phi:   -627, theta:   -177, psi:   6344, sp:     17, sq:     59, sr:    -43, loop_time : 663562271
+ae1 = 189 ae2 = 189 ae3 = 189 ae4 = 189
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =  ae4 = 196
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   30379463, throttle: 17566, roll: 0, pitch: 0, yaw: 0, phi:   -598, theta:   -338, psi:   6259, sp:     58, sq:    165, sr:    -47, loop_time : 579234566
+ae1 = 196 ae2 = 196 ae3 = 196 ae4 = 196
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =8 ae4 = 198
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   30536221, throttle: 17566, roll: 0, pitch: 0, yaw: 0, phi:   -416, theta:   -569, psi:   6157, sp:     56, sq:    -84, sr:    -21, loop_time : 624830747
+ae1 = 198 ae2 = 198 ae3 = 198 ae4 = 198
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 1 ae4 = 198
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   30687225, throttle: 18241, roll: 0, pitch: 0, yaw: 0, phi:   -261, theta:   -188, psi:   6066, sp:     90, sq:   -335, sr:   -115, loop_time : 580215601
+ae1 = 198 ae2 = 198 ae3 = 198 ae4 = 198
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =02 ae4 = 202
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   30837666, throttle: 17566, roll: 0, pitch: 0, yaw: 0, phi:   -238, theta:    126, psi:   5820, sp:   -133, sq:    -16, sr:   -135, loop_time : 570502679
+ae1 = 202 ae2 = 202 ae3 = 202 ae4 = 202
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =98 ae4 = 198
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   31199232, throttle: 18917, roll: 0, pitch: 0, yaw: 0, phi:   -666, theta:   -246, psi:   5539, sp:    146, sq:    -10, sr:    -47, loop_time : -706317357
+ae1 = 198 ae2 = 198 ae3 = 198 ae4 = 198
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =05 ae4 = 205
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   31350175, throttle: 19931, roll: 0, pitch: 0, yaw: 0, phi:   -436, theta:   -140, psi:   5519, sp:     38, sq:    -26, sr:     18, loop_time : 585941061
+ae1 = 205 ae2 = 205 ae3 = 205 ae4 = 205
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =1 ae4 = 211
+
+7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   31384294, throttle: 19931, roll: 0, pitch: 0, yaw: 0, phi:   -428, theta:   -137, psi:   5523, sp:      2, sq:     28, sr:     13, loop_time : 17850429
+ae1 = 211 ae2 = 211 ae3 = 211 ae4 = 211
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =  ae4 = 211
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   31534564, throttle: 21620, roll: 0, pitch: 0, yaw: 0, phi:   -530, theta:   -331, psi:   5511, sp:   -118, sq:    167, sr:    -17, loop_time : 928098994
+ae1 = 211 ae2 = 211 ae3 = 211 ae4 = 211
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = ae4 = 220
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   31690921, throttle: 22295, roll: 0, pitch: 0, yaw: 0, phi:   -670, theta:   -503, psi:   5479, sp:      5, sq:     -5, sr:     -8, loop_time : 647632920
+ae1 = 220 ae2 = 220 ae3 = 220 ae4 = 220
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 3 ae4 = 223
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   31842480, throttle: 22295, roll: 0, pitch: 0, yaw: 0, phi:   -525, theta:   -420, psi:   5532, sp:    162, sq:    -63, sr:     45, loop_time : 584723186
+ae1 = 223 ae2 = 223 ae3 = 223 ae4 = 223
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 3 ae4 = 223
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   31993213, throttle: 23309, roll: 0, pitch: 0, yaw: 0, phi:   -242, theta:   -370, psi:   5628, sp:    131, sq:     -2, sr:     70, loop_time : 584494707
+ae1 = 223 ae2 = 223 ae3 = 223 ae4 = 223
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 8 ae4 = 228
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   32144364, throttle: 24998, roll: 0, pitch: 0, yaw: 0, phi:   -174, theta:   -395, psi:   5730, sp:    -28, sq:     32, sr:     34, loop_time : 579323593
+ae1 = 228 ae2 = 228 ae3 = 228 ae4 = 228
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =7 ae4 = 237
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   32295090, throttle: 25673, roll: 0, pitch: 0, yaw: 0, phi:   -179, theta:   -359, psi:   5712, sp:     62, sq:    -94, sr:    -28, loop_time : 590216800
+ae1 = 237 ae2 = 237 ae3 = 237 ae4 = 237
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = -0 ae4 = 240
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   32657392, throttle: 26011, roll: 0, pitch: 0, yaw: 0, phi:     29, theta:   -322, psi:   5893, sp:    -52, sq:     16, sr:     22, loop_time : -682177306
+ae1 = 240 ae2 = 240 ae3 = 240 ae4 = 240
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 2ae4 = 241
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   32807037, throttle: 26687, roll: 0, pitch: 0, yaw: 0, phi:      5, theta:   -323, psi:   5875, sp:     16, sq:      3, sr:    -29, loop_time : 571059990
+ae1 = 241 ae2 = 241 ae3 = 241 ae4 = 241
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 4 ae4 = 244
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   32959313, throttle: 27700, roll: 0, pitch: 0, yaw: 0, phi:     29, theta:   -356, psi:   5861, sp:    -29, sq:     21, sr:     33, loop_time : 604064627
+ae1 = 244 ae2 = 244 ae3 = 244 ae4 = 244
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =9 ae4 = 249
+
+7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   32997575, throttle: 27700, roll: 0, pitch: 0, yaw: 0, phi:      9, theta:   -367, psi:   5879, sp:    -66, sq:     18, sr:     41, loop_time : 18514674
+ae1 = 249 ae2 = 249 ae3 = 249 ae4 = 249
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 9 ae4 = 249
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   33148612, throttle: 27700, roll: 0, pitch: 0, yaw: 0, phi:    -83, theta:   -415, psi:   5922, sp:    -22, sq:     26, sr:      4, loop_time : 902420966
+ae1 = 249 ae2 = 249 ae3 = 249 ae4 = 249
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 49 ae4 = 249
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   33409204, throttle: 26687, roll: 0, pitch: 0, yaw: 0, phi:     -4, theta:   -388, psi:   5918, sp:     31, sq:    -28, sr:     10, loop_time : 1860139431
+ae1 = 249 ae2 = 249 ae3 = 249 ae4 = 249
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 1 c4 = 244
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   33772122, throttle: 27700, roll: 0, pitch: 0, yaw: 0, phi:    -58, theta:   -447, psi:   5885, sp:     -1, sq:     -1, sr:     -8, loop_time : -463938751
+ae1 = 244 ae2 = 244 ae3 = 244 ae4 = 244
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =49 ae4 = 249
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   33924771, throttle: 28376, roll: 0, pitch: 0, yaw: 0, phi:    -89, theta:   -469, psi:   5896, sp:    -41, sq:     12, sr:      3, loop_time : 609184709
+ae1 = 249 ae2 = 249 ae3 = 249 ae4 = 249
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = -45 e4 = 252
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   34182240, throttle: 28376, roll: 0, pitch: 0, yaw: 0, phi:    -22, theta:   -378, psi:   5916, sp:     64, sq:    -73, sr:     38, loop_time : 1819925139
+ae1 = 252 ae2 = 252 ae3 = 252 ae4 = 252
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 2 ae4 = 252
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   34335073, throttle: 29389, roll: 0, pitch: 0, yaw: 0, phi:     54, theta:   -305, psi:   5968, sp:     19, sq:     -8, sr:     33, loop_time : 591281103
+ae1 = 252 ae2 = 252 ae3 = 252 ae4 = 252
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 6 ae4 = 256
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   34488047, throttle: 30403, roll: 0, pitch: 0, yaw: 0, phi:     47, theta:   -300, psi:   6000, sp:    -15, sq:     -9, sr:     12, loop_time : 626265438
+ae1 = 256 ae2 = 256 ae3 = 256 ae4 = 256
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = ae4 = 261
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   34603966, throttle: 30403, roll: 0, pitch: 0, yaw: 0, phi:     44, theta:   -269, psi:   5999, sp:      3, sq:    -35, sr:     -8, loop_time : 346703766
+ae1 = 261 ae2 = 261 ae3 = 261 ae4 = 261
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = ae4 = 261
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   35277156, throttle: 30065, roll: 0, pitch: 0, yaw: 0, phi:     83, theta:   -262, psi:   6065, sp:    -23, sq:    -14, sr:     -9, loop_time : 755901477
+ae1 = 261 ae2 = 261 ae3 = 261 ae4 = 261
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = ae4 = 259
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   35429741, throttle: 29389, roll: 0, pitch: 0, yaw: 0, phi:     79, theta:   -231, psi:   6043, sp:     11, sq:     -4, sr:    -13, loop_time : 636836480
+ae1 = 259 ae2 = 259 ae3 = 259 ae4 = 259
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =  ae4 = 256
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   35582706, throttle: 29389, roll: 0, pitch: 0, yaw: 0, phi:     84, theta:   -280, psi:   6032, sp:    -19, sq:     65, sr:     -2, loop_time : 660604609
+ae1 = 256 ae2 = 256 ae3 = 256 ae4 = 256
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 6 ae4 = 256
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   35840497, throttle: 30403, roll: 0, pitch: 0, yaw: 0, phi:    120, theta:   -483, psi:   6003, sp:     62, sq:     68, sr:    -26, loop_time : 1829317214
+ae1 = 256 ae2 = 256 ae3 = 256 ae4 = 256
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = - ae4 = 261
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   35993281, throttle: 31078, roll: 0, pitch: 0, yaw: 0, phi:    129, theta:   -510, psi:   6026, sp:     -7, sq:    -58, sr:      6, loop_time : 612598394
+ae1 = 261 ae2 = 261 ae3 = 261 ae4 = 261
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =  ae4 = 264
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   36145892, throttle: 31754, roll: 0, pitch: 0, yaw: 0, phi:    292, theta:   -278, psi:   5998, sp:    223, sq:   -193, sr:    -18, loop_time : 626547806
+ae1 = 264 ae2 = 264 ae3 = 264 ae4 = 264
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 144 = 267
+
+7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   36211937, throttle: 31754, roll: 0, pitch: 0, yaw: 0, phi:    466, theta:   -140, psi:   5979, sp:    226, sq:   -169, sr:    -21, loop_time : 95333580
+ae1 = 267 ae2 = 267 ae3 = 267 ae4 = 267
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =  ae4 = 267
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   36362082, throttle: 32092, roll: 0, pitch: 0, yaw: 0, phi:    675, theta:      1, psi:   5944, sp:     57, sq:     44, sr:    -13, loop_time : 1218058290
+ae1 = 267 ae2 = 267 ae3 = 267 ae4 = 267
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = ae4 = 268
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   36512334, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:    672, theta:   -182, psi:   5923, sp:   -146, sq:    131, sr:    -12, loop_time : 612142221
+ae1 = 268 ae2 = 268 ae3 = 268 ae4 = 268
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 1 ae4 = 271
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   36665254, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:    502, theta:   -489, psi:   5815, sp:    -24, sq:    109, sr:   -107, loop_time : 609615143
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 1 ae4 = 271
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   37759116, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:    296, theta:   -843, psi:   3766, sp:    -80, sq:      2, sr:   -331, loop_time : 108956965
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =1 ae4 = 271
+
+7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   37821297, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:    186, theta:   -844, psi:   3545, sp:   -169, sq:     -7, sr:   -320, loop_time : 87010211
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 271 ae4 = 271
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   38805920, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:    145, theta:   -739, psi:   3410, sp:    207, sq:      7, sr:    179, loop_time : 2117745009
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =  271 ae4 = 271
+
+c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   39430438, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:    290, theta:   -413, psi:   2616, sp:     29, sq:   -193, sr:    196, loop_time : -1467108969
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 71 ae4 = 271
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   39897839, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:    281, theta:   -622, psi:   3692, sp:   -276, sq:   -255, sr:   -592, loop_time : -198370644
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 27 c_s 271
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   40470718, throttle: 34457, roll: 0, pitch: 0, yaw: 0, phi:    596, theta:   -583, psi:   5202, sp:   -150, sq:    251, sr:    -34, loop_time : 780296538
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 7 ae4 = 277
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   40621565, throttle: 34794, roll: 0, pitch: 0, yaw: 0, phi:    -73, theta:   -778, psi:   4364, sp:   -481, sq:    -54, sr:   -735, loop_time : 568293406
+ae1 = 277 ae2 = 277 ae3 = 277 ae4 = 277
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 9 ae4 = 279
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   40774217, throttle: 35470, roll: 0, pitch: 0, yaw: 0, phi:   -619, theta:   -504, psi:   3445, sp:     -3, sq:   -226, sr:   -207, loop_time : 626987936
+ae1 = 279 ae2 = 279 ae3 = 279 ae4 = 279
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 82 ae4 = 282
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   40923206, throttle: 37159, roll: 0, pitch: 0, yaw: 0, phi:   -195, theta:   -347, psi:   3886, sp:    525, sq:     99, sr:    641, loop_time : 580834938
+ae1 = 282 ae2 = 282 ae3 = 282 ae4 = 282
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 88 ae4 = 288
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   41044518, throttle: 37159, roll: 0, pitch: 0, yaw: 0, phi:    589, theta:   -603, psi:   4996, sp:    487, sq:    339, sr:    867, loop_time : 364293561
+ae1 = 288 ae2 = 288 ae3 = 288 ae4 = 288
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 8 ae4 = 288
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   41196946, throttle: 38173, roll: 0, pitch: 0, yaw: 0, phi:   1182, theta:   -976, psi:   5821, sp:    123, sq:     60, sr:    -52, loop_time : 1921004790
+ae1 = 288 ae2 = 288 ae3 = 288 ae4 = 288
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 2 ae4 = 292
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   41345874, throttle: 38173, roll: 0, pitch: 0, yaw: 0, phi:    900, theta:   -814, psi:   4984, sp:   -359, sq:   -297, sr:   -733, loop_time : 565427821
+ae1 = 292 ae2 = 292 ae3 = 292 ae4 = 292
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 2 ae4 = 292
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   41498868, throttle: 38848, roll: 0, pitch: 0, yaw: 0, phi:    174, theta:   -409, psi:   3882, sp:   -359, sq:   -254, sr:   -431, loop_time : 630256154
+ae1 = 292 ae2 = 292 ae3 = 292 ae4 = 292
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = -5 ae4 = 295
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   41861178, throttle: 38173, roll: 0, pitch: 0, yaw: 0, phi:     52, theta:    -56, psi:   3872, sp:     71, sq:     21, sr:     31, loop_time : -547215188
+ae1 = 295 ae2 = 295 ae3 = 295 ae4 = 295
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err =  ae4 = 292
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   42010107, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:     60, theta:    110, psi:   3838, sp:    -53, sq:   -115, sr:    -76, loop_time : 584433605
+ae1 = 292 ae2 = 292 ae3 = 292 ae4 = 292
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 62 e4 = 291
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   42372449, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -652, theta:    132, psi:   3453, sp:    -53, sq:    -14, sr:    -69, loop_time : -522256116
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = -101 ae4 = 291
+
+c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   42651045, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -321, theta:    244, psi:   3517, sp:     79, sq:      6, sr:     94, loop_time : -2126721579
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 0, P1 = 0 P2 = 0 yaw_err = 91 ae4 = 291
+
+c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   43434042, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -461, theta:    194, psi:   3411, sp:    -86, sq:     54, sr:    -69, loop_time : -1626542887
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 1, P1 = 0 P2 = 0 yaw_err = 1 ae4 = 291
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   43897200, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -168, theta:    223, psi:   3213, sp:    122, sq:      9, sr:    -48, loop_time : 1878527335
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 2, P1 = 0 P2 = 0 yaw_err = 1 ae4 = 291
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   44158197, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    -43, theta:    276, psi:   3123, sp:    -44, sq:     29, sr:    -25, loop_time : 1898176573
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 2, P1 = 0 P2 = 0 yaw_err =1 ae4 = 291
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   44259178, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -113, theta:    169, psi:   3087, sp:    -91, sq:    138, sr:    -36, loop_time : 249344774
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 3, P1 = 0 P2 = 0 yaw_err =  ae4 = 291
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   44408671, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -255, theta:     -5, psi:   3055, sp:    -81, sq:     45, sr:    -14, loop_time : 1658583712
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 4, P1 = 0 P2 = 0 yaw_err = 1 ae4 = 291
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   44559407, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -344, theta:    -16, psi:   3053, sp:    -26, sq:    -36, sr:      3, loop_time : 623143419
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 4, P1 = 0 P2 = 0 yaw_err = 1 ae4 = 291
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   44710374, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -351, theta:     72, psi:   3079, sp:     20, sq:    -53, sr:     21, loop_time : 604300898
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 5, P1 = 0 P2 = 0 yaw_err = 1 ae4 = 291
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   44863309, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -317, theta:     97, psi:   3127, sp:     11, sq:     31, sr:     33, loop_time : 619843333
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 6, P1 = 0 P2 = 0 yaw_err =92 ae4 = 289
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   45016287, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -331, theta:     54, psi:   3187, sp:     -2, sq:     -3, sr:     33, loop_time : 637444164
+ae1 = 292 ae2 = 289 ae3 = 292 ae4 = 289
+
+mode = 4, P = 7, P1 = 0 P2 = 0 yaw_err = 3e4 = 291
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   45165226, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -328, theta:     72, psi:   3185, sp:    -14, sq:     -9, sr:    -10, loop_time : 614174259
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 8, P1 = 0 P2 = 0 yaw_err =  ae4 = 291
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   45318201, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -380, theta:     40, psi:   3143, sp:    -36, sq:     29, sr:    -32, loop_time : 632087830
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 9, P1 = 0 P2 = 0 yaw_err = 92 ae4 = 289
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   45574971, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -361, theta:     -5, psi:   3128, sp:     25, sq:      3, sr:     31, loop_time : 1839663388
+ae1 = 292 ae2 = 289 ae3 = 292 ae4 = 289
+
+mode = 4, P = 10, P1 = 0 P2 = 0 yaw_err =92 ae4 = 289
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   45728808, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -330, theta:     21, psi:   3198, sp:     25, sq:    -45, sr:     44, loop_time : 642951366
+ae1 = 292 ae2 = 289 ae3 = 292 ae4 = 289
+
+mode = 4, P = 10, P1 = 0 P2 = 0 yaw_err = ae4 = 291
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   4586904, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   45880048, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -272, theta:     80, psi:   3219, sp:     17, sq:    -15, sr:      3, loop_time : 546980527
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   45880048, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -272, theta:     80, psi:   3219, sp:     17, sq:    -15, sr:      3, loop_time : 546980527
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 11, P1 = 0 P2 = 0 yaw_err =92 ae4 = 289
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   46050866, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -293, theta:     91, psi:   3224, sp:    -46, sq:      1, sr:     21, loop_time : 807099021
+ae1 = 292 ae2 = 289 ae3 = 292 ae4 = 289
+
+mode = 4, P = 12, P1 = 0 P2 = 0 yaw_err = ae4 = 291
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   46206547, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -365, theta:     46, psi:   3235, sp:     -7, sq:     34, sr:    -12, loop_time : 652855434
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 13, P1 = 0 P2 = 0 yaw_err 291 ae4 = 291
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   46358011, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -326, theta:     11, psi:   3221, sp:     25, sq:     18, sr:      7, loop_time : 638632630
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 14, P1 = 0 P2 = 0 yaw_err =94 ae4 = 288
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   46509746, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -327, theta:     10, psi:   3280, sp:     -6, sq:    -19, sr:     39, loop_time : 605285098
+ae1 = 294 ae2 = 288 ae3 = 294 ae4 = 288
+
+mode = 4, P = 15, P1 = 0 P2 = 0 yaw_err =89 ae4 = 292
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   46763320, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -346, theta:     -2, psi:   3277, sp:    -22, sq:     42, sr:    -22, loop_time : 1817289279
+ae1 = 289 ae2 = 292 ae3 = 289 ae4 = 292
+
+mode = 4, P = 16, P1 = 0 P2 = 0 yaw_err 1 ae4 = 291
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   46916358, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -389, theta:    -75, psi:   3229, sp:    -33, sq:     49, sr:    -13, loop_time : 650155700
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 16, P1 = 0 P2 = 0 yaw_err =1 ae4 = 291
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   47070784, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -456, theta:   -141, psi:   3212, sp:    -36, sq:     -9, sr:     -5, loop_time : 660631669
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 4, P = 17, P1 = 0 P2 = 0 yaw_err =  ae4 = 294
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   47222273, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -438, theta:   -126, psi:   3164, sp:     64, sq:    -34, sr:    -58, loop_time : 608428205
+ae1 = 288 ae2 = 294 ae3 = 288 ae4 = 294
+
+mode = 4, P = 18, P1 = 0 P2 = 0 yaw_err =92 ae4 = 289
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   47372746, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -328, theta:      6, psi:   3122, sp:     39, sq:    -81, sr:      9, loop_time : 601516789
+ae1 = 292 ae2 = 289 ae3 = 292 ae4 = 289
+
+mode = 4, P = 18, P1 = 0 P2 = 0 yaw_err =94 ae4 = 288
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   47478279, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -303, theta:     52, psi:   3143, sp:    -26, sq:      3, sr:     36, loop_time : 295186300
+ae1 = 294 ae2 = 288 ae3 = 294 ae4 = 288
+
+mode = 4, P = 19, P1 = 0 P2 = 0 yaw_err =92 ae4 = 289
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   47837774, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -533, theta:     28, psi:   3221, sp:    -24, sq:     42, sr:     -3, loop_time : 1949697208
+ae1 = 292 ae2 = 289 ae3 = 292 ae4 = 289
+
+mode = 4, P = 20, P1 = 0 P2 = 0 yaw_err =295 ae4 = 286
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   48091044, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -598, theta:   -106, psi:   3312, sp:     28, sq:     22, sr:     45, loop_time : 1817144480
+ae1 = 295 ae2 = 286 ae3 = 295 ae4 = 286
+
+mode = 4, P = 21, P1 = 0 P2 = 0 yaw_err =306 ae4 = 274
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   48246267, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -539, theta:   -149, psi:   3500, sp:     25, sq:     44, sr:    194, loop_time : 628286694
+ae1 = 306 ae2 = 274 ae3 = 306 ae4 = 274
+
+mode = 4, P = 21, P1 = 0 P2 = 0 yaw_err =319 ae4 = 259
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   48397009, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -478, theta:   -397, psi:   3933, sp:     -6, sq:    202, sr:    367, loop_time : 598472836
+ae1 = 319 ae2 = 259 ae3 = 319 ae4 = 259
+
+mode = 4, P = 22, P1 = 0 P2 = 0 yaw_err =334 ae4 = 240
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   48548250, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -442, theta:   -809, psi:   4745, sp:     35, sq:    232, sr:    569, loop_time : 583898837
+ae1 = 334 ae2 = 240 ae3 = 334 ae4 = 240
+
+mode = 4, P = 23, P1 = 0 P2 = 0 yaw_err =94 ae4 = 288
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   48698605, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    -97, theta:  -1216, psi:   5351, sp:    223, sq:    235, sr:     35, loop_time : 577862573
+ae1 = 294 ae2 = 288 ae3 = 294 ae4 = 288
+
+mode = 4, P = 24, P1 = 0 P2 = 0 yaw_err = 94ae4 = 366
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   48851587, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -151, theta:  -1481, psi:   4516, sp:   -161, sq:     40, sr:   -952, loop_time : 616622370
+ae1 = 189 ae2 = 366 ae3 = 189 ae4 = 366
+
+mode = 4, P = 24, P1 = 0 P2 = 0 yaw_err =280 ae4 = 300
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   49090164, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:  -1253, theta:   -850, psi:   2008, sp:    -85, sq:   -307, sr:   -111, loop_time : 1547009136
+ae1 = 280 ae2 = 300 ae3 = 280 ae4 = 300
+
+mode = 4, P = 25, P1 = 0 P2 = 0 yaw_err == 327 ae4 = 250
+
+c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   49351117, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    199, theta:  -1688, psi:   4430, sp:    414, sq:    609, sr:    399, loop_time : -1766613746
+ae1 = 327 ae2 = 250 ae3 = 327 ae4 = 250
+
+mode = 4, P = 25, P1 = 0 P2 = 0 yaw_err =109 ae4 = 397
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   49503378, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:      5, theta:  -2314, psi:   3615, sp:   -421, sq:    -58, sr:  -1304, loop_time : 609372807
+ae1 = 109 ae2 = 397 ae3 = 109 ae4 = 397
+
+mode = 4, P = 26, P1 = 0 P2 = 0 yaw_err = 3 ae4 = 345
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   49656388, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:  -1161, theta:  -1757, psi:   1828, sp:   -337, sq:   -223, sr:   -626, loop_time : 639105551
+ae1 = 223 ae2 = 345 ae3 = 223 ae4 = 345
+
+mode = 4, P = 26, P1 = 0 P2 = 0 yaw_err = 382 ae4 = 151
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   49813005, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -921, theta:  -1789, psi:   2254, sp:    529, sq:     58, sr:   1050, loop_time : 639708332
+ae1 = 382 ae2 = 151 ae3 = 382 ae4 = 151
+
+mode = 4, P = 26, P1 = 0 P2 = 0 yaw_err =240 ae4 = 334
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   50697430, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    434, theta:  -1272, psi:   2474, sp:   -128, sq:   -167, sr:   -474, loop_time : 1263945472
+ae1 = 240 ae2 = 334 ae3 = 240 ae4 = 334
+
+mode = 4, P = 27, P1 = 0 P2 = 0 yaw_err =98 ae4 = 282
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   50851994, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    242, theta:  -1043, psi:   2390, sp:    -59, sq:    -80, sr:     76, loop_time : 653726425
+ae1 = 298 ae2 = 282 ae3 = 298 ae4 = 282
+
+mode = 4, P = 27, P1 = 0 P2 = 0 yaw_err =47 ae4 = 328
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   51000929, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:     78, theta:   -985, psi:   2101, sp:   -182, sq:    -89, sr:   -389, loop_time : 595075742
+ae1 = 247 ae2 = 328 ae3 = 247 ae4 = 328
+
+mode = 4, P = 28, P1 = 0 P2 = 0 yaw_err =04 ae4 = 357
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   51676927, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -544, theta:   -891, psi:   1772, sp:   -604, sq:   -319, sr:   -715, loop_time : 417535677
+ae1 = 204 ae2 = 357 ae3 = 204 ae4 = 357
+
+mode = 4, P = 28, P1 = 0 P2 = 0 yaw_err =276 ae4 = 304
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   52039218, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    162, theta:  -1474, psi:   3549, sp:     56, sq:    -41, sr:   -139, loop_time : -483225240
+ae1 = 276 ae2 = 304 ae3 = 276 ae4 = 304
+
+mode = 4, P = 28, P1 = 0 P2 = 0 yaw_err =270 ae4 = 310
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   52306555, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -803, theta:   -901, psi:   1395, sp:    207, sq:   -260, sr:   -194, loop_time : 1985532684
+ae1 = 270 ae2 = 310 ae3 = 270 ae4 = 310
+
+mode = 4, P = 28, P1 = 0 P2 = 0 yaw_err =265 ae4 = 313
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   53088173, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -250, theta:   -826, psi:   1620, sp:   -135, sq:      7, sr:   -227, loop_time : 1708605184
+ae1 = 265 ae2 = 313 ae3 = 265 ae4 = 313
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err =20 ae4 = 348
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   53242533, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -564, theta:   -692, psi:    902, sp:   -129, sq:   -111, sr:   -582, loop_time : 650105412
+ae1 = 220 ae2 = 348 ae3 = 220 ae4 = 348
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err = 6 ae4 = 321
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   53916259, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:  -1406, theta:   -554, psi:   -532, sp:   -247, sq:   -170, sr:   -293, loop_time : 376591153
+ae1 = 256 ae2 = 321 ae3 = 256 ae4 = 321
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err = 375 ae4 = 168
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   54176463, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -677, theta:  -1116, psi:   1186, sp:    254, sq:    282, sr:    858, loop_time : -956462195
+ae1 = 375 ae2 = 168 ae3 = 375 ae4 = 168
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err = 43 ae4 = 228
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   55271492, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -542, theta:   -874, psi:   4310, sp:    264, sq:    150, sr:    498, loop_time : 781220694
+ae1 = 343 ae2 = 228 ae3 = 343 ae4 = 228
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err =226 ae4 = 343
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   55530198, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -404, theta:  -1077, psi:   4302, sp:    -66, sq:     -3, sr:   -516, loop_time : 1793477898
+ae1 = 226 ae2 = 343 ae3 = 226 ae4 = 343
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err = -25 ae4 = 265
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   56313554, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:     52, theta:  -1319, psi:   4304, sp:    -68, sq:   -247, sr:    211, loop_time : 1263891468
+ae1 = 315 ae2 = 265 ae3 = 315 ae4 = 265
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err = 250 ae4 = 327
+
+c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   57137664, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    573, theta:  -1191, psi:   4260, sp:   -340, sq:    179, sr:   -348, loop_time : -1845899102
+ae1 = 250 ae2 = 327 ae3 = 250 ae4 = 327
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err =271 ae4 = 309
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   57399122, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:  -1386, theta:   -812, psi:   2069, sp:   -172, sq:    -80, sr:   -173, loop_time : -986846803
+ae1 = 271 ae2 = 309 ae3 = 271 ae4 = 309
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err =13 ae4 = 352
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   58494721, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -717, theta:   -768, psi:    320, sp:   -399, sq:   -138, sr:   -616, loop_time : 792727737
+ae1 = 213 ae2 = 352 ae3 = 213 ae4 = 352
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err = 369 ae4 = 181
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   58744668, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    -55, theta:  -1415, psi:   1755, sp:    379, sq:    325, sr:    789, loop_time : 1733309292
+ae1 = 369 ae2 = 181 ae3 = 369 ae4 = 181
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err = 394 ae4 = 118
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   59528038, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    483, theta:  -1770, psi:   3082, sp:    -34, sq:    372, sr:   1081, loop_time : 798475012
+ae1 = 394 ae2 = 118 ae3 = 394 ae4 = 118
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err = 350 ae4 = 327
+
+c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   60354011, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    -87, theta:  -1111, psi:   2376, sp:   -121, sq:   -264, sr:   -342, loop_time : -1596655827
+ae1 = 250 ae2 = 327 ae3 = 250 ae4 = 327
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err = 312 ae4 = 268
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   60612652, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -253, theta:   -763, psi:   2325, sp:    124, sq:    126, sr:    185, loop_time : -887910767
+ae1 = 312 ae2 = 268 ae3 = 312 ae4 = 268
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err =57 ae4 = 379
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   61710661, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -655, theta:  -1381, psi:   3697, sp:   -144, sq:   -226, sr:   -925, loop_time : 769700737
+ae1 = 157 ae2 = 379 ae3 = 157 ae4 = 379
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err == 390 ae4 = 130
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   61963599, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    340, theta:   -641, psi:   3001, sp:    759, sq:    218, sr:   1032, loop_time : 1801603389
+ae1 = 390 ae2 = 130 ae3 = 390 ae4 = 130
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err =8 ae4 = 294
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   62742539, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    796, theta:  -1136, psi:   3349, sp:    -43, sq:    -20, sr:    -31, loop_time : 631987457
+ae1 = 288 ae2 = 294 ae3 = 288 ae4 = 294
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err =89 ae4 = 292
+
+c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   63576313, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    -98, theta:   -663, psi:   1944, sp:     67, sq:   -269, sr:    -16, loop_time : -1328165798
+ae1 = 289 ae2 = 292 ae3 = 289 ae4 = 292
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err = 77 ae4 = 303
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   63837492, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:     85, theta:   -437, psi:   1767, sp:     52, sq:    -56, sr:   -123, loop_time : -141031500
+ae1 = 277 ae2 = 303 ae3 = 277 ae4 = 303
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err =2 ae4 = 298
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   64934173, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:     90, theta:   -357, psi:   2100, sp:     39, sq:     18, sr:    -80, loop_time : 797308975
+ae1 = 282 ae2 = 298 ae3 = 282 ae4 = 298
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err =294 ae4 = 288
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   65184311, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    166, theta:   -482, psi:   1985, sp:    -59, sq:     95, sr:     22, loop_time : 1744022828
+ae1 = 294 ae2 = 288 ae3 = 294 ae4 = 288
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err =98 ae4 = 283
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   65967322, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:     72, theta:   -545, psi:   2062, sp:    -14, sq:     53, sr:     62, loop_time : 906907496
+ae1 = 298 ae2 = 283 ae3 = 298 ae4 = 283
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err = 294 ae4 = 288
+
+c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   66791982, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    -31, theta:   -859, psi:   2204, sp:      8, sq:      9, sr:     26, loop_time : -1578196833
+ae1 = 294 ae2 = 288 ae3 = 294 ae4 = 288
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err =89 ae4 = 292
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   67047418, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    -85, theta:   -958, psi:   2210, sp:    -35, sq:     40, sr:    -23, loop_time : -694734066
+ae1 = 289 ae2 = 292 ae3 = 289 ae4 = 292
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err =292 ae4 = 289
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   68142416, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    -89, theta:   -836, psi:   2164, sp:     -4, sq:     17, sr:      3, loop_time : 1951183695
+ae1 = 292 ae2 = 289 ae3 = 292 ae4 = 289
+
+mode = 4, P = 29, P1 = 0 P2 = 0 yaw_err =9 ae4 = 292
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   68402078, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    -96, theta:  -1013, psi:   2142, sp:     14, sq:     19, sr:    -14, loop_time : 2016722071
+ae1 = 289 ae2 = 292 ae3 = 289 ae4 = 292
+
+mode = 0, P = 29, P1 = 0 P2 = 0 yaw_err = 294 ae4 = 288
+
+c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   68766340, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    -78, theta:  -1137, psi:   2165, sp:    -52, sq:    -43, sr:     16, loop_time : -1472538596
+ae1 = 294 ae2 = 288 ae3 = 294 ae4 = 288
+
+mode = 0, P = 29, P1 = 0 P2 = 0 yaw_err ae4 = 0
+
+r = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   69232156, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:  -2452, theta:  -2059, psi:   1940, sp:   -268, sq:     24, sr:     30, loop_time : -1748989351
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 0 P2 = 0 yaw_err ae4 = 0
+
+r = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   70011025, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:  -1532, theta:  -1629, psi:   2470, sp:     96, sq:   -124, sr:    -29, loop_time : -1964450743
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 0 P2 = 0 yaw_err e4 = 0
+
+sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   70266535, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:  -1400, theta:  -1364, psi:   2464, sp:     41, sq:     -9, sr:     35, loop_time : -888469386
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 0 P2 = 0 yaw_erre4 = 0
+
+_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   71357657, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -395, theta:  -1064, psi:   3158, sp:    -14, sq:    -13, sr:    168, loop_time : -77445203
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 0 P2 = 0 yaw_err ae4 = 0
+
+r = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   71622510, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -281, theta:  -1094, psi:   3515, sp:     48, sq:     82, sr:     85, loop_time : -2146767851
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 0 P2 = 0 yaw_erre4 = 0
+
+_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   72400336, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:    -27, theta:  -1040, psi:   3075, sp:     97, sq:    137, sr:    -98, loop_time : 384056991
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 0 P2 = 0 yaw_erre4 = 0
+
+_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   73229933, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:  -1888, theta:   -535, psi:   3540, sp:   -122, sq:   -202, sr:    -68, loop_time : 558071257
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 0 P2 = 0 yaw_err ae4 = 0
+
+r = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   73482320, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:  -1550, theta:   -557, psi:   2693, sp:    285, sq:    338, sr:   -409, loop_time : -1739636716
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 0 P2 = 0 yaw_err =4 = 0
+
+sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   74575780, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -577, theta:  -1055, psi:    664, sp:     83, sq:     37, sr:   -116, loop_time : -191225036
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 0 P2 = 0 yaw_err ae4 = 0
+
+r = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   74839225, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -819, theta:   -829, psi:    679, sp:   -149, sq:    148, sr:     22, loop_time : -2143062478
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 0 P2 = 0 yaw_erre4 = 0
+
+_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   75615589, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:  -1041, theta:   -952, psi:   1297, sp:    121, sq:     50, sr:     41, loop_time : 195567203
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 0 P2 = 0 yaw_erre4 = 0
+
+_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   76448609, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -826, theta:  -1183, psi:   1872, sp:    -53, sq:    235, sr:     -6, loop_time : 851248897
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 0 P2 = 0 yaw_err ae4 = 0
+
+r = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   76705374, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:  -1275, theta:  -1808, psi:   1972, sp:    101, sq:    -85, sr:     50, loop_time : -1399769300
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err 4 = 0
+
+_sr = -7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   76851041, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -867, theta:  -1484, psi:   2028, sp:    263, sq:   -293, sr:     -3, loop_time : 632707556
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err =291 ae4 = 291
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   77730718, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -462, theta:   -669, psi:   1558, sp:   -160, sq:    231, sr:   -177, loop_time : 1094526505
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err = -23 ae4 = 291
+
+c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   78058369, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:  -1158, theta:   -648, psi:   1183, sp:   -198, sq:    158, sr:     24, loop_time : -1187553911
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err = -2 ae4 = 291
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   78839584, throttle: 37835, roll: 0, pitch: 0, yaw: 0, phi:   -504, theta:   -525, psi:   1779, sp:      0, sq:   -154, sr:    -66, loop_time : 1463396821
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err =291 ae4 = 291
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   79097342, throttle: 34794, roll: 0, pitch: 0, yaw: 0, phi:   -509, theta:   -394, psi:   1709, sp:    -29, sq:     20, sr:     15, loop_time : 1826804362
+ae1 = 291 ae2 = 291 ae3 = 291 ae4 = 291
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err =79 ae4 = 279
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   79250144, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -636, theta:   -492, psi:   1649, sp:   -170, sq:     95, sr:    -56, loop_time : 622508599
+ae1 = 279 ae2 = 279 ae3 = 279 ae4 = 279
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err =71 ae4 = 271
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   79670198, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -763, theta:   -809, psi:   1457, sp:     31, sq:     67, sr:     46, loop_time : 734027300
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err 71 ae4 = 271
+
+7, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   79926529, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -626, theta:   -679, psi:   1497, sp:      5, sq:    -39, sr:     -3, loop_time : 75509320
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err = 1 ae4 = 271
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   81020608, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -323, theta:  -1001, psi:   1540, sp:    -47, sq:     16, sr:    -29, loop_time : 851471278
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err = -23 e4 = 271
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   81277114, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -459, theta:   -960, psi:   1324, sp:    -20, sq:    -35, sr:    -83, loop_time : 1829525563
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err =271 ae4 = 271
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   82060162, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -510, theta:  -1113, psi:   1501, sp:    -53, sq:    -23, sr:     29, loop_time : 1226561560
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err = 271 ae4 = 271
+
+c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   82886562, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -769, theta:   -612, psi:   1472, sp:   -170, sq:     33, sr:   -160, loop_time : -1544111534
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err =271 ae4 = 271
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   83145129, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -730, theta:   -517, psi:   1859, sp:    185, sq:   -132, sr:    208, loop_time : -871845455
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err =71 ae4 = 271
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   84240833, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1369, theta:   -551, psi:   1528, sp:    544, sq:    215, sr:    349, loop_time : 715048971
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err =271 ae4 = 271
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   84495742, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1828, theta:   -608, psi:   1305, sp:   -641, sq:    -85, sr:   -419, loop_time : 1847843693
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err =271 ae4 = 271
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   85278128, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1871, theta:    191, psi:    882, sp:   -825, sq:   -108, sr:   -402, loop_time : 1174248804
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err = 271 ae4 = 271
+
+c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   86108277, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -395, theta:   -276, psi:   1291, sp:    457, sq:    146, sr:    190, loop_time : -1398930658
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err =271 ae4 = 271
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   86360795, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -153, theta:   -398, psi:   1178, sp:   -441, sq:    -64, sr:   -352, loop_time : -966564854
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err =71 ae4 = 271
+
+, c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   87455446, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -2899, theta:    624, psi:    380, sp:   -452, sq:   -277, sr:   -210, loop_time : 712033638
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 0 P2 = 0 yaw_err = 71 ae4 = 271
+
+ c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   87715903, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1900, theta:    280, psi:    964, sp:    903, sq:    324, sr:    534, loop_time : 1877193986
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 1 P2 = 0 yaw_err = 271 ae4 = 271
+
+c_sp = -35, c_sq = -25, roll_new = 0, pitch_new = 0
+time:   88288754, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -2402, theta:    128, psi:   1038, sp:    391, sq:     74, sr:    381, loop_time : -1600889751
+ae1 = 271 ae2 = 271 ae3 = 271 ae4 = 271
+
+mode = 5, P = 29, P1 = 1 P2 = 0 yaw_err = -2 264 ae4 = 276
+
+p = -35, c_sq = -25, roll_new = 642, pitch_new = 866
+time:   88549819, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1246, theta:   -345, psi:   1767, sp:    366, sq:   -162, sr:    275, loop_time : 1898018920
+ae1 = 277 ae2 = 265 ae3 = 264 ae4 = 276
+
+mode = 5, P = 29, P1 = 2 P2 = 0 yaw_err =3 = 267 ae4 = 274
+
+p = -35, c_sq = -25, roll_new = 525, pitch_new = 494
+time:   89017443, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1129, theta:     27, psi:   1980, sp:   -397, sq:    180, sr:   -170, loop_time : 2018490648
+ae1 = 274 ae2 = 267 ae3 = 267 ae4 = 274
+
+mode = 5, P = 29, P1 = 2 P2 = 0 yaw_err = ae3 = 259 ae4 = 283
+
+ -35, c_sq = -25, roll_new = 1604, pitch_new = 1330
+time:   89324565, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1406, theta:   -144, psi:   2225, sp:    186, sq:    -98, sr:    233, loop_time : -1653858736
+ae1 = 282 ae2 = 256 ae3 = 259 ae4 = 283
+
+mode = 5, P = 29, P1 = 3 P2 = 0 yaw_err e3 = 255 ae4 = 276
+
+p = -35, c_sq = -25, roll_new = 654, pitch_new = 1920
+time:   89584687, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -931, theta:   -439, psi:   2460, sp:    -64, sq:    122, sr:     74, loop_time : 284604056
+ae1 = 286 ae2 = 265 ae3 = 255 ae4 = 276
+
+mode = 5, P = 29, P1 = 3 P2 = 0 yaw_err =e3 = 243 ae4 = 283
+
+ = -35, c_sq = -25, roll_new = 1611, pitch_new = 3195
+time:   89737783, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1141, theta:   -544, psi:   2538, sp:   -162, sq:      1, sr:      5, loop_time : 628914033
+ae1 = 295 ae2 = 256 ae3 = 243 ae4 = 283
+
+mode = 5, P = 29, P1 = 4 P2 = 0 yaw_err =ae3 = 247 ae4 = 291
+
+= -35, c_sq = -25, roll_new = 2547, pitch_new = 2622
+time:   89996285, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1453, theta:   -353, psi:   2777, sp:    -72, sq:   -174, sr:    180, loop_time : 1837949624
+ae1 = 291 ae2 = 249 ae3 = 247 ae4 = 291
+
+mode = 5, P = 29, P1 = 5 P2 = 0 yaw_err = -2 = 240 ae4 = 298
+
+= -35, c_sq = -25, roll_new = 3580, pitch_new = 3540
+time:   90252723, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1499, theta:   -364, psi:   3178, sp:     62, sq:     47, sr:     69, loop_time : 1873129206
+ae1 = 298 ae2 = 240 ae3 = 240 ae4 = 298
+
+mode = 5, P = 29, P1 = 6 P2 = 0 yaw_err =e3 = 234 ae4 = 298
+
+ = -35, c_sq = -25, roll_new = 3580, pitch_new = 4210
+time:   90408147, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1320, theta:   -321, psi:   3340, sp:    116, sq:   -122, sr:    144, loop_time : 623612962
+ae1 = 303 ae2 = 240 ae3 = 234 ae4 = 298
+
+mode = 5, P = 29, P1 = 7 P2 = 0 yaw_err =ae3 = 235 ae4 = 295
+
+= -35, c_sq = -25, roll_new = 3120, pitch_new = 3936
+time:   90662988, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1124, theta:   -135, psi:   3585, sp:     26, sq:     46, sr:    -25, loop_time : 1817924028
+ae1 = 301 ae2 = 243 ae3 = 235 ae4 = 295
+
+mode = 5, P = 29, P1 = 7 P2 = 0 yaw_err =e3 = 231 ae4 = 307
+
+ = -35, c_sq = -25, roll_new = 4718, pitch_new = 4522
+time:   90819689, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1278, theta:   -125, psi:   3555, sp:    -40, sq:    -82, sr:    -57, loop_time : 646110278
+ae1 = 306 ae2 = 228 ae3 = 231 ae4 = 307
+
+mode = 5, P = 29, P1 = 7 P2 = 0 yaw_err ae3 = 232 ae4 = 310
+
+ = -35, c_sq = -25, roll_new = 5229, pitch_new = 4368
+time:   90933309, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1351, theta:   -103, psi:   3451, sp:     -6, sq:      4, sr:   -114, loop_time : 335226642
+ae1 = 304 ae2 = 223 ae3 = 232 ae4 = 310
+
+mode = 5, P = 29, P1 = 7 P2 = 0 yaw_err =ae3 = 222 ae4 = 325
+
+= -35, c_sq = -25, roll_new = 7210, pitch_new = 5390
+time:   91925210, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1634, theta:   -249, psi:   2416, sp:   -147, sq:     25, sr:   -108, loop_time : 1120979859
+ae1 = 312 ae2 = 202 ae3 = 222 ae4 = 325
+
+mode = 5, P = 29, P1 = 7 P2 = 0 yaw_err = ae3 = 228 ae4 = 316
+
+ -35, c_sq = -25, roll_new = 6034, pitch_new = 4746
+time:   92543390, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1466, theta:   -157, psi:   2785, sp:   -215, sq:     10, sr:     41, loop_time : -1782372908
+ae1 = 307 ae2 = 214 ae3 = 228 ae4 = 316
+
+mode = 5, P = 29, P1 = 8 P2 = 0 yaw_err = e3 = 231 ae4 = 321
+
+= -35, c_sq = -25, roll_new = 6713, pitch_new = 4396
+time:   92691964, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1563, theta:   -107, psi:   2837, sp:    181, sq:   -106, sr:     61, loop_time : -730582859
+ae1 = 304 ae2 = 208 ae3 = 231 ae4 = 321
+
+mode = 5, P = 29, P1 = 9 P2 = 0 yaw_err =ae3 = 229 ae4 = 280
+
+= -35, c_sq = -25, roll_new = 1128, pitch_new = 4632
+time:   92950691, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -745, theta:    -58, psi:   3169, sp:     42, sq:    154, sr:     53, loop_time : 1848359513
+ae1 = 307 ae2 = 261 ae3 = 229 ae4 = 280
+
+mode = 5, P = 29, P1 = 10 P2 = 0 yaw_err ae3 = 210 ae4 = 303
+
+ = -35, c_sq = -25, roll_new = 4023, pitch_new = 6525
+time:   93102302, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1051, theta:   -204, psi:   3112, sp:   -288, sq:    -86, sr:   -103, loop_time : 608065205
+ae1 = 321 ae2 = 235 ae3 = 210 ae4 = 303
+
+mode = 5, P = 29, P1 = 10 P2 = 0 yaw_err = 3 = 243 ae4 = 319
+
+ = -35, c_sq = -25, roll_new = 6460, pitch_new = 3120
+time:   93255309, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1250, theta:    209, psi:   2998, sp:    154, sq:   -310, sr:    -40, loop_time : 634282931
+ae1 = 295 ae2 = 210 ae3 = 243 ae4 = 319
+
+mode = 5, P = 29, P1 = 11 P2 = 0 yaw_err  ae3 = 190 ae4 = 280
+
+= -35, c_sq = -25, roll_new = 1150, pitch_new = 8240
+time:   93617645, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -719, theta:   -303, psi:   3158, sp:   -434, sq:    -78, sr:   -150, loop_time : -560567498
+ae1 = 331 ae2 = 261 ae3 = 190 ae4 = 280
+
+mode = 5, P = 29, P1 = 12 P2 = 0 yaw_err 8 ae3 = 300 ae4 = 321
+
+ -35, c_sq = -25, roll_new = 6622, pitch_new = -3707
+time:   93875329, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1206, theta:    858, psi:   2695, sp:    567, sq:     72, sr:     34, loop_time : 1845823403
+ae1 = 238 ae2 = 208 ae3 = 300 ae4 = 321
+
+mode = 5, P = 29, P1 = 13 P2 = 0 yaw_err  ae3 = 187 ae4 = 205
+
+= -35, c_sq = -25, roll_new = -6936, pitch_new = 8496
+time:   94028280, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:    -26, theta:   -187, psi:   3145, sp:    546, sq:    917, sr:    471, loop_time : 624563889
+ae1 = 334 ae2 = 322 ae3 = 187 ae4 = 205
+
+mode = 5, P = 29, P1 = 13 P2 = 0 yaw_err = -e3 = 75 ae4 = 210
+
+= -35, c_sq = -25, roll_new = -6513, pitch_new = 15119
+time:   94155953, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -103, theta:   -642, psi:   3508, sp:   -855, sq:   -642, sr:   -118, loop_time : 420450265
+ae1 = 376 ae2 = 319 ae3 = 75 ae4 = 210
+
+mode = 5, P = 29, P1 = 14 P2 = 0 yaw_err 1 ae3 = 339 ae4 = 403
+
+ -35, c_sq = -25, roll_new = 19890, pitch_new = -9178
+time:   94310054, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -2134, theta:   1227, psi:   2683, sp:  -1025, sq:   -832, sr:   -832, loop_time : 2095430591
+ae1 = 180 ae2 = -1 ae3 = 339 ae4 = 403
+
+mode = 5, P = 29, P1 = 15 P2 = 0 yaw_err = ae3 = 298 ae4 = 346
+
+ -35, c_sq = -25, roll_new = 10346, pitch_new = -3556
+time:   94467093, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1343, theta:    775, psi:   2047, sp:   1721, sq:   1779, sr:    534, loop_time : 649773579
+ae1 = 240 ae2 = 163 ae3 = 298 ae4 = 346
+
+mode = 5, P = 29, P1 = 15 P2 = 0 yaw_err 36 ae3 = 409 ae4 = -1
+
+ -35, c_sq = -25, roll_new = -26010, pitch_new = -20881
+time:   94619998, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   1130, theta:  -2456, psi:   3674, sp:    272, sq:   1103, sr:    866, loop_time : 618789344
+ae1 = -1 ae2 = 436 ae3 = 409 ae4 = -1
+
+mode = 5, P = 29, P1 = 15 P2 = 0 yaw_err = ae3 = 324 ae4 = 348
+
+ -35, c_sq = -25, roll_new = 10530, pitch_new = -7096
+time:   95715033, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1306, theta:  -3375, psi:   1928, sp:    170, sq:    279, sr:    303, loop_time : 797706732
+ae1 = 204 ae2 = 162 ae3 = 324 ae4 = 348
+
+mode = 5, P = 29, P1 = 15 P2 = 0 yaw_err = 3 = 306 ae4 = 342
+
+ = -35, c_sq = -25, roll_new = 9795, pitch_new = -4576
+time:   95763437, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1257, theta:  -3543, psi:   2020, sp:    -86, sq:    231, sr:     79, loop_time : 41032428
+ae1 = 229 ae2 = 171 ae3 = 306 ae4 = 342
+
+mode = 5, P = 29, P1 = 15 P2 = 1 yaw_err 150 ae3 = 351 ae4 = 352
+
+35, c_sq = -25, roll_new = 11340, pitch_new = -11191
+time:   95916277, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1360, theta:  -3102, psi:   1810, sp:    342, sq:   -523, sr:   -181, loop_time : 1042181467
+ae1 = 151 ae2 = 150 ae3 = 351 ae4 = 352
+
+mode = 5, P = 29, P1 = 15 P2 = 2 yaw_err = -2 = 397 ae4 = 426
+
+= -35, c_sq = -25, roll_new = 24088, pitch_new = -18822
+time:   96487726, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -2288, theta:  -2605, psi:   1174, sp:   1137, sq:    151, sr:    224, loop_time : 889306600
+ae1 = -1 ae2 = -1 ae3 = 397 ae4 = 426
+
+mode = 5, P = 29, P1 = 15 P2 = 2 yaw_err 1 ae3 = 294 ae4 = 463
+
+ -35, c_sq = -25, roll_new = 31592, pitch_new = -3005
+time:   96748009, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   1704, theta:  -3608, psi:   3171, sp:   -373, sq:   -323, sr:   -532, loop_time : 1872489515
+ae1 = 244 ae2 = -1 ae3 = 294 ae4 = 463
+
+mode = 5, P = 29, P1 = 15 P2 = 3 yaw_err  ae3 = 366 ae4 = 276
+
+= -35, c_sq = -25, roll_new = 591, pitch_new = -13628
+time:   97321160, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -719, theta:  -3029, psi:   2402, sp:    532, sq:    646, sr:    716, loop_time : 892664691
+ae1 = 111 ae2 = 265 ae3 = 366 ae4 = 276
+
+mode = 5, P = 29, P1 = 15 P2 = 3 yaw_err  ae3 = 334 ae4 = 228
+
+= -35, c_sq = -25, roll_new = -4767, pitch_new = -8698
+time:   97372422, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -368, theta:  -3367, psi:   2709, sp:    374, sq:    469, sr:    394, loop_time : 49008403
+ae1 = 184 ae2 = 307 ae3 = 334 ae4 = 228
+
+mode = 5, P = 29, P1 = 15 P2 = 4 yaw_err 34 ae3 = 354 ae4 = 303
+
+-35, c_sq = -25, roll_new = 4062, pitch_new = -11479
+time:   97526109, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -750, theta:  -2955, psi:   2317, sp:   -659, sq:   -664, sr:   -616, loop_time : 1109249501
+ae1 = 148 ae2 = 234 ae3 = 354 ae4 = 303
+
+mode = 5, P = 29, P1 = 15 P2 = 5 yaw_err  399 ae3 = 364 ae4 = -1
+
+35, c_sq = -25, roll_new = -19125, pitch_new = -13290
+time:   97783753, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:    479, theta:  -3081, psi:   2825, sp:    685, sq:    421, sr:    702, loop_time : 1846988621
+ae1 = 117 ae2 = 399 ae3 = 364 ae4 = -1
+
+mode = 5, P = 29, P1 = 15 P2 = 6 yaw_err 9 ae3 = 364 ae4 = 291
+
+ -35, c_sq = -25, roll_new = 2575, pitch_new = -13241
+time:   97936759, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -318, theta:  -2726, psi:   2677, sp:  -1408, sq:   -743, sr:   -934, loop_time : 629954083
+ae1 = 118 ae2 = 249 ae3 = 364 ae4 = 291
+
+mode = 5, P = 29, P1 = 15 P2 = 7 yaw_err  ae3 = 466 ae4 = 409
+
+= -35, c_sq = -25, roll_new = 21153, pitch_new = -32254
+time:   98089704, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -2061, theta:  -1733, psi:   1674, sp:     82, sq:     63, sr:    106, loop_time : 644190991
+ae1 = -1 ae2 = -1 ae3 = 466 ae4 = 409
+
+mode = 5, P = 29, P1 = 15 P2 = 7 yaw_err  ae3 = 432 ae4 = 292
+
+= -35, c_sq = -25, roll_new = 2704, pitch_new = -25230
+time:   98244955, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1019, theta:  -2195, psi:   2477, sp:    468, sq:     37, sr:    395, loop_time : 634744503
+ae1 = -1 ae2 = 247 ae3 = 432 ae4 = 292
+
+mode = 5, P = 29, P1 = 15 P2 = 8 yaw_err 2 ae3 = 406 ae4 = 247
+
+ -35, c_sq = -25, roll_new = -2716, pitch_new = -20540
+time:   98399391, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -583, theta:  -2629, psi:   2570, sp:    308, sq:    297, sr:     55, loop_time : 656446520
+ae1 = -1 ae2 = 292 ae3 = 406 ae4 = 247
+
+mode = 5, P = 29, P1 = 15 P2 = 8 yaw_err 98 ae3 = 426 ae4 = 240
+
+-35, c_sq = -25, roll_new = -3425, pitch_new = -24197
+time:   98982049, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:     27, theta:  -2268, psi:   2836, sp:   -790, sq:     37, sr:   -179, loop_time : 1342525628
+ae1 = -1 ae2 = 298 ae3 = 426 ae4 = 240
+
+mode = 5, P = 29, P1 = 15 P2 = 8 yaw_err5 ae3 = -1 ae4 = 256
+
+ = -35, c_sq = -25, roll_new = -1735, pitch_new = 29546
+time:   99345460, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:    -51, theta:   -885, psi:   2668, sp:   -855, sq:  -1082, sr:   -140, loop_time : 65919416
+ae1 = 454 ae2 = 285 ae3 = -1 ae4 = 256
+
+mode = 5, P = 29, P1 = 15 P2 = 8 yaw_err 1 ae3 = 441 ae4 = 424
+
+ -35, c_sq = -25, roll_new = 23741, pitch_new = -27123
+time:  100440212, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1951, theta:  -1858, psi:   2102, sp:   -477, sq:   -366, sr:   -301, loop_time : 1135441862
+ae1 = -1 ae2 = -1 ae3 = 441 ae4 = 424
+
+mode = 5, P = 29, P1 = 15 P2 = 8 yaw_err 45 ae3 = -1 ae4 = 166
+
+ -35, c_sq = -25, roll_new = -10202, pitch_new = 30543
+time:  100591544, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -710, theta:  -1640, psi:   2592, sp:   1439, sq:    209, sr:    607, loop_time : 640755133
+ae1 = 459 ae2 = 345 ae3 = -1 ae4 = 166
+
+mode = 5, P = 29, P1 = 15 P2 = 7 yaw_err = -2ae3 = 330 ae4 = 255
+
+35, c_sq = -25, roll_new = -1847, pitch_new = -7999
+time:  101059642, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1035, theta:   1362, psi:   2496, sp:   1004, sq:   -602, sr:    328, loop_time : -1800846358
+ae1 = 193 ae2 = 285 ae3 = 330 ae4 = 255
+
+mode = 5, P = 29, P1 = 15 P2 = 6 yaw_err 27 ae3 = 355 ae4 = 199
+
+-35, c_sq = -25, roll_new = -7446, pitch_new = -11764
+time:  101212616, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:    -32, theta:    805, psi:   2986, sp:   -197, sq:   1047, sr:    229, loop_time : 629884989
+ae1 = 144 ae2 = 327 ae3 = 355 ae4 = 199
+
+mode = 5, P = 29, P1 = 15 P2 = 5 yaw_err = -23 = 121 ae4 = 291
+
+ -35, c_sq = -25, roll_new = 2601, pitch_new = 13056
+time:  101470286, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -981, theta:   -181, psi:   3106, sp:    474, sq:   -446, sr:    232, loop_time : 1849456925
+ae1 = 363 ae2 = 249 ae3 = 121 ae4 = 291
+
+mode = 5, P = 29, P1 = 15 P2 = 5 yaw_err 3 = 273 ae4 = 271
+
+sp = -35, c_sq = -25, roll_new = 25, pitch_new = -190
+time:  101623272, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -543, theta:    668, psi:   3305, sp:   -223, sq:   -428, sr:   -181, loop_time : 615284641
+ae1 = 268 ae2 = 270 ae3 = 273 ae4 = 271
+
+mode = 5, P = 29, P1 = 15 P2 = 4 yaw_err  ae3 = 333 ae4 = 333
+
+= -35, c_sq = -25, roll_new = 8355, pitch_new = -8465
+time:  101776256, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1151, theta:    938, psi:   2952, sp:    -65, sq:    417, sr:    -56, loop_time : 639849962
+ae1 = 187 ae2 = 189 ae3 = 333 ae4 = 333
+
+mode = 5, P = 29, P1 = 15 P2 = 4 yaw_err = e3 = 390 ae4 = 432
+
+= -35, c_sq = -25, roll_new = 25273, pitch_new = -17525
+time:  102203182, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -2227, theta:   1808, psi:   2146, sp:   -267, sq:   -470, sr:   -618, loop_time : 931018388
+ae1 = -1 ae2 = -1 ae3 = 390 ae4 = 432
+
+mode = 5, P = 29, P1 = 15 P2 = 4 yaw_err 4 ae3 = 417 ae4 = 324
+
+ -35, c_sq = -25, roll_new = 7117, pitch_new = -22289
+time:  102665974, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -743, theta:  -2652, psi:   3002, sp:  -1293, sq:   1062, sr:   -729, loop_time : 1178348141
+ae1 = -1 ae2 = 204 ae3 = 417 ae4 = 324
+
+mode = 5, P = 29, P1 = 16 P2 = 4 yaw_err = -e3 = 384 ae4 = 252
+
+ -35, c_sq = -25, roll_new = -2163, pitch_new = -16421
+time:  103342284, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -247, theta:  -2860, psi:   2980, sp:   -833, sq:    375, sr:   -188, loop_time : 474139156
+ae1 = -1 ae2 = 288 ae3 = 384 ae4 = 252
+
+mode = 5, P = 29, P1 = 16 P2 = 4 yaw_err 31 ae3 = 384 ae4 = 190
+
+-35, c_sq = -25, roll_new = -8196, pitch_new = -16508
+time:  103704612, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:     -5, theta:  -2738, psi:   3192, sp:   -382, sq:    754, sr:    209, loop_time : -543642895
+ae1 = -1 ae2 = 331 ae3 = 384 ae4 = 190
+
+mode = 5, P = 29, P1 = 16 P2 = 4 yaw_err  ae3 = 328 ae4 = 301
+
+= -35, c_sq = -25, roll_new = 3920, pitch_new = -7744
+time:  103811099, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -730, theta:  -2932, psi:   2970, sp:   -511, sq:   -661, sr:   -475, loop_time : 277865903
+ae1 = 196 ae2 = 235 ae3 = 328 ae4 = 301
+
+mode = 5, P = 29, P1 = 16 P2 = 4 yaw_err  ae3 = 394 ae4 = 306
+
+= -35, c_sq = -25, roll_new = 4624, pitch_new = -18208
+time:  104799394, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -573, theta:  -2342, psi:   3197, sp:  -1315, sq:   -405, sr:  -1058, loop_time : 885868984
+ae1 = -1 ae2 = 229 ae3 = 394 ae4 = 306
+
+mode = 5, P = 29, P1 = 16 P2 = 3 yaw_err 4 ae3 = 168 ae4 = 267
+
+ -35, c_sq = -25, roll_new = -440, pitch_new = 10088
+time:  105262361, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -241, theta:   -114, psi:   3041, sp:  -1377, sq:     -7, sr:   -321, loop_time : 1943776240
+ae1 = 345 ae2 = 274 ae3 = 168 ae4 = 267
+
+mode = 5, P = 29, P1 = 16 P2 = 3 yaw_err e3 = 268 ae4 = 414
+
+p = -35, c_sq = -25, roll_new = 21777, pitch_new = 268
+time:  105420633, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -2023, theta:    679, psi:   2301, sp:    274, sq:   -957, sr:   -216, loop_time : 679653603
+ae1 = 273 ae2 = -1 ae3 = 268 ae4 = 414
+
+mode = 5, P = 29, P1 = 15 P2 = 3 yaw_err 1 ae3 = 279 ae4 = 450
+
+ -35, c_sq = -25, roll_new = 28687, pitch_new = -921
+time:  105890799, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -2150, theta:    872, psi:   2702, sp:  -1352, sq:  -1590, sr:   -996, loop_time : -1640405721
+ae1 = 262 ae2 = -1 ae3 = 279 ae4 = 450
+
+mode = 5, P = 29, P1 = 14 P2 = 3 yaw_err 50 ae3 = 430 ae4 = -1
+
+ -35, c_sq = -25, roll_new = -28720, pitch_new = -25023
+time:  106043471, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -3078, theta:   2060, psi:   2370, sp:     63, sq:    621, sr:    555, loop_time : 633664922
+ae1 = -1 ae2 = 450 ae3 = 430 ae4 = -1
+
+mode = 5, P = 29, P1 = 14 P2 = 3 yaw_err = -2 = 148 ae4 = 424
+
+= -35, c_sq = -25, roll_new = 23838, pitch_new = 11440
+time:  106196159, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -2437, theta:   -639, psi:   3162, sp:    573, sq:   1575, sr:    869, loop_time : 645733083
+ae1 = 352 ae2 = -1 ae3 = 148 ae4 = 424
+
+mode = 5, P = 29, P1 = 13 P2 = 3 yaw_err = -3 = 210 ae4 = 259
+
+= -35, c_sq = -25, roll_new = -1374, pitch_new = 6472
+time:  106874760, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -580, theta:    -63, psi:   3383, sp:    311, sq:    543, sr:    396, loop_time : 429709069
+ae1 = 319 ae2 = 282 ae3 = 210 ae4 = 259
+
+mode = 5, P = 29, P1 = 13 P2 = 3 yaw_err  ae3 = 168 ae4 = 297
+
+= -35, c_sq = -25, roll_new = 3376, pitch_new = 10011
+time:  107029950, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -755, theta:    -58, psi:   3491, sp:   -506, sq:   -853, sr:   -425, loop_time : 648319379
+ae1 = 343 ae2 = 241 ae3 = 168 ae4 = 297
+
+mode = 5, P = 29, P1 = 12 P2 = 3 yaw_err 163 ae3 = 336 ae4 = 346
+
+35, c_sq = -25, roll_new = 10411, pitch_new = -8821
+time:  107181926, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1427, theta:   1134, psi:   2809, sp:     61, sq:    259, sr:   -114, loop_time : -1776634567
+ae1 = 183 ae2 = 163 ae3 = 336 ae4 = 346
+
+mode = 5, P = 29, P1 = 12 P2 = 3 yaw_err = -23 = 165 ae4 = 234
+
+ -35, c_sq = -25, roll_new = -4089, pitch_new = 10284
+time:  107330891, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -445, theta:   -617, psi:   3478, sp:    692, sq:   1099, sr:    712, loop_time : 604528949
+ae1 = 345 ae2 = 303 ae3 = 165 ae4 = 234
+
+mode = 5, P = 29, P1 = 12 P2 = 3 yaw_err 5 ae3 = 177 ae4 = 81
+
+= -35, c_sq = -25, roll_new = -14877, pitch_new = 9408
+time:  108425365, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:    451, theta:   -564, psi:   4060, sp:    704, sq:   1179, sr:   1024, loop_time : 752813597
+ae1 = 340 ae2 = 375 ae3 = 177 ae4 = 81
+
+mode = 5, P = 29, P1 = 12 P2 = 3 yaw_err 9 ae3 = 88 ae4 = 343
+
+= -35, c_sq = -25, roll_new = 9948, pitch_new = 14634
+time:  108642270, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1107, theta:   -488, psi:   3412, sp:  -1339, sq:   -867, sr:  -1069, loop_time : 1274325575
+ae1 = 373 ae2 = 169 ae3 = 88 ae4 = 343
+
+mode = 5, P = 29, P1 = 12 P2 = 3 yaw_err = e3 = 270 ae4 = 234
+
+= -35, c_sq = -25, roll_new = -4080, pitch_new = 123
+time:  109527881, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -719, theta:    219, psi:   3079, sp:   1785, sq:   1142, sr:    856, loop_time : 1033220239
+ae1 = 271 ae2 = 303 ae3 = 270 ae4 = 234
+
+mode = 5, P = 29, P1 = 12 P2 = 3 yaw_err  346 ae3 = -1 ae4 = 163
+
+35, c_sq = -25, roll_new = -10440, pitch_new = 23238
+time:  110249979, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:    439, theta:  -1527, psi:   3960, sp:   -727, sq:    421, sr:    144, loop_time : -2027098997
+ae1 = 421 ae2 = 346 ae3 = -1 ae4 = 163
+
+mode = 5, P = 29, P1 = 12 P2 = 3 yaw_err =3 = 270 ae4 = 304
+
+p = -35, c_sq = -25, roll_new = 4377, pitch_new = 24
+time:  110614747, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1310, theta:    378, psi:   2197, sp:   1330, sq:    539, sr:    694, loop_time : -404863664
+ae1 = 271 ae2 = 231 ae3 = 270 ae4 = 304
+
+mode = 5, P = 29, P1 = 12 P2 = 3 yaw_err  ae3 = 223 ae4 = 247
+
+= -35, c_sq = -25, roll_new = -2685, pitch_new = 5268
+time:  111706660, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -514, theta:    -13, psi:   2182, sp:    500, sq:    355, sr:    139, loop_time : 395951393
+ae1 = 312 ae2 = 292 ae3 = 223 ae4 = 247
+
+mode = 5, P = 29, P1 = 12 P2 = 3 yaw_err 5 ae3 = 165 ae4 = 255
+
+ -35, c_sq = -25, roll_new = -1824, pitch_new = 10260
+time:  111858282, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -299, theta:   -392, psi:   2469, sp:   -647, sq:    207, sr:    140, loop_time : 606973097
+ae1 = 345 ae2 = 285 ae3 = 165 ae4 = 255
+
+mode = 0, P = 29, P1 = 12 P2 = 3 yaw_err =  ae3 = 168 ae4 = 190
+
+-35, c_sq = -25, roll_new = -8277, pitch_new = 10068
+time:  112744142, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:     -4, theta:   -527, psi:   1747, sp:    324, sq:    811, sr:    396, loop_time : 1363618487
+ae1 = 345 ae2 = 333 ae3 = 168 ae4 = 190
+
+mode = 0, P = 29, P1 = 12 P2 = 3 yaw_erre3 = 0 ae4 = 0
+
+, c_sp = -35, c_sq = -25, roll_new = -8277, pitch_new = 10068
+time:  112896812, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -505, theta:  -1776, psi:   2166, sp:   -653, sq:    976, sr:    -46, loop_time : 693611435
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 12 P2 = 3 yaw_errae3 = 0 ae4 = 0
+
+ c_sp = -35, c_sq = -25, roll_new = -8277, pitch_new = 10068
+time:  113468061, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1809, theta:  -2943, psi:   1644, sp:    191, sq:   -125, sr:     12, loop_time : 1839344341
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 12 P2 = 3 yaw_err =3 = 0 ae4 = 0
+
+ c_sp = -35, c_sq = -25, roll_new = -8277, pitch_new = 10068
+time:  113936351, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -783, theta:  -2022, psi:    591, sp:    240, sq:   -203, sr:   -674, loop_time : -225500367
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 12 P2 = 3 yaw_errae3 = 0 ae4 = 0
+
+ c_sp = -35, c_sq = -25, roll_new = -8277, pitch_new = 10068
+time:  115033041, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -1845, theta:  -1654, psi: -16455, sp:   -646, sq:   -105, sr:   -570, loop_time : -668764764
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 12 P2 = 3 yaw_err =  0 ae4 = 0
+
+7, c_sp = -35, c_sq = -25, roll_new = -8277, pitch_new = 10068
+time:  115076329, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -2093, theta:  -1601, psi: -16658, sp:   -469, sq:    -75, sr:   -420, loop_time : 40719199
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 12 P2 = 3 yaw_errae3 = 0 ae4 = 0
+
+ c_sp = -35, c_sq = -25, roll_new = -8277, pitch_new = 10068
+time:  115226279, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:  -2305, theta:  -1907, psi: -16853, sp:      3, sq:    295, sr:    191, loop_time : 1056003249
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 12 P2 = 3 yaw_er0 ae3 = 0 ae4 = 0
+
+c_sp = -35, c_sq = -25, roll_new = -8277, pitch_new = 10068
+time:  116317098, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -179, theta:    -15, psi: -15267, sp:      7, sq:    -13, sr:    -78, loop_time : -1128078356
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 12 P2 = 3 yaw_erae3 = 0 ae4 = 0
+
+, c_sp = -35, c_sq = -25, roll_new = -8277, pitch_new = 10068
+time:  116688176, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -244, theta:     37, psi: -15875, sp:     92, sq:    -92, sr:    254, loop_time : -65354096
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
+mode = 0, P = 29, P1 = 12 P2 = 3 yaw_erae3 = 0 ae4 = 0
+
+, c_sp = -35, c_sq = -25, roll_new = -8277, pitch_new = 10068
+time:  117362917, throttle: 32767, roll: 0, pitch: 0, yaw: 0, phi:   -130, theta:    150, psi: -15368, sp:      0, sq:     -5, sr:      3, loop_time : -90655187
+ae1 = 0 ae2 = 0 ae3 = 0 ae4 = 0
+
