@@ -15,6 +15,12 @@
 #include <inttypes.h>
 #include "math.h"
 
+#define LOG_SIZE 34
+int count1 = 0;
+int row = 0;
+int data[0xFFFF];
+int j;
+
 /*------------------------------------------------------------
  * console I/O
  *------------------------------------------------------------
@@ -180,7 +186,7 @@ int 	rs232_putchar(char c)
  *------------------------------------------------------------
  */
 unsigned int previous_time;//last checking time
-unsigned int interval=3000;//sending interval
+unsigned int interval=1000;//sending interval
 
 #include <time.h>
 #include <sys/time.h>
@@ -209,7 +215,7 @@ void mon_delay_ms(unsigned int ms)
         assert(nanosleep(&req,&rem) == 0);
 }
 
-bool sending_timer()//send command periodically to check the connection
+bool send_period()//send command periodically to check the connection
 {
 	unsigned int current_time = mon_time_ms();
 	if(current_time-previous_time > interval)
@@ -233,10 +239,11 @@ bool sending_timer()//send command periodically to check the connection
 #define RAW		6
 #define EXIT		7
 
-int16_t k_throttle = 0, k_roll = 0, k_pitch = 0, k_yaw = 0;
-int16_t j_throttle = 0, j_roll = 0, j_pitch = 0, j_yaw = 0;
-int16_t throttle = 0, roll = 0, pitch = 0, yaw = 0;
-int16_t P, P1, P2 = 0;
+uint16_t k_throttle,j_throttle,throttle;
+int16_t k_roll = 0, k_pitch = 0, k_yaw = 0;
+int16_t j_roll = 0, j_pitch = 0, j_yaw = 0;
+int16_t roll = 0, pitch = 0, yaw = 0;
+uint8_t P, P1, P2 = 0;
 uint8_t mode = 0;
 uint8_t frame = 0;
 int last_sending_time;
@@ -245,8 +252,8 @@ typedef struct
 {
 	uint8_t frame;
 	uint8_t mode;
-	uint8_t throttle;
-	int8_t roll, pitch, yaw;
+	uint16_t throttle;
+	int16_t roll, pitch, yaw;
         uint8_t P, P1, P2;
 	//....
 }command;
@@ -280,8 +287,8 @@ bool get_joystick(int fd)
 				axis[js.number] = js.value;
 				break;
 		}
-		//for (int i = 0; i < 6; i++) {
-		//	fprintf(stderr,"%6d ",axis[i]);
+		//for (int i = 0; i < 12; i++) {
+		//	fprintf(stderr,"%6d ",button[i]);
 		//}
 		//fprintf(stderr,"\n");
 		get_values = true;
@@ -291,12 +298,13 @@ bool get_joystick(int fd)
 	//	assign values
 	//	return true;
 	//}
-	if(get_values && mode != SAFE)
+	if(get_values)
 	{
-		j_throttle = (-axis[3]+32767)/256; 
-		j_roll = axis[0]/256; 
-		j_pitch = axis[1]/256; 
-		j_yaw = axis[2]/256;
+		j_throttle = (-axis[3]+32767); 
+		j_roll = axis[0]; 
+		j_pitch = axis[1]; 
+		j_yaw = axis[2];
+		if(button[0]==1) mode = EXIT;
 		return true;
 	}
 
@@ -344,29 +352,28 @@ bool get_keyboard()
 		{
 			//still need to limit the values
 			case 'r'://lift up
-				k_throttle+=5;
+				k_throttle+=1000;
 				return true;
 			case 'f'://lift down
-				k_throttle-=5;
-			        if (k_throttle < 0) k_throttle = 0;
+				k_throttle-=1000;
 				return true;
 			case 'a'://left, roll up
-				k_roll+=5;
+				k_roll+=1000;
 				return true;
 			case 'd'://right, roll down
-				k_roll-=5;
+				k_roll-=1000;
 				return true;
 			case 'w'://up, pitch down
-				k_pitch-=5;
+				k_pitch-=1000;
 				return true;
 			case 's'://down, pitch up
-				k_pitch+=5;
+				k_pitch+=1000;
 				return true;
 			case 'q'://yaw down
-				k_yaw-=5;
+				k_yaw-=1000;
 				return true;
 			case 'e'://yaw up
-				k_yaw+=5;
+				k_yaw+=1000;
 				return true;
 			case 'u'://yaw up
 				P+=1;
@@ -402,56 +409,68 @@ bool get_keyboard()
  */
 
 int miss_count = 0;//count the successive miss of ack
-bool check_ack = false; //need to check ack or not
+bool waiting_for_ack = false; //need to check whether reciveing ack or not
 int t_threshold = 500; 
 void send_command(command c)
 {
 	rs232_putchar(0xFF);
 	rs232_putchar(c.frame);
 	rs232_putchar(c.mode);
+	rs232_putchar(c.throttle>>8);
 	rs232_putchar(c.throttle);
+	rs232_putchar(c.roll>>8);
 	rs232_putchar(c.roll);
+	rs232_putchar(c.pitch>>8);
 	rs232_putchar(c.pitch);
+	rs232_putchar(c.yaw>>8);
 	rs232_putchar(c.yaw);
 	rs232_putchar(c.P);
 	rs232_putchar(c.P1);
 	rs232_putchar(c.P2);
 	last_sending_time = mon_time_ms();
 	frame++;	
-	check_ack = true;
+	waiting_for_ack = true;
 }
 
-int get_ack()
+
+void get_data()
 {
-	if (check_ack == false) return 0;//need to check ack or not
-	int c = rs232_getchar_nb(),last_c = -1;
-	
-	while(c != -1)
+	int c;
+	while((c = rs232_getchar_nb()) != -1)
 	{
-		last_c = c;//the last meaningful element returned by rs232_getchar
-		c = rs232_getchar_nb();
+		if(c == 255)
+		{
+			int next_c = rs232_getchar_nb();
+			if(next_c == frame-1)//if it is the ack for the last frame
+			{
+				miss_count = 0;
+				waiting_for_ack = false;
+				if(mode == PANIC || mode == CALIBRATION) mode = SAFE;
+				//4fprintf(stderr,"get ack %d\n",next_c);
+			}	
+		}
+		else
+		{
+			term_putchar(c);
+		}
 	}
-	if(last_c == frame-1)//if it is the ack for the last frame
-	{
-		miss_count = 0;
-		check_ack = false;
-		fprintf(stderr,"get ack %d\n",last_c);
-		return 0;
-	}
-	int ms = mon_time_ms();
-	if(ms > last_sending_time + t_threshold)//not get ack in limited time
-	{
-		fprintf(stderr,"frame %u, ack time out\n", frame);
-		miss_count++;
-		check_ack = false;
-		return 1;
-	}
-	fprintf(stderr,"nothing");//not get ack but also not reach the limited time
-	return 2;
 }
 
-
-
+bool resend()
+{
+	if(waiting_for_ack)
+	{
+		int ms = mon_time_ms();
+		if(ms > last_sending_time + t_threshold)//not get ack in limited time
+		{
+			fprintf(stderr,"frame %u, ack time out\n", frame);
+			miss_count++;
+			waiting_for_ack = false;
+			return true;
+		}
+	}
+	return false;
+}
 /*----------------------------------------------------------------
  * main -- execute terminal
  *----------------------------------------------------------------
@@ -463,6 +482,9 @@ int main(int argc, char **argv)
 	int	c;
 	int	fd;
 	//struct js_event js;
+        uint32_t time;
+        int16_t log_data;
+
 
 	term_puts("\nTerminal program - Embedded Real-Time Systems\n");
 
@@ -476,6 +498,13 @@ int main(int argc, char **argv)
 
 	fcntl(fd, F_SETFL, O_NONBLOCK);
 
+        FILE *fp; 
+        fp = fopen("log.txt", "r+");
+        FILE *fp_parse;
+        fp_parse = fopen("log_parse.txt", "w");         
+
+        fprintf(fp, "TIME \t THROTTLE \t ROLL \t PITCH \t YAW \t MODE \t PHI \t THETA \t PSI \t SP \t SQ \t SR \t MOTOR 0 \t MOTOR 1 \t MOTOR 2 \t MOTOR 3 \t LOOP TIME\n");
+
 	term_puts("Type ^C to exit\n");
 
 	/* discard any incoming text
@@ -488,20 +517,26 @@ int main(int argc, char **argv)
 	mon_delay_ms(1000);
 	while((c = rs232_getchar_nb()) != -1)
 		term_putchar(c);
-
+	get_joystick(fd);
+	while(j_throttle!=0||j_yaw!=0||j_pitch!=0||j_roll!=0)
+	{
+		fprintf(stderr,"please set joystick to neutral\n");
+		mon_delay_ms(1000);
+		get_joystick(fd);
+	}
 	command C = {SAFE,0,0,0,0,0};
 	send_command(C); //send the first command
 	while (1)
 	{
-		bool send = false;
-		//send = get_ack()==1;
+		get_data();
+		bool send = resend();
 		send = send || get_joystick(fd);
 		send = send || get_keyboard();
-		//send = send || sending_timer();
+		send = send || send_period();
 
 		//mon_delay_ms(300);
 		if(miss_count>5) mode = PANIC;
-		if(mode == PANIC || mode == EXIT) break;
+		if( mode == EXIT) break;
 		//fprintf(stderr,"mode = %d\n",mode);
 		int ae[4];
 		if (send)
@@ -510,13 +545,14 @@ int main(int argc, char **argv)
 			roll = j_roll + k_roll;
 			pitch = j_pitch + k_pitch;
 			yaw = j_yaw + k_yaw;
-			if(throttle > 255) throttle = 255;
-			if(roll>127) roll = 127;
-			if(roll<-128) roll = -128;
-			if(pitch>127) pitch = 127;
-			if(pitch<-128) pitch = -128;
-			if(yaw>127) yaw = 127;
-			if(yaw<-128) yaw = -128;
+			if(throttle > 65535) throttle = 65535;
+			if(throttle < 0) throttle = 0;
+			if(roll>32767) roll = 32767;
+			if(roll<-32768) roll = -32768;
+			if(pitch>32767) pitch = 32767;
+			if(pitch<-32768) pitch = -32768;
+			if(yaw>32767) yaw = 32767;
+			if(yaw<-32768) yaw = -32768;
 
 			command Command = {frame, mode,throttle,roll,pitch,yaw,P,P1,P2};
 			//fprintf(stderr,"mode = %d\n",mode);
@@ -524,24 +560,96 @@ int main(int argc, char **argv)
 			//fprintf(stderr,"from joystick: throttle = %u roll = %d pitch = %d yaw = %d\n",j_throttle, j_roll, j_pitch, j_yaw);
 			send_command(Command);
 		}
-		while((c = rs232_getchar_nb()) != -1)
-			term_putchar(c);
-		//get_ack();
 	}
 	//send PANIC or EXIT until get ack
 	C.mode = mode;
 	C.frame = frame;
-	send_command(C);	
-	//while(get_ack()!=0)
-	//{
-	//	send_command(C);
-	//	mon_delay_ms(t_threshold);
-	//}
+	waiting_for_ack = true;
+	while(waiting_for_ack)
+	{
+		send_command(C);
+		mon_delay_ms(t_threshold);
+		get_data();
+	}
+
+       if(C.mode == EXIT)
+        {
+              while(c = (rs232_getchar() != 0x7F));
+             /*
+               while(1)
+              {   c = rs232_getchar();
+                  if(c == 0x7F) break;
+                  fprintf(stderr, "%d ", c);
+                  fprintf(fp, "%d ", c);
+                  //data[j] = c;
+                  //j++;
+                  //term_putchar(c);
+                  //term_puts("\t");
+                  count1++;
+                  if(count1 == LOG_SIZE - 1) 
+                  {
+                       fprintf(stderr, "\n");
+                       fprintf(fp, "\n");
+                       count1 = 0;
+                  }
+              }*/
+ 
+             while(1)
+             {  
+                     c = rs232_getchar();
+                     if(c == 0x7F) break;
+                     fprintf(stderr, "%d ", c);
+                  
+                     if(count1 >= 0 && count1 <= 3)
+                     {  
+                            if(count1 == 0)
+                                 time = 0;
+                            time += (c << ((8 * (3 - count1))));
+                            //fprintf(stderr, "c: %d\ttime: %d\t ", c, time);
+                            if (count1 == 3)
+                                 fprintf(fp, "%d\t ", time);
+                     }
+
+                     else if(count1 >= 4 && count1 <= 8)
+                            fprintf(fp, "%d\t ", c);
+   
+                     else if(count1 <= 28)
+                     {
+                            if(count1 % 2 != 0)
+                                  log_data = (c << 8);
+                            else
+                            {
+                                  log_data += c;
+                                  fprintf(fp, "%d\t ", log_data);
+                            }   
+                      }   
+
+                      else if(count1 >= 29 && count1 <= 32)
+                      { 
+                            if(count1  == 29)
+                                  time = 0;
+                            time += (c << (8 * (32 - count1)));
+                            if (count1 == 32)
+                                  fprintf(fp, "%d\t ", time);
+                      }      
+
+                      count1++;
+                      if(count1 == LOG_SIZE - 1) 
+                      {
+                            fprintf(stderr, "\n");
+                            fprintf(fp, "\n");
+                            count1 = 0;
+                      }
+             }      
+        }
+   
+
+
 
 	term_exitio();
 	rs232_close();
 	term_puts("\n<exit>\n");
-
+        fclose(fp);
 	return 0;
 }
 

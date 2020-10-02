@@ -40,7 +40,7 @@ char dequeue(queue *q){
 	return x;
 }
 
-void c_enqueue(c_queue *q,command x){
+void c_enqueue(c_queue *q, command x){
 
 	q->last = (q->last + 1) % C_QUEUE_SIZE;
 	q->Data[ q->last ] = x;
