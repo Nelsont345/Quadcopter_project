@@ -325,23 +325,96 @@ bool get_keyboard()
 				mode = PANIC;
 				return true;
 			case '2':
-				mode = MANUAL;
-				return true;
+				if(mode!=SAFE)
+				{
+					printf("Invalid command! Please go back to safe mode before switching mode\n");
+					return false;
+					
+				}
+				else if(j_throttle!=0||j_roll!=0||j_pitch!=0||j_yaw!=0)
+				{
+					printf("Invalid command! Please set joystick to origin\n");
+					return false;
+
+				}
+				else
+				{
+					mode = MANUAL;
+					return true;
+				}
 			case '3':
-				mode = CALIBRATION;
-				return true;
+				if(mode!=SAFE)
+				{
+					printf("Invalid command! Please go back to safe mode before switching mode\n");
+					return false;
+				}
+				else
+				{
+					mode = CALIBRATION;
+					return true;
+				}
 			case '4':
-				mode = YAW;
-				return true;
+				if(mode!=SAFE)
+				{
+					printf("Invalid command! Please go back to safe mode before switching mode\n");
+					return false;
+				}
+				else if(j_throttle!=0||j_roll!=0||j_pitch!=0||j_yaw!=0)
+				{
+					printf("Invalid command! Please set joystick to origin\n");
+					return false;
+
+				}
+				else
+				{
+					mode = YAW;
+					return true;
+				}
 			case '5':
-				mode = FULL;
-				return true;
+				if(mode!=SAFE)
+				{
+					printf("Invalid command! Please go back to safe mode before switching mode\n");
+					return false;
+				}
+				else if(j_throttle!=0||j_roll!=0||j_pitch!=0||j_yaw!=0)
+				{
+					printf("Invalid command! Please set joystick to origin\n");
+					return false;
+
+				}
+				else
+				{
+					mode = FULL;
+					return true;
+				}
 			case '6':
-				mode = RAW;
-				return true;
+				if(mode!=SAFE)
+				{
+					printf("Invalid command! Please go back to safe mode before switching mode\n");
+					return false;
+				}
+				else if(j_throttle!=0||j_roll!=0||j_pitch!=0||j_yaw!=0)
+				{
+					printf("Invalid command! Please set joystick to origin\n");
+					return false;
+
+				}
+				else
+				{
+					mode = RAW;
+					return true;
+				}
 			case '7':
-				mode = EXIT;
-				return true;
+				if(mode!=SAFE)
+				{
+					printf("Invalid command! Please go back to safe mode before switching mode\n");
+					return false;
+				}
+				else
+				{
+					mode = EXIT;
+					return true;
+				}
 		}
 		if (mode == SAFE) 
 		{

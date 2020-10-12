@@ -52,10 +52,15 @@ void get_command(command c)
 void flash_data()
 {
    cur_time = get_time_us();
-   printf("mode = %u, P = %u, P1 = %u P2 = %u yaw_err = %d c_sr = %d, c_sp = %d, c_sq = %d, roll_new = %d, pitch_new = %d\n", mode, P, P1, P2, y_err, c_sr, c_sp, c_sq, roll_new, pitch_new);
+   //printf("mode = %u, P = %u, P1 = %u P2 = %u yaw_err = %d c_sr = %d, c_sp = %d, c_sq = %d, roll_new = %d, pitch_new = %d\n", mode, P, P1, P2, y_err, c_sr, c_sp, c_sq, roll_new, pitch_new);
 
-   printf("time: %10ld, throttle: %d, roll: %d, pitch: %d, yaw: %d, phi: %6d, theta: %6d, psi: %6d, sp: %6d, sq: %6d, sr: %6d, loop_time : %ld\n", cur_time, throttle, roll, pitch, yaw, phi, theta, psi, sp,sq, sr, prev_loop_time);
-   printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n\n",ae[0],ae[1],ae[2],ae[3]);
+  // printf("time: %10ld, throttle: %d, roll: %d, pitch: %d, yaw: %d, phi: %6d, theta: %6d, psi: %6d, sp: %6d, sq: %6d, sr: %6d, loop_time : %ld\nmode = %u, P = %u, P1 = %u P2 = %u yaw_err = %d c_sr = %d, c_sp = %d, c_sq = %d, roll_new = %d, pitch_new = %d\nae1 = %d ae2 = %d ae3 = %d ae4 = %d\n\n", cur_time, throttle, roll, pitch, yaw, phi, theta, psi, sp,sq, sr, prev_loop_time, mode, P, P1, P2, y_err, c_sr, c_sp, c_sq, roll_new, pitch_new, ae[0],ae[1],ae[2],ae[3]);
+
+    //printf("mode : %d throttle: %d yaw_err: %d P: %d c_sr: %d sr: %d ae : %d %d %d %d\n", mode, throttle, y_err, P,  c_sr, sr, ae[0], ae[1], ae[2], ae[3]);  
+printf("mode : %d throttle: %d pitch_new: %ld roll_new: %ld P1: %d P2: %d sq: %d sp: %d theta: %d phi:  %d ae : %d %d %d %d\n", mode, throttle, pitch_new, roll_new, P1, P2, sq, sp, theta, phi, ae[0], ae[1], ae[2], ae[3]); 
+
+
+   //printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n\n",ae[0],ae[1],ae[2],ae[3]);
    data[0] = ((cur_time & 0xFFFFFFFF) >> 24);
    data[1] = ((cur_time & 0xFFFFFF) >> 16);
    data[2] = ((cur_time & 0xFFFF) >> 8);
@@ -195,7 +200,7 @@ int main(void)
 			read_baro();
                         if(counter%32 == 0)
                       {
-		        flash_data();
+		       
 			
                  /*	printf("%10ld | ", get_time_us());
 			printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
@@ -216,6 +221,9 @@ int main(void)
 			get_dmp_data();
 			run_filters_and_control();
 		}
+                 
+                if(counter%10 == 0)
+                        flash_data();
                 loop_time += ( get_time_us() - start_time );
                 //if(iflag) {printf("\nloop time: %ld, tot_intr_time: %ld, intr_start_time: %ld, intr_stop_time : %ld\n\n", loop_time, tot_intr_time, intr_start_time, intr_stop_time);
                 prev_loop_time = loop_time - tot_intr_time;
