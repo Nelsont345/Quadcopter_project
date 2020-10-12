@@ -39,23 +39,11 @@
 void flash_data();
 void log_data();
 
->>>>>>> Liang
 bool demo_done;
 
 //Mode
 
 uint8_t mode;
-<<<<<<< HEAD
-int8_t CRC;
-
-//Command
-typedef struct {
-	uint8_t mode;
-	uint8_t throttle;
-	int8_t CRC;
-	int8_t roll, pitch, yaw;
-	
-=======
 
 //Command
 typedef struct {
@@ -78,6 +66,18 @@ int16_t c_phi, c_theta, c_psi, c_sp, c_sq, c_sr;
 int16_t y_err;
 int32_t pitch_new, roll_new;
 
+//filtering
+int32_t processed_phi;
+int32_t prev_phi_x[2];
+int32_t prev_phi_y[2];
+
+//kalman
+int32_t bias;
+int32_t error;
+int32_t P2PHI; 
+int32_t C1;
+int32_t C2;
+
 // Timers
 #define TIMER_PERIOD	50 //50ms=20Hz (MAX 23bit, 4.6h)
 void timers_init(void);
@@ -95,9 +95,6 @@ uint32_t intr_start_time, intr_stop_time;
 void gpio_init(void);
 
 // Queue
-<<<<<<< HEAD
-#define QUEUE_SIZE 64
-=======
 #define QUEUE_SIZE 256
 #define C_QUEUE_SIZE 32
 typedef struct {
@@ -107,19 +104,6 @@ typedef struct {
 } queue;
 
 typedef struct {
-<<<<<<< HEAD
-	command Data[QUEUE_SIZE];
-	uint16_t first,last;
-  	uint16_t count; 
-} myqueue;
-
-void init_queue(queue *q);
-void myinit_queue(myqueue *q);
-void enqueue(queue *q, char x);
-char dequeue(queue *q);
-void myenqueue(myqueue *q, command x);
-command mydequeue(myqueue *q);
-=======
 	command Data[C_QUEUE_SIZE];
 	uint16_t first,last;
   	uint16_t count; 
@@ -131,17 +115,12 @@ void enqueue(queue *q, char x);
 char dequeue(queue *q);
 void c_enqueue(c_queue *q, command x);
 command c_dequeue(c_queue *q);
->>>>>>> Liang
 
 // UART
 #define RX_PIN_NUMBER  16
 #define TX_PIN_NUMBER  14
 queue rx_queue;
-<<<<<<< HEAD
-myqueue myrx_queue;
-=======
 c_queue c_rx_queue;
->>>>>>> Liang
 queue tx_queue;
 uint32_t last_correct_checksum_time;
 void uart_init(void);

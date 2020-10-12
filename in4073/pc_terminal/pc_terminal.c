@@ -61,7 +61,6 @@ int	term_getchar_nb()
         static unsigned char 	line [2];
 
         if (read(0,line,1)) // note: destructive read
-				printf("%c \n", (char) line[0]);
         		return (int) line[0];
 
         return -1;
@@ -183,40 +182,6 @@ int 	rs232_putchar(char c)
 }
 
 /*------------------------------------------------------------
-<<<<<<< HEAD
- * joystick I/O
- *------------------------------------------------------------
- */
-#include "joystick.h"
-#define JS_DEV	"/dev/input/js0"
-
-int	axis[6];
-int	button[12];
-
-void get_joystick(int fd)
-{
-	struct js_event js;
-	while (read(fd, &js, sizeof(struct js_event)) == 
-	       			sizeof(struct js_event))  {
-
-		/* register data
-		 */
-		 fprintf(stderr,".");
-		fprintf(stderr,"%6d ",js.number);
-		switch(js.type & ~JS_EVENT_INIT) {
-			case JS_EVENT_BUTTON:
-				button[js.number] = js.value;
-				break;
-			case JS_EVENT_AXIS:
-				axis[js.number] = js.value;
-				break;
-		}
-		//for (int i = 0; i < 6; i++) {
-		//	fprintf(stderr,"%6d ",axis[i]);
-		//}
-	}
-	return;
-=======
  * time
  *------------------------------------------------------------
  */
@@ -259,7 +224,6 @@ bool send_period()//send command periodically to check the connection
 		return true;
 	}
 	return false;
->>>>>>> Liang
 }
 
 /*------------------------------------------------------------
@@ -273,86 +237,6 @@ bool send_period()//send command periodically to check the connection
 #define YAW		4
 #define FULL		5
 #define RAW		6
-<<<<<<< HEAD
-
-int8_t k_throttle = 0, k_roll = 0, k_pitch = 0, k_yaw = 0;
-int8_t j_throttle = 0, j_roll = 0, j_pitch = 0, j_yaw = 0;
-uint8_t mode = 0;
-
-typedef struct
-{
-	uint8_t mode;
-	uint8_t throttle;
-	int8_t roll, pitch, yaw;
-	uint8_t CRC;
-	//....
-}command;
-
-void send_command(command c)
-{
-	rs232_putchar(0xFF);
-	rs232_putchar(c.mode);
-	rs232_putchar(c.throttle);
-	rs232_putchar(c.roll);
-	rs232_putchar(c.pitch);
-	rs232_putchar(c.yaw);
-	rs232_putchar(c.CRC);
-}
-
-/*------------------------------------------------------------
- * time
- *------------------------------------------------------------
- */
-
-#include <time.h>
-#include <assert.h>
-unsigned int    mon_time_ms(void)
-{
-        unsigned int    ms;
-        struct timeval  tv;
-        struct timezone tz;
-
-        gettimeofday(&tv, &tz);
-        ms = 1000 * (tv.tv_sec % 65); // 65 sec wrap around
-        ms = ms + tv.tv_usec / 1000;
-        return ms;
-}
-
-void    mon_delay_ms(unsigned int ms)
-{
-        struct timespec req, rem;
-
-        req.tv_sec = ms / 1000;
-        req.tv_nsec = 1000000 * (ms % 1000);
-        assert(nanosleep(&req,&rem) == 0);
-}
-
-/*----------------------------------------------------------------
- * CRC calculation
- *----------------------------------------------------------------
- */
-#include "crc.h"
-//verifies if correct values have been sent
-uint8_t get_crc(uint8_t crc, uint8_t *msg, uint8_t bufferSize)
-{
-	uint8_t const *buffer = msg;
-
-	if (buffer == NULL) return 0xff;
-
-	crc &= 0xff;
-	printf("null \n");
-
-	for (int i = 0; i < bufferSize; i++)
-	{
-		printf("crc_now %d buffer_i %d \n", crc, buffer[i]);
-		crc = crc8_table[ crc ^ buffer[i] ];
-		
-	}
-
-	return crc;
-}
-
-=======
 #define EXIT		7
 
 uint16_t k_throttle,j_throttle,throttle;
@@ -664,20 +548,11 @@ bool resend()
  * main -- execute terminal
  *----------------------------------------------------------------
  */
-<<<<<<< HEAD
-#include <stdbool.h>
-=======
 
->>>>>>> Liang
 
 int main(int argc, char **argv)
 {
 	int	c;
-<<<<<<< HEAD
-	//int	fd;
-	//struct js_event js;
-
-=======
 	int	fd;
 	//struct js_event js;
         uint32_t time;
@@ -689,21 +564,14 @@ int main(int argc, char **argv)
 	term_initio();
 	rs232_open();
 
-<<<<<<< HEAD
-//	if ((fd = open(JS_DEV, O_RDONLY)) < 0) {
-//		perror("jstest");
-//		exit(1);
-//	}
-
-//	fcntl(fd, F_SETFL, O_NONBLOCK);
-=======
+	/*
 	if ((fd = open(JS_DEV, O_RDONLY)) < 0) {
 		perror("jstest");
 		exit(1);
 	}
+	*/
 
 	fcntl(fd, F_SETFL, O_NONBLOCK);
->>>>>>> Liang
 
         FILE *fp; 
         fp = fopen("log.txt", "r+");
@@ -721,123 +589,10 @@ int main(int argc, char **argv)
 
 	/* send & receive
 	 */
-<<<<<<< HEAD
-	for (;;)
-	{
-		//get_joystick(fd);
-		//if ((c = term_getchar_nb()) != -1)
-		//	rs232_putchar(c);
-
-		//if ((c = rs232_getchar_nb()) != -1)
-		//	term_putchar(c);
-		mon_delay_ms(300);
-		if ((c = term_getchar_nb()) != -1)//still need to limit the values
-		{
-			switch (c)
-			{
-				case '0':
-					mode = SAFE;
-					break;
-				case '1':
-					mode = PANIC;
-					break;
-				case '2':
-					mode = MANUAL;
-					break;
-				case '3':
-					mode = CALIBRATION;
-					break;
-				case '4':
-					mode = YAW;
-					break;
-				case '5':
-					mode = FULL;
-					break;
-				case '6':
-					mode = RAW;
-					break;
-			}
-			//if (mode == SAFE) 
-			//{
-			//	printf("safe mode!\n");
-			//	if(c == 27)
-			//	{
-			//		demo_done = true;
-			//		break;
-			//	}
-			//	continue;
-			//}
-			switch (c)
-			{
-				//still need to limit the values
-				case 'r'://lift up
-					k_throttle++;
-					break;
-				case 'f'://lift down
-					k_throttle--;
-					if (k_throttle < 0) k_throttle = 0;
-					break;
-				case 'a'://left, roll up
-					k_roll++;
-					break;
-				case 'd'://right, roll down
-					k_roll--;
-					break;
-				case 'w'://up, pitch down
-					k_pitch--;
-					break;
-				case 's'://down, pitch up
-					k_pitch++;
-					break;
-				case 'q'://yaw down
-					k_yaw--;
-					break;
-				case 'e'://yaw up
-					k_yaw++;
-					break;
-			}
-		}
-
-		//fprintf(stderr,"mode = %d\n",mode);
-		//fprintf(stderr,"from keyboard: throttle = %d roll = %d pitch = %d yaw = %d\n",k_throttle, k_roll, k_pitch, k_yaw);
-		//fprintf(stderr,"from joystick: throttle = %d roll = %d pitch = %d yaw = %d\n",j_throttle, j_roll, j_pitch, j_yaw);
-		int8_t CRC=0;
-		command Command = {mode,k_throttle+j_throttle,k_roll+j_roll,k_pitch+j_roll,k_yaw+j_yaw, CRC};
-
-		
-		while((c = rs232_getchar_nb()) != -1)
-			term_putchar(c); 
-		//char data[8] = [Command.mode, Command.throttle, Command.roll, Command.pitch, Command.yaw]
-		uint8_t val[7];
-		val[0] = Command.mode;
-		val[1] = Command.throttle;
-		val[2] = Command.roll;
-		val[3] = Command.yaw;
-		val[4] = Command.frame;
-
-
-		//int crc = get_crc(255, &val, 7);
-		int check = get_crc(0, val, 5);
-		printf("crc %u val %d\n",check, val[0]);
-		Command.CRC = check;
-		printf("command ");
-		printf("%d ", Command.mode);
-		printf("%d ", Command.throttle);
-		printf("%d ", Command.roll);
-		printf("%d ", Command.pitch);
-		printf("%d ", Command.yaw);
-		printf("%d \n", Command.CRC);
-		send_command(Command);
-	}
-
-
-	//...
-	//packetize data and send via rs232
-
-=======
 	mon_delay_ms(1000);
 	while((c = rs232_getchar_nb()) != -1)
 		term_putchar(c);
+	
 	get_joystick(fd);
 	while(j_throttle!=0||j_yaw!=0||j_pitch!=0||j_roll!=0)
 	{
@@ -845,6 +600,7 @@ int main(int argc, char **argv)
 		mon_delay_ms(1000);
 		get_joystick(fd);
 	}
+	
 	command C = {SAFE,0,0,0,0,0};
 	send_command(C); //send the first command
 	while (1)
@@ -973,4 +729,3 @@ int main(int argc, char **argv)
         fclose(fp);
 	return 0;
 }
-

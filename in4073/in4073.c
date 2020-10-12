@@ -19,20 +19,6 @@
  * process_key -- process command keys
  *------------------------------------------------------------------
  */
-<<<<<<< HEAD
-
-void get_command(command c)
-{
-	//printf("get %u %d, %d, %d, %u\n", c.throttle c.roll, c.pitch, c.yaw, c.mode);
-	throttle = c.throttle;
-	roll = c.roll;
-	pitch = c.pitch;
-	yaw = c.yaw;
-	mode = c.mode;
-	CRC = c.CRC;
-}
-=======
->>>>>>> Liang
 
 uint32_t cur_time;
 uint32_t write_address = 0x00000000;
@@ -63,8 +49,6 @@ void get_command(command c)
         //printf("\nqueue time: %ld\n", queue_time);
 }
 
-<<<<<<< HEAD
-=======
 void flash_data()
 {
    cur_time = get_time_us();
@@ -165,14 +149,35 @@ void log_data()
     uart_put(0x7F);
 }
 
->>>>>>> Liang
+//Filtering
+
+void filter_init()
+{
+        processed_phi = 0;       
+        prev_phi_x[0] = 0;
+        prev_phi_x[1] = 0;
+        prev_phi_y[0] = 0;
+        prev_phi_y[1] = 0;       
+}
+
+void kalman_init()
+{
+        bias = 0;       
+        error = 0;
+        P2PHI = 1;
+        C1 = 1;
+        C2 = 1;     
+}
+
+
 /*------------------------------------------------------------------
  * main -- everything you need is here :)
  *------------------------------------------------------------------
  */
 int main(void)
 {
-	
+	filter_init();
+        kalman_init();
 	uart_init();
 	gpio_init();
 	timers_init();
@@ -208,7 +213,6 @@ int main(void)
                         log_data();
 			break;
                 }
->>>>>>> Liang
 
 		if (check_timer_flag()) 
 		{

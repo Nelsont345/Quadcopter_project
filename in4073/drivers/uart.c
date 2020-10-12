@@ -45,11 +45,7 @@ void UART0_IRQHandler(void)
 	{       
 
 		NRF_UART0->EVENTS_RXDRDY  = 0;
-<<<<<<< HEAD
-		printf("get data %lu \n",NRF_UART0->RXD);
-=======
 		//printf("get data %lu",NRF_UART0->RXD);
->>>>>>> Liang
 		uint8_t k = NRF_UART0->RXD;
 		
 		if (b_counter == 0 && k == 0xFF)
@@ -60,20 +56,6 @@ void UART0_IRQHandler(void)
 		else if (b_counter>0)
 		{
 			data[b_counter-1] = k;
-<<<<<<< HEAD
-			printf("get dataff%d %d",b_counter, k);
-			b_counter++;
-			
-			if(b_counter==6)
-			{
-				command c = {data[0],data[1],data[2],data[3],data[4]};
-				myenqueue( &myrx_queue, c);
-				printf("%d",myrx_queue.count);
-				b_counter = 0;
-				p_counter++;
-				//still need to check the packets
-				printf("end packet\n");
-=======
 			//printf("get data%d %d",b_counter, k);
 			b_counter++;
 			if(b_counter==14)
@@ -90,7 +72,6 @@ void UART0_IRQHandler(void)
 				uart_put(c.frame);
 				//still need to check the packets by CRC
 				//printf("end packet\n");
->>>>>>> Liang
 			}
 		}
                 // loop_time = get_time_us() - start_time;
@@ -115,11 +96,7 @@ void UART0_IRQHandler(void)
 void uart_init(void)
 {
 	init_queue(&rx_queue); // Initialize receive queue
-<<<<<<< HEAD
-	myinit_queue(&myrx_queue);
-=======
 	c_init_queue(&c_rx_queue);
->>>>>>> Liang
 	init_queue(&tx_queue); // Initialize transmit queue
 
 	nrf_gpio_cfg_output(TX_PIN_NUMBER);
