@@ -34,10 +34,8 @@
 #define YAW		4
 #define FULL		5
 #define RAW		6
-
-<<<<<<< HEAD
-=======
-#define DATASIZE        29
+#define EXIT		7
+#define DATASIZE        33
 void flash_data();
 void log_data();
 
@@ -63,15 +61,22 @@ typedef struct {
 typedef struct {
 	uint8_t frame;
 	uint8_t mode;
-	uint8_t throttle;
-	int8_t roll, pitch, yaw;
->>>>>>> Liang
+	uint16_t throttle;
+	int16_t roll, pitch, yaw;
+        uint8_t P,P1,P2;
+        uint32_t start_time;
 }command;
 
 // Control
-int16_t throttle, roll, pitch, yaw;
+uint16_t throttle;
+int16_t roll, pitch, yaw;
+int16_t P, P1, P2;
 int16_t motor[4],ae[4];
 void run_filters_and_control();
+int32_t cal_phi, cal_theta, cal_psi, cal_sp, cal_sq, cal_sr;
+int16_t c_phi, c_theta, c_psi, c_sp, c_sq, c_sr;
+int16_t y_err;
+int32_t pitch_new, roll_new;
 
 // Timers
 #define TIMER_PERIOD	50 //50ms=20Hz (MAX 23bit, 4.6h)
@@ -79,6 +84,12 @@ void timers_init(void);
 uint32_t get_time_us(void);
 bool check_timer_flag(void);
 void clear_timer_flag(void);
+uint32_t last_receiving_time; 
+
+// Profiling
+
+uint32_t start_time, loop_time, queue_time, tot_intr_time, prev_loop_time;
+uint32_t intr_start_time, intr_stop_time;
 
 // GPIO
 void gpio_init(void);
@@ -88,8 +99,7 @@ void gpio_init(void);
 #define QUEUE_SIZE 64
 =======
 #define QUEUE_SIZE 256
-#define C_QUEUE_SIZE 64
->>>>>>> Liang
+#define C_QUEUE_SIZE 32
 typedef struct {
 	uint8_t Data[QUEUE_SIZE];
 	uint16_t first,last;

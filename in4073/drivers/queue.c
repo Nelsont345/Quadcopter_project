@@ -47,12 +47,7 @@ char dequeue(queue *q){
 	return x;
 }
 
-<<<<<<< HEAD
-void myenqueue(myqueue *q,command x){
-
-	q->last = (q->last + 1) % QUEUE_SIZE;
-=======
-void c_enqueue(c_queue *q,command x){
+void c_enqueue(c_queue *q, command x){
 
 	q->last = (q->last + 1) % C_QUEUE_SIZE;
 >>>>>>> Liang
