@@ -13,6 +13,36 @@
 
 #include "in4073.h"
 #include "math.h"
+uint16_t isqrt(long x)
+{
+	/*
+	 *	Logically, these are unsigned. We need the sign bit to test
+	 *	whether (op - res - one) underflowed.
+	 */
+	if(x<0) return 0;
+	int op, res, one;
+
+	op = x;
+	res = 0;
+
+	/* "one" starts at the highest power of four <= than the argument. */
+
+	one = 1 << 30;	/* second-to-top bit set */
+	while (one > op) one >>= 2;
+
+	while (one != 0) {
+		if (op >= res + one) {
+			op = op - (res + one);
+			res = res +  2 * one;
+		}
+		res /= 2;
+		one /= 4;
+	}
+	return(res);
+}
+
+
+
 uint8_t cal_count = 0;
 int16_t fp_mul(int8_t a, int8_t b, int8_t n)
 {
@@ -38,10 +68,10 @@ void run_filters_and_control()
 		//float A = 1/4/b, B = 1/2/b, C = 1/4/d;
                  
 		int32_t A = 1, B = 1, C = 1; 
-		ae[0] = (int16_t) sqrt(A * throttle + 2 * B * pitch - C * yaw)*1.5;
-		ae[1] = (int16_t) sqrt(A * throttle - 2 * B * roll + C * yaw)*1.5;
-		ae[2] = (int16_t) sqrt(A * throttle - 2 * B * pitch - C * yaw)*1.5;
-		ae[3] = (int16_t) sqrt(A * throttle + 2 * B * roll + C * yaw)*1.5;
+		ae[0] = (int16_t) isqrt(A * throttle + 2 * B * pitch - C * yaw)*0.7+120;
+		ae[1] = (int16_t) isqrt(A * throttle - 2 * B * roll + C * yaw)*0.7+120;
+		ae[2] = (int16_t) isqrt(A * throttle - 2 * B * pitch - C * yaw)*0.7+120;
+		ae[3] = (int16_t) isqrt(A * throttle + 2 * B * roll + C * yaw)*0.7+120;
 		//printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);
 	}
 	else if (mode == PANIC)
@@ -54,7 +84,7 @@ void run_filters_and_control()
 			ae[2] *=0.9;
 			ae[3] *=0.9;
 			update_motors();
-			nrf_delay_ms(1000);
+			nrf_delay_ms(500);
 			//printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);
 		}
                 
@@ -88,42 +118,53 @@ void run_filters_and_control()
 	}
    
         else if(mode == YAW)
-        {  int16_t yaw_new;
+        {  
+	   int32_t yaw_new = 0;
            //int8_t x, y;
            int32_t A = 1, B = 1, C = 1; 
            y_err = yaw - (sr - c_sr);
-           if(y_err > 5 || y_err < -5)
-           {   
-               
+           if(y_err > 100 || y_err < -100)
+           {
                yaw_new = P * y_err;
-               //pitch = 0;
-               //roll = 0;
-	       ae[0] = (int16_t) sqrt(A * throttle + 2 * B * pitch - C * yaw_new)*1.5;
-	       ae[1] = (int16_t) sqrt(A * throttle - 2 * B * roll  + C * yaw_new)*1.5;
-	       ae[2] = (int16_t) sqrt(A * throttle - 2 * B * pitch - C * yaw_new)*1.5;
-	       ae[3] = (int16_t) sqrt(A * throttle + 2 * B * roll  + C * yaw_new)*1.5;
-           }             
+	       if(yaw_new>32767) yaw_new = 32767;
+	       if(yaw_new<-32768) yaw_new = -32768;
+           }
+           ae[0] = (int16_t) isqrt(A * throttle + 2 * B * pitch - C * yaw_new)*0.7+160;
+	   ae[1] = (int16_t) isqrt(A * throttle - 2 * B * roll  + C * yaw_new)*0.7+160;
+	   ae[2] = (int16_t) isqrt(A * throttle - 2 * B * pitch - C * yaw_new)*0.7+160;
+	   ae[3] = (int16_t) isqrt(A * throttle + 2 * B * roll  + C * yaw_new)*0.7+160;       
         }	
  
         else if(mode == FULL)
         {
-           //int16_t p_err, r_err, prate_err, rrate_err;           
-	   int32_t A = 1, B = 1, C = 1;   
+             int16_t p_err, r_err;
+                  
+	     int32_t A = 1, B = 1, C = 1;   
            
-           //p_err = 0 - theta;
-           //r_err = 0 - psi;
-          // prate_err = pitch - (sq - c_sq);
-          // rrate_err = roll - (sp - c_sp);
+             p_err = pitch - (theta - c_theta);
+             r_err = roll - (phi   - c_phi);
+           
+           //prate_err = pitch - (sq - c_sq);
+           //rrate_err = roll - (sp - c_sp);
           // yaw = 0;
 
-           pitch_new = P1 * (0 - (theta - c_theta)) - P2 * (sq - c_sq);
-           roll_new =  P1 * (0 - (phi - c_phi))   - P2 * (sp - c_sp);
+           //pitch_new = P1 * (0 - (theta - c_theta)) - P2 * (sq - c_sq);
+           //roll_new =  P1 * (0 - (phi - c_phi))   - P2 * (sp - c_sp);
+            if(p_err > 100 || p_err < -100 || r_err < -100 || r_err > 100)
+            { 
+                pitch_new = P2 * P1 * p_err - P2 * (sp - c_sp);
+                roll_new = P2 * P1 * r_err - P2 * (sq - c_sq);
+                if(pitch_new < -32768) pitch_new = -32768;
+                if(pitch_new > 32767) pitch_new = 32767;
+                if(roll_new < -32768) roll_new = -32768;
+                if(roll_new > 32767) roll_new = 32767;
+            }
+          
+          ae[0] = (int16_t) isqrt(A * throttle + 2 * B * pitch_new - C * yaw)*0.7 + 160;
+	  ae[1] = (int16_t) isqrt(A * throttle - 2 * B * roll_new  + C * yaw)*0.7 + 160;
+	  ae[2] = (int16_t) isqrt(A * throttle - 2 * B * pitch_new - C * yaw)*0.7 + 160;
+	  ae[3] = (int16_t) isqrt(A * throttle + 2 * B * roll_new  + C * yaw)*0.7 + 160;
            
-          ae[0] = (int16_t) sqrt(A * throttle + 2 * B * pitch_new - C * yaw) * 1.5;
-	  ae[1] = (int16_t) sqrt(A * throttle - 2 * B * roll_new  + C * yaw) * 1.5;
-	  ae[2] = (int16_t) sqrt(A * throttle - 2 * B * pitch_new - C * yaw) * 1.5;
-	  ae[3] = (int16_t) sqrt(A * throttle + 2 * B * roll_new  + C * yaw) * 1.5;
-
           /*while(p_err > 10 || r_err > 10)
            {
                while(prate_err > 3 || rrate_err > 3)
@@ -148,7 +189,7 @@ void run_filters_and_control()
            } */
         }
 
-        else 
+        else if(mode == SAFE) 
 	{
 		ae[0] = ae[1] = ae[2] = ae[3] = 0;
 	}
