@@ -52,14 +52,9 @@ void get_command(command c)
 void flash_data()
 {
    cur_time = get_time_us();
-   //printf("mode = %u, P = %u, P1 = %u P2 = %u yaw_err = %d c_sr = %d, c_sp = %d, c_sq = %d, roll_new = %d, pitch_new = %d\n", mode, P, P1, P2, y_err, c_sr, c_sp, c_sq, roll_new, pitch_new);
-
-  // printf("time: %10ld, throttle: %d, roll: %d, pitch: %d, yaw: %d, phi: %6d, theta: %6d, psi: %6d, sp: %6d, sq: %6d, sr: %6d, loop_time : %ld\nmode = %u, P = %u, P1 = %u P2 = %u yaw_err = %d c_sr = %d, c_sp = %d, c_sq = %d, roll_new = %d, pitch_new = %d\nae1 = %d ae2 = %d ae3 = %d ae4 = %d\n\n", cur_time, throttle, roll, pitch, yaw, phi, theta, psi, sp,sq, sr, prev_loop_time, mode, P, P1, P2, y_err, c_sr, c_sp, c_sq, roll_new, pitch_new, ae[0],ae[1],ae[2],ae[3]);
-
-    //printf("mode : %d throttle: %d yaw_err: %d P: %d c_sr: %d sr: %d ae : %d %d %d %d\n", mode, throttle, y_err, P,  c_sr, sr, ae[0], ae[1], ae[2], ae[3]);  
-printf("mode : %d throttle: %d pitch_new: %ld roll_new: %ld P1: %d P2: %d sq: %d sp: %d theta: %d phi:  %d ae : %d %d %d %d\n", mode, throttle, pitch_new, roll_new, P1, P2, sq, sp, theta, phi, ae[0], ae[1], ae[2], ae[3]); 
-
-
+  //printf("mode = %u, P = %u, P1 = %u P2 = %u yaw_err = %d c_sr = %d, c_sp = %d, c_sq = %d, roll_new = %d, pitch_new = %d\n", mode, P, P1, P2, y_err, c_sr, c_sp, c_sq, roll_new, pitch_new);
+  if(mode != 7)
+//  printf("time: %10ld, throttle: %d, roll: %d, pitch: %d, yaw: %d, phi: %6d, theta: %6d, psi: %6d, sp: %6d, sq: %6d, sr: %6d, loop_time : %ld\nmode = %u, P = %u, P1 = %u P2 = %u yaw_err = %d c_sr = %d, c_sp = %d, c_sq = %d, roll_new = %d, pitch_new = %d\n\n", cur_time, throttle, roll, pitch, yaw, phi, theta, psi, sp,sq, sr, prev_loop_time, mode, P, P1, P2, y_err, c_sr, c_sp, c_sq, roll_new, pitch_new);
    //printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n\n",ae[0],ae[1],ae[2],ae[3]);
    data[0] = ((cur_time & 0xFFFFFFFF) >> 24);
    data[1] = ((cur_time & 0xFFFFFF) >> 16);
@@ -102,8 +97,8 @@ printf("mode : %d throttle: %d pitch_new: %ld roll_new: %ld P1: %d P2: %d sq: %d
    data[31] = (prev_loop_time & 0xFFFF) >> 8;
    data[32] = (prev_loop_time & 0xFF);
   // printf("0: %d, 1: %d, 2: %d, 3: %d, 4: %d , 5: %d , 6: %d , 7: %d , 8: %d , 9: %d , 10: %d , 11: %d , 12: %d, 13: %d, 14: %d, 15: %d, 16: %d ,  17: %d, 18: %d, 19: %d, 20: %d, 21: %d, 22: %d, 23: %d,   24: %d, 25: %d , 26: %d, 27: %d, 28: %d \n", data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14], data[15],  data[16], data[17], data[18], data[19], data[20], data[21], data[22], data[23], data[24], data[25], data[26], data[27], data[28]); 
- // if (mode!= 7) 
- // { printf(" %d, %d, %d, %d, %d, %d, %d, %d ,%d ,%d , %d , %d , %d, %d, %d, %d, %d , %d, %d, %d, %d, %d, %d, %d, %d, %d , %d, %d, %d, %d, %d, %d, %d \n", data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14], data[15],  data[16], data[17], data[18], data[19], data[20], data[21], data[22], data[23], data[24], data[25], data[26], data[27], data[28], data[29], data[30], data[31], data[32]); }
+  if (mode!= 7) 
+  { printf(" %d, %d, %d, %d, %d, %d, %d, %d ,%d ,%d , %d , %d , %d, %d, %d, %d, %d , %d, %d, %d, %d, %d, %d, %d, %d, %d , %d, %d, %d, %d, %d, %d, %d \n", data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11], data[12], data[13], data[14], data[15],  data[16], data[17], data[18], data[19], data[20], data[21], data[22], data[23], data[24], data[25], data[26], data[27], data[28], data[29], data[30], data[31], data[32]); }
    //flash_write_bytes(uint32_t address, uint8_t *data, uint32_t count)
 
    if(!flash_write_bytes(write_address, data, DATASIZE))
@@ -132,17 +127,20 @@ printf("mode : %d throttle: %d pitch_new: %ld roll_new: %ld P1: %d P2: %d sq: %d
 void log_data()
 {   
     read_address = 0x00000000;
-    uart_put(0x7F);
-
+    printf("in log func\n");
+    while(ready2 == 0)
+          uart_put(0x7F);
+    printf("after start byte\n");
+    //uart_put(0x7F);
     while(read_address <= 0xFFFF)
-    { 
+    {       
             if(flash_read_bytes(read_address, data_r, DATASIZE))
             {    
                   for(int i = 0; i < DATASIZE; i++)
                   {
                           uart_put(data_r[i]);
                   }
-                  nrf_delay_ms(100);
+                  nrf_delay_ms(1000);
             }
             read_address += (DATASIZE * 8);
     }
@@ -171,7 +169,7 @@ int main(void)
 	demo_done = false;
         last_receiving_time = get_time_us();
 	while (!demo_done)
-	{       
+	{      // printf("%10ld | \n", get_time_us());
                 tot_intr_time = 0; 
 		//printf("count = %d\n",c_rx_queue.count);
 		if (c_rx_queue.count){
@@ -186,9 +184,11 @@ int main(void)
 			if(get_time_us()-last_receiving_time > 2000000) mode = PANIC;
 		}		
                 if(mode == EXIT)
-                {
-                        flash_data();
+                {   
+                       // flash_data();
+                         printf("flashed data\n");
                         log_data();
+                         printf("finished logging\n");
 			break;
                 }
 
@@ -200,7 +200,7 @@ int main(void)
 			read_baro();
                         if(counter%32 == 0)
                       {
-		       
+		        flash_data();
 			
                  /*	printf("%10ld | ", get_time_us());
 			printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
@@ -221,9 +221,6 @@ int main(void)
 			get_dmp_data();
 			run_filters_and_control();
 		}
-                 
-                if(counter%10 == 0)
-                        flash_data();
                 loop_time += ( get_time_us() - start_time );
                 //if(iflag) {printf("\nloop time: %ld, tot_intr_time: %ld, intr_start_time: %ld, intr_stop_time : %ld\n\n", loop_time, tot_intr_time, intr_start_time, intr_stop_time);
                 prev_loop_time = loop_time - tot_intr_time;

@@ -21,6 +21,8 @@ int row = 0;
 int data[0xFFFF];
 int j;
 
+int js_start_time;
+
 /*------------------------------------------------------------
  * console I/O
  *------------------------------------------------------------
@@ -280,6 +282,7 @@ bool get_joystick(int fd)
 		//fprintf(stderr,".");
 		//fprintf(stderr,"%6d ",js.number);
 		switch(js.type & ~JS_EVENT_INIT) {
+                        //js_start_time = 
 			case JS_EVENT_BUTTON:
 				button[js.number] = js.value;
 				break;
@@ -325,96 +328,23 @@ bool get_keyboard()
 				mode = PANIC;
 				return true;
 			case '2':
-				if(mode!=SAFE)
-				{
-					printf("Invalid command! Please go back to safe mode before switching mode\n");
-					return false;
-					
-				}
-				else if(j_throttle!=0||j_roll!=0||j_pitch!=0||j_yaw!=0)
-				{
-					printf("Invalid command! Please set joystick to origin\n");
-					return false;
-
-				}
-				else
-				{
-					mode = MANUAL;
-					return true;
-				}
+				mode = MANUAL;
+				return true;
 			case '3':
-				if(mode!=SAFE)
-				{
-					printf("Invalid command! Please go back to safe mode before switching mode\n");
-					return false;
-				}
-				else
-				{
-					mode = CALIBRATION;
-					return true;
-				}
+				mode = CALIBRATION;
+				return true;
 			case '4':
-				if(mode!=SAFE)
-				{
-					printf("Invalid command! Please go back to safe mode before switching mode\n");
-					return false;
-				}
-				else if(j_throttle!=0||j_roll!=0||j_pitch!=0||j_yaw!=0)
-				{
-					printf("Invalid command! Please set joystick to origin\n");
-					return false;
-
-				}
-				else
-				{
-					mode = YAW;
-					return true;
-				}
+				mode = YAW;
+				return true;
 			case '5':
-				if(mode!=SAFE)
-				{
-					printf("Invalid command! Please go back to safe mode before switching mode\n");
-					return false;
-				}
-				else if(j_throttle!=0||j_roll!=0||j_pitch!=0||j_yaw!=0)
-				{
-					printf("Invalid command! Please set joystick to origin\n");
-					return false;
-
-				}
-				else
-				{
-					mode = FULL;
-					return true;
-				}
+				mode = FULL;
+				return true;
 			case '6':
-				if(mode!=SAFE)
-				{
-					printf("Invalid command! Please go back to safe mode before switching mode\n");
-					return false;
-				}
-				else if(j_throttle!=0||j_roll!=0||j_pitch!=0||j_yaw!=0)
-				{
-					printf("Invalid command! Please set joystick to origin\n");
-					return false;
-
-				}
-				else
-				{
-					mode = RAW;
-					return true;
-				}
+				mode = RAW;
+				return true;
 			case '7':
-				if(mode!=SAFE)
-				{
-					printf("Invalid command! Please go back to safe mode before switching mode\n");
-					return false;
-				}
-				else
-				{
-					mode = EXIT;
-					return true;
-				}
+				mode = EXIT;
+				return true;
 		}
 		if (mode == SAFE) 
 		{
@@ -510,7 +440,7 @@ void get_data()
 {
 	int c;
 	while((c = rs232_getchar_nb()) != -1)
-	{
+	{       //term_puts("in while\n");
 		if(c == 255)
 		{
 			int next_c = rs232_getchar_nb();
@@ -563,16 +493,16 @@ int main(int argc, char **argv)
 
 	term_initio();
 	rs232_open();
-
+/*
 	if ((fd = open(JS_DEV, O_RDONLY)) < 0) {
 		perror("jstest");
 		exit(1);
 	}
 
 	fcntl(fd, F_SETFL, O_NONBLOCK);
-
+*/
         FILE *fp; 
-        fp = fopen("log.txt", "r+");
+        fp = fopen("log.txt", "w");
         FILE *fp_parse;
         fp_parse = fopen("log_parse.txt", "w");         
 
@@ -590,25 +520,25 @@ int main(int argc, char **argv)
 	mon_delay_ms(1000);
 	while((c = rs232_getchar_nb()) != -1)
 		term_putchar(c);
-	get_joystick(fd);
+/*	get_joystick(fd);
 	while(j_throttle!=0||j_yaw!=0||j_pitch!=0||j_roll!=0)
 	{
 		fprintf(stderr,"please set joystick to neutral\n");
 		mon_delay_ms(1000);
 		get_joystick(fd);
-	}
+	}*/
 	command C = {SAFE,0,0,0,0,0};
 	send_command(C); //send the first command
 	while (1)
 	{
 		get_data();
 		bool send = resend();
-		send = send || get_joystick(fd);
+	//	send = send || get_joystick(fd);
 		send = send || get_keyboard();
 		send = send || send_period();
 
 		//mon_delay_ms(300);
-		if(miss_count>5) mode = PANIC;
+		if(miss_count>5) {mode = PANIC; break;};
 		if( mode == EXIT) break;
 		//fprintf(stderr,"mode = %d\n",mode);
 		int ae[4];
@@ -637,41 +567,70 @@ int main(int argc, char **argv)
 	//send PANIC or EXIT until get ack
 	C.mode = mode;
 	C.frame = frame;
-	waiting_for_ack = true;
-	while(waiting_for_ack)
-	{
+	bool send = true;
+	while(send)
+	{       
 		send_command(C);
 		mon_delay_ms(t_threshold);
-		get_data();
+		while((c = rs232_getchar_nb()) != -1)
+		{
+			if(c == 255)
+			{
+				int next_c = rs232_getchar_nb();
+				if(next_c == frame-1)//if it is the ack for the last frame
+				{
+					miss_count = 0;
+					waiting_for_ack = false;
+					break;
+				}
+			}
+			else
+			{
+				term_putchar(c);
+			}
+		}
+		send = resend();
+		if(miss_count>5)
+		{
+			fprintf(stderr,"can't access to the drone!\n");
+			break;
+		}
 	}
-
-       if(C.mode == EXIT)
-        {
-              while(c = (rs232_getchar() != 0x7F));
-             /*
+       
+         if(C.mode == EXIT)
+         {
                while(1)
-              {   c = rs232_getchar();
-                  if(c == 0x7F) break;
-                  fprintf(stderr, "%d ", c);
-                  fprintf(fp, "%d ", c);
-                  //data[j] = c;
-                  //j++;
-                  //term_putchar(c);
-                  //term_puts("\t");
-                  count1++;
-                  if(count1 == LOG_SIZE - 1) 
-                  {
-                       fprintf(stderr, "\n");
-                       fprintf(fp, "\n");
-                       count1 = 0;
-                  }
-              }*/
+               {    
+                   c = rs232_getchar();
+                   if(c != 0x7F)
+                   {
+                          fprintf(stderr, "%d %c\n", c, c);    continue;
+                   }
+                   else 
+                   {
+                       rs232_putchar(0xFE);
+                       while(1)
+                       {
+                           c = rs232_getchar();
+                           fprintf(stderr, "%d %c\n", c, c);  
+                           if(c == 0x7F)
+                               break;
+
+                       }
+                       break;
+                   }
+               }      
+        }  
+   /*    if(C.mode == EXIT)
+        {     term_puts("in the if\n");
+              while(c = (rs232_getchar() != 0x7F));
+
  
              while(1)
-             {  
+             {       term_puts("waiting for char\n");
                      c = rs232_getchar();
                      if(c == 0x7F) break;
-                     fprintf(stderr, "%d ", c);
+                     fprintf(stderr, "%d\t %c ", c, c);
                   
                      if(count1 >= 0 && count1 <= 3)
                      {  
@@ -716,7 +675,7 @@ int main(int argc, char **argv)
              }      
         }
    
-
+*/
 
 
 	term_exitio();

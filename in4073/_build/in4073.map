@@ -16,12 +16,14 @@ Archive member included to satisfy reference by file (symbol)
                               _build/mpu_wrapper.o (asin)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_atan2.o)
                               _build/mpu_wrapper.o (atan2)
+/home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_sqrt.o)
+                              _build/control.o (sqrt)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o)
                               /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_asin.o) (__ieee754_asin)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_atan2.o)
                               /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_atan2.o) (__ieee754_atan2)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_sqrt.o)
-                              /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o) (__ieee754_sqrt)
+                              /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_sqrt.o) (__ieee754_sqrt)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
                               /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_atan2.o) (atan)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_lib_ver.o)
@@ -37,7 +39,7 @@ Archive member included to satisfy reference by file (symbol)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_dvmd_tls.o)
                               /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_udivsi3.o) (__aeabi_idiv0)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpdf2.o)
-                              _build/inv_mpu.o (__aeabi_dcmpgt)
+                              /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_sqrt.o) (__aeabi_dcmplt)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpsf2.o)
                               _build/inv_mpu.o (__aeabi_fcmpeq)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_aeabi_ldivmod.o)
@@ -69,9 +71,9 @@ Archive member included to satisfy reference by file (symbol)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatunsisf.o)
                               _build/inv_mpu_dmp_motion_driver.o (__aeabi_ui2f)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(adddf3.o)
-                              _build/control.o (__aeabi_dadd)
+                              _build/mpu_wrapper.o (__aeabi_dadd)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
-                              /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o) (__aeabi_ddiv)
+                              /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_sqrt.o) (__aeabi_ddiv)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqdf2.o)
                               /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpdf2.o) (__eqdf2)
 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gedf2.o)
@@ -190,7 +192,7 @@ errno               0x4               /home/lya/software_package_2.0/gcc-arm-non
 cal_theta           0x4               _build/in4073.o
 saz                 0x2               _build/in4073.o
 queue_time          0x4               _build/in4073.o
-roll_new            0x4               _build/in4073.o
+roll_new            0x2               _build/in4073.o
 cal_sp              0x4               _build/in4073.o
 rx_queue            0x106             _build/in4073.o
 phi                 0x2               _build/in4073.o
@@ -221,6 +223,7 @@ cal_psi             0x4               _build/in4073.o
 cal_sr              0x4               _build/in4073.o
 intr_start_time     0x4               _build/in4073.o
 timer_flag          0x1               _build/timers.o
+ready2              0x1               _build/in4073.o
 sp                  0x2               _build/in4073.o
 last_receiving_time
                     0x4               _build/in4073.o
@@ -230,7 +233,7 @@ motor               0x8               _build/in4073.o
 yaw                 0x2               _build/in4073.o
 last_correct_checksum_time
                     0x4               _build/in4073.o
-pitch_new           0x4               _build/in4073.o
+pitch_new           0x2               _build/in4073.o
 pitch               0x2               _build/in4073.o
 roll                0x2               _build/in4073.o
 ble_tx_queue        0x106             _build/in4073.o
@@ -286,7 +289,6 @@ Discarded input sections
  .text          0x00000000        0x0 _build/control.o
  .data          0x00000000        0x0 _build/control.o
  .bss           0x00000000        0x0 _build/control.o
- .text.isqrt    0x00000000       0x58 _build/control.o
  .text.fp_mul   0x00000000        0x8 _build/control.o
  .text.update_motors
                 0x00000000       0x78 _build/control.o
@@ -650,6 +652,9 @@ Discarded input sections
  .text          0x00000000        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_atan2.o)
  .data          0x00000000        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_atan2.o)
  .bss           0x00000000        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_atan2.o)
+ .text          0x00000000        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_sqrt.o)
+ .data          0x00000000        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_sqrt.o)
+ .bss           0x00000000        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_sqrt.o)
  .text          0x00000000        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o)
  .data          0x00000000        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o)
  .bss           0x00000000        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o)
@@ -992,7 +997,7 @@ END GROUP
  *(fs_data)
                 [!provide]                PROVIDE (__stop_fs_data, .)
 
-.text           0x00018000     0xbb14
+.text           0x00018000     0xb834
  *(.Vectors)
  .Vectors       0x00018000       0xc0 _build/gcc_startup_nrf51.o
                 0x00018000                __Vectors
@@ -1017,592 +1022,594 @@ END GROUP
                 0x000182b8       0x3c _build/nrf_delay.o
                 0x000182b8                nrf_delay_ms
  .text.flash_data
-                0x000182f4      0x1b8 _build/in4073.o
+                0x000182f4      0x248 _build/in4073.o
                 0x000182f4                flash_data
  .text.log_data
-                0x000184ac       0x68 _build/in4073.o
-                0x000184ac                log_data
+                0x0001853c       0x90 _build/in4073.o
+                0x0001853c                log_data
  .text.startup.main
-                0x00018514      0x230 _build/in4073.o
-                0x00018514                main
+                0x000185cc      0x240 _build/in4073.o
+                0x000185cc                main
  .text.run_filters_and_control
-                0x00018744      0xb1c _build/control.o
-                0x00018744                run_filters_and_control
+                0x0001880c      0x658 _build/control.o
+                0x0001880c                run_filters_and_control
  .text.gpio_init
-                0x00019260       0x8c _build/gpio.o
-                0x00019260                gpio_init
+                0x00018e64       0x8c _build/gpio.o
+                0x00018e64                gpio_init
  .text.quadrupel_timer_handler
-                0x000192ec        0xc _build/timers.o
-                0x000192ec                quadrupel_timer_handler
+                0x00018ef0        0xc _build/timers.o
+                0x00018ef0                quadrupel_timer_handler
  .text.TIMER2_IRQHandler
-                0x000192f8       0xb8 _build/timers.o
-                0x000192f8                TIMER2_IRQHandler
+                0x00018efc       0xb8 _build/timers.o
+                0x00018efc                TIMER2_IRQHandler
  .text.TIMER1_IRQHandler
-                0x000193b0       0xac _build/timers.o
-                0x000193b0                TIMER1_IRQHandler
+                0x00018fb4       0xac _build/timers.o
+                0x00018fb4                TIMER1_IRQHandler
  .text.get_time_us
-                0x0001945c       0x20 _build/timers.o
-                0x0001945c                get_time_us
+                0x00019060       0x20 _build/timers.o
+                0x00019060                get_time_us
  .text.check_timer_flag
-                0x0001947c        0xc _build/timers.o
-                0x0001947c                check_timer_flag
+                0x00019080        0xc _build/timers.o
+                0x00019080                check_timer_flag
  .text.clear_timer_flag
-                0x00019488        0xc _build/timers.o
-                0x00019488                clear_timer_flag
+                0x0001908c        0xc _build/timers.o
+                0x0001908c                clear_timer_flag
  .text.timers_init
-                0x00019494      0x1d4 _build/timers.o
-                0x00019494                timers_init
+                0x00019098      0x1d4 _build/timers.o
+                0x00019098                timers_init
  .text.uart_put
-                0x00019668       0x44 _build/uart.o
-                0x00019668                uart_put
- .text._write   0x000196ac       0x84 _build/uart.o
-                0x000196ac                _write
+                0x0001926c       0x44 _build/uart.o
+                0x0001926c                uart_put
+ .text._write   0x000192b0       0x84 _build/uart.o
+                0x000192b0                _write
  .text.UART0_IRQHandler
-                0x00019730      0x1a8 _build/uart.o
-                0x00019730                UART0_IRQHandler
+                0x00019334      0x1a0 _build/uart.o
+                0x00019334                UART0_IRQHandler
  .text.uart_init
-                0x000198d8       0xac _build/uart.o
-                0x000198d8                uart_init
+                0x000194d4       0xac _build/uart.o
+                0x000194d4                uart_init
  .text.init_queue
-                0x00019984       0x14 _build/queue.o
-                0x00019984                init_queue
+                0x00019580       0x14 _build/queue.o
+                0x00019580                init_queue
  .text.c_init_queue
-                0x00019998       0x18 _build/queue.o
-                0x00019998                c_init_queue
- .text.enqueue  0x000199b0       0x1c _build/queue.o
-                0x000199b0                enqueue
- .text.dequeue  0x000199cc       0x20 _build/queue.o
-                0x000199cc                dequeue
+                0x00019594       0x18 _build/queue.o
+                0x00019594                c_init_queue
+ .text.enqueue  0x000195ac       0x1c _build/queue.o
+                0x000195ac                enqueue
+ .text.dequeue  0x000195c8       0x20 _build/queue.o
+                0x000195c8                dequeue
  .text.c_enqueue
-                0x000199ec       0x40 _build/queue.o
-                0x000199ec                c_enqueue
+                0x000195e8       0x40 _build/queue.o
+                0x000195e8                c_enqueue
  .text.c_dequeue
-                0x00019a2c       0x34 _build/queue.o
-                0x00019a2c                c_dequeue
+                0x00019628       0x34 _build/queue.o
+                0x00019628                c_dequeue
  .text.i2c_read
-                0x00019a60       0xc0 _build/twi.o
-                0x00019a60                i2c_read
+                0x0001965c       0xc0 _build/twi.o
+                0x0001965c                i2c_read
  .text.i2c_write
-                0x00019b20       0x70 _build/twi.o
-                0x00019b20                i2c_write
+                0x0001971c       0x70 _build/twi.o
+                0x0001971c                i2c_write
  .text.SPI0_TWI0_IRQHandler
-                0x00019b90       0x70 _build/twi.o
-                0x00019b90                SPI0_TWI0_IRQHandler
+                0x0001978c       0x70 _build/twi.o
+                0x0001978c                SPI0_TWI0_IRQHandler
  .text.twi_init
-                0x00019c00       0x84 _build/twi.o
-                0x00019c00                twi_init
+                0x000197fc       0x84 _build/twi.o
+                0x000197fc                twi_init
  .text.adc_request_sample
-                0x00019c84       0x18 _build/adc.o
-                0x00019c84                adc_request_sample
+                0x00019880       0x18 _build/adc.o
+                0x00019880                adc_request_sample
  .text.ADC_IRQHandler
-                0x00019c9c       0x24 _build/adc.o
-                0x00019c9c                ADC_IRQHandler
+                0x00019898       0x24 _build/adc.o
+                0x00019898                ADC_IRQHandler
  .text.adc_init
-                0x00019cc0       0x3c _build/adc.o
-                0x00019cc0                adc_init
+                0x000198bc       0x3c _build/adc.o
+                0x000198bc                adc_init
  .text.read_baro
-                0x00019cfc      0x1b4 _build/baro.o
-                0x00019cfc                read_baro
+                0x000198f8      0x1b4 _build/baro.o
+                0x000198f8                read_baro
  .text.baro_init
-                0x00019eb0       0x34 _build/baro.o
-                0x00019eb0                baro_init
+                0x00019aac       0x34 _build/baro.o
+                0x00019aac                baro_init
  .text.sd_ble_gap_disconnect
-                0x00019ee4        0x4 _build/ble.o
+                0x00019ae0        0x4 _build/ble.o
  .text.sd_ble_gap_ppcp_set
-                0x00019ee8        0x4 _build/ble.o
+                0x00019ae4        0x4 _build/ble.o
  .text.sd_ble_gap_device_name_set
-                0x00019eec        0x4 _build/ble.o
+                0x00019ae8        0x4 _build/ble.o
  .text.sd_ble_gap_sec_params_reply
-                0x00019ef0        0x4 _build/ble.o
+                0x00019aec        0x4 _build/ble.o
  .text.sd_ble_gatts_sys_attr_set
-                0x00019ef4        0x4 _build/ble.o
+                0x00019af0        0x4 _build/ble.o
  .text.sd_ble_enable
-                0x00019ef8        0x4 _build/ble.o
+                0x00019af4        0x4 _build/ble.o
  .text.sd_nvic_EnableIRQ
-                0x00019efc        0x4 _build/ble.o
+                0x00019af8        0x4 _build/ble.o
  .text.sd_nvic_ClearPendingIRQ
-                0x00019f00        0x4 _build/ble.o
+                0x00019afc        0x4 _build/ble.o
  .text.sd_nvic_SetPriority
-                0x00019f04        0x4 _build/ble.o
+                0x00019b00        0x4 _build/ble.o
  .text.sd_radio_notification_cfg_set
-                0x00019f08        0x4 _build/ble.o
+                0x00019b04        0x4 _build/ble.o
  .text.conn_params_error_handler
-                0x00019f0c       0x1c _build/ble.o
+                0x00019b08       0x1c _build/ble.o
  .text.nus_data_handler
-                0x00019f28       0x20 _build/ble.o
+                0x00019b24       0x20 _build/ble.o
  .text.ble_evt_dispatch
-                0x00019f48       0x94 _build/ble.o
+                0x00019b44       0x94 _build/ble.o
  .text.on_conn_params_evt
-                0x00019fdc       0x38 _build/ble.o
+                0x00019bd8       0x38 _build/ble.o
  .text.SWI1_IRQHandler
-                0x0001a014       0x10 _build/ble.o
-                0x0001a014                SWI1_IRQHandler
+                0x00019c10       0x10 _build/ble.o
+                0x00019c10                SWI1_IRQHandler
  .text.ble_init
-                0x0001a024      0x204 _build/ble.o
-                0x0001a024                ble_init
+                0x00019c20      0x204 _build/ble.o
+                0x00019c20                ble_init
  .text.flash_write_bytes
-                0x0001a228      0x248 _build/spi_flash.o
-                0x0001a228                flash_write_bytes
+                0x00019e24      0x248 _build/spi_flash.o
+                0x00019e24                flash_write_bytes
  .text.flash_read_bytes
-                0x0001a470       0xf0 _build/spi_flash.o
-                0x0001a470                flash_read_bytes
+                0x0001a06c       0xf0 _build/spi_flash.o
+                0x0001a06c                flash_read_bytes
  .text.spi_flash_init
-                0x0001a560      0x230 _build/spi_flash.o
-                0x0001a560                spi_flash_init
+                0x0001a15c      0x230 _build/spi_flash.o
+                0x0001a15c                spi_flash_init
  .text.mpu_reset_fifo
-                0x0001a790      0x15c _build/inv_mpu.o
-                0x0001a790                mpu_reset_fifo
+                0x0001a38c      0x15c _build/inv_mpu.o
+                0x0001a38c                mpu_reset_fifo
  .text.mpu_lp_accel_mode
-                0x0001a8ec      0x1b8 _build/inv_mpu.o
-                0x0001a8ec                mpu_lp_accel_mode
+                0x0001a4e8      0x1b8 _build/inv_mpu.o
+                0x0001a4e8                mpu_lp_accel_mode
  .text.mpu_get_accel_fsr
-                0x0001aaa4       0x4c _build/inv_mpu.o
-                0x0001aaa4                mpu_get_accel_fsr
+                0x0001a6a0       0x4c _build/inv_mpu.o
+                0x0001a6a0                mpu_get_accel_fsr
  .text.mpu_set_lpf
-                0x0001aaf0       0x78 _build/inv_mpu.o
-                0x0001aaf0                mpu_set_lpf
+                0x0001a6ec       0x78 _build/inv_mpu.o
+                0x0001a6ec                mpu_set_lpf
  .text.mpu_set_sample_rate
-                0x0001ab68      0x168 _build/inv_mpu.o
-                0x0001ab68                mpu_set_sample_rate
+                0x0001a764      0x168 _build/inv_mpu.o
+                0x0001a764                mpu_set_sample_rate
  .text.mpu_configure_fifo
-                0x0001acd0       0xd0 _build/inv_mpu.o
-                0x0001acd0                mpu_configure_fifo
+                0x0001a8cc       0xd0 _build/inv_mpu.o
+                0x0001a8cc                mpu_configure_fifo
  .text.mpu_set_sensors
-                0x0001ada0      0x140 _build/inv_mpu.o
-                0x0001ada0                mpu_set_sensors
+                0x0001a99c      0x140 _build/inv_mpu.o
+                0x0001a99c                mpu_set_sensors
  .text.mpu_init
-                0x0001aee0      0x1f4 _build/inv_mpu.o
-                0x0001aee0                mpu_init
+                0x0001aadc      0x1f4 _build/inv_mpu.o
+                0x0001aadc                mpu_init
  .text.mpu_read_fifo_stream
-                0x0001b0d4       0xb0 _build/inv_mpu.o
-                0x0001b0d4                mpu_read_fifo_stream
+                0x0001acd0       0xb0 _build/inv_mpu.o
+                0x0001acd0                mpu_read_fifo_stream
  .text.mpu_set_int_level
-                0x0001b184       0x10 _build/inv_mpu.o
-                0x0001b184                mpu_set_int_level
+                0x0001ad80       0x10 _build/inv_mpu.o
+                0x0001ad80                mpu_set_int_level
  .text.mpu_set_int_latched
-                0x0001b194       0x68 _build/inv_mpu.o
-                0x0001b194                mpu_set_int_latched
+                0x0001ad90       0x68 _build/inv_mpu.o
+                0x0001ad90                mpu_set_int_latched
  .text.mpu_write_mem
-                0x0001b1fc       0x58 _build/inv_mpu.o
-                0x0001b1fc                mpu_write_mem
+                0x0001adf8       0x58 _build/inv_mpu.o
+                0x0001adf8                mpu_write_mem
  .text.mpu_load_firmware
-                0x0001b254      0x15c _build/inv_mpu.o
-                0x0001b254                mpu_load_firmware
+                0x0001ae50      0x15c _build/inv_mpu.o
+                0x0001ae50                mpu_load_firmware
  .text.mpu_set_dmp_state
-                0x0001b3b0      0x174 _build/inv_mpu.o
-                0x0001b3b0                mpu_set_dmp_state
+                0x0001afac      0x174 _build/inv_mpu.o
+                0x0001afac                mpu_set_dmp_state
  .text.dmp_load_motion_driver_firmware
-                0x0001b524       0x1c _build/inv_mpu_dmp_motion_driver.o
-                0x0001b524                dmp_load_motion_driver_firmware
+                0x0001b120       0x1c _build/inv_mpu_dmp_motion_driver.o
+                0x0001b120                dmp_load_motion_driver_firmware
  .text.dmp_set_orientation
-                0x0001b540      0x118 _build/inv_mpu_dmp_motion_driver.o
-                0x0001b540                dmp_set_orientation
+                0x0001b13c      0x118 _build/inv_mpu_dmp_motion_driver.o
+                0x0001b13c                dmp_set_orientation
  .text.dmp_set_fifo_rate
-                0x0001b658       0x64 _build/inv_mpu_dmp_motion_driver.o
-                0x0001b658                dmp_set_fifo_rate
+                0x0001b254       0x64 _build/inv_mpu_dmp_motion_driver.o
+                0x0001b254                dmp_set_fifo_rate
  .text.dmp_set_tap_thresh
-                0x0001b6bc      0x164 _build/inv_mpu_dmp_motion_driver.o
-                0x0001b6bc                dmp_set_tap_thresh
+                0x0001b2b8      0x164 _build/inv_mpu_dmp_motion_driver.o
+                0x0001b2b8                dmp_set_tap_thresh
  .text.dmp_enable_feature
-                0x0001b820      0x28c _build/inv_mpu_dmp_motion_driver.o
-                0x0001b820                dmp_enable_feature
+                0x0001b41c      0x28c _build/inv_mpu_dmp_motion_driver.o
+                0x0001b41c                dmp_enable_feature
  .text.dmp_read_fifo
-                0x0001baac      0x20c _build/inv_mpu_dmp_motion_driver.o
-                0x0001baac                dmp_read_fifo
+                0x0001b6a8      0x20c _build/inv_mpu_dmp_motion_driver.o
+                0x0001b6a8                dmp_read_fifo
  .text.inv_orientation_matrix_to_scalar
-                0x0001bcb8      0x11c _build/ml.o
-                0x0001bcb8                inv_orientation_matrix_to_scalar
+                0x0001b8b4      0x11c _build/ml.o
+                0x0001b8b4                inv_orientation_matrix_to_scalar
  .text.get_dmp_data
-                0x0001bdd4      0x218 _build/mpu_wrapper.o
-                0x0001bdd4                get_dmp_data
+                0x0001b9d0      0x218 _build/mpu_wrapper.o
+                0x0001b9d0                get_dmp_data
  .text.check_sensor_int_flag
-                0x0001bfec       0x20 _build/mpu_wrapper.o
-                0x0001bfec                check_sensor_int_flag
+                0x0001bbe8       0x20 _build/mpu_wrapper.o
+                0x0001bbe8                check_sensor_int_flag
  .text.imu_init
-                0x0001c00c      0x10c _build/mpu_wrapper.o
-                0x0001c00c                imu_init
+                0x0001bc08      0x10c _build/mpu_wrapper.o
+                0x0001bc08                imu_init
  .text.app_error_handler
-                0x0001c118       0x40 _build/app_error.o
-                0x0001c118                app_error_handler
+                0x0001bd14       0x40 _build/app_error.o
+                0x0001bd14                app_error_handler
  .text.rtc1_stop
-                0x0001c158       0x78 _build/app_timer.o
+                0x0001bd54       0x78 _build/app_timer.o
  .text.RTC1_IRQHandler
-                0x0001c1d0       0xe0 _build/app_timer.o
-                0x0001c1d0                RTC1_IRQHandler
+                0x0001bdcc       0xe0 _build/app_timer.o
+                0x0001bdcc                RTC1_IRQHandler
  .text.SWI0_IRQHandler
-                0x0001c2b0      0x4cc _build/app_timer.o
-                0x0001c2b0                SWI0_IRQHandler
+                0x0001beac      0x4cc _build/app_timer.o
+                0x0001beac                SWI0_IRQHandler
  .text.app_timer_init
-                0x0001c77c       0xe4 _build/app_timer.o
-                0x0001c77c                app_timer_init
+                0x0001c378       0xe4 _build/app_timer.o
+                0x0001c378                app_timer_init
  .text.app_timer_create
-                0x0001c860       0x34 _build/app_timer.o
-                0x0001c860                app_timer_create
+                0x0001c45c       0x34 _build/app_timer.o
+                0x0001c45c                app_timer_create
  .text.app_timer_start
-                0x0001c894       0xec _build/app_timer.o
-                0x0001c894                app_timer_start
+                0x0001c490       0xec _build/app_timer.o
+                0x0001c490                app_timer_start
  .text.app_timer_stop
-                0x0001c980       0xc4 _build/app_timer.o
-                0x0001c980                app_timer_stop
+                0x0001c57c       0xc4 _build/app_timer.o
+                0x0001c57c                app_timer_stop
  .text.pstorage_access_status_get
-                0x0001ca44       0x28 _build/pstorage.o
-                0x0001ca44                pstorage_access_status_get
+                0x0001c640       0x28 _build/pstorage.o
+                0x0001c640                pstorage_access_status_get
  .text.sd_ble_gap_address_get
-                0x0001ca6c        0x4 _build/ble_advdata.o
+                0x0001c668        0x4 _build/ble_advdata.o
  .text.sd_ble_gap_adv_data_set
-                0x0001ca70        0x4 _build/ble_advdata.o
+                0x0001c66c        0x4 _build/ble_advdata.o
  .text.sd_ble_gap_appearance_get
-                0x0001ca74        0x4 _build/ble_advdata.o
+                0x0001c670        0x4 _build/ble_advdata.o
  .text.sd_ble_gap_device_name_get
-                0x0001ca78        0x4 _build/ble_advdata.o
+                0x0001c674        0x4 _build/ble_advdata.o
  .text.sd_ble_uuid_encode
-                0x0001ca7c        0x4 _build/ble_advdata.o
+                0x0001c678        0x4 _build/ble_advdata.o
  .text.uuid_list_sized_encode
-                0x0001ca80       0xf8 _build/ble_advdata.o
+                0x0001c67c       0xf8 _build/ble_advdata.o
  .text.adv_data_encode
-                0x0001cb78      0x5b8 _build/ble_advdata.o
-                0x0001cb78                adv_data_encode
+                0x0001c774      0x5b8 _build/ble_advdata.o
+                0x0001c774                adv_data_encode
  .text.ble_advdata_set
-                0x0001d130       0x68 _build/ble_advdata.o
-                0x0001d130                ble_advdata_set
+                0x0001cd2c       0x68 _build/ble_advdata.o
+                0x0001cd2c                ble_advdata_set
  .text.sd_ble_gap_adv_start
-                0x0001d198        0x4 _build/ble_advertising.o
+                0x0001cd94        0x4 _build/ble_advertising.o
  .text.ble_advertising_start.part.1
-                0x0001d19c      0x2a8 _build/ble_advertising.o
+                0x0001cd98      0x2a8 _build/ble_advertising.o
  .text.ble_advertising_init
-                0x0001d444      0x144 _build/ble_advertising.o
-                0x0001d444                ble_advertising_init
+                0x0001d040      0x144 _build/ble_advertising.o
+                0x0001d040                ble_advertising_init
  .text.ble_advertising_start
-                0x0001d588       0x3c _build/ble_advertising.o
-                0x0001d588                ble_advertising_start
+                0x0001d184       0x3c _build/ble_advertising.o
+                0x0001d184                ble_advertising_start
  .text.ble_advertising_on_ble_evt
-                0x0001d5c4       0xec _build/ble_advertising.o
-                0x0001d5c4                ble_advertising_on_ble_evt
+                0x0001d1c0       0xec _build/ble_advertising.o
+                0x0001d1c0                ble_advertising_on_ble_evt
  .text.sd_ble_gap_conn_param_update
-                0x0001d6b0        0x4 _build/ble_conn_params.o
+                0x0001d2ac        0x4 _build/ble_conn_params.o
  .text.sd_ble_gap_disconnect
-                0x0001d6b4        0x4 _build/ble_conn_params.o
+                0x0001d2b0        0x4 _build/ble_conn_params.o
  .text.sd_ble_gap_ppcp_set
-                0x0001d6b8        0x4 _build/ble_conn_params.o
+                0x0001d2b4        0x4 _build/ble_conn_params.o
  .text.sd_ble_gap_ppcp_get
-                0x0001d6bc        0x4 _build/ble_conn_params.o
+                0x0001d2b8        0x4 _build/ble_conn_params.o
  .text.update_timeout_handler
-                0x0001d6c0       0x78 _build/ble_conn_params.o
+                0x0001d2bc       0x78 _build/ble_conn_params.o
  .text.conn_params_negotiation
-                0x0001d738       0x88 _build/ble_conn_params.o
+                0x0001d334       0x88 _build/ble_conn_params.o
  .text.ble_conn_params_init
-                0x0001d7c0       0x78 _build/ble_conn_params.o
-                0x0001d7c0                ble_conn_params_init
+                0x0001d3bc       0x78 _build/ble_conn_params.o
+                0x0001d3bc                ble_conn_params_init
  .text.ble_conn_params_on_ble_evt
-                0x0001d838       0xac _build/ble_conn_params.o
-                0x0001d838                ble_conn_params_on_ble_evt
+                0x0001d434       0xac _build/ble_conn_params.o
+                0x0001d434                ble_conn_params_on_ble_evt
  .text.sd_ble_gatts_service_add
-                0x0001d8e4        0x4 _build/ble_nus.o
+                0x0001d4e0        0x4 _build/ble_nus.o
  .text.sd_ble_gatts_characteristic_add
-                0x0001d8e8        0x4 _build/ble_nus.o
+                0x0001d4e4        0x4 _build/ble_nus.o
  .text.sd_ble_uuid_vs_add
-                0x0001d8ec        0x4 _build/ble_nus.o
+                0x0001d4e8        0x4 _build/ble_nus.o
  .text.ble_nus_on_ble_evt
-                0x0001d8f0       0x60 _build/ble_nus.o
-                0x0001d8f0                ble_nus_on_ble_evt
+                0x0001d4ec       0x60 _build/ble_nus.o
+                0x0001d4ec                ble_nus_on_ble_evt
  .text.ble_nus_init
-                0x0001d950      0x208 _build/ble_nus.o
-                0x0001d950                ble_nus_init
+                0x0001d54c      0x208 _build/ble_nus.o
+                0x0001d54c                ble_nus_init
  .text.sd_nvic_EnableIRQ
-                0x0001db58        0x4 _build/softdevice_handler.o
+                0x0001d754        0x4 _build/softdevice_handler.o
  .text.sd_evt_get
-                0x0001db5c        0x4 _build/softdevice_handler.o
+                0x0001d758        0x4 _build/softdevice_handler.o
  .text.sd_softdevice_enable
-                0x0001db60        0x4 _build/softdevice_handler.o
+                0x0001d75c        0x4 _build/softdevice_handler.o
  .text.sd_ble_evt_get
-                0x0001db64        0x4 _build/softdevice_handler.o
+                0x0001d760        0x4 _build/softdevice_handler.o
  .text.softdevice_assertion_handler
-                0x0001db68        0xc _build/softdevice_handler.o
-                0x0001db68                softdevice_assertion_handler
+                0x0001d764        0xc _build/softdevice_handler.o
+                0x0001d764                softdevice_assertion_handler
  .text.intern_softdevice_events_execute.part.0
-                0x0001db74       0xec _build/softdevice_handler.o
+                0x0001d770       0xec _build/softdevice_handler.o
  .text.softdevice_handler_init
-                0x0001dc60       0x4c _build/softdevice_handler.o
-                0x0001dc60                softdevice_handler_init
+                0x0001d85c       0x4c _build/softdevice_handler.o
+                0x0001d85c                softdevice_handler_init
  .text.softdevice_ble_evt_handler_set
-                0x0001dcac       0x14 _build/softdevice_handler.o
-                0x0001dcac                softdevice_ble_evt_handler_set
+                0x0001d8a8       0x14 _build/softdevice_handler.o
+                0x0001d8a8                softdevice_ble_evt_handler_set
  .text.SWI2_IRQHandler
-                0x0001dcc0       0x34 _build/softdevice_handler.o
-                0x0001dcc0                SWI2_IRQHandler
- .text          0x0001dcf4       0x54 _build/gcc_startup_nrf51.o
-                0x0001dcf4                Reset_Handler
-                0x0001dd3c                NMI_Handler
-                0x0001dd3e                HardFault_Handler
-                0x0001dd40                SVC_Handler
-                0x0001dd42                PendSV_Handler
-                0x0001dd44                SysTick_Handler
-                0x0001dd46                RTC0_IRQHandler
-                0x0001dd46                GPIOTE_IRQHandler
-                0x0001dd46                POWER_CLOCK_IRQHandler
-                0x0001dd46                RADIO_IRQHandler
-                0x0001dd46                LPCOMP_IRQHandler
-                0x0001dd46                SWI4_IRQHandler
-                0x0001dd46                TEMP_IRQHandler
-                0x0001dd46                QDEC_IRQHandler
-                0x0001dd46                SWI5_IRQHandler
-                0x0001dd46                TIMER0_IRQHandler
-                0x0001dd46                ECB_IRQHandler
-                0x0001dd46                Default_Handler
-                0x0001dd46                SWI3_IRQHandler
-                0x0001dd46                CCM_AAR_IRQHandler
-                0x0001dd46                WDT_IRQHandler
-                0x0001dd46                RNG_IRQHandler
-                0x0001dd46                SPI1_TWI1_IRQHandler
- .text.fabs     0x0001dd48        0x8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_fabs.o)
-                0x0001dd48                fabs
- .text.asin     0x0001dd50       0xc4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_asin.o)
-                0x0001dd50                asin
- .text.atan2    0x0001de14        0x8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_atan2.o)
-                0x0001de14                atan2
+                0x0001d8bc       0x34 _build/softdevice_handler.o
+                0x0001d8bc                SWI2_IRQHandler
+ .text          0x0001d8f0       0x54 _build/gcc_startup_nrf51.o
+                0x0001d8f0                Reset_Handler
+                0x0001d938                NMI_Handler
+                0x0001d93a                HardFault_Handler
+                0x0001d93c                SVC_Handler
+                0x0001d93e                PendSV_Handler
+                0x0001d940                SysTick_Handler
+                0x0001d942                RTC0_IRQHandler
+                0x0001d942                GPIOTE_IRQHandler
+                0x0001d942                POWER_CLOCK_IRQHandler
+                0x0001d942                RADIO_IRQHandler
+                0x0001d942                LPCOMP_IRQHandler
+                0x0001d942                SWI4_IRQHandler
+                0x0001d942                TEMP_IRQHandler
+                0x0001d942                QDEC_IRQHandler
+                0x0001d942                SWI5_IRQHandler
+                0x0001d942                TIMER0_IRQHandler
+                0x0001d942                ECB_IRQHandler
+                0x0001d942                Default_Handler
+                0x0001d942                SWI3_IRQHandler
+                0x0001d942                CCM_AAR_IRQHandler
+                0x0001d942                WDT_IRQHandler
+                0x0001d942                RNG_IRQHandler
+                0x0001d942                SPI1_TWI1_IRQHandler
+ .text.fabs     0x0001d944        0x8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_fabs.o)
+                0x0001d944                fabs
+ .text.asin     0x0001d94c       0xc4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_asin.o)
+                0x0001d94c                asin
+ .text.atan2    0x0001da10        0x8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_atan2.o)
+                0x0001da10                atan2
+ .text.sqrt     0x0001da18       0xc0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_sqrt.o)
+                0x0001da18                sqrt
  .text.__ieee754_asin
-                0x0001de1c      0x3cc /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o)
-                0x0001de1c                __ieee754_asin
+                0x0001dad8      0x3cc /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o)
+                0x0001dad8                __ieee754_asin
  .text.__ieee754_atan2
-                0x0001e1e8      0x178 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_atan2.o)
-                0x0001e1e8                __ieee754_atan2
+                0x0001dea4      0x178 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_atan2.o)
+                0x0001dea4                __ieee754_atan2
  .text.__ieee754_sqrt
-                0x0001e360      0x1ec /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_sqrt.o)
-                0x0001e360                __ieee754_sqrt
- .text.atan     0x0001e54c      0x33c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
-                0x0001e54c                atan
- .text.matherr  0x0001e888        0x4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_matherr.o)
-                0x0001e888                matherr
- .text.nan      0x0001e88c        0xc /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_nan.o)
-                0x0001e88c                nan
- .text          0x0001e898      0x114 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_udivsi3.o)
-                0x0001e898                __udivsi3
-                0x0001e898                __aeabi_uidiv
-                0x0001e9a4                __aeabi_uidivmod
- .text          0x0001e9ac      0x1d4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_divsi3.o)
-                0x0001e9ac                __aeabi_idiv
-                0x0001e9ac                __divsi3
-                0x0001eb78                __aeabi_idivmod
- .text          0x0001eb80        0x4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_dvmd_tls.o)
-                0x0001eb80                __aeabi_ldiv0
-                0x0001eb80                __aeabi_idiv0
- .text          0x0001eb84       0x7c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpdf2.o)
-                0x0001eb84                __aeabi_cdrcmple
-                0x0001eb94                __aeabi_cdcmple
-                0x0001eb94                __aeabi_cdcmpeq
-                0x0001eba4                __aeabi_dcmpeq
-                0x0001ebb0                __aeabi_dcmplt
-                0x0001ebc4                __aeabi_dcmple
-                0x0001ebd8                __aeabi_dcmpgt
-                0x0001ebec                __aeabi_dcmpge
- .text          0x0001ec00       0x74 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpsf2.o)
-                0x0001ec00                __aeabi_cfrcmple
-                0x0001ec08                __aeabi_cfcmple
-                0x0001ec08                __aeabi_cfcmpeq
-                0x0001ec18                __aeabi_fcmpeq
-                0x0001ec24                __aeabi_fcmplt
-                0x0001ec38                __aeabi_fcmple
-                0x0001ec4c                __aeabi_fcmpgt
-                0x0001ec60                __aeabi_fcmpge
- .text          0x0001ec74       0x58 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_muldi3.o)
-                0x0001ec74                __aeabi_lmul
-                0x0001ec74                __muldi3
- .text          0x0001eccc       0x30 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_fixunssfsi.o)
-                0x0001eccc                __aeabi_f2uiz
-                0x0001eccc                __fixunssfsi
- .text          0x0001ecfc      0x2ec /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(addsf3.o)
-                0x0001ecfc                __aeabi_fadd
- .text          0x0001efe8      0x234 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
-                0x0001efe8                __aeabi_fdiv
- .text          0x0001f21c       0x50 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqsf2.o)
-                0x0001f21c                __nesf2
-                0x0001f21c                __eqsf2
- .text          0x0001f26c       0x88 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gesf2.o)
-                0x0001f26c                __gtsf2
-                0x0001f26c                __gesf2
- .text          0x0001f2f4       0x88 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(lesf2.o)
-                0x0001f2f4                __lesf2
-                0x0001f2f4                __ltsf2
- .text          0x0001f37c      0x228 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
-                0x0001f37c                __aeabi_fmul
- .text          0x0001f5a4      0x30c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subsf3.o)
-                0x0001f5a4                __aeabi_fsub
- .text          0x0001f8b0       0x44 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixsfsi.o)
-                0x0001f8b0                __aeabi_f2iz
- .text          0x0001f8f4       0x90 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsisf.o)
-                0x0001f8f4                __aeabi_i2f
- .text          0x0001f984       0x7c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatunsisf.o)
-                0x0001f984                __aeabi_ui2f
- .text          0x0001fa00      0x658 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(adddf3.o)
-                0x0001fa00                __aeabi_dadd
- .text          0x00020058      0x62c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
-                0x00020058                __aeabi_ddiv
- .text          0x00020684       0x80 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqdf2.o)
-                0x00020684                __eqdf2
-                0x00020684                __nedf2
- .text          0x00020704       0xc8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gedf2.o)
-                0x00020704                __gtdf2
-                0x00020704                __gedf2
- .text          0x000207cc       0xd4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(ledf2.o)
-                0x000207cc                __ltdf2
-                0x000207cc                __ledf2
- .text          0x000208a0      0x4f4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
-                0x000208a0                __aeabi_dmul
- .text          0x00020d94      0x6a8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subdf3.o)
-                0x00020d94                __aeabi_dsub
- .text          0x0002143c       0x40 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(unorddf2.o)
-                0x0002143c                __aeabi_dcmpun
- .text          0x0002147c       0x6c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixdfsi.o)
-                0x0002147c                __aeabi_d2iz
- .text          0x000214e8       0x84 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsidf.o)
-                0x000214e8                __aeabi_i2d
- .text          0x0002156c       0xa8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(extendsfdf2.o)
-                0x0002156c                __aeabi_f2d
- .text          0x00021614       0x3c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_clzsi2.o)
-                0x00021614                __clzsi2
- .text.__errno  0x00021650        0xc /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-errno.o)
-                0x00021650                __errno
- .text.memcmp   0x0002165c       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcmp.o)
-                0x0002165c                memcmp
- .text.memcpy   0x0002167a       0x12 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
-                0x0002167a                memcpy
- .text.printf   0x0002168c       0x34 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
-                0x0002168c                printf
-                0x0002168c                iprintf
- .text.sprintf  0x000216c0       0x44 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sprintf.o)
-                0x000216c0                sprintf
-                0x000216c0                siprintf
- .text          0x00021704        0xe /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-strlen.o)
-                0x00021704                strlen
- *fill*         0x00021712        0x2 
+                0x0001e01c      0x1ec /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_sqrt.o)
+                0x0001e01c                __ieee754_sqrt
+ .text.atan     0x0001e208      0x33c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
+                0x0001e208                atan
+ .text.matherr  0x0001e544        0x4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_matherr.o)
+                0x0001e544                matherr
+ .text.nan      0x0001e548        0xc /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_nan.o)
+                0x0001e548                nan
+ .text          0x0001e554      0x114 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_udivsi3.o)
+                0x0001e554                __udivsi3
+                0x0001e554                __aeabi_uidiv
+                0x0001e660                __aeabi_uidivmod
+ .text          0x0001e668      0x1d4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_divsi3.o)
+                0x0001e668                __aeabi_idiv
+                0x0001e668                __divsi3
+                0x0001e834                __aeabi_idivmod
+ .text          0x0001e83c        0x4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_dvmd_tls.o)
+                0x0001e83c                __aeabi_ldiv0
+                0x0001e83c                __aeabi_idiv0
+ .text          0x0001e840       0x7c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpdf2.o)
+                0x0001e840                __aeabi_cdrcmple
+                0x0001e850                __aeabi_cdcmple
+                0x0001e850                __aeabi_cdcmpeq
+                0x0001e860                __aeabi_dcmpeq
+                0x0001e86c                __aeabi_dcmplt
+                0x0001e880                __aeabi_dcmple
+                0x0001e894                __aeabi_dcmpgt
+                0x0001e8a8                __aeabi_dcmpge
+ .text          0x0001e8bc       0x74 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpsf2.o)
+                0x0001e8bc                __aeabi_cfrcmple
+                0x0001e8c4                __aeabi_cfcmple
+                0x0001e8c4                __aeabi_cfcmpeq
+                0x0001e8d4                __aeabi_fcmpeq
+                0x0001e8e0                __aeabi_fcmplt
+                0x0001e8f4                __aeabi_fcmple
+                0x0001e908                __aeabi_fcmpgt
+                0x0001e91c                __aeabi_fcmpge
+ .text          0x0001e930       0x58 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_muldi3.o)
+                0x0001e930                __aeabi_lmul
+                0x0001e930                __muldi3
+ .text          0x0001e988       0x30 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_fixunssfsi.o)
+                0x0001e988                __aeabi_f2uiz
+                0x0001e988                __fixunssfsi
+ .text          0x0001e9b8      0x2ec /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(addsf3.o)
+                0x0001e9b8                __aeabi_fadd
+ .text          0x0001eca4      0x234 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
+                0x0001eca4                __aeabi_fdiv
+ .text          0x0001eed8       0x50 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqsf2.o)
+                0x0001eed8                __nesf2
+                0x0001eed8                __eqsf2
+ .text          0x0001ef28       0x88 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gesf2.o)
+                0x0001ef28                __gtsf2
+                0x0001ef28                __gesf2
+ .text          0x0001efb0       0x88 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(lesf2.o)
+                0x0001efb0                __lesf2
+                0x0001efb0                __ltsf2
+ .text          0x0001f038      0x228 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
+                0x0001f038                __aeabi_fmul
+ .text          0x0001f260      0x30c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subsf3.o)
+                0x0001f260                __aeabi_fsub
+ .text          0x0001f56c       0x44 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixsfsi.o)
+                0x0001f56c                __aeabi_f2iz
+ .text          0x0001f5b0       0x90 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsisf.o)
+                0x0001f5b0                __aeabi_i2f
+ .text          0x0001f640       0x7c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatunsisf.o)
+                0x0001f640                __aeabi_ui2f
+ .text          0x0001f6bc      0x658 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(adddf3.o)
+                0x0001f6bc                __aeabi_dadd
+ .text          0x0001fd14      0x62c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
+                0x0001fd14                __aeabi_ddiv
+ .text          0x00020340       0x80 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqdf2.o)
+                0x00020340                __eqdf2
+                0x00020340                __nedf2
+ .text          0x000203c0       0xc8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gedf2.o)
+                0x000203c0                __gtdf2
+                0x000203c0                __gedf2
+ .text          0x00020488       0xd4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(ledf2.o)
+                0x00020488                __ltdf2
+                0x00020488                __ledf2
+ .text          0x0002055c      0x4f4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
+                0x0002055c                __aeabi_dmul
+ .text          0x00020a50      0x6a8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subdf3.o)
+                0x00020a50                __aeabi_dsub
+ .text          0x000210f8       0x40 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(unorddf2.o)
+                0x000210f8                __aeabi_dcmpun
+ .text          0x00021138       0x6c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixdfsi.o)
+                0x00021138                __aeabi_d2iz
+ .text          0x000211a4       0x84 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsidf.o)
+                0x000211a4                __aeabi_i2d
+ .text          0x00021228       0xa8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(extendsfdf2.o)
+                0x00021228                __aeabi_f2d
+ .text          0x000212d0       0x3c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_clzsi2.o)
+                0x000212d0                __clzsi2
+ .text.__errno  0x0002130c        0xc /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-errno.o)
+                0x0002130c                __errno
+ .text.memcmp   0x00021318       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcmp.o)
+                0x00021318                memcmp
+ .text.memcpy   0x00021336       0x12 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
+                0x00021336                memcpy
+ .text.printf   0x00021348       0x34 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
+                0x00021348                printf
+                0x00021348                iprintf
+ .text.sprintf  0x0002137c       0x44 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sprintf.o)
+                0x0002137c                sprintf
+                0x0002137c                siprintf
+ .text          0x000213c0        0xe /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-strlen.o)
+                0x000213c0                strlen
+ *fill*         0x000213ce        0x2 
  .text._cleanup_r
-                0x00021714       0x10 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00021714                _cleanup_r
+                0x000213d0       0x10 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x000213d0                _cleanup_r
  .text.std.isra.0
-                0x00021724       0x48 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x000213e0       0x48 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
  .text.__sfmoreglue
-                0x0002176c       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x0002176c                __sfmoreglue
- .text.__sinit  0x00021798       0x68 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00021798                __sinit
- .text.__sfp    0x00021800       0x7c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00021800                __sfp
+                0x00021428       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00021428                __sfmoreglue
+ .text.__sinit  0x00021454       0x68 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00021454                __sinit
+ .text.__sfp    0x000214bc       0x7c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x000214bc                __sfp
  .text._fwalk_reent
-                0x0002187c       0x42 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
-                0x0002187c                _fwalk_reent
- *fill*         0x000218be        0x2 
+                0x00021538       0x42 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
+                0x00021538                _fwalk_reent
+ *fill*         0x0002157a        0x2 
  .text._malloc_r
-                0x000218c0       0xc0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
-                0x000218c0                _malloc_r
+                0x0002157c       0xc0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
+                0x0002157c                _malloc_r
  .text.__ssputs_r
-                0x00021980       0xc4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
-                0x00021980                __ssputs_r
+                0x0002163c       0xc4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x0002163c                __ssputs_r
  .text._svfprintf_r
-                0x00021a44      0x1fc /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
-                0x00021a44                _svfprintf_r
-                0x00021a44                _svfiprintf_r
+                0x00021700      0x1fc /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x00021700                _svfprintf_r
+                0x00021700                _svfiprintf_r
  .text.__sfputc_r
-                0x00021c40       0x2a /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000218fc       0x2a /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
  .text.__sfputs_r
-                0x00021c6a       0x24 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x00021c6a                __sfputs_r
- *fill*         0x00021c8e        0x2 
+                0x00021926       0x24 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x00021926                __sfputs_r
+ *fill*         0x0002194a        0x2 
  .text._vfprintf_r
-                0x00021c90      0x238 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x00021c90                _vfiprintf_r
-                0x00021c90                _vfprintf_r
+                0x0002194c      0x238 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x0002194c                _vfiprintf_r
+                0x0002194c                _vfprintf_r
  .text._printf_common
-                0x00021ec8       0xdc /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x00021ec8                _printf_common
+                0x00021b84       0xdc /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00021b84                _printf_common
  .text._printf_i
-                0x00021fa4      0x244 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x00021fa4                _printf_i
- .text._sbrk_r  0x000221e8       0x24 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sbrkr.o)
-                0x000221e8                _sbrk_r
- .text.__sread  0x0002220c       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x0002220c                __sread
+                0x00021c60      0x244 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00021c60                _printf_i
+ .text._sbrk_r  0x00021ea4       0x24 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sbrkr.o)
+                0x00021ea4                _sbrk_r
+ .text.__sread  0x00021ec8       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x00021ec8                __sread
  .text.__swrite
-                0x00022234       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x00022234                __swrite
- .text.__sseek  0x0002226c       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x0002226c                __sseek
+                0x00021ef0       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x00021ef0                __swrite
+ .text.__sseek  0x00021f28       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x00021f28                __sseek
  .text.__sclose
-                0x00022298        0xc /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x00022298                __sclose
+                0x00021f54        0xc /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x00021f54                __sclose
  .text.__swbuf_r
-                0x000222a4       0xb0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
-                0x000222a4                __swbuf_r
+                0x00021f60       0xb0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
+                0x00021f60                __swbuf_r
  .text._write_r
-                0x00022354       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-writer.o)
-                0x00022354                _write_r
+                0x00022010       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-writer.o)
+                0x00022010                _write_r
  .text.__swsetup_r
-                0x0002237c       0xec /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
-                0x0002237c                __swsetup_r
+                0x00022038       0xec /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
+                0x00022038                __swsetup_r
  .text._close_r
-                0x00022468       0x24 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-closer.o)
-                0x00022468                _close_r
+                0x00022124       0x24 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-closer.o)
+                0x00022124                _close_r
  .text.__sflush_r
-                0x0002248c      0x10c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
-                0x0002248c                __sflush_r
+                0x00022148      0x10c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
+                0x00022148                __sflush_r
  .text._fflush_r
-                0x00022598       0x58 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
-                0x00022598                _fflush_r
+                0x00022254       0x58 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
+                0x00022254                _fflush_r
  .text._lseek_r
-                0x000225f0       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-lseekr.o)
-                0x000225f0                _lseek_r
+                0x000222ac       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-lseekr.o)
+                0x000222ac                _lseek_r
  .text.__swhatbuf_r
-                0x00022618       0x4c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
-                0x00022618                __swhatbuf_r
+                0x000222d4       0x4c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
+                0x000222d4                __swhatbuf_r
  .text.__smakebuf_r
-                0x00022664       0x7c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
-                0x00022664                __smakebuf_r
- .text.memchr   0x000226e0       0x16 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr-stub.o)
-                0x000226e0                memchr
- .text.memmove  0x000226f6       0x2a /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memmove.o)
-                0x000226f6                memmove
+                0x00022320       0x7c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
+                0x00022320                __smakebuf_r
+ .text.memchr   0x0002239c       0x16 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr-stub.o)
+                0x0002239c                memchr
+ .text.memmove  0x000223b2       0x2a /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memmove.o)
+                0x000223b2                memmove
  .text.__malloc_lock
-                0x00022720        0x2 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
-                0x00022720                __malloc_lock
+                0x000223dc        0x2 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
+                0x000223dc                __malloc_lock
  .text.__malloc_unlock
-                0x00022722        0x2 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
-                0x00022722                __malloc_unlock
- .text._free_r  0x00022724       0x98 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
-                0x00022724                _free_r
+                0x000223de        0x2 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
+                0x000223de                __malloc_unlock
+ .text._free_r  0x000223e0       0x98 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
+                0x000223e0                _free_r
  .text._realloc_r
-                0x000227bc       0x4c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-reallocr.o)
-                0x000227bc                _realloc_r
- .text._read_r  0x00022808       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-readr.o)
-                0x00022808                _read_r
+                0x00022478       0x4c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-reallocr.o)
+                0x00022478                _realloc_r
+ .text._read_r  0x000224c4       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-readr.o)
+                0x000224c4                _read_r
  .text._fstat_r
-                0x00022830       0x24 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fstatr.o)
-                0x00022830                _fstat_r
+                0x000224ec       0x24 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fstatr.o)
+                0x000224ec                _fstat_r
  .text._isatty_r
-                0x00022854       0x24 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-isattyr.o)
-                0x00022854                _isatty_r
+                0x00022510       0x24 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-isattyr.o)
+                0x00022510                _isatty_r
  .text._malloc_usable_size_r
-                0x00022878       0x16 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-msizer.o)
-                0x00022878                _malloc_usable_size_r
- *fill*         0x0002288e        0x2 
- .text._close   0x00022890       0x10 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(close.o)
-                0x00022890                _close
- .text._fstat   0x000228a0       0x10 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(fstat.o)
-                0x000228a0                _fstat
- .text._isatty  0x000228b0       0x10 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(isatty.o)
-                0x000228b0                _isatty
- .text._lseek   0x000228c0       0x10 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(lseek.o)
-                0x000228c0                _lseek
- .text._read    0x000228d0       0x10 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(read.o)
-                0x000228d0                _read
- .text._sbrk    0x000228e0       0x1c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(sbrk.o)
-                0x000228e0                _sbrk
+                0x00022534       0x16 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-msizer.o)
+                0x00022534                _malloc_usable_size_r
+ *fill*         0x0002254a        0x2 
+ .text._close   0x0002254c       0x10 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(close.o)
+                0x0002254c                _close
+ .text._fstat   0x0002255c       0x10 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(fstat.o)
+                0x0002255c                _fstat
+ .text._isatty  0x0002256c       0x10 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(isatty.o)
+                0x0002256c                _isatty
+ .text._lseek   0x0002257c       0x10 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(lseek.o)
+                0x0002257c                _lseek
+ .text._read    0x0002258c       0x10 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(read.o)
+                0x0002258c                _read
+ .text._sbrk    0x0002259c       0x1c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(sbrk.o)
+                0x0002259c                _sbrk
  *(.init)
- .init          0x000228fc        0x4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x000228fc                _init
- .init          0x00022900        0x8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+ .init          0x000225b8        0x4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x000225b8                _init
+ .init          0x000225bc        0x8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
  *(.fini)
- .fini          0x00022908        0x4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x00022908                _fini
- .fini          0x0002290c        0x8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+ .fini          0x000225c4        0x4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x000225c4                _fini
+ .fini          0x000225c8        0x8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -1615,116 +1622,120 @@ END GROUP
  *(.dtors)
  *(.rodata*)
  .rodata.str1.1
-                0x00022914        0x2 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
- *fill*         0x00022916        0x2 
+                0x000225d0        0x2 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
+ *fill*         0x000225d2        0x2 
  .rodata._global_impure_ptr
-                0x00022918        0x4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
-                0x00022918                _global_impure_ptr
+                0x000225d4        0x4 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
+                0x000225d4                _global_impure_ptr
  .rodata.str1.4
-                0x0002291c       0x86 _build/in4073.o
- *fill*         0x000229a2        0x2 
+                0x000225d8       0xe2 _build/in4073.o
+ *fill*         0x000226ba        0x2 
  .rodata.str1.4
-                0x000229a4       0x21 _build/control.o
- *fill*         0x000229c5        0x3 
- .rodata.quadrupel_timer.7157
-                0x000229c8        0x4 _build/timers.o
+                0x000226bc       0x21 _build/control.o
+ *fill*         0x000226dd        0x3 
+ .rodata.quadrupel_timer.7158
+                0x000226e0        0x4 _build/timers.o
  .rodata.str1.4
-                0x000229cc       0x11 _build/uart.o
- *fill*         0x000229dd        0x3 
+                0x000226e4       0x11 _build/uart.o
+ *fill*         0x000226f5        0x3 
  .rodata.str1.4
-                0x000229e0       0x38 _build/twi.o
+                0x000226f8       0x38 _build/twi.o
  .rodata.str1.4
-                0x00022a18       0x12 _build/ble.o
- *fill*         0x00022a2a        0x2 
- .rodata.test   0x00022a2c       0x28 _build/inv_mpu.o
-                0x00022a2c                test
+                0x00022730       0x12 _build/ble.o
+ *fill*         0x00022742        0x2 
+ .rodata.test   0x00022744       0x28 _build/inv_mpu.o
+                0x00022744                test
  .rodata.str1.4
-                0x00022a54       0xa6 _build/inv_mpu.o
- *fill*         0x00022afa        0x2 
- .rodata.hw     0x00022afc        0xc _build/inv_mpu.o
-                0x00022afc                hw
- .rodata.reg    0x00022b08       0x1e _build/inv_mpu.o
-                0x00022b08                reg
- *fill*         0x00022b26        0x2 
- .rodata        0x00022b28       0x4b _build/inv_mpu_dmp_motion_driver.o
- *fill*         0x00022b73        0x1 
+                0x0002276c       0xa6 _build/inv_mpu.o
+ *fill*         0x00022812        0x2 
+ .rodata.hw     0x00022814        0xc _build/inv_mpu.o
+                0x00022814                hw
+ .rodata.reg    0x00022820       0x1e _build/inv_mpu.o
+                0x00022820                reg
+ *fill*         0x0002283e        0x2 
+ .rodata        0x00022840       0x4b _build/inv_mpu_dmp_motion_driver.o
+ *fill*         0x0002288b        0x1 
  .rodata.dmp_memory
-                0x00022b74      0xbf6 _build/inv_mpu_dmp_motion_driver.o
- *fill*         0x0002376a        0x2 
+                0x0002288c      0xbf6 _build/inv_mpu_dmp_motion_driver.o
+ *fill*         0x00023482        0x2 
  .rodata.str1.4
-                0x0002376c      0x14a _build/mpu_wrapper.o
- *fill*         0x000238b6        0x2 
+                0x00023484      0x14a _build/mpu_wrapper.o
+ *fill*         0x000235ce        0x2 
  .rodata.str1.4
-                0x000238b8       0x27 _build/app_error.o
- *fill*         0x000238df        0x1 
+                0x000235d0       0x27 _build/app_error.o
+ *fill*         0x000235f7        0x1 
  .rodata.m_conn_params_timer_id
-                0x000238e0        0x4 _build/ble_conn_params.o
- .rodata        0x000238e4       0x10 _build/ble_nus.o
+                0x000235f8        0x4 _build/ble_conn_params.o
+ .rodata        0x000235fc       0x10 _build/ble_nus.o
  .rodata.str1.4
-                0x000238f4        0x8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_asin.o)
+                0x0002360c        0x5 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_asin.o)
                                   0x9 (size before relaxing)
- *fill*         0x000238fc        0x4 
+ *fill*         0x00023611        0x3 
+ .rodata.str1.4
+                0x00023614        0x8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_sqrt.o)
+                                  0x5 (size before relaxing)
+ *fill*         0x0002361c        0x4 
  .rodata.atanlo
-                0x00023900       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
+                0x00023620       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
  .rodata.atanhi
-                0x00023920       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
- .rodata        0x00023940       0x80 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
- .rodata        0x000239c0       0x40 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
- .rodata        0x00023a00       0x40 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
- .rodata        0x00023a40       0x40 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
+                0x00023640       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
+ .rodata        0x00023660       0x80 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
+ .rodata        0x000236e0       0x40 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
+ .rodata        0x00023720       0x40 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
+ .rodata        0x00023760       0x40 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
  .rodata.__sf_fake_stdin
-                0x00023a80       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00023a80                __sf_fake_stdin
+                0x000237a0       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x000237a0                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x00023aa0       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00023aa0                __sf_fake_stdout
+                0x000237c0       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x000237c0                __sf_fake_stdout
  .rodata.__sf_fake_stderr
-                0x00023ac0       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00023ac0                __sf_fake_stderr
+                0x000237e0       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x000237e0                __sf_fake_stderr
  .rodata.str1.1
-                0x00023ae0       0x11 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x00023800       0x11 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
  .rodata.str1.1
-                0x00023af1       0x11 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x00023811       0x11 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
  .rodata.str1.1
-                0x00023af1       0x22 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00023811       0x22 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
  *(.eh_frame*)
- *fill*         0x00023b13        0x1 
- .eh_frame      0x00023b14        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
-                0x00023b14                . = ALIGN (0x4)
+ *fill*         0x00023833        0x1 
+ .eh_frame      0x00023834        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+                0x00023834                . = ALIGN (0x4)
 
-.glue_7         0x00023b14        0x0
- .glue_7        0x00023b14        0x0 linker stubs
+.glue_7         0x00023834        0x0
+ .glue_7        0x00023834        0x0 linker stubs
 
-.glue_7t        0x00023b14        0x0
- .glue_7t       0x00023b14        0x0 linker stubs
+.glue_7t        0x00023834        0x0
+ .glue_7t       0x00023834        0x0 linker stubs
 
-.vfp11_veneer   0x00023b14        0x0
- .vfp11_veneer  0x00023b14        0x0 linker stubs
+.vfp11_veneer   0x00023834        0x0
+ .vfp11_veneer  0x00023834        0x0 linker stubs
 
-.v4_bx          0x00023b14        0x0
- .v4_bx         0x00023b14        0x0 linker stubs
+.v4_bx          0x00023834        0x0
+ .v4_bx         0x00023834        0x0 linker stubs
 
-.iplt           0x00023b14        0x0
- .iplt          0x00023b14        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.iplt           0x00023834        0x0
+ .iplt          0x00023834        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.ARM.extab      0x00023b14        0x0
+.ARM.extab      0x00023834        0x0
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00023b14                . = ALIGN (0x4)
-                0x00023b14                __exidx_start = .
+                0x00023834                . = ALIGN (0x4)
+                0x00023834                __exidx_start = .
 
-.ARM.exidx      0x00023b14        0x8
+.ARM.exidx      0x00023834        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00023b14        0x8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
- .ARM.exidx     0x00023b1c        0x0 _build/gcc_startup_nrf51.o
+ .ARM.exidx     0x00023834        0x8 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.exidx     0x0002383c        0x0 _build/gcc_startup_nrf51.o
                                   0x8 (size before relaxing)
-                0x00023b1c                . = ALIGN (0x4)
-                0x00023b1c                __exidx_end = .
-                0x00023b1c                __etext = .
+                0x0002383c                . = ALIGN (0x4)
+                0x0002383c                __exidx_end = .
+                0x0002383c                __etext = .
 
-.rel.dyn        0x00023b1c        0x0
- .rel.iplt      0x00023b1c        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.rel.dyn        0x0002383c        0x0
+ .rel.iplt      0x0002383c        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.data           0x20002000       0xb4 load address 0x00023b1c
+.data           0x20002000       0xb4 load address 0x0002383c
                 0x20002000                __data_start__ = .
  *(vtable)
  *(.data*)
@@ -1743,7 +1754,7 @@ END GROUP
                 0x2000206c        0x2 _build/ble.o
  *fill*         0x2000206e        0x2 
  .data.st       0x20002070       0x2c _build/inv_mpu.o
- .data.gyro_orientation.7077
+ .data.gyro_orientation.7078
                 0x2000209c        0x9 _build/mpu_wrapper.o
  *fill*         0x200020a5        0x1 
  .data.current_slave_link_conn_handle.7275
@@ -1773,10 +1784,10 @@ END GROUP
                 0x200020b4                . = ALIGN (0x4)
                 0x200020b4                __data_end__ = .
 
-.igot.plt       0x200020b4        0x0 load address 0x00023bd0
+.igot.plt       0x200020b4        0x0 load address 0x000238f0
  .igot.plt      0x200020b4        0x0 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.bss            0x200020b4      0xd1c load address 0x00023bd0
+.bss            0x200020b4      0xd1c load address 0x000238f0
                 0x200020b4                . = ALIGN (0x4)
                 0x200020b4                __bss_start__ = .
  *(.bss*)
@@ -1794,9 +1805,9 @@ END GROUP
                 0x200020dc        0x1 _build/control.o
                 0x200020dc                cal_count
  *fill*         0x200020dd        0x3 
- .bss.APP_TIMER_BUF.7153
+ .bss.APP_TIMER_BUF.7154
                 0x200020e0      0x1c8 _build/timers.o
- .bss.quadrupel_timer_data.7156
+ .bss.quadrupel_timer_data.7157
                 0x200022a8       0x20 _build/timers.o
  .bss.p_counter
                 0x200022c8        0x2 _build/uart.o
@@ -1814,10 +1825,10 @@ END GROUP
  *fill*         0x200022e3        0x1 
  .bss.initTime  0x200022e4        0x4 _build/baro.o
                 0x200022e4                initTime
- .bss.data.7070
+ .bss.data.7071
                 0x200022e8        0x2 _build/baro.o
  *fill*         0x200022ea        0x2 
- .bss.BLE_EVT_BUFFER.9001
+ .bss.BLE_EVT_BUFFER.9002
                 0x200022ec       0x48 _build/ble.o
  .bss.m_nus     0x20002334       0x1c _build/ble.o
  .bss.spi_config_table
@@ -1971,7 +1982,8 @@ END GROUP
                 0x20002c20                cal_psi
                 0x20002c24                cal_sr
                 0x20002c28                intr_start_time
-                0x20002c2c                sp
+                0x20002c2c                ready2
+                0x20002c2e                sp
                 0x20002c30                last_receiving_time
                 0x20002c34                radio_active
                 0x20002c38                prev_loop_time
@@ -1979,8 +1991,8 @@ END GROUP
                 0x20002c44                yaw
                 0x20002c48                last_correct_checksum_time
                 0x20002c4c                pitch_new
-                0x20002c50                pitch
-                0x20002c52                roll
+                0x20002c4e                pitch
+                0x20002c50                roll
                 0x20002c54                ble_tx_queue
                 0x20002d5c                ae
                 0x20002d64                c_theta
@@ -2099,153 +2111,155 @@ OUTPUT(_build/in4073.out elf32-littlearm)
  .ARM.attributes
                 0x0000067d       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_atan2.o)
  .ARM.attributes
-                0x000006a9       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o)
+                0x000006a9       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_sqrt.o)
  .ARM.attributes
-                0x000006d5       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_atan2.o)
+                0x000006d5       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o)
  .ARM.attributes
-                0x00000701       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_sqrt.o)
+                0x00000701       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_atan2.o)
  .ARM.attributes
-                0x0000072d       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
+                0x0000072d       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_sqrt.o)
  .ARM.attributes
-                0x00000759       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_lib_ver.o)
+                0x00000759       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
  .ARM.attributes
-                0x00000785       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_matherr.o)
+                0x00000785       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_lib_ver.o)
  .ARM.attributes
-                0x000007b1       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_nan.o)
+                0x000007b1       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_matherr.o)
  .ARM.attributes
-                0x000007dd       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_udivsi3.o)
+                0x000007dd       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_nan.o)
  .ARM.attributes
-                0x000007fb       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_divsi3.o)
+                0x00000809       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_udivsi3.o)
  .ARM.attributes
-                0x00000819       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_dvmd_tls.o)
+                0x00000827       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_divsi3.o)
  .ARM.attributes
-                0x00000837       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpdf2.o)
+                0x00000845       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x00000855       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpsf2.o)
+                0x00000863       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpdf2.o)
  .ARM.attributes
-                0x00000873       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_muldi3.o)
+                0x00000881       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpsf2.o)
  .ARM.attributes
-                0x0000089f       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_fixunssfsi.o)
+                0x0000089f       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_muldi3.o)
  .ARM.attributes
-                0x000008cb       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(addsf3.o)
+                0x000008cb       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_fixunssfsi.o)
  .ARM.attributes
-                0x000008f7       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
+                0x000008f7       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(addsf3.o)
  .ARM.attributes
-                0x00000923       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqsf2.o)
+                0x00000923       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
  .ARM.attributes
-                0x0000094f       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gesf2.o)
+                0x0000094f       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqsf2.o)
  .ARM.attributes
-                0x0000097b       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(lesf2.o)
+                0x0000097b       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gesf2.o)
  .ARM.attributes
-                0x000009a7       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
+                0x000009a7       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(lesf2.o)
  .ARM.attributes
-                0x000009d3       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subsf3.o)
+                0x000009d3       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
  .ARM.attributes
-                0x000009ff       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixsfsi.o)
+                0x000009ff       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subsf3.o)
  .ARM.attributes
-                0x00000a2b       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsisf.o)
+                0x00000a2b       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixsfsi.o)
  .ARM.attributes
-                0x00000a57       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatunsisf.o)
+                0x00000a57       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsisf.o)
  .ARM.attributes
-                0x00000a83       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(adddf3.o)
+                0x00000a83       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatunsisf.o)
  .ARM.attributes
-                0x00000aaf       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
+                0x00000aaf       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(adddf3.o)
  .ARM.attributes
-                0x00000adb       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqdf2.o)
+                0x00000adb       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
  .ARM.attributes
-                0x00000b07       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gedf2.o)
+                0x00000b07       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqdf2.o)
  .ARM.attributes
-                0x00000b33       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(ledf2.o)
+                0x00000b33       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gedf2.o)
  .ARM.attributes
-                0x00000b5f       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
+                0x00000b5f       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(ledf2.o)
  .ARM.attributes
-                0x00000b8b       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subdf3.o)
+                0x00000b8b       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
  .ARM.attributes
-                0x00000bb7       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(unorddf2.o)
+                0x00000bb7       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subdf3.o)
  .ARM.attributes
-                0x00000be3       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixdfsi.o)
+                0x00000be3       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(unorddf2.o)
  .ARM.attributes
-                0x00000c0f       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsidf.o)
+                0x00000c0f       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixdfsi.o)
  .ARM.attributes
-                0x00000c3b       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(extendsfdf2.o)
+                0x00000c3b       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsidf.o)
  .ARM.attributes
-                0x00000c67       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_clzsi2.o)
+                0x00000c67       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(extendsfdf2.o)
  .ARM.attributes
-                0x00000c85       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-errno.o)
+                0x00000c93       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_clzsi2.o)
  .ARM.attributes
-                0x00000cb1       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcmp.o)
+                0x00000cb1       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-errno.o)
  .ARM.attributes
-                0x00000cdd       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
+                0x00000cdd       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcmp.o)
  .ARM.attributes
-                0x00000d09       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
+                0x00000d09       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
  .ARM.attributes
-                0x00000d35       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sprintf.o)
+                0x00000d35       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
  .ARM.attributes
-                0x00000d61       0x1c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-strlen.o)
+                0x00000d61       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sprintf.o)
  .ARM.attributes
-                0x00000d7d       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00000d8d       0x1c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-strlen.o)
  .ARM.attributes
-                0x00000da9       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
+                0x00000da9       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
  .ARM.attributes
-                0x00000dd5       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
+                0x00000dd5       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
  .ARM.attributes
-                0x00000e01       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x00000e01       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
  .ARM.attributes
-                0x00000e2d       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x00000e2d       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
  .ARM.attributes
-                0x00000e59       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00000e59       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
  .ARM.attributes
-                0x00000e85       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sbrkr.o)
+                0x00000e85       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
  .ARM.attributes
-                0x00000eb1       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x00000eb1       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sbrkr.o)
  .ARM.attributes
-                0x00000edd       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
+                0x00000edd       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
  .ARM.attributes
-                0x00000f09       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-writer.o)
+                0x00000f09       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
  .ARM.attributes
-                0x00000f35       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
+                0x00000f35       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-writer.o)
  .ARM.attributes
-                0x00000f61       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-closer.o)
+                0x00000f61       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
  .ARM.attributes
-                0x00000f8d       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
+                0x00000f8d       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-closer.o)
  .ARM.attributes
-                0x00000fb9       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-lseekr.o)
+                0x00000fb9       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
  .ARM.attributes
-                0x00000fe5       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
+                0x00000fe5       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-lseekr.o)
  .ARM.attributes
-                0x00001011       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr-stub.o)
+                0x00001011       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
  .ARM.attributes
-                0x0000103d       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memmove.o)
+                0x0000103d       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr-stub.o)
  .ARM.attributes
-                0x00001069       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
+                0x00001069       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memmove.o)
  .ARM.attributes
-                0x00001095       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
+                0x00001095       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
  .ARM.attributes
-                0x000010c1       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-reallocr.o)
+                0x000010c1       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
  .ARM.attributes
-                0x000010ed       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-readr.o)
+                0x000010ed       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-reallocr.o)
  .ARM.attributes
-                0x00001119       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-reent.o)
+                0x00001119       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-readr.o)
  .ARM.attributes
-                0x00001145       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fstatr.o)
+                0x00001145       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-reent.o)
  .ARM.attributes
-                0x00001171       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-isattyr.o)
+                0x00001171       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fstatr.o)
  .ARM.attributes
-                0x0000119d       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-msizer.o)
+                0x0000119d       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-isattyr.o)
  .ARM.attributes
-                0x000011c9       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+                0x000011c9       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-msizer.o)
  .ARM.attributes
-                0x000011e7       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(close.o)
+                0x000011f5       0x1e /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
  .ARM.attributes
-                0x00001213       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(fstat.o)
+                0x00001213       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(close.o)
  .ARM.attributes
-                0x0000123f       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(isatty.o)
+                0x0000123f       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(fstat.o)
  .ARM.attributes
-                0x0000126b       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(lseek.o)
+                0x0000126b       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(isatty.o)
  .ARM.attributes
-                0x00001297       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(read.o)
+                0x00001297       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(lseek.o)
  .ARM.attributes
-                0x000012c3       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(sbrk.o)
+                0x000012c3       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(read.o)
+ .ARM.attributes
+                0x000012ef       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(sbrk.o)
 
 .comment        0x00000000       0x6e
  .comment       0x00000000       0x6e _build/system_nrf51.o
@@ -2275,7 +2289,7 @@ OUTPUT(_build/in4073.out elf32-littlearm)
  .comment       0x0000006e       0x6f _build/ble_nus.o
  .comment       0x0000006e       0x6f _build/softdevice_handler.o
 
-.debug_frame    0x00000000     0x1020
+.debug_frame    0x00000000     0x1058
  .debug_frame   0x00000000       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-exit.o)
  .debug_frame   0x00000028       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-init.o)
  .debug_frame   0x00000054       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memset.o)
@@ -2283,73 +2297,74 @@ OUTPUT(_build/in4073.out elf32-littlearm)
  .debug_frame   0x00000094       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_fabs.o)
  .debug_frame   0x000000b4       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_asin.o)
  .debug_frame   0x000000ec       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_atan2.o)
- .debug_frame   0x00000114       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o)
- .debug_frame   0x0000014c       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_atan2.o)
- .debug_frame   0x00000184       0x3c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_sqrt.o)
- .debug_frame   0x000001c0       0x3c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
- .debug_frame   0x000001fc       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_matherr.o)
- .debug_frame   0x0000021c       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_nan.o)
- .debug_frame   0x0000023c       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_udivsi3.o)
- .debug_frame   0x0000025c       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_divsi3.o)
- .debug_frame   0x0000027c       0x34 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_muldi3.o)
- .debug_frame   0x000002b0       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_fixunssfsi.o)
- .debug_frame   0x000002d8       0x30 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(addsf3.o)
- .debug_frame   0x00000308       0x3c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
- .debug_frame   0x00000344       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqsf2.o)
- .debug_frame   0x00000370       0x30 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gesf2.o)
- .debug_frame   0x000003a0       0x30 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(lesf2.o)
- .debug_frame   0x000003d0       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
- .debug_frame   0x00000408       0x30 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subsf3.o)
- .debug_frame   0x00000438       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixsfsi.o)
- .debug_frame   0x00000458       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsisf.o)
- .debug_frame   0x00000484       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatunsisf.o)
- .debug_frame   0x000004b0       0x3c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(adddf3.o)
- .debug_frame   0x000004ec       0x3c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
- .debug_frame   0x00000528       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqdf2.o)
- .debug_frame   0x00000560       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gedf2.o)
- .debug_frame   0x00000598       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(ledf2.o)
- .debug_frame   0x000005d0       0x3c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
- .debug_frame   0x0000060c       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subdf3.o)
- .debug_frame   0x00000644       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(unorddf2.o)
- .debug_frame   0x00000670       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixdfsi.o)
- .debug_frame   0x0000069c       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsidf.o)
- .debug_frame   0x000006c8       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(extendsfdf2.o)
- .debug_frame   0x000006f4       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-errno.o)
- .debug_frame   0x00000714       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcmp.o)
- .debug_frame   0x00000740       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x00000768       0x50 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
- .debug_frame   0x000007b8       0x50 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sprintf.o)
- .debug_frame   0x00000808      0x140 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
- .debug_frame   0x00000948       0x58 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
- .debug_frame   0x000009a0       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x000009cc       0x74 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
- .debug_frame   0x00000a40       0x9c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
- .debug_frame   0x00000adc       0x54 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
- .debug_frame   0x00000b30       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sbrkr.o)
- .debug_frame   0x00000b5c       0x90 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
- .debug_frame   0x00000bec       0x48 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
- .debug_frame   0x00000c34       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-writer.o)
- .debug_frame   0x00000c60       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
- .debug_frame   0x00000c8c       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-closer.o)
- .debug_frame   0x00000cb8       0x68 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
- .debug_frame   0x00000d20       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-lseekr.o)
- .debug_frame   0x00000d4c       0x54 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
- .debug_frame   0x00000da0       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr-stub.o)
- .debug_frame   0x00000dc0       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memmove.o)
- .debug_frame   0x00000de8       0x30 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
- .debug_frame   0x00000e18       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
- .debug_frame   0x00000e44       0x30 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-reallocr.o)
- .debug_frame   0x00000e74       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-readr.o)
- .debug_frame   0x00000ea0       0x48 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-reent.o)
- .debug_frame   0x00000ee8       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fstatr.o)
- .debug_frame   0x00000f14       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-isattyr.o)
- .debug_frame   0x00000f40       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-msizer.o)
- .debug_frame   0x00000f60       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(close.o)
- .debug_frame   0x00000f80       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(fstat.o)
- .debug_frame   0x00000fa0       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(isatty.o)
- .debug_frame   0x00000fc0       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(lseek.o)
- .debug_frame   0x00000fe0       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(read.o)
- .debug_frame   0x00001000       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(sbrk.o)
+ .debug_frame   0x00000114       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_sqrt.o)
+ .debug_frame   0x0000014c       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o)
+ .debug_frame   0x00000184       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_atan2.o)
+ .debug_frame   0x000001bc       0x3c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_sqrt.o)
+ .debug_frame   0x000001f8       0x3c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
+ .debug_frame   0x00000234       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_matherr.o)
+ .debug_frame   0x00000254       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_nan.o)
+ .debug_frame   0x00000274       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_udivsi3.o)
+ .debug_frame   0x00000294       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_divsi3.o)
+ .debug_frame   0x000002b4       0x34 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_muldi3.o)
+ .debug_frame   0x000002e8       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_fixunssfsi.o)
+ .debug_frame   0x00000310       0x30 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(addsf3.o)
+ .debug_frame   0x00000340       0x3c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
+ .debug_frame   0x0000037c       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqsf2.o)
+ .debug_frame   0x000003a8       0x30 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gesf2.o)
+ .debug_frame   0x000003d8       0x30 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(lesf2.o)
+ .debug_frame   0x00000408       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
+ .debug_frame   0x00000440       0x30 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subsf3.o)
+ .debug_frame   0x00000470       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixsfsi.o)
+ .debug_frame   0x00000490       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsisf.o)
+ .debug_frame   0x000004bc       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatunsisf.o)
+ .debug_frame   0x000004e8       0x3c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(adddf3.o)
+ .debug_frame   0x00000524       0x3c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
+ .debug_frame   0x00000560       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqdf2.o)
+ .debug_frame   0x00000598       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gedf2.o)
+ .debug_frame   0x000005d0       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(ledf2.o)
+ .debug_frame   0x00000608       0x3c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
+ .debug_frame   0x00000644       0x38 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subdf3.o)
+ .debug_frame   0x0000067c       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(unorddf2.o)
+ .debug_frame   0x000006a8       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixdfsi.o)
+ .debug_frame   0x000006d4       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsidf.o)
+ .debug_frame   0x00000700       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(extendsfdf2.o)
+ .debug_frame   0x0000072c       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-errno.o)
+ .debug_frame   0x0000074c       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcmp.o)
+ .debug_frame   0x00000778       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x000007a0       0x50 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
+ .debug_frame   0x000007f0       0x50 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sprintf.o)
+ .debug_frame   0x00000840      0x140 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+ .debug_frame   0x00000980       0x58 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
+ .debug_frame   0x000009d8       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x00000a04       0x74 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
+ .debug_frame   0x00000a78       0x9c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+ .debug_frame   0x00000b14       0x54 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+ .debug_frame   0x00000b68       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sbrkr.o)
+ .debug_frame   0x00000b94       0x90 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+ .debug_frame   0x00000c24       0x48 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
+ .debug_frame   0x00000c6c       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-writer.o)
+ .debug_frame   0x00000c98       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
+ .debug_frame   0x00000cc4       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-closer.o)
+ .debug_frame   0x00000cf0       0x68 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
+ .debug_frame   0x00000d58       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-lseekr.o)
+ .debug_frame   0x00000d84       0x54 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
+ .debug_frame   0x00000dd8       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr-stub.o)
+ .debug_frame   0x00000df8       0x28 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memmove.o)
+ .debug_frame   0x00000e20       0x30 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
+ .debug_frame   0x00000e50       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x00000e7c       0x30 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-reallocr.o)
+ .debug_frame   0x00000eac       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-readr.o)
+ .debug_frame   0x00000ed8       0x48 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-reent.o)
+ .debug_frame   0x00000f20       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fstatr.o)
+ .debug_frame   0x00000f4c       0x2c /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-isattyr.o)
+ .debug_frame   0x00000f78       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-msizer.o)
+ .debug_frame   0x00000f98       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(close.o)
+ .debug_frame   0x00000fb8       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(fstat.o)
+ .debug_frame   0x00000fd8       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(isatty.o)
+ .debug_frame   0x00000ff8       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(lseek.o)
+ .debug_frame   0x00001018       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(read.o)
+ .debug_frame   0x00001038       0x20 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(sbrk.o)
 
 .stab           0x00000000       0x84
  .stab          0x00000000       0x24 /home/lya/software_package_2.0/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(close.o)

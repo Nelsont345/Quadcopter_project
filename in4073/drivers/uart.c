@@ -43,11 +43,12 @@ void UART0_IRQHandler(void)
 {       intr_start_time = get_time_us();
 	if (NRF_UART0->EVENTS_RXDRDY != 0)
 	{       
-
+              
 		NRF_UART0->EVENTS_RXDRDY  = 0;
 		//printf("get data %lu",NRF_UART0->RXD);
 		uint8_t k = NRF_UART0->RXD;
-		
+		if(k == 0xFE)
+                       ready2 = 1;
 		if (b_counter == 0 && k == 0xFF)
 		{
 			b_counter++;

@@ -64,7 +64,8 @@ void run_filters_and_control();
 int32_t cal_phi, cal_theta, cal_psi, cal_sp, cal_sq, cal_sr;
 int16_t c_phi, c_theta, c_psi, c_sp, c_sq, c_sr;
 int16_t y_err;
-int32_t pitch_new, roll_new;
+int16_t pitch_new, roll_new;
+bool ready2;
 
 // Timers
 #define TIMER_PERIOD	50 //50ms=20Hz (MAX 23bit, 4.6h)
