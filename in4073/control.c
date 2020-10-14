@@ -52,7 +52,17 @@ int32_t butterworth(int32_t x0, int32_t x1, int32_t x2, int32_t y1, int32_t y2)
     return filtered;
 }
 
-
+void kalman_filter(void)
+{   // phi : sax, theta ; say
+	int32_t p;
+	int32_t phi;
+	p = sp - bias;
+	phi = sax + p *P2PHI;
+	error = phi - sax;
+	sax = phi - error/C1;
+	bias = bias + (error/P2PHI)/C2;
+}
+	
 
 uint8_t cal_count = 0;
 int16_t fp_mul(int8_t a, int8_t b, int8_t n)
@@ -204,13 +214,15 @@ void run_filters_and_control()
         {
            //phi =0;
            // butterworth only for sr
-           processed_phi = butterworth(phi, prev_phi_x[0], prev_phi_x[1], prev_phi_y[0], prev_phi_x[1]);
+
+           /*processed_phi = butterworth(phi, prev_phi_x[0], prev_phi_x[1], prev_phi_y[0], prev_phi_x[1]);
            prev_phi_x[1] = prev_phi_x[0];
            prev_phi_x[0] = phi;
 
            prev_phi_y[1] = prev_phi_y[0];
            prev_phi_y[0] = processed_phi;
            phi = processed_phi;
+		   */
 		   //kalman_filter();
            // kalman sp and phi , sq and theta
         }

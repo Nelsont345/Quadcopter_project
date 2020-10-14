@@ -183,7 +183,7 @@ int main(void)
 	timers_init();
 	adc_init();
 	twi_init();
-	imu_init(true, 100);	
+	imu_init(false, 100);	
 	baro_init();
 	spi_flash_init();
 	ble_init();
@@ -240,7 +240,8 @@ int main(void)
 
 		if (check_sensor_int_flag()) 
 		{
-			get_dmp_data();
+			//get_dmp_data();
+                        get_raw_sensor_data();
 			run_filters_and_control();
 		}
                  
