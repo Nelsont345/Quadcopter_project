@@ -56,12 +56,61 @@ void update_motors(void)
 	motor[3] = ae[3]>0?ae[3]:0;
 }
 
+int32_t butterworth(int32_t x0, int32_t x1, int32_t x2, int32_t y1, int32_t y2)
+{
+    int32_t a[3]; 
+    int32_t b[3];
+    //a[0] = 1; a[1] = -1.73472577, a[2] =  0.7660066; b[0] = 0.00782021; b[1] = 0.01564042, b[2] =  0.00782021;
+    a[0] = 16384; a[1] = -20609; a[2] = 7646; b[0] = 855; b[1] = 1710; b[2] = 855; //need to round
+    int32_t part1 = x0*b[0] + x1*b[1] + x2*b[2]; 
+    int32_t part2 = y1*a[1] + y2*a[2];
+    int32_t filtered = (part1 - part2) >>14;  //a[0] = 1 or 16384, should be divided or shifted right 
+    return filtered;
+}
+
+void kalman_filter()
+{
+
+
+
+}
 void run_filters_and_control()
 {
 	// fancy stuff here
 	// control loops and/or filters
 
 	// ae[0] = xxx, ae[1] = yyy etc etc
+        if(raw_mode)
+        {
+
+		if(mode == YAW)
+		{
+	          	processed_yaw = butterworth(sr, prev_yaw_x[0], prev_yaw_x[1], prev_yaw_y[0], prev_yaw_y[1]);
+	
+		        prev_yaw_x[1] = prev_yaw_x[0];
+	           	prev_yaw_x[0] = sr;
+	
+	           	prev_yaw_y[1] = prev_yaw_y[0];
+	           	prev_yaw_y[0] = processed_yaw;
+	           	sr = processed_yaw;
+                }
+                else if(mode == FULL)   
+	  		kalman_filter();    	
+        }
+
+	if(height_mode)
+	{
+		int32_t h_err;
+		uint32_t Q = 2;
+		h_err = pressure - fixed_pressure;                  
+               	throttle_new = Q * h_err;
+	       	if(throttle_new > 65535) throttle_new = 65535;
+	       	if(throttle_new < 0) throttle_new = 0;           	
+		throttle = throttle_new;
+	}
+
+
+
 	if (mode == MANUAL)
 	{
 		
@@ -75,7 +124,7 @@ void run_filters_and_control()
 		//printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);
 	}
 	else if (mode == PANIC)
-	{
+	{       printf("panic\n");
 		int i;
 		for(i=0;i<10;i++)
 		{
@@ -144,12 +193,6 @@ void run_filters_and_control()
              p_err = pitch - (theta - c_theta);
              r_err = roll - (phi   - c_phi);
            
-           //prate_err = pitch - (sq - c_sq);
-           //rrate_err = roll - (sp - c_sp);
-          // yaw = 0;
-
-           //pitch_new = P1 * (0 - (theta - c_theta)) - P2 * (sq - c_sq);
-           //roll_new =  P1 * (0 - (phi - c_phi))   - P2 * (sp - c_sp);
             if(p_err > 100 || p_err < -100 || r_err < -100 || r_err > 100)
             { 
                 pitch_new = P2 * P1 * p_err - P2 * (sp - c_sp);
@@ -165,28 +208,6 @@ void run_filters_and_control()
 	  ae[2] = (int16_t) isqrt(A * throttle - 2 * B * pitch_new - C * yaw)*0.7 + 160;
 	  ae[3] = (int16_t) isqrt(A * throttle + 2 * B * roll_new  + C * yaw)*0.7 + 160;
            
-          /*while(p_err > 10 || r_err > 10)
-           {
-               while(prate_err > 3 || rrate_err > 3)
-               {
-                   pitch_new = fp_mul(P2, prate_err, 0);
-                   roll_new  = fp_mul(P2, rrate_err, 0);
-	           ae[0] = (int16_t) sqrt(A * throttle + 2 * B * pitch_new - C * yaw) * 1.5;
-	           ae[1] = (int16_t) sqrt(A * throttle - 2 * B * roll_new  + C * yaw) * 1.5;
-	           ae[2] = (int16_t) sqrt(A * throttle - 2 * B * pitch_new - C * yaw) * 1.5;
-	           ae[3] = (int16_t) sqrt(A * throttle + 2 * B * roll_new  + C * yaw) * 1.5;
-                   prate_err = pitch - (sq - c_sq);
-                   rrate_err = roll - (sp - c_sp);
-               } 
-               pitch_new = pitch + P1 * p_err;
-               roll_new  = roll  + P1 * r_err;
-	       ae[0] = (int16_t) sqrt(A * throttle + 2 * B * pitch_new - C * yaw) * 1.5;
-	       ae[1] = (int16_t) sqrt(A * throttle - 2 * B * roll_new  + C * yaw) * 1.5;
-	       ae[2] = (int16_t) sqrt(A * throttle - 2 * B * pitch_new - C * yaw) * 1.5;
-	       ae[3] = (int16_t) sqrt(A * throttle + 2 * B * roll_new  + C * yaw) * 1.5;     
-               p_err = c_theta - theta;
-               r_err = c_psi - psi;          
-           } */
         }
 
         else if(mode == SAFE) 
