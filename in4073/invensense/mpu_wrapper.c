@@ -85,7 +85,6 @@ bool check_sensor_int_flag(void)
 
 void imu_init(bool dmp, uint16_t freq)
 {
-	dmp = false;
 	static int8_t gyro_orientation[9] = {	1, 0, 0,
 											0, 1, 0,
 											0, 0, 1	};

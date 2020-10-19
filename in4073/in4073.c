@@ -178,6 +178,7 @@ int main(void)
 {
 	filter_init();
         kalman_init();
+        get_raw_data_flag = 0;
 	uart_init();
 	gpio_init();
 	timers_init();
@@ -224,7 +225,7 @@ int main(void)
                       {
 		       
 			
-                 /*	printf("%10ld | ", get_time_us());
+                 	printf("%10ld | ", get_time_us());
 			printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
 			printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
 			printf("%6d %6d %6d | ", phi, theta, psi);
@@ -232,7 +233,7 @@ int main(void)
 			//printf("%4d | %4ld | %6ld |", bat_volt, temperature, pressure);
 			printf("%6d %6d %6d | %d || %d |||    %d  - %d\n",P, P1, P2, mode, y_err, yaw, sr);
                     
-                 */
+                 
                         }
                     
 			clear_timer_flag();
@@ -240,8 +241,11 @@ int main(void)
 
 		if (check_sensor_int_flag()) 
 		{
-			//get_dmp_data();
-                        get_raw_sensor_data();
+                        if (get_raw_data_flag)
+                                get_raw_sensor_data();     
+                        else
+                                get_dmp_data();
+                        //get_raw_sensor_data();
 			run_filters_and_control();
 		}
                  

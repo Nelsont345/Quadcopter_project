@@ -45,7 +45,8 @@ int32_t butterworth(int32_t x0, int32_t x1, int32_t x2, int32_t y1, int32_t y2)
     int32_t a[3]; 
     int32_t b[3];
     //a[0] = 1; a[1] = -1.73472577, a[2] =  0.7660066; b[0] = 0.00782021; b[1] = 0.01564042, b[2] =  0.00782021;
-    a[0] = 16384; a[1] = -20609; a[2] = 7646; b[0] = 855; b[1] = 1710; b[2] = 855; //need to round
+    a[0] = 16384; a[1] = -20609; a[2] = 7646; b[0] = 855; b[1] = 1710; b[2] = 855; //need to 
+	a[0] = 16384; a[1] = -26586; a[2] = 11196; b[0] = 248; b[1] = 497;  b[2] = 248;
     int32_t part1 = x0*b[0] + x1*b[1] + x2*b[2]; 
     int32_t part2 = y1*a[1] + y2*a[2];
     int32_t filtered = (part1 - part2) >>14;  //a[0] = 1 or 16384, should be divided or shifted right 
@@ -53,7 +54,7 @@ int32_t butterworth(int32_t x0, int32_t x1, int32_t x2, int32_t y1, int32_t y2)
 }
 
 void kalman_filter(void)
-{   // phi : sax, theta ; say
+{   // sphi : sax, theta ; say
 	int32_t p;
 	int32_t phi;
 	p = sp - bias;
@@ -212,17 +213,18 @@ void run_filters_and_control()
         }
 		else if(mode == RAW)
         {
+
            //phi =0;
            // butterworth only for sr
 
-           /*processed_phi = butterworth(phi, prev_phi_x[0], prev_phi_x[1], prev_phi_y[0], prev_phi_x[1]);
+           processed_phi = butterworth(phi, prev_phi_x[0], prev_phi_x[1], prev_phi_y[0], prev_phi_x[1]);
            prev_phi_x[1] = prev_phi_x[0];
            prev_phi_x[0] = phi;
 
            prev_phi_y[1] = prev_phi_y[0];
            prev_phi_y[0] = processed_phi;
            phi = processed_phi;
-		   */
+		   
 		   //kalman_filter();
            // kalman sp and phi , sq and theta
         }

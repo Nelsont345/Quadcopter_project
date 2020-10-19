@@ -55,6 +55,7 @@ typedef struct {
         uint32_t start_time;
 }command;
 
+
 // Control
 uint16_t throttle;
 int16_t roll, pitch, yaw;
@@ -77,6 +78,9 @@ int32_t error;
 int32_t P2PHI; 
 int32_t C1;
 int32_t C2;
+
+//raw flag
+bool get_raw_data_flag;
 
 // Timers
 #define TIMER_PERIOD	50 //50ms=20Hz (MAX 23bit, 4.6h)

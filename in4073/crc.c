@@ -16,3 +16,11 @@ uint8_t get_crc(uint8_t crc, void const *msg, uint8_t bufferSize)
 
 	return crc;
 }
+
+int main (int argc, uint8_t *argv[])
+{
+	uint8_t value = get_crc(0, argv[0], 1);
+	printf("%u \n", value);
+	uint8_t value2 = get_crc(0, value, 1);
+	printf("%u \n", value2);
+}
