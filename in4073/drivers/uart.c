@@ -14,7 +14,6 @@ bool txd_available = true;
 bool start_flag = false;
 uint8_t b_counter = 0;
 uint16_t p_counter = 0;
-uint16_t data[20];
 
 
 void uart_put(uint8_t byte)
@@ -38,43 +37,19 @@ int _write(int file, const char * p_char, int len)
 	return len;
 }
 
-
 void UART0_IRQHandler(void)
-{       intr_start_time = get_time_us();
+{
 	if (NRF_UART0->EVENTS_RXDRDY != 0)
-	{       
-
+	{   
+		intr_start_time = get_time_us();    
 		NRF_UART0->EVENTS_RXDRDY  = 0;
 		//printf("get data %lu",NRF_UART0->RXD);
-		uint8_t k = NRF_UART0->RXD;
-		
-		if (b_counter == 0 && k == 0xFF)
-		{
-			b_counter++;
-			//printf("get packet %u",p_counter);
-		}
-		else if (b_counter>0)
-		{
-			data[b_counter-1] = k;
-			//printf("get data%d %d",b_counter, k);
-			b_counter++;
-			if(b_counter==14)
-			{
-				//enqueue the command
-				command c =
-{data[0],data[1],(data[2]<<8)+data[3],(data[4]<<8)+data[5],(data[6]<<8)+data[7],(data[8]<<8)+data[9],data[10],data[11],data[12], intr_start_time};
-				c_enqueue( &c_rx_queue, c);
-				//printf("%d",c_rx_queue.count);
-				b_counter = 0;
-				p_counter++;
-				//send ack
-				uart_put(255);
-				uart_put(c.frame);
-				//still need to check the packets by CRC
-				//printf("end packet\n");
-			}
-		}
-                // loop_time = get_time_us() - start_time;
+		uint8_t k = NRF_UART0->RXD;  
+                             
+		enqueue(&rx_queue, k);
+
+                if(mode == 8 && k == 0xFF)
+                     ready = false;
 	}
 
 	if (NRF_UART0->EVENTS_TXDRDY != 0)
@@ -89,14 +64,12 @@ void UART0_IRQHandler(void)
 		NRF_UART0->EVENTS_ERROR = 0;
 		printf("uart error: %lu\n", NRF_UART0->ERRORSRC);
 	}
-        intr_stop_time = get_time_us();
-        tot_intr_time += (intr_stop_time - intr_start_time);
+        
 }
 
 void uart_init(void)
 {
 	init_queue(&rx_queue); // Initialize receive queue
-	c_init_queue(&c_rx_queue);
 	init_queue(&tx_queue); // Initialize transmit queue
 
 	nrf_gpio_cfg_output(TX_PIN_NUMBER);

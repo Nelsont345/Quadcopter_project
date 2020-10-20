@@ -26,6 +26,19 @@ static uint8_t const crc8_table[] =
 	0x78, 0x5C, 0x30, 0x14, 0xE8, 0xCC, 0xA0, 0x84, 0x7C, 0x58, 0x34, 0x10, 0xEC, 0xC8, 0xA4, 0x80
 };
 
-uint8_t get_crc(uint8_t crc, uint8_t *msg, uint8_t bufferSize);
-
+uint8_t get_crc(uint8_t crc, uint8_t msg, uint8_t bufferSize)
+{
+	crc &= 0xff;
+	//printf("crc_now %d message %d \n", crc, msg);
+	crc = crc8_table[ crc ^ msg ];
+	return crc;
+}
+uint8_t get_crc2(uint8_t crc, uint8_t msg, uint8_t bufferSize)
+{
+       // printf("crc %d msg %d\n", crc, msg);
+	crc &= 0xff;
+	//printf("index %d\n", crc^msg);
+	crc = crc8_table[ crc ^ msg ];
+	return crc;
+}
 #endif

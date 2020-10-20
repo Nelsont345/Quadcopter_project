@@ -98,7 +98,7 @@ void run_filters_and_control()
 
 	}
 	else if (mode == PANIC)
-	{
+	{       printf("panic\n");
 		int i;
 		for(i=0;i<10;i++)
 		{
@@ -167,12 +167,6 @@ void run_filters_and_control()
              p_err = pitch - (theta - c_theta);
              r_err = roll - (phi   - c_phi);
            
-           //prate_err = pitch - (sq - c_sq);
-           //rrate_err = roll - (sp - c_sp);
-          // yaw = 0;
-
-           //pitch_new = P1 * (0 - (theta - c_theta)) - P2 * (sq - c_sq);
-           //roll_new =  P1 * (0 - (phi - c_phi))   - P2 * (sp - c_sp);
             if(p_err > 100 || p_err < -100 || r_err < -100 || r_err > 100)
             { 
                 pitch_new = P2 * P1 * p_err - P2 * (sp - c_sp);
@@ -188,28 +182,6 @@ void run_filters_and_control()
 	  ae[2] = (int16_t) isqrt(A * throttle - 2 * B * pitch_new - C * yaw)*0.7 + 160;
 	  ae[3] = (int16_t) isqrt(A * throttle + 2 * B * roll_new  + C * yaw)*0.7 + 160;
            
-          /*while(p_err > 10 || r_err > 10)
-           {
-               while(prate_err > 3 || rrate_err > 3)
-               {
-                   pitch_new = fp_mul(P2, prate_err, 0);
-                   roll_new  = fp_mul(P2, rrate_err, 0);
-	           ae[0] = (int16_t) sqrt(A * throttle + 2 * B * pitch_new - C * yaw) * 1.5;
-	           ae[1] = (int16_t) sqrt(A * throttle - 2 * B * roll_new  + C * yaw) * 1.5;
-	           ae[2] = (int16_t) sqrt(A * throttle - 2 * B * pitch_new - C * yaw) * 1.5;
-	           ae[3] = (int16_t) sqrt(A * throttle + 2 * B * roll_new  + C * yaw) * 1.5;
-                   prate_err = pitch - (sq - c_sq);
-                   rrate_err = roll - (sp - c_sp);
-               } 
-               pitch_new = pitch + P1 * p_err;
-               roll_new  = roll  + P1 * r_err;
-	       ae[0] = (int16_t) sqrt(A * throttle + 2 * B * pitch_new - C * yaw) * 1.5;
-	       ae[1] = (int16_t) sqrt(A * throttle - 2 * B * roll_new  + C * yaw) * 1.5;
-	       ae[2] = (int16_t) sqrt(A * throttle - 2 * B * pitch_new - C * yaw) * 1.5;
-	       ae[3] = (int16_t) sqrt(A * throttle + 2 * B * roll_new  + C * yaw) * 1.5;     
-               p_err = c_theta - theta;
-               r_err = c_psi - psi;          
-           } */
         }
 		else if(mode == RAW)
         {
