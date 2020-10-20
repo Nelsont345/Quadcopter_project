@@ -17,6 +17,7 @@ void init_queue(queue *q){
 	q->count = 0;
 }
 
+
 void enqueue(queue *q,char x){
 
 	q->last = (q->last + 1) % QUEUE_SIZE;
@@ -31,3 +32,4 @@ char dequeue(queue *q){
 	q->count -= 1;
 	return x;
 }
+

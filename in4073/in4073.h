@@ -26,13 +26,62 @@
 #define GREEN		28
 #define BLUE		30
 #define INT_PIN		5
-#define PACKET_SIZE     8
+
+#define SAFE		0
+#define PANIC		1
+#define MANUAL		2
+#define CALIBRATION	3
+#define YAW		4
+#define FULL		5
+#define RAW		6
+#define HEIGHT		7
+#define EXIT		8
+#define DATASIZE        33
+
+// logging
+void flash_data();
+void log_data();
+volatile bool ready;
 bool demo_done;
 
+//Mode
+
+uint8_t mode;
+
+
+uint8_t crc;
 // Control
-int16_t L, M, N, T;
+uint16_t throttle;
+int16_t roll, pitch, yaw;
+uint8_t P, P1, P2;
 int16_t motor[4],ae[4];
 void run_filters_and_control();
+int32_t cal_phi, cal_theta, cal_psi, cal_sp, cal_sq, cal_sr;
+int16_t c_phi, c_theta, c_psi, c_sp, c_sq, c_sr;
+int16_t y_err;
+int32_t pitch_new, roll_new;
+//uint32_t t_receive[256];
+
+//raw mode
+bool raw_mode;
+int32_t processed_yaw;
+int32_t prev_yaw_x[2];
+int32_t prev_yaw_y[2];
+
+
+//height mode
+bool height_mode;
+uint16_t throttle_new;
+int32_t fixed_pressure;
+
+
+//kalman
+int32_t bias;
+int32_t error;
+int32_t P2PHI; 
+int32_t C1;
+int32_t C2;
+
 
 // Timers
 #define TIMER_PERIOD	50 //50ms=20Hz (MAX 23bit, 4.6h)
@@ -40,6 +89,16 @@ void timers_init(void);
 uint32_t get_time_us(void);
 bool check_timer_flag(void);
 void clear_timer_flag(void);
+uint32_t last_receiving_time; 
+
+// Profiling
+
+uint32_t start_time, loop_time, queue_time, tot_intr_time, prev_loop_time;
+uint32_t intr_start_time, intr_stop_time;
+uint32_t filter_start_time, filter_stop_time;
+uint32_t cycle_time;
+uint32_t response_time;
+
 
 // GPIO
 void gpio_init(void);
@@ -50,8 +109,10 @@ typedef struct {
 	uint8_t Data[QUEUE_SIZE];
 	uint16_t first,last;
   	uint16_t count; 
-        uint8_t index[QUEUE_SIZE];
 } queue;
+
+
+
 void init_queue(queue *q);
 void enqueue(queue *q, char x);
 char dequeue(queue *q);

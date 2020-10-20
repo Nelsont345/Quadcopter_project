@@ -12,7 +12,9 @@
 
 bool txd_available = true;
 bool start_flag = false;
-int8_t counter = 0;
+uint8_t b_counter = 0;
+uint16_t p_counter = 0;
+
 
 void uart_put(uint8_t byte)
 {
@@ -35,30 +37,19 @@ int _write(int file, const char * p_char, int len)
 	return len;
 }
 
-
 void UART0_IRQHandler(void)
-{      // printf("in irq\n");
+{
 	if (NRF_UART0->EVENTS_RXDRDY != 0)
-	{      
+	{   
+		intr_start_time = get_time_us();    
 		NRF_UART0->EVENTS_RXDRDY  = 0;
-                if(NRF_UART0->RXD == 47)
-                {   start_flag = 1;
-                    printf("setting start flag\n");
-                }
+		//printf("get data %lu",NRF_UART0->RXD);
+		uint8_t k = NRF_UART0->RXD;  
+                             
+		enqueue(&rx_queue, k);
 
-                if(start_flag == 1 && counter < 18)
-                {
-                    enqueue( &rx_queue, NRF_UART0->RXD);
-                    counter++;
-                    printf("enqueueing\n");
-                    if(counter==17)
-                    { 
-                        counter = 0;
-                        start_flag = 0;
-                    }
-        
-                }  
-		
+                if(mode == 8 && k == 0xFF)
+                     ready = false;
 	}
 
 	if (NRF_UART0->EVENTS_TXDRDY != 0)
@@ -73,6 +64,7 @@ void UART0_IRQHandler(void)
 		NRF_UART0->EVENTS_ERROR = 0;
 		printf("uart error: %lu\n", NRF_UART0->ERRORSRC);
 	}
+        
 }
 
 void uart_init(void)
