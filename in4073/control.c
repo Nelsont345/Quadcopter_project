@@ -93,7 +93,7 @@ void run_filters_and_control()
 	           	prev_yaw_y[1] = prev_yaw_y[0];
 	           	prev_yaw_y[0] = processed_yaw;
 	           	sr = processed_yaw;
-                }
+		}
                 else if(mode == FULL)   
 	  		kalman_filter();    	
         }
