@@ -1025,7 +1025,7 @@ END GROUP
  *(fs_data)
                 [!provide]                PROVIDE (__stop_fs_data, .)
 
-.text           0x00018000     0xc0ac
+.text           0x00018000     0xc2a4
  *(.Vectors)
  .Vectors       0x00018000       0xc0 _build/gcc_startup_nrf51.o
                 0x00018000                __Vectors
@@ -1053,598 +1053,598 @@ END GROUP
                 0x000182f4      0x140 _build/in4073.o
                 0x000182f4                flash_data
  .text.get_command
-                0x00018434      0x188 _build/in4073.o
+                0x00018434      0x234 _build/in4073.o
                 0x00018434                get_command
  .text.get_connection_check
-                0x000185bc       0x28 _build/in4073.o
-                0x000185bc                get_connection_check
+                0x00018668       0xe4 _build/in4073.o
+                0x00018668                get_connection_check
  .text.log_data
-                0x000185e4       0x90 _build/in4073.o
-                0x000185e4                log_data
+                0x0001874c       0x90 _build/in4073.o
+                0x0001874c                log_data
  .text.raw_init
-                0x00018674       0x80 _build/in4073.o
-                0x00018674                raw_init
+                0x000187dc       0x80 _build/in4073.o
+                0x000187dc                raw_init
  .text.startup.main
-                0x000186f4      0x250 _build/in4073.o
-                0x000186f4                main
+                0x0001885c      0x26c _build/in4073.o
+                0x0001885c                main
  .text.kalman_filter
-                0x00018944       0xc8 _build/control.o
-                0x00018944                kalman_filter
+                0x00018ac8       0xc8 _build/control.o
+                0x00018ac8                kalman_filter
  .text.run_filters_and_control
-                0x00018a0c      0xbf0 _build/control.o
-                0x00018a0c                run_filters_and_control
+                0x00018b90      0xbf0 _build/control.o
+                0x00018b90                run_filters_and_control
  .text.gpio_init
-                0x000195fc       0x8c _build/gpio.o
-                0x000195fc                gpio_init
+                0x00019780       0x8c _build/gpio.o
+                0x00019780                gpio_init
  .text.quadrupel_timer_handler
-                0x00019688        0xc _build/timers.o
-                0x00019688                quadrupel_timer_handler
+                0x0001980c        0xc _build/timers.o
+                0x0001980c                quadrupel_timer_handler
  .text.TIMER2_IRQHandler
-                0x00019694       0xb8 _build/timers.o
-                0x00019694                TIMER2_IRQHandler
+                0x00019818       0xb8 _build/timers.o
+                0x00019818                TIMER2_IRQHandler
  .text.TIMER1_IRQHandler
-                0x0001974c       0xac _build/timers.o
-                0x0001974c                TIMER1_IRQHandler
+                0x000198d0       0xac _build/timers.o
+                0x000198d0                TIMER1_IRQHandler
  .text.get_time_us
-                0x000197f8       0x20 _build/timers.o
-                0x000197f8                get_time_us
+                0x0001997c       0x20 _build/timers.o
+                0x0001997c                get_time_us
  .text.check_timer_flag
-                0x00019818        0xc _build/timers.o
-                0x00019818                check_timer_flag
+                0x0001999c        0xc _build/timers.o
+                0x0001999c                check_timer_flag
  .text.clear_timer_flag
-                0x00019824        0xc _build/timers.o
-                0x00019824                clear_timer_flag
+                0x000199a8        0xc _build/timers.o
+                0x000199a8                clear_timer_flag
  .text.timers_init
-                0x00019830      0x1d4 _build/timers.o
-                0x00019830                timers_init
+                0x000199b4      0x1d4 _build/timers.o
+                0x000199b4                timers_init
  .text.uart_put
-                0x00019a04       0x44 _build/uart.o
-                0x00019a04                uart_put
- .text._write   0x00019a48       0x84 _build/uart.o
-                0x00019a48                _write
+                0x00019b88       0x44 _build/uart.o
+                0x00019b88                uart_put
+ .text._write   0x00019bcc       0x84 _build/uart.o
+                0x00019bcc                _write
  .text.UART0_IRQHandler
-                0x00019acc       0x90 _build/uart.o
-                0x00019acc                UART0_IRQHandler
+                0x00019c50       0x90 _build/uart.o
+                0x00019c50                UART0_IRQHandler
  .text.uart_init
-                0x00019b5c       0xa0 _build/uart.o
-                0x00019b5c                uart_init
+                0x00019ce0       0xa0 _build/uart.o
+                0x00019ce0                uart_init
  .text.init_queue
-                0x00019bfc       0x14 _build/queue.o
-                0x00019bfc                init_queue
- .text.enqueue  0x00019c10       0x1c _build/queue.o
-                0x00019c10                enqueue
- .text.dequeue  0x00019c2c       0x20 _build/queue.o
-                0x00019c2c                dequeue
+                0x00019d80       0x14 _build/queue.o
+                0x00019d80                init_queue
+ .text.enqueue  0x00019d94       0x1c _build/queue.o
+                0x00019d94                enqueue
+ .text.dequeue  0x00019db0       0x20 _build/queue.o
+                0x00019db0                dequeue
  .text.i2c_read
-                0x00019c4c       0xc0 _build/twi.o
-                0x00019c4c                i2c_read
+                0x00019dd0       0xc0 _build/twi.o
+                0x00019dd0                i2c_read
  .text.i2c_write
-                0x00019d0c       0x70 _build/twi.o
-                0x00019d0c                i2c_write
+                0x00019e90       0x70 _build/twi.o
+                0x00019e90                i2c_write
  .text.SPI0_TWI0_IRQHandler
-                0x00019d7c       0x70 _build/twi.o
-                0x00019d7c                SPI0_TWI0_IRQHandler
+                0x00019f00       0x70 _build/twi.o
+                0x00019f00                SPI0_TWI0_IRQHandler
  .text.twi_init
-                0x00019dec       0x84 _build/twi.o
-                0x00019dec                twi_init
+                0x00019f70       0x84 _build/twi.o
+                0x00019f70                twi_init
  .text.adc_request_sample
-                0x00019e70       0x18 _build/adc.o
-                0x00019e70                adc_request_sample
+                0x00019ff4       0x18 _build/adc.o
+                0x00019ff4                adc_request_sample
  .text.ADC_IRQHandler
-                0x00019e88       0x24 _build/adc.o
-                0x00019e88                ADC_IRQHandler
+                0x0001a00c       0x24 _build/adc.o
+                0x0001a00c                ADC_IRQHandler
  .text.adc_init
-                0x00019eac       0x3c _build/adc.o
-                0x00019eac                adc_init
+                0x0001a030       0x3c _build/adc.o
+                0x0001a030                adc_init
  .text.read_baro
-                0x00019ee8      0x1b4 _build/baro.o
-                0x00019ee8                read_baro
+                0x0001a06c      0x1b4 _build/baro.o
+                0x0001a06c                read_baro
  .text.baro_init
-                0x0001a09c       0x34 _build/baro.o
-                0x0001a09c                baro_init
+                0x0001a220       0x34 _build/baro.o
+                0x0001a220                baro_init
  .text.sd_ble_gap_disconnect
-                0x0001a0d0        0x4 _build/ble.o
+                0x0001a254        0x4 _build/ble.o
  .text.sd_ble_gap_ppcp_set
-                0x0001a0d4        0x4 _build/ble.o
+                0x0001a258        0x4 _build/ble.o
  .text.sd_ble_gap_device_name_set
-                0x0001a0d8        0x4 _build/ble.o
+                0x0001a25c        0x4 _build/ble.o
  .text.sd_ble_gap_sec_params_reply
-                0x0001a0dc        0x4 _build/ble.o
+                0x0001a260        0x4 _build/ble.o
  .text.sd_ble_gatts_sys_attr_set
-                0x0001a0e0        0x4 _build/ble.o
+                0x0001a264        0x4 _build/ble.o
  .text.sd_ble_enable
-                0x0001a0e4        0x4 _build/ble.o
+                0x0001a268        0x4 _build/ble.o
  .text.sd_nvic_EnableIRQ
-                0x0001a0e8        0x4 _build/ble.o
+                0x0001a26c        0x4 _build/ble.o
  .text.sd_nvic_ClearPendingIRQ
-                0x0001a0ec        0x4 _build/ble.o
+                0x0001a270        0x4 _build/ble.o
  .text.sd_nvic_SetPriority
-                0x0001a0f0        0x4 _build/ble.o
+                0x0001a274        0x4 _build/ble.o
  .text.sd_radio_notification_cfg_set
-                0x0001a0f4        0x4 _build/ble.o
+                0x0001a278        0x4 _build/ble.o
  .text.conn_params_error_handler
-                0x0001a0f8       0x1c _build/ble.o
+                0x0001a27c       0x1c _build/ble.o
  .text.nus_data_handler
-                0x0001a114       0x20 _build/ble.o
+                0x0001a298       0x20 _build/ble.o
  .text.ble_evt_dispatch
-                0x0001a134       0x94 _build/ble.o
+                0x0001a2b8       0x94 _build/ble.o
  .text.on_conn_params_evt
-                0x0001a1c8       0x38 _build/ble.o
+                0x0001a34c       0x38 _build/ble.o
  .text.SWI1_IRQHandler
-                0x0001a200       0x10 _build/ble.o
-                0x0001a200                SWI1_IRQHandler
+                0x0001a384       0x10 _build/ble.o
+                0x0001a384                SWI1_IRQHandler
  .text.ble_init
-                0x0001a210      0x204 _build/ble.o
-                0x0001a210                ble_init
+                0x0001a394      0x204 _build/ble.o
+                0x0001a394                ble_init
  .text.flash_write_bytes
-                0x0001a414      0x248 _build/spi_flash.o
-                0x0001a414                flash_write_bytes
+                0x0001a598      0x248 _build/spi_flash.o
+                0x0001a598                flash_write_bytes
  .text.flash_read_bytes
-                0x0001a65c       0xf0 _build/spi_flash.o
-                0x0001a65c                flash_read_bytes
+                0x0001a7e0       0xf0 _build/spi_flash.o
+                0x0001a7e0                flash_read_bytes
  .text.spi_flash_init
-                0x0001a74c      0x230 _build/spi_flash.o
-                0x0001a74c                spi_flash_init
+                0x0001a8d0      0x230 _build/spi_flash.o
+                0x0001a8d0                spi_flash_init
  .text.mpu_reset_fifo
-                0x0001a97c      0x15c _build/inv_mpu.o
-                0x0001a97c                mpu_reset_fifo
+                0x0001ab00      0x15c _build/inv_mpu.o
+                0x0001ab00                mpu_reset_fifo
  .text.mpu_lp_accel_mode
-                0x0001aad8      0x1b8 _build/inv_mpu.o
-                0x0001aad8                mpu_lp_accel_mode
+                0x0001ac5c      0x1b8 _build/inv_mpu.o
+                0x0001ac5c                mpu_lp_accel_mode
  .text.mpu_get_accel_fsr
-                0x0001ac90       0x4c _build/inv_mpu.o
-                0x0001ac90                mpu_get_accel_fsr
+                0x0001ae14       0x4c _build/inv_mpu.o
+                0x0001ae14                mpu_get_accel_fsr
  .text.mpu_set_lpf
-                0x0001acdc       0x78 _build/inv_mpu.o
-                0x0001acdc                mpu_set_lpf
+                0x0001ae60       0x78 _build/inv_mpu.o
+                0x0001ae60                mpu_set_lpf
  .text.mpu_set_sample_rate
-                0x0001ad54      0x168 _build/inv_mpu.o
-                0x0001ad54                mpu_set_sample_rate
+                0x0001aed8      0x168 _build/inv_mpu.o
+                0x0001aed8                mpu_set_sample_rate
  .text.mpu_configure_fifo
-                0x0001aebc       0xd0 _build/inv_mpu.o
-                0x0001aebc                mpu_configure_fifo
+                0x0001b040       0xd0 _build/inv_mpu.o
+                0x0001b040                mpu_configure_fifo
  .text.mpu_set_sensors
-                0x0001af8c      0x140 _build/inv_mpu.o
-                0x0001af8c                mpu_set_sensors
+                0x0001b110      0x140 _build/inv_mpu.o
+                0x0001b110                mpu_set_sensors
  .text.mpu_init
-                0x0001b0cc      0x1f4 _build/inv_mpu.o
-                0x0001b0cc                mpu_init
+                0x0001b250      0x1f4 _build/inv_mpu.o
+                0x0001b250                mpu_init
  .text.mpu_read_fifo
-                0x0001b2c0      0x26c _build/inv_mpu.o
-                0x0001b2c0                mpu_read_fifo
+                0x0001b444      0x26c _build/inv_mpu.o
+                0x0001b444                mpu_read_fifo
  .text.mpu_read_fifo_stream
-                0x0001b52c       0xb0 _build/inv_mpu.o
-                0x0001b52c                mpu_read_fifo_stream
+                0x0001b6b0       0xb0 _build/inv_mpu.o
+                0x0001b6b0                mpu_read_fifo_stream
  .text.mpu_set_int_level
-                0x0001b5dc       0x10 _build/inv_mpu.o
-                0x0001b5dc                mpu_set_int_level
+                0x0001b760       0x10 _build/inv_mpu.o
+                0x0001b760                mpu_set_int_level
  .text.mpu_set_int_latched
-                0x0001b5ec       0x68 _build/inv_mpu.o
-                0x0001b5ec                mpu_set_int_latched
+                0x0001b770       0x68 _build/inv_mpu.o
+                0x0001b770                mpu_set_int_latched
  .text.mpu_write_mem
-                0x0001b654       0x58 _build/inv_mpu.o
-                0x0001b654                mpu_write_mem
+                0x0001b7d8       0x58 _build/inv_mpu.o
+                0x0001b7d8                mpu_write_mem
  .text.mpu_load_firmware
-                0x0001b6ac      0x15c _build/inv_mpu.o
-                0x0001b6ac                mpu_load_firmware
+                0x0001b830      0x15c _build/inv_mpu.o
+                0x0001b830                mpu_load_firmware
  .text.mpu_set_dmp_state
-                0x0001b808      0x174 _build/inv_mpu.o
-                0x0001b808                mpu_set_dmp_state
+                0x0001b98c      0x174 _build/inv_mpu.o
+                0x0001b98c                mpu_set_dmp_state
  .text.dmp_load_motion_driver_firmware
-                0x0001b97c       0x1c _build/inv_mpu_dmp_motion_driver.o
-                0x0001b97c                dmp_load_motion_driver_firmware
+                0x0001bb00       0x1c _build/inv_mpu_dmp_motion_driver.o
+                0x0001bb00                dmp_load_motion_driver_firmware
  .text.dmp_set_orientation
-                0x0001b998      0x118 _build/inv_mpu_dmp_motion_driver.o
-                0x0001b998                dmp_set_orientation
+                0x0001bb1c      0x118 _build/inv_mpu_dmp_motion_driver.o
+                0x0001bb1c                dmp_set_orientation
  .text.dmp_set_fifo_rate
-                0x0001bab0       0x64 _build/inv_mpu_dmp_motion_driver.o
-                0x0001bab0                dmp_set_fifo_rate
+                0x0001bc34       0x64 _build/inv_mpu_dmp_motion_driver.o
+                0x0001bc34                dmp_set_fifo_rate
  .text.dmp_set_tap_thresh
-                0x0001bb14      0x164 _build/inv_mpu_dmp_motion_driver.o
-                0x0001bb14                dmp_set_tap_thresh
+                0x0001bc98      0x164 _build/inv_mpu_dmp_motion_driver.o
+                0x0001bc98                dmp_set_tap_thresh
  .text.dmp_enable_feature
-                0x0001bc78      0x28c _build/inv_mpu_dmp_motion_driver.o
-                0x0001bc78                dmp_enable_feature
+                0x0001bdfc      0x28c _build/inv_mpu_dmp_motion_driver.o
+                0x0001bdfc                dmp_enable_feature
  .text.dmp_read_fifo
-                0x0001bf04      0x20c _build/inv_mpu_dmp_motion_driver.o
-                0x0001bf04                dmp_read_fifo
+                0x0001c088      0x20c _build/inv_mpu_dmp_motion_driver.o
+                0x0001c088                dmp_read_fifo
  .text.inv_orientation_matrix_to_scalar
-                0x0001c110      0x11c _build/ml.o
-                0x0001c110                inv_orientation_matrix_to_scalar
+                0x0001c294      0x11c _build/ml.o
+                0x0001c294                inv_orientation_matrix_to_scalar
  .text.get_dmp_data
-                0x0001c22c      0x218 _build/mpu_wrapper.o
-                0x0001c22c                get_dmp_data
+                0x0001c3b0      0x218 _build/mpu_wrapper.o
+                0x0001c3b0                get_dmp_data
  .text.get_raw_sensor_data
-                0x0001c444       0x88 _build/mpu_wrapper.o
-                0x0001c444                get_raw_sensor_data
+                0x0001c5c8       0x88 _build/mpu_wrapper.o
+                0x0001c5c8                get_raw_sensor_data
  .text.check_sensor_int_flag
-                0x0001c4cc       0x20 _build/mpu_wrapper.o
-                0x0001c4cc                check_sensor_int_flag
+                0x0001c650       0x20 _build/mpu_wrapper.o
+                0x0001c650                check_sensor_int_flag
  .text.imu_init
-                0x0001c4ec      0x10c _build/mpu_wrapper.o
-                0x0001c4ec                imu_init
+                0x0001c670      0x10c _build/mpu_wrapper.o
+                0x0001c670                imu_init
  .text.app_error_handler
-                0x0001c5f8       0x40 _build/app_error.o
-                0x0001c5f8                app_error_handler
+                0x0001c77c       0x40 _build/app_error.o
+                0x0001c77c                app_error_handler
  .text.rtc1_stop
-                0x0001c638       0x78 _build/app_timer.o
+                0x0001c7bc       0x78 _build/app_timer.o
  .text.RTC1_IRQHandler
-                0x0001c6b0       0xe0 _build/app_timer.o
-                0x0001c6b0                RTC1_IRQHandler
+                0x0001c834       0xe0 _build/app_timer.o
+                0x0001c834                RTC1_IRQHandler
  .text.SWI0_IRQHandler
-                0x0001c790      0x4cc _build/app_timer.o
-                0x0001c790                SWI0_IRQHandler
+                0x0001c914      0x4cc _build/app_timer.o
+                0x0001c914                SWI0_IRQHandler
  .text.app_timer_init
-                0x0001cc5c       0xe4 _build/app_timer.o
-                0x0001cc5c                app_timer_init
+                0x0001cde0       0xe4 _build/app_timer.o
+                0x0001cde0                app_timer_init
  .text.app_timer_create
-                0x0001cd40       0x34 _build/app_timer.o
-                0x0001cd40                app_timer_create
+                0x0001cec4       0x34 _build/app_timer.o
+                0x0001cec4                app_timer_create
  .text.app_timer_start
-                0x0001cd74       0xec _build/app_timer.o
-                0x0001cd74                app_timer_start
+                0x0001cef8       0xec _build/app_timer.o
+                0x0001cef8                app_timer_start
  .text.app_timer_stop
-                0x0001ce60       0xc4 _build/app_timer.o
-                0x0001ce60                app_timer_stop
+                0x0001cfe4       0xc4 _build/app_timer.o
+                0x0001cfe4                app_timer_stop
  .text.pstorage_access_status_get
-                0x0001cf24       0x28 _build/pstorage.o
-                0x0001cf24                pstorage_access_status_get
+                0x0001d0a8       0x28 _build/pstorage.o
+                0x0001d0a8                pstorage_access_status_get
  .text.sd_ble_gap_address_get
-                0x0001cf4c        0x4 _build/ble_advdata.o
+                0x0001d0d0        0x4 _build/ble_advdata.o
  .text.sd_ble_gap_adv_data_set
-                0x0001cf50        0x4 _build/ble_advdata.o
+                0x0001d0d4        0x4 _build/ble_advdata.o
  .text.sd_ble_gap_appearance_get
-                0x0001cf54        0x4 _build/ble_advdata.o
+                0x0001d0d8        0x4 _build/ble_advdata.o
  .text.sd_ble_gap_device_name_get
-                0x0001cf58        0x4 _build/ble_advdata.o
+                0x0001d0dc        0x4 _build/ble_advdata.o
  .text.sd_ble_uuid_encode
-                0x0001cf5c        0x4 _build/ble_advdata.o
+                0x0001d0e0        0x4 _build/ble_advdata.o
  .text.uuid_list_sized_encode
-                0x0001cf60       0xf8 _build/ble_advdata.o
+                0x0001d0e4       0xf8 _build/ble_advdata.o
  .text.adv_data_encode
-                0x0001d058      0x5b8 _build/ble_advdata.o
-                0x0001d058                adv_data_encode
+                0x0001d1dc      0x5b8 _build/ble_advdata.o
+                0x0001d1dc                adv_data_encode
  .text.ble_advdata_set
-                0x0001d610       0x68 _build/ble_advdata.o
-                0x0001d610                ble_advdata_set
+                0x0001d794       0x68 _build/ble_advdata.o
+                0x0001d794                ble_advdata_set
  .text.sd_ble_gap_adv_start
-                0x0001d678        0x4 _build/ble_advertising.o
+                0x0001d7fc        0x4 _build/ble_advertising.o
  .text.ble_advertising_start.part.1
-                0x0001d67c      0x2a8 _build/ble_advertising.o
+                0x0001d800      0x2a8 _build/ble_advertising.o
  .text.ble_advertising_init
-                0x0001d924      0x144 _build/ble_advertising.o
-                0x0001d924                ble_advertising_init
+                0x0001daa8      0x144 _build/ble_advertising.o
+                0x0001daa8                ble_advertising_init
  .text.ble_advertising_start
-                0x0001da68       0x3c _build/ble_advertising.o
-                0x0001da68                ble_advertising_start
+                0x0001dbec       0x3c _build/ble_advertising.o
+                0x0001dbec                ble_advertising_start
  .text.ble_advertising_on_ble_evt
-                0x0001daa4       0xec _build/ble_advertising.o
-                0x0001daa4                ble_advertising_on_ble_evt
+                0x0001dc28       0xec _build/ble_advertising.o
+                0x0001dc28                ble_advertising_on_ble_evt
  .text.sd_ble_gap_conn_param_update
-                0x0001db90        0x4 _build/ble_conn_params.o
+                0x0001dd14        0x4 _build/ble_conn_params.o
  .text.sd_ble_gap_disconnect
-                0x0001db94        0x4 _build/ble_conn_params.o
+                0x0001dd18        0x4 _build/ble_conn_params.o
  .text.sd_ble_gap_ppcp_set
-                0x0001db98        0x4 _build/ble_conn_params.o
+                0x0001dd1c        0x4 _build/ble_conn_params.o
  .text.sd_ble_gap_ppcp_get
-                0x0001db9c        0x4 _build/ble_conn_params.o
+                0x0001dd20        0x4 _build/ble_conn_params.o
  .text.update_timeout_handler
-                0x0001dba0       0x78 _build/ble_conn_params.o
+                0x0001dd24       0x78 _build/ble_conn_params.o
  .text.conn_params_negotiation
-                0x0001dc18       0x88 _build/ble_conn_params.o
+                0x0001dd9c       0x88 _build/ble_conn_params.o
  .text.ble_conn_params_init
-                0x0001dca0       0x78 _build/ble_conn_params.o
-                0x0001dca0                ble_conn_params_init
+                0x0001de24       0x78 _build/ble_conn_params.o
+                0x0001de24                ble_conn_params_init
  .text.ble_conn_params_on_ble_evt
-                0x0001dd18       0xac _build/ble_conn_params.o
-                0x0001dd18                ble_conn_params_on_ble_evt
+                0x0001de9c       0xac _build/ble_conn_params.o
+                0x0001de9c                ble_conn_params_on_ble_evt
  .text.sd_ble_gatts_service_add
-                0x0001ddc4        0x4 _build/ble_nus.o
+                0x0001df48        0x4 _build/ble_nus.o
  .text.sd_ble_gatts_characteristic_add
-                0x0001ddc8        0x4 _build/ble_nus.o
+                0x0001df4c        0x4 _build/ble_nus.o
  .text.sd_ble_uuid_vs_add
-                0x0001ddcc        0x4 _build/ble_nus.o
+                0x0001df50        0x4 _build/ble_nus.o
  .text.ble_nus_on_ble_evt
-                0x0001ddd0       0x60 _build/ble_nus.o
-                0x0001ddd0                ble_nus_on_ble_evt
+                0x0001df54       0x60 _build/ble_nus.o
+                0x0001df54                ble_nus_on_ble_evt
  .text.ble_nus_init
-                0x0001de30      0x208 _build/ble_nus.o
-                0x0001de30                ble_nus_init
+                0x0001dfb4      0x208 _build/ble_nus.o
+                0x0001dfb4                ble_nus_init
  .text.sd_nvic_EnableIRQ
-                0x0001e038        0x4 _build/softdevice_handler.o
+                0x0001e1bc        0x4 _build/softdevice_handler.o
  .text.sd_evt_get
-                0x0001e03c        0x4 _build/softdevice_handler.o
+                0x0001e1c0        0x4 _build/softdevice_handler.o
  .text.sd_softdevice_enable
-                0x0001e040        0x4 _build/softdevice_handler.o
+                0x0001e1c4        0x4 _build/softdevice_handler.o
  .text.sd_ble_evt_get
-                0x0001e044        0x4 _build/softdevice_handler.o
+                0x0001e1c8        0x4 _build/softdevice_handler.o
  .text.softdevice_assertion_handler
-                0x0001e048        0xc _build/softdevice_handler.o
-                0x0001e048                softdevice_assertion_handler
+                0x0001e1cc        0xc _build/softdevice_handler.o
+                0x0001e1cc                softdevice_assertion_handler
  .text.intern_softdevice_events_execute.part.0
-                0x0001e054       0xec _build/softdevice_handler.o
+                0x0001e1d8       0xec _build/softdevice_handler.o
  .text.softdevice_handler_init
-                0x0001e140       0x4c _build/softdevice_handler.o
-                0x0001e140                softdevice_handler_init
+                0x0001e2c4       0x4c _build/softdevice_handler.o
+                0x0001e2c4                softdevice_handler_init
  .text.softdevice_ble_evt_handler_set
-                0x0001e18c       0x14 _build/softdevice_handler.o
-                0x0001e18c                softdevice_ble_evt_handler_set
+                0x0001e310       0x14 _build/softdevice_handler.o
+                0x0001e310                softdevice_ble_evt_handler_set
  .text.SWI2_IRQHandler
-                0x0001e1a0       0x34 _build/softdevice_handler.o
-                0x0001e1a0                SWI2_IRQHandler
- .text          0x0001e1d4       0x54 _build/gcc_startup_nrf51.o
-                0x0001e1d4                Reset_Handler
-                0x0001e21c                NMI_Handler
-                0x0001e21e                HardFault_Handler
-                0x0001e220                SVC_Handler
-                0x0001e222                PendSV_Handler
-                0x0001e224                SysTick_Handler
-                0x0001e226                RTC0_IRQHandler
-                0x0001e226                GPIOTE_IRQHandler
-                0x0001e226                POWER_CLOCK_IRQHandler
-                0x0001e226                RADIO_IRQHandler
-                0x0001e226                LPCOMP_IRQHandler
-                0x0001e226                SWI4_IRQHandler
-                0x0001e226                TEMP_IRQHandler
-                0x0001e226                QDEC_IRQHandler
-                0x0001e226                SWI5_IRQHandler
-                0x0001e226                TIMER0_IRQHandler
-                0x0001e226                ECB_IRQHandler
-                0x0001e226                Default_Handler
-                0x0001e226                SWI3_IRQHandler
-                0x0001e226                CCM_AAR_IRQHandler
-                0x0001e226                WDT_IRQHandler
-                0x0001e226                RNG_IRQHandler
-                0x0001e226                SPI1_TWI1_IRQHandler
- .text.fabs     0x0001e228        0x8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_fabs.o)
-                0x0001e228                fabs
- .text.asin     0x0001e230       0xc4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_asin.o)
-                0x0001e230                asin
- .text.atan2    0x0001e2f4        0x8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_atan2.o)
-                0x0001e2f4                atan2
+                0x0001e324       0x34 _build/softdevice_handler.o
+                0x0001e324                SWI2_IRQHandler
+ .text          0x0001e358       0x54 _build/gcc_startup_nrf51.o
+                0x0001e358                Reset_Handler
+                0x0001e3a0                NMI_Handler
+                0x0001e3a2                HardFault_Handler
+                0x0001e3a4                SVC_Handler
+                0x0001e3a6                PendSV_Handler
+                0x0001e3a8                SysTick_Handler
+                0x0001e3aa                RTC0_IRQHandler
+                0x0001e3aa                GPIOTE_IRQHandler
+                0x0001e3aa                POWER_CLOCK_IRQHandler
+                0x0001e3aa                RADIO_IRQHandler
+                0x0001e3aa                LPCOMP_IRQHandler
+                0x0001e3aa                SWI4_IRQHandler
+                0x0001e3aa                TEMP_IRQHandler
+                0x0001e3aa                QDEC_IRQHandler
+                0x0001e3aa                SWI5_IRQHandler
+                0x0001e3aa                TIMER0_IRQHandler
+                0x0001e3aa                ECB_IRQHandler
+                0x0001e3aa                Default_Handler
+                0x0001e3aa                SWI3_IRQHandler
+                0x0001e3aa                CCM_AAR_IRQHandler
+                0x0001e3aa                WDT_IRQHandler
+                0x0001e3aa                RNG_IRQHandler
+                0x0001e3aa                SPI1_TWI1_IRQHandler
+ .text.fabs     0x0001e3ac        0x8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_fabs.o)
+                0x0001e3ac                fabs
+ .text.asin     0x0001e3b4       0xc4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_asin.o)
+                0x0001e3b4                asin
+ .text.atan2    0x0001e478        0x8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_atan2.o)
+                0x0001e478                atan2
  .text.__ieee754_asin
-                0x0001e2fc      0x3cc /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o)
-                0x0001e2fc                __ieee754_asin
+                0x0001e480      0x3cc /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o)
+                0x0001e480                __ieee754_asin
  .text.__ieee754_atan2
-                0x0001e6c8      0x178 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_atan2.o)
-                0x0001e6c8                __ieee754_atan2
+                0x0001e84c      0x178 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_atan2.o)
+                0x0001e84c                __ieee754_atan2
  .text.__ieee754_sqrt
-                0x0001e840      0x1ec /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_sqrt.o)
-                0x0001e840                __ieee754_sqrt
- .text.atan     0x0001ea2c      0x33c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
-                0x0001ea2c                atan
- .text.matherr  0x0001ed68        0x4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_matherr.o)
-                0x0001ed68                matherr
- .text.nan      0x0001ed6c        0xc /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_nan.o)
-                0x0001ed6c                nan
- .text          0x0001ed78      0x114 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_udivsi3.o)
-                0x0001ed78                __udivsi3
-                0x0001ed78                __aeabi_uidiv
-                0x0001ee84                __aeabi_uidivmod
- .text          0x0001ee8c      0x1d4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_divsi3.o)
-                0x0001ee8c                __aeabi_idiv
-                0x0001ee8c                __divsi3
-                0x0001f058                __aeabi_idivmod
- .text          0x0001f060        0x4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_dvmd_tls.o)
-                0x0001f060                __aeabi_ldiv0
-                0x0001f060                __aeabi_idiv0
- .text          0x0001f064       0x7c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpdf2.o)
-                0x0001f064                __aeabi_cdrcmple
-                0x0001f074                __aeabi_cdcmple
-                0x0001f074                __aeabi_cdcmpeq
-                0x0001f084                __aeabi_dcmpeq
-                0x0001f090                __aeabi_dcmplt
-                0x0001f0a4                __aeabi_dcmple
-                0x0001f0b8                __aeabi_dcmpgt
-                0x0001f0cc                __aeabi_dcmpge
- .text          0x0001f0e0       0x74 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpsf2.o)
-                0x0001f0e0                __aeabi_cfrcmple
-                0x0001f0e8                __aeabi_cfcmple
-                0x0001f0e8                __aeabi_cfcmpeq
-                0x0001f0f8                __aeabi_fcmpeq
-                0x0001f104                __aeabi_fcmplt
-                0x0001f118                __aeabi_fcmple
-                0x0001f12c                __aeabi_fcmpgt
-                0x0001f140                __aeabi_fcmpge
- .text          0x0001f154       0x58 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_muldi3.o)
-                0x0001f154                __aeabi_lmul
-                0x0001f154                __muldi3
- .text          0x0001f1ac       0x30 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_fixunssfsi.o)
-                0x0001f1ac                __aeabi_f2uiz
-                0x0001f1ac                __fixunssfsi
- .text          0x0001f1dc      0x2ec /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(addsf3.o)
-                0x0001f1dc                __aeabi_fadd
- .text          0x0001f4c8      0x234 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
-                0x0001f4c8                __aeabi_fdiv
- .text          0x0001f6fc       0x50 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqsf2.o)
-                0x0001f6fc                __nesf2
-                0x0001f6fc                __eqsf2
- .text          0x0001f74c       0x88 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gesf2.o)
-                0x0001f74c                __gtsf2
-                0x0001f74c                __gesf2
- .text          0x0001f7d4       0x88 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(lesf2.o)
-                0x0001f7d4                __lesf2
-                0x0001f7d4                __ltsf2
- .text          0x0001f85c      0x228 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
-                0x0001f85c                __aeabi_fmul
- .text          0x0001fa84      0x30c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subsf3.o)
-                0x0001fa84                __aeabi_fsub
- .text          0x0001fd90       0x44 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixsfsi.o)
-                0x0001fd90                __aeabi_f2iz
- .text          0x0001fdd4       0x90 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsisf.o)
-                0x0001fdd4                __aeabi_i2f
- .text          0x0001fe64       0x7c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatunsisf.o)
-                0x0001fe64                __aeabi_ui2f
- .text          0x0001fee0      0x658 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(adddf3.o)
-                0x0001fee0                __aeabi_dadd
- .text          0x00020538      0x62c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
-                0x00020538                __aeabi_ddiv
- .text          0x00020b64       0x80 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqdf2.o)
-                0x00020b64                __eqdf2
-                0x00020b64                __nedf2
- .text          0x00020be4       0xc8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gedf2.o)
-                0x00020be4                __gtdf2
-                0x00020be4                __gedf2
- .text          0x00020cac       0xd4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(ledf2.o)
-                0x00020cac                __ltdf2
-                0x00020cac                __ledf2
- .text          0x00020d80      0x4f4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
-                0x00020d80                __aeabi_dmul
- .text          0x00021274      0x6a8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subdf3.o)
-                0x00021274                __aeabi_dsub
- .text          0x0002191c       0x40 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(unorddf2.o)
-                0x0002191c                __aeabi_dcmpun
- .text          0x0002195c       0x6c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixdfsi.o)
-                0x0002195c                __aeabi_d2iz
- .text          0x000219c8       0x84 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsidf.o)
-                0x000219c8                __aeabi_i2d
- .text          0x00021a4c       0xa8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(extendsfdf2.o)
-                0x00021a4c                __aeabi_f2d
- .text          0x00021af4       0x3c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_clzsi2.o)
-                0x00021af4                __clzsi2
- .text.__errno  0x00021b30        0xc /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-errno.o)
-                0x00021b30                __errno
- .text.memcmp   0x00021b3c       0x1e /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcmp.o)
-                0x00021b3c                memcmp
- .text.memcpy   0x00021b5a       0x12 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
-                0x00021b5a                memcpy
- .text.printf   0x00021b6c       0x34 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
-                0x00021b6c                printf
-                0x00021b6c                iprintf
- .text.sprintf  0x00021ba0       0x44 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sprintf.o)
-                0x00021ba0                sprintf
-                0x00021ba0                siprintf
- .text          0x00021be4        0xe /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-strlen.o)
-                0x00021be4                strlen
- *fill*         0x00021bf2        0x2 
+                0x0001e9c4      0x1ec /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_sqrt.o)
+                0x0001e9c4                __ieee754_sqrt
+ .text.atan     0x0001ebb0      0x33c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
+                0x0001ebb0                atan
+ .text.matherr  0x0001eeec        0x4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_matherr.o)
+                0x0001eeec                matherr
+ .text.nan      0x0001eef0        0xc /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_nan.o)
+                0x0001eef0                nan
+ .text          0x0001eefc      0x114 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_udivsi3.o)
+                0x0001eefc                __udivsi3
+                0x0001eefc                __aeabi_uidiv
+                0x0001f008                __aeabi_uidivmod
+ .text          0x0001f010      0x1d4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_divsi3.o)
+                0x0001f010                __aeabi_idiv
+                0x0001f010                __divsi3
+                0x0001f1dc                __aeabi_idivmod
+ .text          0x0001f1e4        0x4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_dvmd_tls.o)
+                0x0001f1e4                __aeabi_ldiv0
+                0x0001f1e4                __aeabi_idiv0
+ .text          0x0001f1e8       0x7c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpdf2.o)
+                0x0001f1e8                __aeabi_cdrcmple
+                0x0001f1f8                __aeabi_cdcmple
+                0x0001f1f8                __aeabi_cdcmpeq
+                0x0001f208                __aeabi_dcmpeq
+                0x0001f214                __aeabi_dcmplt
+                0x0001f228                __aeabi_dcmple
+                0x0001f23c                __aeabi_dcmpgt
+                0x0001f250                __aeabi_dcmpge
+ .text          0x0001f264       0x74 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpsf2.o)
+                0x0001f264                __aeabi_cfrcmple
+                0x0001f26c                __aeabi_cfcmple
+                0x0001f26c                __aeabi_cfcmpeq
+                0x0001f27c                __aeabi_fcmpeq
+                0x0001f288                __aeabi_fcmplt
+                0x0001f29c                __aeabi_fcmple
+                0x0001f2b0                __aeabi_fcmpgt
+                0x0001f2c4                __aeabi_fcmpge
+ .text          0x0001f2d8       0x58 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_muldi3.o)
+                0x0001f2d8                __aeabi_lmul
+                0x0001f2d8                __muldi3
+ .text          0x0001f330       0x30 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_fixunssfsi.o)
+                0x0001f330                __aeabi_f2uiz
+                0x0001f330                __fixunssfsi
+ .text          0x0001f360      0x2ec /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(addsf3.o)
+                0x0001f360                __aeabi_fadd
+ .text          0x0001f64c      0x234 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
+                0x0001f64c                __aeabi_fdiv
+ .text          0x0001f880       0x50 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqsf2.o)
+                0x0001f880                __nesf2
+                0x0001f880                __eqsf2
+ .text          0x0001f8d0       0x88 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gesf2.o)
+                0x0001f8d0                __gtsf2
+                0x0001f8d0                __gesf2
+ .text          0x0001f958       0x88 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(lesf2.o)
+                0x0001f958                __lesf2
+                0x0001f958                __ltsf2
+ .text          0x0001f9e0      0x228 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
+                0x0001f9e0                __aeabi_fmul
+ .text          0x0001fc08      0x30c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subsf3.o)
+                0x0001fc08                __aeabi_fsub
+ .text          0x0001ff14       0x44 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixsfsi.o)
+                0x0001ff14                __aeabi_f2iz
+ .text          0x0001ff58       0x90 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsisf.o)
+                0x0001ff58                __aeabi_i2f
+ .text          0x0001ffe8       0x7c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatunsisf.o)
+                0x0001ffe8                __aeabi_ui2f
+ .text          0x00020064      0x658 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(adddf3.o)
+                0x00020064                __aeabi_dadd
+ .text          0x000206bc      0x62c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
+                0x000206bc                __aeabi_ddiv
+ .text          0x00020ce8       0x80 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqdf2.o)
+                0x00020ce8                __eqdf2
+                0x00020ce8                __nedf2
+ .text          0x00020d68       0xc8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gedf2.o)
+                0x00020d68                __gtdf2
+                0x00020d68                __gedf2
+ .text          0x00020e30       0xd4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(ledf2.o)
+                0x00020e30                __ltdf2
+                0x00020e30                __ledf2
+ .text          0x00020f04      0x4f4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
+                0x00020f04                __aeabi_dmul
+ .text          0x000213f8      0x6a8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subdf3.o)
+                0x000213f8                __aeabi_dsub
+ .text          0x00021aa0       0x40 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(unorddf2.o)
+                0x00021aa0                __aeabi_dcmpun
+ .text          0x00021ae0       0x6c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixdfsi.o)
+                0x00021ae0                __aeabi_d2iz
+ .text          0x00021b4c       0x84 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsidf.o)
+                0x00021b4c                __aeabi_i2d
+ .text          0x00021bd0       0xa8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(extendsfdf2.o)
+                0x00021bd0                __aeabi_f2d
+ .text          0x00021c78       0x3c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_clzsi2.o)
+                0x00021c78                __clzsi2
+ .text.__errno  0x00021cb4        0xc /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-errno.o)
+                0x00021cb4                __errno
+ .text.memcmp   0x00021cc0       0x1e /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcmp.o)
+                0x00021cc0                memcmp
+ .text.memcpy   0x00021cde       0x12 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
+                0x00021cde                memcpy
+ .text.printf   0x00021cf0       0x34 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
+                0x00021cf0                printf
+                0x00021cf0                iprintf
+ .text.sprintf  0x00021d24       0x44 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sprintf.o)
+                0x00021d24                sprintf
+                0x00021d24                siprintf
+ .text          0x00021d68        0xe /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-strlen.o)
+                0x00021d68                strlen
+ *fill*         0x00021d76        0x2 
  .text._cleanup_r
-                0x00021bf4       0x10 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00021bf4                _cleanup_r
+                0x00021d78       0x10 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00021d78                _cleanup_r
  .text.std.isra.0
-                0x00021c04       0x48 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00021d88       0x48 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
  .text.__sfmoreglue
-                0x00021c4c       0x2c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00021c4c                __sfmoreglue
- .text.__sinit  0x00021c78       0x68 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00021c78                __sinit
- .text.__sfp    0x00021ce0       0x7c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00021ce0                __sfp
+                0x00021dd0       0x2c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00021dd0                __sfmoreglue
+ .text.__sinit  0x00021dfc       0x68 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00021dfc                __sinit
+ .text.__sfp    0x00021e64       0x7c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00021e64                __sfp
  .text._fwalk_reent
-                0x00021d5c       0x42 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
-                0x00021d5c                _fwalk_reent
- *fill*         0x00021d9e        0x2 
+                0x00021ee0       0x42 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
+                0x00021ee0                _fwalk_reent
+ *fill*         0x00021f22        0x2 
  .text._malloc_r
-                0x00021da0       0xc0 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
-                0x00021da0                _malloc_r
+                0x00021f24       0xc0 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
+                0x00021f24                _malloc_r
  .text.__ssputs_r
-                0x00021e60       0xc4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
-                0x00021e60                __ssputs_r
+                0x00021fe4       0xc4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x00021fe4                __ssputs_r
  .text._svfprintf_r
-                0x00021f24      0x1fc /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
-                0x00021f24                _svfprintf_r
-                0x00021f24                _svfiprintf_r
+                0x000220a8      0x1fc /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x000220a8                _svfprintf_r
+                0x000220a8                _svfiprintf_r
  .text.__sfputc_r
-                0x00022120       0x2a /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000222a4       0x2a /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
  .text.__sfputs_r
-                0x0002214a       0x24 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x0002214a                __sfputs_r
- *fill*         0x0002216e        0x2 
+                0x000222ce       0x24 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000222ce                __sfputs_r
+ *fill*         0x000222f2        0x2 
  .text._vfprintf_r
-                0x00022170      0x238 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x00022170                _vfiprintf_r
-                0x00022170                _vfprintf_r
+                0x000222f4      0x238 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x000222f4                _vfiprintf_r
+                0x000222f4                _vfprintf_r
  .text._printf_common
-                0x000223a8       0xdc /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x000223a8                _printf_common
+                0x0002252c       0xdc /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0002252c                _printf_common
  .text._printf_i
-                0x00022484      0x244 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x00022484                _printf_i
- .text._sbrk_r  0x000226c8       0x24 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sbrkr.o)
-                0x000226c8                _sbrk_r
- .text.__sread  0x000226ec       0x28 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x000226ec                __sread
+                0x00022608      0x244 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00022608                _printf_i
+ .text._sbrk_r  0x0002284c       0x24 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sbrkr.o)
+                0x0002284c                _sbrk_r
+ .text.__sread  0x00022870       0x28 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x00022870                __sread
  .text.__swrite
-                0x00022714       0x38 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x00022714                __swrite
- .text.__sseek  0x0002274c       0x2c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x0002274c                __sseek
+                0x00022898       0x38 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x00022898                __swrite
+ .text.__sseek  0x000228d0       0x2c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x000228d0                __sseek
  .text.__sclose
-                0x00022778        0xc /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x00022778                __sclose
+                0x000228fc        0xc /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x000228fc                __sclose
  .text.__swbuf_r
-                0x00022784       0xb0 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
-                0x00022784                __swbuf_r
+                0x00022908       0xb0 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
+                0x00022908                __swbuf_r
  .text._write_r
-                0x00022834       0x28 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-writer.o)
-                0x00022834                _write_r
+                0x000229b8       0x28 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-writer.o)
+                0x000229b8                _write_r
  .text.__swsetup_r
-                0x0002285c       0xec /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
-                0x0002285c                __swsetup_r
+                0x000229e0       0xec /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
+                0x000229e0                __swsetup_r
  .text._close_r
-                0x00022948       0x24 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-closer.o)
-                0x00022948                _close_r
+                0x00022acc       0x24 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-closer.o)
+                0x00022acc                _close_r
  .text.__sflush_r
-                0x0002296c      0x10c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
-                0x0002296c                __sflush_r
+                0x00022af0      0x10c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
+                0x00022af0                __sflush_r
  .text._fflush_r
-                0x00022a78       0x58 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
-                0x00022a78                _fflush_r
+                0x00022bfc       0x58 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
+                0x00022bfc                _fflush_r
  .text._lseek_r
-                0x00022ad0       0x28 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-lseekr.o)
-                0x00022ad0                _lseek_r
+                0x00022c54       0x28 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-lseekr.o)
+                0x00022c54                _lseek_r
  .text.__swhatbuf_r
-                0x00022af8       0x4c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
-                0x00022af8                __swhatbuf_r
+                0x00022c7c       0x4c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
+                0x00022c7c                __swhatbuf_r
  .text.__smakebuf_r
-                0x00022b44       0x7c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
-                0x00022b44                __smakebuf_r
- .text.memchr   0x00022bc0       0x16 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr-stub.o)
-                0x00022bc0                memchr
- .text.memmove  0x00022bd6       0x2a /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memmove.o)
-                0x00022bd6                memmove
+                0x00022cc8       0x7c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
+                0x00022cc8                __smakebuf_r
+ .text.memchr   0x00022d44       0x16 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr-stub.o)
+                0x00022d44                memchr
+ .text.memmove  0x00022d5a       0x2a /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memmove.o)
+                0x00022d5a                memmove
  .text.__malloc_lock
-                0x00022c00        0x2 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
-                0x00022c00                __malloc_lock
+                0x00022d84        0x2 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
+                0x00022d84                __malloc_lock
  .text.__malloc_unlock
-                0x00022c02        0x2 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
-                0x00022c02                __malloc_unlock
- .text._free_r  0x00022c04       0x98 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
-                0x00022c04                _free_r
+                0x00022d86        0x2 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
+                0x00022d86                __malloc_unlock
+ .text._free_r  0x00022d88       0x98 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
+                0x00022d88                _free_r
  .text._realloc_r
-                0x00022c9c       0x4c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-reallocr.o)
-                0x00022c9c                _realloc_r
- .text._read_r  0x00022ce8       0x28 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-readr.o)
-                0x00022ce8                _read_r
+                0x00022e20       0x4c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-reallocr.o)
+                0x00022e20                _realloc_r
+ .text._read_r  0x00022e6c       0x28 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-readr.o)
+                0x00022e6c                _read_r
  .text._fstat_r
-                0x00022d10       0x24 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fstatr.o)
-                0x00022d10                _fstat_r
+                0x00022e94       0x24 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fstatr.o)
+                0x00022e94                _fstat_r
  .text._isatty_r
-                0x00022d34       0x24 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-isattyr.o)
-                0x00022d34                _isatty_r
+                0x00022eb8       0x24 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-isattyr.o)
+                0x00022eb8                _isatty_r
  .text._malloc_usable_size_r
-                0x00022d58       0x16 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-msizer.o)
-                0x00022d58                _malloc_usable_size_r
- *fill*         0x00022d6e        0x2 
- .text._close   0x00022d70       0x10 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(close.o)
-                0x00022d70                _close
- .text._fstat   0x00022d80       0x10 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(fstat.o)
-                0x00022d80                _fstat
- .text._isatty  0x00022d90       0x10 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(isatty.o)
-                0x00022d90                _isatty
- .text._lseek   0x00022da0       0x10 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(lseek.o)
-                0x00022da0                _lseek
- .text._read    0x00022db0       0x10 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(read.o)
-                0x00022db0                _read
- .text._sbrk    0x00022dc0       0x1c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(sbrk.o)
-                0x00022dc0                _sbrk
+                0x00022edc       0x16 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-msizer.o)
+                0x00022edc                _malloc_usable_size_r
+ *fill*         0x00022ef2        0x2 
+ .text._close   0x00022ef4       0x10 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(close.o)
+                0x00022ef4                _close
+ .text._fstat   0x00022f04       0x10 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(fstat.o)
+                0x00022f04                _fstat
+ .text._isatty  0x00022f14       0x10 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(isatty.o)
+                0x00022f14                _isatty
+ .text._lseek   0x00022f24       0x10 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(lseek.o)
+                0x00022f24                _lseek
+ .text._read    0x00022f34       0x10 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(read.o)
+                0x00022f34                _read
+ .text._sbrk    0x00022f44       0x1c /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(sbrk.o)
+                0x00022f44                _sbrk
  *(.init)
- .init          0x00022ddc        0x4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x00022ddc                _init
- .init          0x00022de0        0x8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+ .init          0x00022f60        0x4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00022f60                _init
+ .init          0x00022f64        0x8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
  *(.fini)
- .fini          0x00022de8        0x4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x00022de8                _fini
- .fini          0x00022dec        0x8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+ .fini          0x00022f6c        0x4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00022f6c                _fini
+ .fini          0x00022f70        0x8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -1657,118 +1657,117 @@ END GROUP
  *(.dtors)
  *(.rodata*)
  .rodata.str1.1
-                0x00022df4        0x2 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
- *fill*         0x00022df6        0x2 
+                0x00022f78        0x2 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
+ *fill*         0x00022f7a        0x2 
  .rodata._global_impure_ptr
-                0x00022df8        0x4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
-                0x00022df8                _global_impure_ptr
+                0x00022f7c        0x4 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
+                0x00022f7c                _global_impure_ptr
  .rodata.str1.4
-                0x00022dfc       0x36 _build/in4073.o
- *fill*         0x00022e32        0x2 
+                0x00022f80       0xae _build/in4073.o
+ *fill*         0x0002302e        0x2 
  .rodata.crc8_table
-                0x00022e34      0x100 _build/in4073.o
+                0x00023030      0x100 _build/in4073.o
  .rodata.str1.4
-                0x00022f34       0x29 _build/control.o
- *fill*         0x00022f5d        0x3 
+                0x00023130       0x29 _build/control.o
+ *fill*         0x00023159        0x3 
  .rodata.quadrupel_timer.7169
-                0x00022f60        0x4 _build/timers.o
+                0x0002315c        0x4 _build/timers.o
  .rodata.str1.4
-                0x00022f64       0x11 _build/uart.o
- *fill*         0x00022f75        0x3 
+                0x00023160       0x11 _build/uart.o
+ *fill*         0x00023171        0x3 
  .rodata.str1.4
-                0x00022f78       0x38 _build/twi.o
+                0x00023174       0x38 _build/twi.o
  .rodata.str1.4
-                0x00022fb0       0x12 _build/ble.o
- *fill*         0x00022fc2        0x2 
- .rodata.test   0x00022fc4       0x28 _build/inv_mpu.o
-                0x00022fc4                test
+                0x000231ac       0x12 _build/ble.o
+ *fill*         0x000231be        0x2 
+ .rodata.test   0x000231c0       0x28 _build/inv_mpu.o
+                0x000231c0                test
  .rodata.str1.4
-                0x00022fec       0xa6 _build/inv_mpu.o
- *fill*         0x00023092        0x2 
- .rodata.hw     0x00023094        0xc _build/inv_mpu.o
-                0x00023094                hw
- .rodata.reg    0x000230a0       0x1e _build/inv_mpu.o
-                0x000230a0                reg
- *fill*         0x000230be        0x2 
- .rodata        0x000230c0       0x4b _build/inv_mpu_dmp_motion_driver.o
- *fill*         0x0002310b        0x1 
+                0x000231e8       0xa6 _build/inv_mpu.o
+ *fill*         0x0002328e        0x2 
+ .rodata.hw     0x00023290        0xc _build/inv_mpu.o
+                0x00023290                hw
+ .rodata.reg    0x0002329c       0x1e _build/inv_mpu.o
+                0x0002329c                reg
+ *fill*         0x000232ba        0x2 
+ .rodata        0x000232bc       0x4b _build/inv_mpu_dmp_motion_driver.o
+ *fill*         0x00023307        0x1 
  .rodata.dmp_memory
-                0x0002310c      0xbf6 _build/inv_mpu_dmp_motion_driver.o
- *fill*         0x00023d02        0x2 
+                0x00023308      0xbf6 _build/inv_mpu_dmp_motion_driver.o
+ *fill*         0x00023efe        0x2 
  .rodata.str1.4
-                0x00023d04      0x14a _build/mpu_wrapper.o
- *fill*         0x00023e4e        0x2 
+                0x00023f00      0x14a _build/mpu_wrapper.o
+ *fill*         0x0002404a        0x2 
  .rodata.str1.4
-                0x00023e50       0x27 _build/app_error.o
- *fill*         0x00023e77        0x1 
+                0x0002404c       0x27 _build/app_error.o
+ *fill*         0x00024073        0x1 
  .rodata.m_conn_params_timer_id
-                0x00023e78        0x4 _build/ble_conn_params.o
- .rodata        0x00023e7c       0x10 _build/ble_nus.o
+                0x00024074        0x4 _build/ble_conn_params.o
+ .rodata        0x00024078       0x10 _build/ble_nus.o
  .rodata.str1.4
-                0x00023e8c        0x8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_asin.o)
+                0x00024088        0x8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_asin.o)
                                   0x9 (size before relaxing)
- *fill*         0x00023e94        0x4 
  .rodata.atanlo
-                0x00023e98       0x20 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
+                0x00024090       0x20 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
  .rodata.atanhi
-                0x00023eb8       0x20 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
- .rodata        0x00023ed8       0x80 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
- .rodata        0x00023f58       0x40 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
- .rodata        0x00023f98       0x40 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
- .rodata        0x00023fd8       0x40 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
+                0x000240b0       0x20 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
+ .rodata        0x000240d0       0x80 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
+ .rodata        0x00024150       0x40 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
+ .rodata        0x00024190       0x40 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
+ .rodata        0x000241d0       0x40 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
  .rodata.__sf_fake_stdin
-                0x00024018       0x20 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00024018                __sf_fake_stdin
+                0x00024210       0x20 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00024210                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x00024038       0x20 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00024038                __sf_fake_stdout
+                0x00024230       0x20 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00024230                __sf_fake_stdout
  .rodata.__sf_fake_stderr
-                0x00024058       0x20 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00024058                __sf_fake_stderr
+                0x00024250       0x20 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00024250                __sf_fake_stderr
  .rodata.str1.1
-                0x00024078       0x11 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x00024270       0x11 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
  .rodata.str1.1
-                0x00024089       0x11 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x00024281       0x11 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
  .rodata.str1.1
-                0x00024089       0x22 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00024281       0x22 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
  *(.eh_frame*)
- *fill*         0x000240ab        0x1 
- .eh_frame      0x000240ac        0x0 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
-                0x000240ac                . = ALIGN (0x4)
+ *fill*         0x000242a3        0x1 
+ .eh_frame      0x000242a4        0x0 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+                0x000242a4                . = ALIGN (0x4)
 
-.glue_7         0x000240ac        0x0
- .glue_7        0x000240ac        0x0 linker stubs
+.glue_7         0x000242a4        0x0
+ .glue_7        0x000242a4        0x0 linker stubs
 
-.glue_7t        0x000240ac        0x0
- .glue_7t       0x000240ac        0x0 linker stubs
+.glue_7t        0x000242a4        0x0
+ .glue_7t       0x000242a4        0x0 linker stubs
 
-.vfp11_veneer   0x000240ac        0x0
- .vfp11_veneer  0x000240ac        0x0 linker stubs
+.vfp11_veneer   0x000242a4        0x0
+ .vfp11_veneer  0x000242a4        0x0 linker stubs
 
-.v4_bx          0x000240ac        0x0
- .v4_bx         0x000240ac        0x0 linker stubs
+.v4_bx          0x000242a4        0x0
+ .v4_bx         0x000242a4        0x0 linker stubs
 
-.iplt           0x000240ac        0x0
- .iplt          0x000240ac        0x0 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.iplt           0x000242a4        0x0
+ .iplt          0x000242a4        0x0 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.ARM.extab      0x000240ac        0x0
+.ARM.extab      0x000242a4        0x0
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000240ac                . = ALIGN (0x4)
-                0x000240ac                __exidx_start = .
+                0x000242a4                . = ALIGN (0x4)
+                0x000242a4                __exidx_start = .
 
-.ARM.exidx      0x000240ac        0x8
+.ARM.exidx      0x000242a4        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x000240ac        0x8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
- .ARM.exidx     0x000240b4        0x0 _build/gcc_startup_nrf51.o
+ .ARM.exidx     0x000242a4        0x8 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.exidx     0x000242ac        0x0 _build/gcc_startup_nrf51.o
                                   0x8 (size before relaxing)
-                0x000240b4                . = ALIGN (0x4)
-                0x000240b4                __exidx_end = .
-                0x000240b4                __etext = .
+                0x000242ac                . = ALIGN (0x4)
+                0x000242ac                __exidx_end = .
+                0x000242ac                __etext = .
 
-.rel.dyn        0x000240b4        0x0
- .rel.iplt      0x000240b4        0x0 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.rel.dyn        0x000242ac        0x0
+ .rel.iplt      0x000242ac        0x0 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.data           0x20002000       0xb4 load address 0x000240b4
+.data           0x20002000       0xb4 load address 0x000242ac
                 0x20002000                __data_start__ = .
  *(vtable)
  *(.data*)
@@ -1817,10 +1816,10 @@ END GROUP
                 0x200020b4                . = ALIGN (0x4)
                 0x200020b4                __data_end__ = .
 
-.igot.plt       0x200020b4        0x0 load address 0x00024168
+.igot.plt       0x200020b4        0x0 load address 0x00024360
  .igot.plt      0x200020b4        0x0 /home/nelson/Documents/CS4140ES_Embedded_Systems_Lab/software_package/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.bss            0x200020b4      0xb14 load address 0x00024168
+.bss            0x200020b4      0xb14 load address 0x00024360
                 0x200020b4                . = ALIGN (0x4)
                 0x200020b4                __bss_start__ = .
  *(.bss*)

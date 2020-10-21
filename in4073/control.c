@@ -13,7 +13,7 @@
 
 #include "in4073.h"
 #include "math.h"
-#define P2PHI_SHIFT 5
+#define P2PHI_SHIFT 8
 #define C1_SHIFT 7
 #define C2_SHIFT 20
 

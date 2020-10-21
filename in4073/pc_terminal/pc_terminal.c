@@ -416,7 +416,7 @@ bool get_keyboard()
 					return true;
 				}
 			case '4':
-				if(mode!=SAFE && mode!= 4)
+				if(mode!=SAFE && mode!= 4 && mode!=RAW)
 				{
 					printf("Invalid command! Please go back to safe mode before switching mode\n");
 					return false;
@@ -433,7 +433,7 @@ bool get_keyboard()
 					return true;
 				}
 			case '5':
-				if(mode!=SAFE && mode!=5)
+				if(mode!=SAFE && mode!=5 && mode!=RAW)
 				{
 					printf("Invalid command! Please go back to safe mode before switching mode\n");
 					return false;
@@ -622,7 +622,7 @@ void get_data()
 			if(ack_frame == frame-1)//if it is the ack for the last frame
 			{
 				unsigned int receiving_time = mon_time_ms();
-				fprintf(stderr,"get ack %d after %ums\n",ack_frame,receiving_time-sending_time[ack_frame]);
+				//fprintf(stderr,"get ack %d after %ums\n",ack_frame,receiving_time-sending_time[ack_frame]);
 				fprintf(fp2,"message_packet\t%u ms\n", receiving_time-sending_time[ack_frame]);
 				miss_count = 0;
 				waiting_for_ack = false;
@@ -685,13 +685,13 @@ int main(int argc, char **argv)
 	term_initio();
 	rs232_open();
 
-	/*if ((fd = open(JS_DEV, O_RDONLY)) < 0) {
+	if ((fd = open(JS_DEV, O_RDONLY)) < 0) {
 		perror("jstest");
 		exit(1);
 	}
 
 	fcntl(fd, F_SETFL, O_NONBLOCK);
-	*/
+	
         fp2 = fopen("log2.txt", "w"); 
         fp = fopen("log.txt", "w");
         
@@ -710,7 +710,7 @@ int main(int argc, char **argv)
 	mon_delay_ms(1000);
 	while((c = rs232_getchar_nb()) != -1)
 		term_putchar(c);
-	//get_joystick(fd);
+	get_joystick(fd);
 	while(j_throttle!=0||j_yaw!=0||j_pitch!=0||j_roll!=0)
 	{
 		fprintf(stderr,"please set joystick to neutral\n");
@@ -729,7 +729,7 @@ int main(int argc, char **argv)
       			exit( EXIT_FAILURE );
     		}
 
-		//send = send || get_joystick(fd);
+		send = send || get_joystick(fd);
 		send = send || get_keyboard();
 		if(miss_count>5) mode = PANIC;
 		if(mode == EXIT) break;

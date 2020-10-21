@@ -46,6 +46,22 @@ void get_command()
 		for(int i=0;i<11;i++) dequeue(&rx_queue); 
 		return;
 	}
+
+    if(new_mode == RAW && new_mode!=mode)
+	{   raw_mode = !raw_mode;
+        if(raw_mode)		
+			imu_init(false, 100);
+		if(!raw_mode)
+			imu_init(true, 100);
+	}
+
+	if(new_mode == HEIGHT && new_mode!=mode)
+    {
+	    height_mode = !height_mode;
+	    if(height_mode)
+                      fixed_pressure = pressure;
+        }
+
 	mode = new_mode;
 	throttle = dequeue(&rx_queue);
 	throttle = (throttle<<8)+dequeue(&rx_queue);
@@ -59,22 +75,19 @@ void get_command()
 	P1 = dequeue(&rx_queue);
 	P2 = dequeue(&rx_queue);
 
-	//printf("frame: %u mode: %u throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u \n",frame, mode, throttle, roll, pitch, yaw, P, P1, P2, crc);
+	printf("frame: %u mode: %u raw_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u sp %d sq %d sr %d sax %d say %d saz %d fixed_pressure %ld throttle_new %d pressure %ld\n",frame, mode, raw_mode,throttle, roll, pitch, yaw, P, P1, P2, crc, fixed_pressure, throttle_new, pressure);
 	uart_put(0xFF);
 	uart_put(frame);
-        if(mode == RAW)
-	{       raw_mode = !raw_mode;
-                if(raw_mode)		
+    
+	/*if(mode == RAW)
+	{   raw_mode = !raw_mode;
+        if(raw_mode)		
 			imu_init(false, 100);
 		if(!raw_mode)
 			imu_init(true, 100);
-	}	 
-        if(mode == HEIGHT)
-        {
-	       height_mode = !height_mode;
-	       if(height_mode)
-                      fixed_pressure = pressure;
-        }
+	}	 */
+    
+	
 	if(mode!=8)
 	flash_data();
 	t_access = get_time_us();
@@ -83,6 +96,8 @@ void get_command()
 void get_connection_check()
 {
 	frame = dequeue(&rx_queue);
+	printf("frame: %u mode: %u raw_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u sp %d sq %d sr %d sax %d say %d saz %d\n",frame, mode, raw_mode, throttle, roll, pitch, yaw, P, P1, P2, crc, sp, sq, sr, sax, say, saz);
+
 	//printf("frame(check connection): %u\n",frame);
         flash_data();
 	uart_put(0xFE);
@@ -250,7 +265,7 @@ int main(void)
 				}
 			}
 		} 
-                //if(mode!=SAFE && get_time_us()-last_receiving_time > 2000000) mode = PANIC;
+                if(mode!=SAFE && get_time_us()-last_receiving_time > 2000000) mode = PANIC;
                 if(mode == EXIT)
                 {      
                         uart_put(0x00);
@@ -264,8 +279,12 @@ int main(void)
 		{			
 			adc_request_sample();
 			read_baro();
-                        if(counter%32 == 0)
+			 //printf("cycle time: %lu \n", cycle_time);
+
+                        if(counter++%32 == 0)
                         {
+							//counter++;
+							nrf_gpio_pin_toggle(BLUE);
 	                 	//printf("%10ld	", get_time_us());
 				//printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
 				//printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
@@ -293,20 +312,23 @@ int main(void)
 
                 loop_time = get_time_us();            
                 cycle_time = (loop_time - prev_loop_time);
-				printf("cycle time: %lu \n", cycle_time);
+				
                 prev_loop_time = loop_time;
 		if(key_press)
-                {       if(filter_stop_time  > t_access)
-				
-			{response_time = filter_stop_time - t_access;
-			key_press = false;}
+		{   if(filter_stop_time  > t_access)				
+			{	
+				response_time = filter_stop_time - t_access;
+				key_press = false;
+			}
 		}
-		counter++;
-                if(counter%20 == 0)
-                {               
-                         nrf_gpio_pin_toggle(BLUE);
+		
+		//printf("counter, %ld \n", counter);
+        if(counter%400 == 0)
+        {               
+            
+		//	 printf("cycle time: %lu \n", cycle_time);
 
-                }
+        }
 
 
 
