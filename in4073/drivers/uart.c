@@ -48,8 +48,6 @@ void UART0_IRQHandler(void)
                              
 		enqueue(&rx_queue, k);
 
-                if(mode == 8 && k == 0xFF)
-                     ready = false;
 	}
 
 	if (NRF_UART0->EVENTS_TXDRDY != 0)

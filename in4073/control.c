@@ -40,30 +40,8 @@ uint16_t isqrt(long x)
 	}
 	return(res);
 }
-int32_t butterworth(int32_t x0, int32_t x1, int32_t x2, int32_t y1, int32_t y2)
-{
-    int32_t a[3]; 
-    int32_t b[3];
-    //a[0] = 1; a[1] = -1.73472577, a[2] =  0.7660066; b[0] = 0.00782021; b[1] = 0.01564042, b[2] =  0.00782021;
-    a[0] = 16384; a[1] = -20609; a[2] = 7646; b[0] = 855; b[1] = 1710; b[2] = 855; //need to 
-	a[0] = 16384; a[1] = -26586; a[2] = 11196; b[0] = 248; b[1] = 497;  b[2] = 248;
-    int32_t part1 = x0*b[0] + x1*b[1] + x2*b[2]; 
-    int32_t part2 = y1*a[1] + y2*a[2];
-    int32_t filtered = (part1 - part2) >>14;  //a[0] = 1 or 16384, should be divided or shifted right 
-    return filtered;
-}
 
-void kalman_filter(void)
-{   // sphi : sax, theta ; say
-	int32_t p;
-	int32_t phi;
-	p = sp - bias;
-	phi = sax + p *P2PHI;
-	error = phi - sax;
-	sax = phi - error/C1;
-	bias = bias + (error/P2PHI)/C2;
-}
-	
+
 
 uint8_t cal_count = 0;
 int16_t fp_mul(int8_t a, int8_t b, int8_t n)
@@ -78,12 +56,60 @@ void update_motors(void)
 	motor[3] = ae[3]>0?ae[3]:0;
 }
 
+int32_t butterworth(int32_t x0, int32_t x1, int32_t x2, int32_t y1, int32_t y2)
+{
+    int32_t a[3]; 
+    int32_t b[3];
+    //a[0] = 1; a[1] = -1.73472577, a[2] =  0.7660066; b[0] = 0.00782021; b[1] = 0.01564042, b[2] =  0.00782021;
+    a[0] = 16384; a[1] = -20609; a[2] = 7646; b[0] = 855; b[1] = 1710; b[2] = 855; //need to round
+    int32_t part1 = x0*b[0] + x1*b[1] + x2*b[2]; 
+    int32_t part2 = y1*a[1] + y2*a[2];
+    int32_t filtered = (part1 - part2) >>14;  //a[0] = 1 or 16384, should be divided or shifted right 
+    return filtered;
+}
+
+void kalman_filter()
+{
+
+
+
+}
 void run_filters_and_control()
 {
 	// fancy stuff here
 	// control loops and/or filters
 
 	// ae[0] = xxx, ae[1] = yyy etc etc
+
+        if(raw_mode)
+        {
+
+		if(mode == YAW)
+		{
+	          	processed_yaw = butterworth(sr, prev_yaw_x[0], prev_yaw_x[1], prev_yaw_y[0], prev_yaw_y[1]);
+	
+		        prev_yaw_x[1] = prev_yaw_x[0];
+	           	prev_yaw_x[0] = sr;
+	
+	           	prev_yaw_y[1] = prev_yaw_y[0];
+	           	prev_yaw_y[0] = processed_yaw;
+	           	sr = processed_yaw;
+                }
+                else if(mode == FULL)   
+	  		kalman_filter();    	
+        }
+
+	if(height_mode)
+	{
+		int32_t h_err;
+		uint32_t Q = 2;
+		h_err = pressure - fixed_pressure;                  
+               	throttle_new = Q * h_err;
+	       	if(throttle_new > 65535) throttle_new = 65535;
+	       	if(throttle_new < 0) throttle_new = 0;           	
+		throttle = throttle_new;
+	}
+
 	if (mode == MANUAL)
 	{
 		
@@ -95,7 +121,6 @@ void run_filters_and_control()
 		ae[2] = (int16_t) isqrt(A * throttle - 2 * B * pitch - C * yaw)*0.7+120;
 		ae[3] = (int16_t) isqrt(A * throttle + 2 * B * roll + C * yaw)*0.7+120;
 		//printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);
-
 	}
 	else if (mode == PANIC)
 	{       printf("panic\n");
@@ -182,23 +207,6 @@ void run_filters_and_control()
 	  ae[2] = (int16_t) isqrt(A * throttle - 2 * B * pitch_new - C * yaw)*0.7 + 160;
 	  ae[3] = (int16_t) isqrt(A * throttle + 2 * B * roll_new  + C * yaw)*0.7 + 160;
            
-        }
-		else if(mode == RAW)
-        {
-
-           //phi =0;
-           // butterworth only for sr
-
-           processed_phi = butterworth(phi, prev_phi_x[0], prev_phi_x[1], prev_phi_y[0], prev_phi_x[1]);
-           prev_phi_x[1] = prev_phi_x[0];
-           prev_phi_x[0] = phi;
-
-           prev_phi_y[1] = prev_phi_y[0];
-           prev_phi_y[0] = processed_phi;
-           phi = processed_phi;
-		   
-		   //kalman_filter();
-           // kalman sp and phi , sq and theta
         }
 
         else if(mode == SAFE) 

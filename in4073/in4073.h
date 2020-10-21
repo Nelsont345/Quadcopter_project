@@ -36,12 +36,11 @@
 #define RAW		6
 #define HEIGHT		7
 #define EXIT		8
-#define DATASIZE        33
+#define DATASIZE        37
 
 // logging
 void flash_data();
 void log_data();
-volatile bool ready;
 bool demo_done;
 
 //Mode
@@ -83,21 +82,6 @@ int32_t C1;
 int32_t C2;
 
 
-//filtering
-int32_t processed_phi;
-int32_t prev_phi_x[2];
-int32_t prev_phi_y[2];
-
-//kalman
-int32_t bias;
-int32_t error;
-int32_t P2PHI; 
-int32_t C1;
-int32_t C2;
-
-//raw flag
-bool get_raw_data_flag;
-
 // Timers
 #define TIMER_PERIOD	50 //50ms=20Hz (MAX 23bit, 4.6h)
 void timers_init(void);
@@ -108,7 +92,7 @@ uint32_t last_receiving_time;
 
 // Profiling
 
-uint32_t start_time, loop_time, queue_time, tot_intr_time, prev_loop_time;
+uint32_t start_time, loop_time, tot_intr_time, prev_loop_time;
 uint32_t intr_start_time, intr_stop_time;
 uint32_t filter_start_time, filter_stop_time;
 uint32_t cycle_time;
