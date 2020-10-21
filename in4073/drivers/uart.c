@@ -41,19 +41,12 @@ void UART0_IRQHandler(void)
 {
 	if (NRF_UART0->EVENTS_RXDRDY != 0)
 	{   
-       intr_start_time = get_time_us();    
+		intr_start_time = get_time_us();    
 		NRF_UART0->EVENTS_RXDRDY  = 0;
 		//printf("get data %lu",NRF_UART0->RXD);
 		uint8_t k = NRF_UART0->RXD;  
                              
 		enqueue(&rx_queue, k);
-                if(k == 0xFF)
-                 {    
-			enqueue(&rx_queue, (intr_start_time & 0xFFFFFFFF) >> 24);
-			enqueue(&rx_queue, (intr_start_time & 0xFFFFFF) >> 16);
-			enqueue(&rx_queue, (intr_start_time & 0xFFFF) >> 8);
-			enqueue(&rx_queue, (intr_start_time & 0xFF));
-		}
 
                 if(mode == 8 && k == 0xFF)
                      ready = false;

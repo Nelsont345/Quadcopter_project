@@ -36,12 +36,18 @@ uint32_t t_access;
 
 void get_command()
 {
-	t_receive = dequeue(&rx_queue) << 24;
-        t_receive += dequeue(&rx_queue) << 16;
-	t_receive += dequeue(&rx_queue) << 8;
-        t_receive += dequeue(&rx_queue);
 	frame = dequeue(&rx_queue);
-	mode = dequeue(&rx_queue);
+	uint8_t new_mode = dequeue(&rx_queue);
+	uint8_t crc = dequeue(&rx_queue);
+
+	if(crc != get_crc2(0, new_mode, 1)) 
+	{
+		//printf("wrong! frame: %u mode: %u throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u \n",frame, new_mode, new_throttle, new_roll, new_pitch, new_yaw, new_P, new_P1, new_P2, crc);
+		printf("wrong command!\n\n");
+		for(int i=0;i<11;i++) dequeue(&rx_queue); 
+		return;
+	}
+	mode = new_mode;
 	throttle = dequeue(&rx_queue);
 	throttle = (throttle<<8)+dequeue(&rx_queue);
 	roll = dequeue(&rx_queue);
@@ -53,15 +59,10 @@ void get_command()
 	P = dequeue(&rx_queue);
 	P1 = dequeue(&rx_queue);
 	P2 = dequeue(&rx_queue);
-	uint8_t crc = dequeue(&rx_queue);
-        
-	if(crc != get_crc2(0, mode, 1)) printf("wrong command!\n\n");
-	else 
-	{
-		printf("frame: %u mode: %u throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u \n",frame, mode, throttle, roll, pitch, yaw, P, P1, P2, crc);
-		uart_put(0xFF);
-		uart_put(frame);
-	}
+
+	printf("frame: %u mode: %u throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u \n",frame, mode, throttle, roll, pitch, yaw, P, P1, P2, crc);
+	uart_put(0xFF);
+	uart_put(frame);
         if(mode == RAW)
 	       raw_mode = !raw_mode; 
         if(mode == HEIGHT)
@@ -70,18 +71,17 @@ void get_command()
 	       if(height_mode)
                       fixed_pressure = pressure;
         }
-if(mode!=8)
-flash_data();
-t_access = get_time_us();
-queue_time = t_access - t_receive;
-  
+	if(mode!=8)
+	flash_data();
+	t_access = get_time_us();
+	queue_time = t_access - t_receive;
 }
 
 void get_connection_check()
 {
 	frame = dequeue(&rx_queue);
-	//printf("frame(check connection): %u\n",frame);
-	uart_put(0xFF);
+	printf("frame(check connection): %u\n",frame);
+	uart_put(0xFE);
 	uart_put(frame);
 //flash_data();
 }
@@ -216,35 +216,31 @@ int main(void)
 	while (!demo_done)
 	{      
                 tot_intr_time = 0;
-		if (!receiving_data&&rx_queue.count>0)
+		if (rx_queue.count>0)
 		{
-			command_type = dequeue(&rx_queue);
-			if(command_type == 0xFF)
+			if(!receiving_data)
 			{
-				size=18;
-				receiving_data=true;
-				
+				command_type = dequeue(&rx_queue);
+				if(command_type == 0xFF || command_type == 0xFE) receiving_data = true;
 			}
-			if(command_type == 0xFE)
+			else
 			{
-				size=1;
-				receiving_data=true;
-				
+				if(command_type == 0xFF && rx_queue.count>=14)
+				{
+					get_command();
+					last_receiving_time = get_time_us();
+					key_press = true;
+					receiving_data =false;
+				}
+				if(command_type == 0xFE && rx_queue.count>=1)
+				{
+					get_connection_check();
+					last_receiving_time = get_time_us();
+					receiving_data=false;
+				}
 			}
 		} 
-
-		if (receiving_data&&rx_queue.count>=size)
-                {
-
-			if (command_type == 0xFF) { get_command(); key_press = true;}
- 			else if (command_type == 0xFE) get_connection_check();
-			last_receiving_time = get_time_us();
-			receiving_data = false;
-		}
-                else
-		{
-			if(get_time_us()-last_receiving_time > 2000000) mode = PANIC;
-		}
+                //if(mode!=SAFE && get_time_us()-last_receiving_time > 2000000) mode = PANIC;
                 if(mode == EXIT)
                 {      
                         uart_put(0x00);
@@ -260,11 +256,11 @@ int main(void)
 			read_baro();
                         if(counter%32 == 0)
                         {
-	                 	printf("%10ld	", get_time_us());
+	                 	//printf("%10ld	", get_time_us());
 				//printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
 				//printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
-				printf("%6d %6d %6d | ", phi, theta, psi);
-				printf("%6d	%6d	%6d	%6ld	\n", sp, sq, sr, prev_yaw_x[0]);
+				//printf("%6d %6d %6d | ", phi, theta, psi);
+				//printf("%6d	%6d	%6d	%6ld	\n", sp, sq, sr, prev_yaw_x[0]);
 				//printf("%4d | %4ld | %6ld |", bat_volt, temperature, pressure);
 				//printf("%6d %6d %6d | %d || %d |||    %d  - %d\n",P, P1, P2, mode, y_err, yaw, sr);
                         }

@@ -48,28 +48,40 @@ bool demo_done;
 
 uint8_t mode;
 
-//Command
-typedef struct {
-	uint8_t frame;
-	uint8_t mode;
-	uint16_t throttle;
-	int16_t roll, pitch, yaw;
-        uint8_t P,P1,P2;
-        uint8_t crc;
-        uint32_t start_time;
-}command;
 
 uint8_t crc;
 // Control
 uint16_t throttle;
 int16_t roll, pitch, yaw;
-int16_t P, P1, P2;
+uint8_t P, P1, P2;
 int16_t motor[4],ae[4];
 void run_filters_and_control();
 int32_t cal_phi, cal_theta, cal_psi, cal_sp, cal_sq, cal_sr;
 int16_t c_phi, c_theta, c_psi, c_sp, c_sq, c_sr;
 int16_t y_err;
 int32_t pitch_new, roll_new;
+//uint32_t t_receive[256];
+
+//raw mode
+bool raw_mode;
+int32_t processed_yaw;
+int32_t prev_yaw_x[2];
+int32_t prev_yaw_y[2];
+
+
+//height mode
+bool height_mode;
+uint16_t throttle_new;
+int32_t fixed_pressure;
+
+
+//kalman
+int32_t bias;
+int32_t error;
+int32_t P2PHI; 
+int32_t C1;
+int32_t C2;
+
 
 
 //raw mode

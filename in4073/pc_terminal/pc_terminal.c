@@ -243,8 +243,10 @@ void log_file(int c)
  * time
  *------------------------------------------------------------
  */
+unsigned int last_sending_time;
 unsigned int previous_time;//last checking time
 unsigned int interval=500;//sending interval
+unsigned int sending_time[256];
 
 #include <time.h>
 #include <sys/time.h>
@@ -268,17 +270,14 @@ void mon_delay_ms(unsigned int ms)
         req.tv_sec = ms / 1000;
         req.tv_nsec = 1000000 * (ms % 1000);
 
-
-
         assert(nanosleep(&req,&rem) == 0);
 }
 
 bool send_period()//send command periodically to check the connection
 {
 	unsigned int current_time = mon_time_ms();
-	if(current_time-previous_time > interval)
+	if(current_time-last_sending_time > interval)
 	{
-		previous_time = current_time;
 		return true;
 	}
 	return false;
@@ -306,7 +305,7 @@ uint8_t P, P1, P2 = 0;
 uint8_t mode = 0;
 uint8_t frame = 0;
 uint8_t crc = 0;
-int last_sending_time;
+
 
 int16_t sadd(int16_t a, int16_t b)
 {
@@ -570,6 +569,7 @@ void send_command()
 	rs232_putchar(0xFF);
 	rs232_putchar(frame);
 	rs232_putchar(mode);
+        rs232_putchar(get_crc(0, mode, 1));
 	rs232_putchar(throttle>>8);
 	rs232_putchar(throttle);
 	rs232_putchar(roll>>8);
@@ -581,10 +581,11 @@ void send_command()
 	rs232_putchar(P);
 	rs232_putchar(P1);
 	rs232_putchar(P2);
-        rs232_putchar(get_crc(0, mode, 1));
-        //fprintf(stderr, "command sent %d %d\n", c.mode, c.crc );
+
+        //fprintf(stderr, "send frame: %u mode: %u throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u \n",frame, mode, throttle, roll, pitch, yaw, P, P1, P2, get_crc(0, mode, 1));
 	last_sending_time = mon_time_ms();
-	frame++;	
+	sending_time[frame] = last_sending_time;
+	frame++;
 	waiting_for_ack = true;
 }
 
@@ -594,6 +595,7 @@ void send_connection_check()
 	rs232_putchar(0xFE);
 	rs232_putchar(frame);
 	last_sending_time = mon_time_ms();
+	sending_time[frame] = last_sending_time;
 	frame++;	
 	waiting_for_ack = true;
 }
@@ -605,9 +607,24 @@ void get_data()
 	{
 		if(c == 0xFF)
 		{
-			int next_c = rs232_getchar_nb();
-			if(next_c == frame-1)//if it is the ack for the last frame
+			int ack_frame = rs232_getchar_nb();
+			if(ack_frame == frame-1)//if it is the ack for the last frame
 			{
+				unsigned int receiving_time = mon_time_ms();
+				fprintf(stderr,"get ack %d after %ums\n",ack_frame,receiving_time-sending_time[ack_frame]);
+				miss_count = 0;
+				waiting_for_ack = false;
+				if(mode == PANIC || mode == CALIBRATION) mode = SAFE;
+				//fprintf(stderr,"get ack %d\n",next_c);
+			}	
+		}
+		if(c == 0xFE)
+		{
+			int ack_frame = rs232_getchar_nb();
+			if(ack_frame == frame-1)//if it is the ack for the last frame
+			{
+				unsigned int receiving_time = mon_time_ms();
+				fprintf(stderr,"get ack(check) %d after %ums\n",ack_frame,receiving_time-sending_time[ack_frame]);
 				miss_count = 0;
 				waiting_for_ack = false;
 				if(mode == PANIC || mode == CALIBRATION) mode = SAFE;
@@ -704,7 +721,6 @@ int main(int argc, char **argv)
 		send = send || get_keyboard();
 		if(miss_count>5) mode = PANIC;
 		if(mode == EXIT) break;
-		int ae[4];
 		if (send)
 		{
 			//fprintf(stderr,"send frame: %u mode: %u throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u\n",frame, mode, throttle, roll, pitch, yaw, P, P1, P2);
