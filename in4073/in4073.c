@@ -180,7 +180,7 @@ void log_data()
 void raw_init()
 {
 	//ready = true;
-     	raw_mode = false;
+	raw_mode = false;
 	height_mode = false;
 	processed_yaw = 0;       
 	prev_yaw_x[0] = 0;
@@ -281,9 +281,9 @@ int main(void)
 		if (check_sensor_int_flag()) 
 		{       
                         filter_start_time = get_time_us();
-			if(raw_mode)
+			if(!raw_mode)
 			     get_dmp_data();
-			else if(!raw_mode) 
+			else if(raw_mode) 
 				get_raw_sensor_data();
 
 			run_filters_and_control();

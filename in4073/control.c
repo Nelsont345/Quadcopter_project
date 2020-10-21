@@ -206,10 +206,6 @@ void run_filters_and_control()
 	   ae[3] = (int16_t) isqrt(A * throttle + 2 * B * roll  + C * yaw_new)*0.7+160;       
 	}	
 
-	else if(mode == RAW)
-	{
-		raw_mode = 1-raw_mode;
-	}
  
 	else if(mode == FULL)
 	{
