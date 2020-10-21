@@ -103,20 +103,20 @@ void run_filters_and_control()
         if(raw_mode)
         {
 
-		if(mode == YAW || mode == FULL)
-		{
-			processed_yaw = butterworth(sr, prev_yaw_x[0], prev_yaw_x[1], prev_yaw_y[0], prev_yaw_y[1]);	
-			prev_yaw_x[1] = prev_yaw_x[0];
-			prev_yaw_x[0] = sr;	
-			prev_yaw_y[1] = prev_yaw_y[0];
-			prev_yaw_y[0] = processed_yaw;
-			sr = processed_yaw;
-				
-		}
-		if(mode == FULL)   
-		{
-			kalman_filter();  
-		}	  		  	
+			if(mode == YAW || mode == FULL)
+			{
+				processed_yaw = butterworth(sr, prev_yaw_x[0], prev_yaw_x[1], prev_yaw_y[0], prev_yaw_y[1]);	
+				prev_yaw_x[1] = prev_yaw_x[0];
+				prev_yaw_x[0] = sr;	
+				prev_yaw_y[1] = prev_yaw_y[0];
+				prev_yaw_y[0] = processed_yaw;
+				sr = processed_yaw;
+					
+			}
+			if(mode == FULL)   
+			{
+				kalman_filter();  
+			}	  		  	
         }
 
 	if(height_mode)
@@ -163,32 +163,33 @@ void run_filters_and_control()
 	else if (mode == CALIBRATION)
 	{  
            
-           cal_count++;
-           // take average readings over 100 values 
-           if(cal_count < 128)
+		cal_count++;
+		// take average readings over 100 values 
+		if(cal_count < 128)
 	   { 
-                 cal_phi   += phi;
-                 cal_theta += theta;
-                 cal_psi   += psi;
-                 cal_sp    += sp;
-                 cal_sq    += sq;
-                 cal_sr    += sr;
-           }
-           else if(cal_count == 128)
-           {     printf("calibrated. return to safe mode\n");
-                 c_phi   = cal_phi / 128;
-                 c_theta = cal_theta / 128;
-                 c_psi   = cal_psi / 128;
-                 c_sp    = cal_sp / 128;
-                 c_sq    = cal_sq / 128;
-                 c_sr    = cal_sr / 128;
-                 cal_count = 0;
-		 mode = SAFE;
-           }
+			cal_phi   += phi;
+			cal_theta += theta;
+			cal_psi   += psi;
+			cal_sp    += sp;
+			cal_sq    += sq;
+			cal_sr    += sr;
+		}
+		else if(cal_count == 128)
+		{   
+			printf("calibrated. return to safe mode\n");
+			c_phi   = cal_phi / 128;
+			c_theta = cal_theta / 128;
+			c_psi   = cal_psi / 128;
+			c_sp    = cal_sp / 128;
+			c_sq    = cal_sq / 128;
+			c_sr    = cal_sr / 128;
+			cal_count = 0;
+		mode = SAFE;
+		}
 	}
    
-        else if(mode == YAW)
-        {  
+	else if(mode == YAW)
+	{  
 	   int32_t yaw_new = 0;
            //int8_t x, y;
            int32_t A = 1, B = 1, C = 1; 
@@ -203,10 +204,15 @@ void run_filters_and_control()
 	   ae[1] = (int16_t) isqrt(A * throttle - 2 * B * roll  + C * yaw_new)*0.7+160;
 	   ae[2] = (int16_t) isqrt(A * throttle - 2 * B * pitch - C * yaw_new)*0.7+160;
 	   ae[3] = (int16_t) isqrt(A * throttle + 2 * B * roll  + C * yaw_new)*0.7+160;       
-        }	
+	}	
+
+	else if(mode == RAW)
+	{
+		raw_mode = 1-raw_mode;
+	}
  
-        else if(mode == FULL)
-        {
+	else if(mode == FULL)
+	{
              int16_t p_err, r_err;
                   
 	     int32_t A = 1, B = 1, C = 1;   
@@ -222,7 +228,7 @@ void run_filters_and_control()
                 if(pitch_new > 32767) pitch_new = 32767;
                 if(roll_new < -32768) roll_new = -32768;
                 if(roll_new > 32767) roll_new = 32767;
-            }
+	}
           
           ae[0] = (int16_t) isqrt(A * throttle + 2 * B * pitch_new - C * yaw)*0.7 + 160;
 	  ae[1] = (int16_t) isqrt(A * throttle - 2 * B * roll_new  + C * yaw)*0.7 + 160;
@@ -231,7 +237,7 @@ void run_filters_and_control()
            
         }
 
-        else if(mode == SAFE) 
+	else if(mode == SAFE) 
 	{
 		ae[0] = ae[1] = ae[2] = ae[3] = 0;
 	}
