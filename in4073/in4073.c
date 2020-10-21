@@ -170,13 +170,23 @@ void log_data()
 void raw_init()
 {
 	ready = true;
-     	raw_mode = false;
+	raw_mode = false;
 	height_mode = false;
-        processed_yaw = 0;       
-        prev_yaw_x[0] = 0;
-        prev_yaw_x[1] = 0;
-        prev_yaw_y[0] = 0;
-        prev_yaw_y[1] = 0; 
+	processed_yaw = 0;       
+	prev_yaw_x[0] = 0;
+	prev_yaw_x[1] = 0;
+	prev_yaw_y[0] = 0;
+	prev_yaw_y[1] = 0; 
+	p_bias = 0;
+    phi_error = 0;
+    p_kalman = 0;
+    phi_kalman = 0;
+    sphi = 0;
+    q_bias = 0;
+    stheta = 0;
+    theta_error = 0;
+    q_kalman = 0;
+    theta_kalman = 0;
 }
 
 /*------------------------------------------------------------------
@@ -195,7 +205,7 @@ int main(void)
 	baro_init();
 	spi_flash_init();
 	ble_init();
-        raw_init();
+	raw_init();
 	mode = SAFE;
 	throttle = roll = pitch = yaw = 0;
 	uint32_t counter = 0;
@@ -248,16 +258,16 @@ int main(void)
 		{			
 			adc_request_sample();
 			read_baro();
-                        /*if(counter%32 == 0)
+                        if(counter%32 == 0)
                         {
-	                 	printf("%10ld | ", get_time_us());
-				printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
-				printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
+	                 	printf("%10ld	", get_time_us());
+				//printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
+				//printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
 				printf("%6d %6d %6d | ", phi, theta, psi);
-				printf("%6d %6d %6d | ", sp, sq, sr);
-				printf("%4d | %4ld | %6ld |", bat_volt, temperature, pressure);
-				printf("%6d %6d %6d | %d || %d |||    %d  - %d\n",P, P1, P2, mode, y_err, yaw, sr);
-                        }*/
+				printf("%6d	%6d	%6d	%6ld	\n", sp, sq, sr, prev_yaw_x[0]);
+				//printf("%4d | %4ld | %6ld |", bat_volt, temperature, pressure);
+				//printf("%6d %6d %6d | %d || %d |||    %d  - %d\n",P, P1, P2, mode, y_err, yaw, sr);
+                        }
                     
 			clear_timer_flag();
 		}

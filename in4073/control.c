@@ -13,6 +13,11 @@
 
 #include "in4073.h"
 #include "math.h"
+#define P2PHI_SHIFT 5
+#define C1_SHIFT 7
+#define C2_SHIFT 20
+
+
 uint16_t isqrt(long x)
 {
 	/*
@@ -56,23 +61,38 @@ void update_motors(void)
 	motor[3] = ae[3]>0?ae[3]:0;
 }
 
-int32_t butterworth(int32_t x0, int32_t x1, int32_t x2, int32_t y1, int32_t y2)
+
+int butterworth(int32_t x0, int32_t x1, int32_t x2, int32_t y1, int32_t y2)
 {
-    int32_t a[3]; 
-    int32_t b[3];
-    //a[0] = 1; a[1] = -1.73472577, a[2] =  0.7660066; b[0] = 0.00782021; b[1] = 0.01564042, b[2] =  0.00782021;
-    a[0] = 16384; a[1] = -20609; a[2] = 7646; b[0] = 855; b[1] = 1710; b[2] = 855; //need to round
-    int32_t part1 = x0*b[0] + x1*b[1] + x2*b[2]; 
-    int32_t part2 = y1*a[1] + y2*a[2];
+    int32_t a[6]; 
+    int32_t b[6];
+    //a[0] = 16384; a[1] = -28672; a[2] = 14336; b[0] = 66; b[1] = 136; b[2] = 66; //actual values
+
+    a[0] = 14; a[1] = 0; a[2] = 15; a[3] = 12; a[4] = 14; a[5] = 11; //shifts
+    b[0] = 6; b[1] = 1; b[2] = 7; b[3] = 3; b[4] = 6; b[5] = 1;      
+    int32_t part1 = (x0<<b[0]) + (x0<<b[1]) + (x1<<b[2]) + (x1<<b[3]) + (x2<<b[4]) +(x2<<b[5]);
+    int32_t part2 = (-y1<<a[2]) + (y1<<a[3]) + (y2<<a[4]) - (y2<<a[5]);
     int32_t filtered = (part1 - part2) >>14;  //a[0] = 1 or 16384, should be divided or shifted right 
     return filtered;
 }
 
 void kalman_filter()
 {
+	sphi = say << 16;  
+    p_kalman = (sp << 16) - p_bias;   
+    phi_kalman = phi_kalman + (p_kalman >> P2PHI_SHIFT);
+    phi_error = phi_kalman - sphi;
+    phi_kalman = phi_kalman - (phi_error >> C1_SHIFT);// C1;
+    p_bias = p_bias + ((phi_error << P2PHI_SHIFT)>>C2_SHIFT);// C2;
+	phi = phi_kalman>>16;
 
-
-
+	stheta = sax << 16;  
+    q_kalman = (sq << 16) - q_bias;   
+    theta_kalman = theta_kalman + (q_kalman >> P2PHI_SHIFT);
+    theta_error = theta_kalman - stheta;
+    theta_kalman = theta_kalman - (theta_error >> C1_SHIFT);// C1;
+    q_bias = q_bias + ((theta_error << P2PHI_SHIFT)>>C2_SHIFT);// C2;
+	theta = theta_kalman>>16;
 }
 void run_filters_and_control()
 {
@@ -83,19 +103,20 @@ void run_filters_and_control()
         if(raw_mode)
         {
 
-		if(mode == YAW)
+		if(mode == YAW || mode == FULL)
 		{
-	          	processed_yaw = butterworth(sr, prev_yaw_x[0], prev_yaw_x[1], prev_yaw_y[0], prev_yaw_y[1]);
-	
-		        prev_yaw_x[1] = prev_yaw_x[0];
-	           	prev_yaw_x[0] = sr;
-	
-	           	prev_yaw_y[1] = prev_yaw_y[0];
-	           	prev_yaw_y[0] = processed_yaw;
-	           	sr = processed_yaw;
+			processed_yaw = butterworth(sr, prev_yaw_x[0], prev_yaw_x[1], prev_yaw_y[0], prev_yaw_y[1]);	
+			prev_yaw_x[1] = prev_yaw_x[0];
+			prev_yaw_x[0] = sr;	
+			prev_yaw_y[1] = prev_yaw_y[0];
+			prev_yaw_y[0] = processed_yaw;
+			sr = processed_yaw;
+				
 		}
-                else if(mode == FULL)   
-	  		kalman_filter();    	
+		if(mode == FULL)   
+		{
+			kalman_filter();  
+		}	  		  	
         }
 
 	if(height_mode)

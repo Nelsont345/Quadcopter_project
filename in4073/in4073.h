@@ -78,6 +78,18 @@ int32_t processed_yaw;
 int32_t prev_yaw_x[2];
 int32_t prev_yaw_y[2];
 
+int32_t p_bias;
+int32_t sphi;
+int32_t phi_error;
+int32_t p_kalman;
+int32_t phi_kalman;
+
+int32_t q_bias;
+int32_t stheta;
+int32_t theta_error;
+int32_t q_kalman;
+int32_t theta_kalman;
+
 
 //height mode
 bool height_mode;
