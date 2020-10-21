@@ -124,12 +124,13 @@ void run_filters_and_control()
 	if(height_mode)
 	{
 		int32_t h_err;
-		uint32_t Q = 2;
+		uint32_t Q = 5000;
 		h_err = pressure - fixed_pressure;                  
-               	throttle_new = Q * h_err;
+               	throttle_new =throttle + Q * h_err;
+		    //printf("Change in throttle %ld  throttle %d new throttle %ld\n", Q * h_err,  throttle, throttle_new);
 	       	if(throttle_new > 65535) throttle_new = 65535;
-	       	if(throttle_new < 0) throttle_new = 0;           	
-		throttle = throttle_new;
+	       	if(throttle_new < 00) throttle_new = 0;           	
+		//throttle = throttle_new;
 	}
 
 
@@ -156,7 +157,7 @@ void run_filters_and_control()
 			ae[2] *=0.9;
 			ae[3] *=0.9;
 			update_motors();
-			nrf_delay_ms(500);
+			nrf_delay_ms(200);
 			//printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);
 		}
                 
@@ -238,6 +239,17 @@ void run_filters_and_control()
 	else if(mode == SAFE) 
 	{
 		ae[0] = ae[1] = ae[2] = ae[3] = 0;
+	}
+
+	else if(height_mode)
+	{
+
+		int32_t A = 1, B = 1, C = 1; 
+		ae[0] = (int16_t) isqrt(A * throttle_new + 2 * B * pitch - C * yaw)*0.7+160;
+		ae[1] = (int16_t) isqrt(A * throttle_new - 2 * B * roll + C * yaw)*0.7+160;
+		ae[2] = (int16_t) isqrt(A * throttle_new - 2 * B * pitch - C * yaw)*0.7+160;
+		ae[3] = (int16_t) isqrt(A * throttle_new + 2 * B * roll + C * yaw)*0.7+160;
+
 	}
 	update_motors();
 }

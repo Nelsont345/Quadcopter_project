@@ -69,9 +69,7 @@ int32_t prev_yaw_y[2];
 
 
 //height mode
-bool height_mode;
-uint16_t throttle_new;
-int32_t fixed_pressure;
+int32_t throttle_new;
 
 
 //kalman
@@ -104,7 +102,7 @@ int32_t theta_kalman;
 
 //height mode
 bool height_mode;
-uint16_t throttle_new;
+//uint16_t throttle_new;
 int32_t fixed_pressure;
 
 

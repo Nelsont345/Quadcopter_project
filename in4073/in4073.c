@@ -75,7 +75,7 @@ void get_command()
 	P1 = dequeue(&rx_queue);
 	P2 = dequeue(&rx_queue);
 
-	printf("frame: %u mode: %u raw_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u sp %d sq %d sr %d sax %d say %d saz %d fixed_pressure %ld throttle_new %d pressure %ld\n",frame, mode, raw_mode,throttle, roll, pitch, yaw, P, P1, P2, crc, fixed_pressure, throttle_new, pressure);
+   printf("frame: %u mode: %u height_mode %d raw_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u fixed_pressure %ld throttle_new %ld pressure %ld\n",frame, mode, height_mode, raw_mode,throttle, roll, pitch, yaw, P, P1, P2, crc, fixed_pressure, throttle_new, pressure);
 	uart_put(0xFF);
 	uart_put(frame);
     
@@ -96,7 +96,7 @@ void get_command()
 void get_connection_check()
 {
 	frame = dequeue(&rx_queue);
-	printf("frame: %u mode: %u raw_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u sp %d sq %d sr %d sax %d say %d saz %d\n",frame, mode, raw_mode, throttle, roll, pitch, yaw, P, P1, P2, crc, sp, sq, sr, sax, say, saz);
+	//printf("frame: %u mode: %u height_mode %d raw_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u fixed_pressure %ld throttle_new %ld pressure %ld\n",frame, mode, height_mode, raw_mode,throttle, roll, pitch, yaw, P, P1, P2, crc, fixed_pressure, throttle_new, pressure);
 
 	//printf("frame(check connection): %u\n",frame);
         flash_data();
@@ -280,9 +280,11 @@ int main(void)
 			adc_request_sample();
 			read_baro();
 			 //printf("cycle time: %lu \n", cycle_time);
+            //printf("Change in throttle %ld  throttle %d new throttle %ld\n", Q * h_err,  throttle, throttle_new);
 
-                        if(counter++%32 == 0)
-                        {
+                        if(counter++%12 == 0)
+                        {               printf(" throttle %d new throttle %ld\n",  throttle, throttle_new);
+
 							//counter++;
 							nrf_gpio_pin_toggle(BLUE);
 	                 	//printf("%10ld	", get_time_us());
