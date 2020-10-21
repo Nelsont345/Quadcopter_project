@@ -265,12 +265,19 @@ int main(void)
 				}
 			}
 		} 
-                if(mode!=SAFE && get_time_us()-last_receiving_time > 2000000) mode = PANIC;
+				uint32_t cur_time = get_time_us();
+                if(mode!=SAFE && cur_time-last_receiving_time > 2000000) mode = PANIC;
                 if(mode == EXIT)
                 {      
+						                        
+//        		        log_data();
+mode = PANIC;
+run_filters_and_control();
                         uart_put(0x00);
-        		log_data();
-                        mode = SAFE;
+
+        		        log_data();
+
+
                         demo_done = true;
                 }
 
@@ -283,7 +290,9 @@ int main(void)
             //printf("Change in throttle %ld  throttle %d new throttle %ld\n", Q * h_err,  throttle, throttle_new);
 
                         if(counter++%12 == 0)
-                        {               printf(" throttle %d new throttle %ld\n",  throttle, throttle_new);
+                        {               printf(" throttle %d new throttle %ld\t",  throttle, throttle_new);
+										printf("%4d \n", bat_volt);
+
 
 							//counter++;
 							nrf_gpio_pin_toggle(BLUE);
@@ -335,7 +344,6 @@ int main(void)
 
 
 	}	
-
 	printf("\n\t Goodbye \n\n");
 	nrf_delay_ms(100);
 

@@ -21,6 +21,7 @@ int count1 = 0;
 int row = 0;
 int data[0xFFFF];
 int j;
+uint32_t prev_time;
 bool ready = true;
         uint32_t time2;
         int16_t log_data;
@@ -195,19 +196,20 @@ void log_file(int c)
               fprintf(stderr, "%d ",c);
               if(count1 >= 0 && count1 <= 3)
               {  
-                      if(count1 == 0)
-                      time2 = 0;
-                      time2 += (c << ((8 * (3 - count1))));
-                      if (count1 == 3)
-                      {
-                               if(time2 == -1)
-                               {   
-					rs232_putchar(0xFF);  ready = false;
-					//break;
-			       }
-			       else
-                               fprintf(fp, "%d\t ", time2);
-                      }
+                    if(count1 == 0)
+                    time2 = 0;
+                    time2 += (c << ((8 * (3 - count1))));
+                    if (count1 == 3)
+                    {     
+                            if(time2 - prev_time > 655360 && prev_time !=0)
+                            {   
+									rs232_putchar(0xFF);  ready = false;
+									//break;
+			                }
+			       			else
+                               		fprintf(fp, "%d\t ", time2);
+							   		prev_time = time2;
+                    }
               }
 
               else if(count1 >= 4 && count1 <= 8)
@@ -714,7 +716,7 @@ int main(int argc, char **argv)
 	while(j_throttle!=0||j_yaw!=0||j_pitch!=0||j_roll!=0)
 	{
 		fprintf(stderr,"please set joystick to neutral\n");
-		mon_delay_ms(1000);
+		mon_delay_ms(500);
 		get_joystick(fd);
 	}
 	send_command();
@@ -762,8 +764,8 @@ int main(int argc, char **argv)
         if(mode == EXIT)
         {  
                 while(rs232_getchar() != 0x00);
-                c = 0;
-                log_file(c);
+                //c = 0;
+                //log_file(c);
 
                 rs232_putchar(0x00);
                 while(ready )

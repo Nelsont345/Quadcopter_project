@@ -157,7 +157,7 @@ void run_filters_and_control()
 			ae[2] *=0.9;
 			ae[3] *=0.9;
 			update_motors();
-			nrf_delay_ms(200);
+			nrf_delay_ms(750);
 			//printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);
 		}
                 
