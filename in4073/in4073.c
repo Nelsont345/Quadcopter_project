@@ -272,7 +272,7 @@ int main(void)
 				//printf("%6d %6d %6d | ", phi, theta, psi);
 				//printf("%6d	%6d	%6d	%6ld, %6d	", sp, sq, sr, prev_yaw_x[0], raw_mode);
 				//printf("%4d | %4ld | %6ld |", bat_volt, temperature, pressure);
-				printf("%6d %6d %6d | %d || %d |||    %d  - %d | %d\n",P, P1, P2, mode, y_err, yaw, sr, raw_mode);
+				//printf("%6d %6d %6d | %d || %d |||    %d  - %d | %d\n",P, P1, P2, mode, y_err, yaw, sr, raw_mode);
                         }
                     
 			clear_timer_flag();
@@ -293,6 +293,7 @@ int main(void)
 
                 loop_time = get_time_us();            
                 cycle_time = (loop_time - prev_loop_time);
+				printf("cycle time: %lu \n", cycle_time);
                 prev_loop_time = loop_time;
 		if(key_press)
                 {       if(filter_stop_time  > t_access)
