@@ -16,7 +16,7 @@
 #include "math.h"
 #include "crc.h"
 #include <stdlib.h>
-#define LOG_SIZE 34
+#define LOG_SIZE 38
 int count1 = 0;
 int row = 0;
 int data[0xFFFF];
@@ -27,7 +27,8 @@ bool ready = true;
 
 
         FILE *fp; 
-        
+                FILE *fp2;
+
 
 /*------------------------------------------------------------
  * console I/O
@@ -204,6 +205,7 @@ void log_file(int c)
 					rs232_putchar(0xFF);  ready = false;
 					//break;
 			       }
+			       else
                                fprintf(fp, "%d\t ", time2);
                       }
               }
@@ -228,6 +230,15 @@ void log_file(int c)
                               time2 = 0;
                       time2 += (c << (8 * (32 - count1)));
                       if (count1 == 32)
+                              fprintf(fp, "%d\t ", time2);
+              } 
+
+              else if(count1 >= 33 && count1 <= 36)
+              { 
+                      if(count1  == 33)
+                              time2 = 0;
+                      time2 += (c << (8 * (36 - count1)));
+                      if (count1 == 36)
                               fprintf(fp, "%d\t ", time2);
               }      
               count1++;
@@ -612,6 +623,7 @@ void get_data()
 			{
 				unsigned int receiving_time = mon_time_ms();
 				fprintf(stderr,"get ack %d after %ums\n",ack_frame,receiving_time-sending_time[ack_frame]);
+				fprintf(fp2,"message_packet\t%u ms\n", receiving_time-sending_time[ack_frame]);
 				miss_count = 0;
 				waiting_for_ack = false;
 				if(mode == PANIC || mode == CALIBRATION) mode = SAFE;
@@ -624,7 +636,7 @@ void get_data()
 			if(ack_frame == frame-1)//if it is the ack for the last frame
 			{
 				unsigned int receiving_time = mon_time_ms();
-				fprintf(stderr,"get ack(check) %d after %ums\n",ack_frame,receiving_time-sending_time[ack_frame]);
+				//fprintf(stderr,"get ack(check) %d after %ums\n",ack_frame,receiving_time-sending_time[ack_frame]);
 				miss_count = 0;
 				waiting_for_ack = false;
 				if(mode == PANIC || mode == CALIBRATION) mode = SAFE;
@@ -680,10 +692,10 @@ int main(int argc, char **argv)
 
 	fcntl(fd, F_SETFL, O_NONBLOCK);
 	*/
+        fp2 = fopen("log2.txt", "w"); 
         fp = fopen("log.txt", "w");
         
-        FILE *fp2;
-        fp2 = fopen("log2.txt", "w");  
+ 
         fprintf(fp, "TIME \t THROTTLE \t ROLL \t PITCH \t YAW \t MODE \t PHI \t THETA \t PSI \t SP \t SQ \t SR \t MOTOR 0 \t MOTOR 1 \t MOTOR 2 \t MOTOR 3 \t LOOP TIME\n");
 
 	term_puts("Type ^C to exit\n");

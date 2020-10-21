@@ -11,6 +11,12 @@ After that read the Makefile to find out what rules are available (modify them a
 "make upload-run" is the most interesting one as it will compile both sides, upload the code to the quad and execute the pc side.
 
 p.s. If dfu_serial complains about pyserial, you can install it with "pip install pyserial". 
+<<<<<<< HEAD
+      ("sudo apt-get install python-pip" on debian based if you are also missing pip)
+	  
+	  
+Have fun and remember: Google it before asking the TAs!
+=======
       ("sudo apt-get install python-pip" on debian based if you are also missing pip
 	  
 In case if you find the error message "make: ../gcc-arm-none-eabi/bin/arm-none-eabi-gcc: Command not found" when compiling the code, follow the following procedure.
@@ -20,3 +26,4 @@ In case if you find the error message "make: ../gcc-arm-none-eabi/bin/arm-none-e
 Have fun and remember: Google it before asking the TAs!
 
 
+>>>>>>> Liang

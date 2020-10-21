@@ -31,7 +31,6 @@ uint8_t data[DATASIZE];
 uint8_t data_r[DATASIZE];
 uint8_t data_r2[DATASIZE];
 bool iflag = false;
-uint32_t t_receive;
 uint32_t t_access;
 
 void get_command()
@@ -60,11 +59,16 @@ void get_command()
 	P1 = dequeue(&rx_queue);
 	P2 = dequeue(&rx_queue);
 
-	printf("frame: %u mode: %u throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u \n",frame, mode, throttle, roll, pitch, yaw, P, P1, P2, crc);
+	//printf("frame: %u mode: %u throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u \n",frame, mode, throttle, roll, pitch, yaw, P, P1, P2, crc);
 	uart_put(0xFF);
 	uart_put(frame);
         if(mode == RAW)
-	       raw_mode = !raw_mode; 
+	{       raw_mode = !raw_mode;
+                if(raw_mode)		
+			imu_init(false, 100);
+		if(!raw_mode)
+			imu_init(true, 100);
+	}	 
         if(mode == HEIGHT)
         {
 	       height_mode = !height_mode;
@@ -74,13 +78,13 @@ void get_command()
 	if(mode!=8)
 	flash_data();
 	t_access = get_time_us();
-	queue_time = t_access - t_receive;
 }
 
 void get_connection_check()
 {
 	frame = dequeue(&rx_queue);
-	printf("frame(check connection): %u\n",frame);
+	//printf("frame(check connection): %u\n",frame);
+        flash_data();
 	uart_put(0xFE);
 	uart_put(frame);
 //flash_data();
@@ -122,11 +126,17 @@ void flash_data()
    data[27] = (motor[3] & 0xFFFF) >> 8;
    data[28] = motor[3] & 0xFF;
 
-   data[29] = (prev_loop_time & 0xFFFFFFFF) >> 24;
-   data[30] = (prev_loop_time & 0xFFFFFF) >> 16; 
-   data[31] = (prev_loop_time & 0xFFFF) >> 8;
-   data[32] = (prev_loop_time & 0xFF);
+   data[29] = (cycle_time & 0xFFFFFFFF) >> 24;
+   data[30] = (cycle_time & 0xFFFFFF) >> 16; 
+   data[31] = (cycle_time & 0xFFFF) >> 8;
+   data[32] = (cycle_time & 0xFF);
 
+   data[33] = (response_time & 0xFFFFFFFF) >> 24;
+   data[34] = (response_time & 0xFFFFFF) >> 16; 
+   data[35] = (response_time & 0xFFFF) >> 8;
+   data[36] = (response_time & 0xFF);
+
+ 
    if(!flash_write_bytes(write_address, data, DATASIZE))
    {   
        write_address = 0x00000000;
@@ -141,14 +151,14 @@ void flash_data()
 void log_data()
 {   
     read_address = 0x00000000;
-    //uart_put(0x7F);
     while(dequeue(&rx_queue) != 0x00);
-    //while(ready == false)
-          uart_put(0x00);
+    uart_put(0x00);
                   nrf_delay_ms(1000);
     read_address = 0x00000000;
-    while(ready == true)
-    { 
+    while(1)
+    { 	    
+            if(rx_queue.count && (dequeue(&rx_queue) == 0xFF))
+                  break;
             if(flash_read_bytes(read_address, data_r, DATASIZE))
             {    
                   nrf_delay_ms(500);
@@ -169,8 +179,8 @@ void log_data()
 
 void raw_init()
 {
-	ready = true;
-	raw_mode = false;
+	//ready = true;
+     	raw_mode = false;
 	height_mode = false;
 	processed_yaw = 0;       
 	prev_yaw_x[0] = 0;
@@ -271,30 +281,34 @@ int main(void)
 		if (check_sensor_int_flag()) 
 		{       
                         filter_start_time = get_time_us();
-			//if(!raw_mode)
+			if(!raw_mode)
 			     get_dmp_data();
-                        //else if(raw_mode) 
-                        //     get_raw_sensor_data();
+                        else if(raw_mode) 
+                             get_raw_sensor_data();
 
 			run_filters_and_control();
                         filter_stop_time = get_time_us();
 		}
                 //sensor_start_time = get_time_us();		  
-                if(counter%20 == 0)
-                {                   
-                         nrf_gpio_pin_toggle(BLUE);
-                }
 
                 loop_time = get_time_us();            
                 cycle_time = (loop_time - prev_loop_time);
                 prev_loop_time = loop_time;
 		if(key_press)
-                {        
-			response_time = filter_stop_time - t_receive;
-			key_press = false;
+                {       if(filter_stop_time  > t_access)
+				
+			{response_time = filter_stop_time - t_access;
+			key_press = false;}
 		}
+		counter++;
+                if(counter%20 == 0)
+                {               
+                         nrf_gpio_pin_toggle(BLUE);
 
-                
+                }
+
+
+
 	}	
 
 	printf("\n\t Goodbye \n\n");
