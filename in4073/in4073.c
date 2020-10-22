@@ -304,7 +304,8 @@ run_filters_and_control();
 				//printf("%4d | %4ld | %6ld |", bat_volt, temperature, pressure);
 				//printf("%6d %6d %6d | %d || %d |||    %d  - %d | %d\n",P, P1, P2, mode, y_err, yaw, sr, raw_mode);
                         }
-                    
+            if(bat_volt<1050) mode = PANIC;
+			else if(bat_volt<1100) printf("battery is low\n");
 			clear_timer_flag();
 		}
 
