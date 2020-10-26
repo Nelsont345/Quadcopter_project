@@ -41,9 +41,98 @@ uint8_t frame = 0;
 uint8_t crc = 0;
 bool send;
 
+/*------------------------------------------------------------
+ * GUI
+ *------------------------------------------------------------
+ */
+
+static void
+to_safe (GtkWidget *widget,
+             gpointer   data)
+{
+  mode = SAFE;
+  send = true;
+}
+
+static void
+to_panic (GtkWidget *widget,
+             gpointer   data)
+{
+  mode = PANIC;
+  send = true;
+}
+
+static void
+to_manual (GtkWidget *widget,
+             gpointer   data)
+{
+  mode = MANUAL;
+  send = true;
+}
+
+static void
+to_calibration (GtkWidget *widget,
+             gpointer   data)
+{
+  mode = CALIBRATION;
+  send = true;
+}
+
+static void
+to_yaw (GtkWidget *widget,
+             gpointer   data)
+{
+  mode = YAW;
+  send = true;
+}
+
+static void
+to_full (GtkWidget *widget,
+             gpointer   data)
+{
+  mode = FULL;
+  send = true;
+}
+
+static void
+to_raw (GtkWidget *widget,
+             gpointer   data)
+{
+  mode = RAW;
+  send = true;
+}
+
+static void
+to_height (GtkWidget *widget,
+             gpointer   data)
+{
+  mode = HEIGHT;
+  send = true;
+}
+
+static void
+to_exit (GtkWidget *widget,
+             gpointer   data)
+{
+  mode = EXIT;
+  send = true;
+}
+
 
   /* Declare variables */
 GtkWidget *window;
+
+GtkWidget *button_box;
+GtkWidget *b_safe;
+GtkWidget *b_panic;
+GtkWidget *b_manual;
+GtkWidget *b_calibration;
+GtkWidget *b_yaw;
+GtkWidget *b_full;
+GtkWidget *b_raw;
+GtkWidget *b_height;
+GtkWidget *b_exit;
+
 GtkWidget *throttle_scale;
 GtkWidget *throttle_label;
 GtkWidget *roll_scale;
@@ -294,6 +383,32 @@ activate (GtkApplication *app,
   gtk_window_set_default_size (GTK_WINDOW (window), 400, 300);
   gtk_container_set_border_width (GTK_CONTAINER (window), 5);
 
+  //button_box = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
+  //gtk_container_add (GTK_CONTAINER (window), button_box);
+
+  b_safe = gtk_button_new_with_label ("SAFE");
+  g_signal_connect (b_safe, "clicked", G_CALLBACK (to_safe), NULL);
+  b_panic = gtk_button_new_with_label ("PANIC");
+  g_signal_connect (b_panic, "clicked", G_CALLBACK (to_panic), NULL);
+  b_manual = gtk_button_new_with_label ("MANUAL");
+  g_signal_connect (b_manual, "clicked", G_CALLBACK (to_manual), NULL);
+  b_calibration = gtk_button_new_with_label ("CALIBTRATION");
+  g_signal_connect (b_calibration, "clicked", G_CALLBACK (to_calibration), NULL);
+  b_yaw = gtk_button_new_with_label ("YAW");
+  g_signal_connect (b_yaw, "clicked", G_CALLBACK (to_yaw), NULL);
+  b_full = gtk_button_new_with_label ("FULL");
+  g_signal_connect (b_full, "clicked", G_CALLBACK (to_full), NULL);
+  b_raw = gtk_button_new_with_label ("RAW");
+  g_signal_connect (b_raw, "clicked", G_CALLBACK (to_raw), NULL);
+  b_height = gtk_button_new_with_label ("HEIGHT");
+  g_signal_connect (b_height, "clicked", G_CALLBACK (to_height), NULL);
+  b_exit = gtk_button_new_with_label ("EXIT");
+  g_signal_connect (b_exit, "clicked", G_CALLBACK (to_exit), NULL);
+
+  //g_signal_connect_swapped (b_safe, "clicked", G_CALLBACK (gtk_widget_destroy), window);
+  //gtk_container_add (GTK_CONTAINER (button_box), b_safe);
+
+
   /* Two labels to be shown in the window */
   throttle_label = gtk_label_new (g_strdup_printf ("throttle: %u", k_throttle));
   roll_label = gtk_label_new (g_strdup_printf ("roll: %u", k_roll));
@@ -393,20 +508,30 @@ activate (GtkApplication *app,
   grid = gtk_grid_new ();
   gtk_grid_set_column_spacing (GTK_GRID (grid), 10);
   //gtk_grid_set_column_homogeneous (GTK_GRID (grid), TRUE);
-  gtk_grid_attach (GTK_GRID (grid), throttle_scale, 0, 0, 1, 1);
-  gtk_grid_attach (GTK_GRID (grid), throttle_label, 1, 0, 1, 1);
-  gtk_grid_attach (GTK_GRID (grid), roll_scale, 0, 1, 1, 1);
-  gtk_grid_attach (GTK_GRID (grid), roll_label, 1, 1, 1, 1);
-  gtk_grid_attach (GTK_GRID (grid), pitch_scale, 0, 2, 1, 1);
-  gtk_grid_attach (GTK_GRID (grid), pitch_label, 1, 2, 1, 1);
-  gtk_grid_attach (GTK_GRID (grid), yaw_scale, 0, 3, 1, 1);
-  gtk_grid_attach (GTK_GRID (grid), yaw_label, 1, 3, 1, 1);
-  gtk_grid_attach (GTK_GRID (grid), P_scale, 0, 4, 1, 1);
-  gtk_grid_attach (GTK_GRID (grid), P_label, 1, 4, 1, 1);
-  gtk_grid_attach (GTK_GRID (grid), P1_scale, 0, 5, 1, 1);
-  gtk_grid_attach (GTK_GRID (grid), P1_label, 1, 5, 1, 1);
-  gtk_grid_attach (GTK_GRID (grid), P2_scale, 0, 6, 1, 1);
-  gtk_grid_attach (GTK_GRID (grid), P2_label, 1, 6, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), throttle_scale, 1, 0, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), throttle_label, 2, 0, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), roll_scale, 1, 1, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), roll_label, 2, 1, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), pitch_scale, 1, 2, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), pitch_label, 2, 2, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), yaw_scale, 1, 3, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), yaw_label, 2, 3, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), P_scale, 1, 4, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), P_label, 2, 4, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), P1_scale, 1, 5, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), P1_label, 2, 5, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), P2_scale, 1, 6, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), P2_label, 2, 6, 1, 1);
+
+  gtk_grid_attach (GTK_GRID (grid), b_safe, 0, 0, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), b_panic, 0, 1, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), b_manual, 0, 2, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), b_calibration, 0, 3, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), b_yaw, 0, 4, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), b_full, 0, 5, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), b_raw, 0, 6, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), b_height, 0, 7, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), b_exit, 0, 8, 1, 1);
 
   gtk_container_add (GTK_CONTAINER (window), grid);
 
@@ -977,6 +1102,7 @@ void send_command()
 	sending_time[frame] = last_sending_time;
 	frame++;
 	waiting_for_ack = true;
+	send = false;
 }
 
 
@@ -1021,6 +1147,11 @@ void get_data()
 				if(mode == PANIC || mode == CALIBRATION) mode = SAFE;
 				//fprintf(stderr,"get ack %d\n",next_c);
 			}	
+		}
+		else if(c == 0xFD)
+		{
+			fprintf(stderr,"recover from PANIC mode");
+			mode = SAFE;
 		}
 		else
 		{

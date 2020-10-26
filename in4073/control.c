@@ -147,9 +147,10 @@ void run_filters_and_control()
 		//printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);
 	}
 	else if (mode == PANIC)
-	{       printf("panic\n");
-		int i;
-		for(i=0;i<10;i++)
+	{       
+		printf("panic\n");
+
+		for(int i=0;i<10;i++)
 		{
 			ae[0] *=0.9;
 			ae[1] *=0.9;
@@ -159,7 +160,7 @@ void run_filters_and_control()
 			nrf_delay_ms(500);
 			//printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);
 		}
-                
+		uart_put(0xFD);              
 		mode = SAFE;
 	}
 	else if (mode == CALIBRATION)
@@ -186,7 +187,8 @@ void run_filters_and_control()
 			c_sq    = cal_sq / 128;
 			c_sr    = cal_sr / 128;
 			cal_count = 0;
-		mode = SAFE;
+			uart_put(0xFC);  
+			mode = SAFE;
 		}
 	}
    

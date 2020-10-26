@@ -42,27 +42,14 @@ void get_command()
 	if(crc != get_crc2(0, new_mode, 1)) 
 	{
 		//printf("wrong! frame: %u mode: %u throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u \n",frame, new_mode, new_throttle, new_roll, new_pitch, new_yaw, new_P, new_P1, new_P2, crc);
-		printf("wrong command!\n\n");
-		for(int i=0;i<11;i++) dequeue(&rx_queue); 
+		//printf("wrong command!\n\n");
+		for(int i=0;i<13;i++) dequeue(&rx_queue); 
 		return;
 	}
 
-    if(new_mode == RAW && new_mode!=mode)
-	{   raw_mode = !raw_mode;
-        if(raw_mode)		
-			imu_init(false, 100);
-		if(!raw_mode)
-			imu_init(true, 100);
-	}
-
-	if(new_mode == HEIGHT && new_mode!=mode)
-    {
-	    height_mode = !height_mode;
-	    if(height_mode)
-                      fixed_pressure = pressure;
-        }
-
 	mode = new_mode;
+	uint8_t new_raw_mode = dequeue(&rx_queue);
+	uint8_t new_height_mode = dequeue(&rx_queue);
 	throttle = dequeue(&rx_queue);
 	throttle = (throttle<<8)+dequeue(&rx_queue);
 	roll = dequeue(&rx_queue);
@@ -75,19 +62,19 @@ void get_command()
 	P1 = dequeue(&rx_queue);
 	P2 = dequeue(&rx_queue);
 
-	printf("frame: %u mode: %u raw_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u sp %d sq %d sr %d sax %d say %d saz %d fixed_pressure %ld throttle_new %d pressure %ld\n",frame, mode, raw_mode,throttle, roll, pitch, yaw, P, P1, P2, crc, fixed_pressure, throttle_new, pressure);
+	//printf("frame: %u mode: %u raw_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u fixed_pressure %ld throttle_new %d pressure %ld\n",frame, mode, raw_mode,throttle, roll, pitch, yaw, P, P1, P2, crc, fixed_pressure, throttle_new, pressure);
+	//printf("frame: %u mode: %u\n",frame, mode);
 	uart_put(0xFF);
 	uart_put(frame);
     
-	/*if(mode == RAW)
-	{   raw_mode = !raw_mode;
-        if(raw_mode)		
-			imu_init(false, 100);
-		if(!raw_mode)
-			imu_init(true, 100);
-	}	 */
-    
-	
+        if(new_raw_mode == 1 && raw_mode == 0) imu_init(false, 100);
+	else if(new_raw_mode == 0 && raw_mode == 1) imu_init(true, 100);
+	if(height_mode == 0 && new_height_mode == 1) fixed_pressure = pressure;
+	height_mode = new_height_mode;
+	raw_mode = new_raw_mode;
+
+	printf("frame: %u mode: %u raw_mode:%d height_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u fixed_pressure %ld throttle_new %d pressure %ld\n\n",frame, mode, raw_mode, height_mode, throttle, roll, pitch, yaw, P, P1, P2, crc, fixed_pressure, throttle_new, pressure);
+
 	if(mode!=8)
 	flash_data();
 	t_access = get_time_us();
@@ -96,7 +83,7 @@ void get_command()
 void get_connection_check()
 {
 	frame = dequeue(&rx_queue);
-	printf("frame: %u mode: %u raw_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u sp %d sq %d sr %d sax %d say %d saz %d\n",frame, mode, raw_mode, throttle, roll, pitch, yaw, P, P1, P2, crc, sp, sq, sr, sax, say, saz);
+	//printf("frame: %u mode: %u raw_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u sp %d sq %d sr %d sax %d say %d saz %d\n",frame, mode, raw_mode, throttle, roll, pitch, yaw, P, P1, P2, crc, sp, sq, sr, sax, say, saz);
 
 	//printf("frame(check connection): %u\n",frame);
         flash_data();
@@ -240,6 +227,7 @@ int main(void)
         bool key_press = false;
 	while (!demo_done)
 	{      
+		//printf("last%lu\n", last_receiving_time);
                 tot_intr_time = 0;
 		if (rx_queue.count>0)
 		{
@@ -250,10 +238,10 @@ int main(void)
 			}
 			else
 			{
-				if(command_type == 0xFF && rx_queue.count>=14)
+				if(command_type == 0xFF && rx_queue.count>=16)
 				{
 					get_command();
-					last_receiving_time = get_time_us();
+					last_receiving_time = get_time_us();	
 					key_press = true;
 					receiving_data =false;
 				}
@@ -264,8 +252,13 @@ int main(void)
 					receiving_data=false;
 				}
 			}
-		} 
-                if(mode!=SAFE && get_time_us()-last_receiving_time > 2000000) mode = PANIC;
+		}
+		cur_time = get_time_us();
+                if(mode!=SAFE && ((cur_time-last_receiving_time) > 2000000)) 
+		{
+			printf("%lu  %lu\n",cur_time, last_receiving_time);
+			//mode = PANIC;
+		}
                 if(mode == EXIT)
                 {      
                         uart_put(0x00);
@@ -284,16 +277,19 @@ int main(void)
                         if(counter++%32 == 0)
                         {
 							//counter++;
-							nrf_gpio_pin_toggle(BLUE);
+				nrf_gpio_pin_toggle(BLUE);
+				//printf("last%lu\n", last_receiving_time);
 	                 	//printf("%10ld	", get_time_us());
 				//printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
 				//printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
 				//printf("%6d %6d %6d | ", phi, theta, psi);
 				//printf("%6d	%6d	%6d	%6ld, %6d	", sp, sq, sr, prev_yaw_x[0], raw_mode);
-				//printf("%4d | %4ld | %6ld |", bat_volt, temperature, pressure);
+				//printf("%d | %4ld | %6ld |\n", bat_volt, temperature, pressure);
 				//printf("%6d %6d %6d | %d || %d |||    %d  - %d | %d\n",P, P1, P2, mode, y_err, yaw, sr, raw_mode);
+                        
+				//if(bat_volt*0.007058824 <= 11) printf("battery is low!\n");
                         }
-                    
+			//if(bat_volt*0.007058824<10.5) mode = PANIC;
 			clear_timer_flag();
 		}
 

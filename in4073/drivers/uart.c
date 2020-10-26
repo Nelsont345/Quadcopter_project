@@ -11,10 +11,6 @@
 #include "in4073.h"
 
 bool txd_available = true;
-bool start_flag = false;
-uint8_t b_counter = 0;
-uint16_t p_counter = 0;
-
 
 void uart_put(uint8_t byte)
 {
@@ -47,7 +43,8 @@ void UART0_IRQHandler(void)
 		uint8_t k = NRF_UART0->RXD;  
                              
 		enqueue(&rx_queue, k);
-
+		
+		//printf("last%lu\n", last_receiving_time);
 	}
 
 	if (NRF_UART0->EVENTS_TXDRDY != 0)

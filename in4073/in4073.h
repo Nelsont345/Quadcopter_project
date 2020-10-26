@@ -62,7 +62,7 @@ int32_t pitch_new, roll_new;
 //uint32_t t_receive[256];
 
 //raw mode
-bool raw_mode;
+uint8_t raw_mode;
 int32_t processed_yaw;
 int32_t prev_yaw_x[2];
 int32_t prev_yaw_y[2];
@@ -81,14 +81,6 @@ int32_t P2PHI;
 int32_t C1;
 int32_t C2;
 
-
-
-//raw mode
-bool raw_mode;
-int32_t processed_yaw;
-int32_t prev_yaw_x[2];
-int32_t prev_yaw_y[2];
-
 int32_t p_bias;
 int32_t sphi;
 int32_t phi_error;
@@ -100,12 +92,6 @@ int32_t stheta;
 int32_t theta_error;
 int32_t q_kalman;
 int32_t theta_kalman;
-
-
-//height mode
-bool height_mode;
-uint16_t throttle_new;
-int32_t fixed_pressure;
 
 
 //kalman
