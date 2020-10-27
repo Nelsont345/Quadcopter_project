@@ -1,22 +1,32 @@
-message_packet	30 ms
-312,000000 
-message_packet	33 ms
-80,000000 
-message_packet	31 ms
-208,000000 
 message_packet	7 ms
-187,000000 
+63,000000 
+message_packet	7 ms
+59,000000 
 message_packet	8 ms
-182,000000 
-message_packet	31 ms
-188,000000 
+87,000000 
+message_packet	9 ms
+101,000000 
+message_packet	10 ms
+58,000000 
 message_packet	7 ms
-220,000000 
+56,000000 
+message_packet	8 ms
+65,000000 
+message_packet	7 ms
+59,000000 
 message_packet	6 ms
-201,000000 
-message_packet	31 ms
-115,000000 
-message_packet	7 ms
-170,000000 
+60,000000 
+message_packet	30 ms
+75,000000 
+message_packet	6 ms
+57,000000 
+message_packet	10 ms
+59,000000 
+message_packet	5 ms
+58,000000 
+message_packet	33 ms
+56,000000 
+message_packet	30 ms
+56,000000 
 message_packet	31 ms
 message_packet	1000 ms
