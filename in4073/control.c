@@ -130,7 +130,7 @@ void run_filters_and_control()
                	throttle_new = Q * h_err;
 	       	if(throttle_new > 65535) throttle_new = 65535;
 	       	if(throttle_new < 0) throttle_new = 0;           	
-		throttle = throttle_new;
+		//throttle = throttle_new;
 	}
 
 
@@ -158,7 +158,7 @@ void run_filters_and_control()
 			ae[2] *=0.9;
 			ae[3] *=0.9;
 			update_motors();
-			nrf_delay_ms(500);
+			nrf_delay_ms(750);
 			//printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);
 		}
 		uart_put(0xFD);              
@@ -237,7 +237,16 @@ void run_filters_and_control()
 	  ae[3] = (int16_t) isqrt(A * (throttle +  throttle_new) + 2 * B * roll_new  + C * yaw)*0.7 + 160;
            
         }
+	else if(height_mode)
+	{
 
+		int32_t A = 1, B = 1, C = 1; 
+		ae[0] = (int16_t) isqrt(A * (throttle + throttle_new) + 2 * B * pitch - C * yaw)*0.7+160;
+		ae[1] = (int16_t) isqrt(A * (throttle + throttle_new) - 2 * B * roll + C * yaw)*0.7+160;
+		ae[2] = (int16_t) isqrt(A * (throttle + throttle_new) - 2 * B * pitch - C * yaw)*0.7+160;
+		ae[3] = (int16_t) isqrt(A * (throttle + throttle_new) + 2 * B * roll + C * yaw)*0.7+160;
+
+	}
 	else if(mode == SAFE) 
 	{
 		ae[0] = ae[1] = ae[2] = ae[3] = 0;

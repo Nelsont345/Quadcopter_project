@@ -266,6 +266,7 @@ int main(void)
                         demo_done = true;
 
         		log_data();
+				mode = SAFE;
 
                 }
 
@@ -292,6 +293,8 @@ int main(void)
 				//if(bat_volt*0.007058824 <= 11) printf("battery is low!\n");
                         }
 			//if(bat_volt*0.007058824<10.5) mode = PANIC;
+			//if(bat_volt<1050) mode = PANIC;
+			//else if(bat_volt<1100) printf("battery is low\n");
 			clear_timer_flag();
 		}
 

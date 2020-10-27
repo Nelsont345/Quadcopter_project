@@ -1224,7 +1224,7 @@ void *loop()
 	while(j_throttle!=0||j_yaw!=0||j_pitch!=0||j_roll!=0)
 	{
 		fprintf(stderr,"please set joystick to neutral\n");
-		mon_delay_ms(1000);
+		mon_delay_ms(500);
 		//get_joystick(fd);
 	}
 	send_command();
