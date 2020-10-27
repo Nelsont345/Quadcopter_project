@@ -565,7 +565,7 @@ bool spi_flash_init(void)
     
     // Initialize the SPI
     spi_master_init(SPI_MODULE, &spi_config);
-	
+
 	nrf_gpio_cfg_output(SPI_WP);
 	nrf_gpio_cfg_output(SPI_HOLD);
 	nrf_gpio_pin_set(SPI_WP);

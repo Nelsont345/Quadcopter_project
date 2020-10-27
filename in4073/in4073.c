@@ -61,7 +61,8 @@ void get_command()
 	P = dequeue(&rx_queue);
 	P1 = dequeue(&rx_queue);
 	P2 = dequeue(&rx_queue);
-
+	Q = dequeue(&rx_queue);
+	Q = (Q<<8)+dequeue(&rx_queue);
 	//printf("frame: %u mode: %u raw_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u fixed_pressure %ld throttle_new %d pressure %ld\n",frame, mode, raw_mode,throttle, roll, pitch, yaw, P, P1, P2, crc, fixed_pressure, throttle_new, pressure);
 	//printf("frame: %u mode: %u\n",frame, mode);
 	uart_put(0xFF);
@@ -73,7 +74,7 @@ void get_command()
 	height_mode = new_height_mode;
 	raw_mode = new_raw_mode;
 
-	printf("frame: %u mode: %u raw_mode:%d height_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u fixed_pressure %ld throttle_new %d pressure %ld\n\n",frame, mode, raw_mode, height_mode, throttle, roll, pitch, yaw, P, P1, P2, crc, fixed_pressure, throttle_new, pressure);
+	printf("frame: %u mode: %u raw_mode:%d height_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u Q: %u crc: %u fixed_pressure %ld throttle_new %d pressure %ld\n\n",frame, mode, raw_mode, height_mode, throttle, roll, pitch, yaw, P, P1, P2, Q, crc, fixed_pressure, throttle_new, pressure);
 
 	if(mode!=8)
 	flash_data();
@@ -151,12 +152,12 @@ void flash_data()
 }
 
 void log_data()
-{   
+{   uart_put(0x00);
     read_address = 0x00000000;
-    while(dequeue(&rx_queue) != 0x00);
+    while(rx_queue.count && dequeue(&rx_queue) != 0x00);
     uart_put(0x00);
-                  nrf_delay_ms(1000);
-    read_address = 0x00000000;
+    nrf_delay_ms(1000);
+
     while(1)
     { 	    
             if(rx_queue.count && (dequeue(&rx_queue) == 0xFF))
@@ -238,10 +239,10 @@ int main(void)
 			}
 			else
 			{
-				if(command_type == 0xFF && rx_queue.count>=16)
+				if(command_type == 0xFF && rx_queue.count>=18)
 				{
 					get_command();
-					last_receiving_time = get_time_us();	
+					last_receiving_time = get_time_us();
 					key_press = true;
 					receiving_data =false;
 				}
@@ -260,11 +261,12 @@ int main(void)
 			//mode = PANIC;
 		}
                 if(mode == EXIT)
-                {      
-                        uart_put(0x00);
-        		log_data();
-                        mode = SAFE;
+                {       //mode = PANIC;
+                        //run_filters_and_control();
                         demo_done = true;
+
+        		log_data();
+
                 }
 
 

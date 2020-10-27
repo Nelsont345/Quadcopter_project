@@ -41,6 +41,8 @@ GtkWidget *P1_scale;
 GtkWidget *P1_label;
 GtkWidget *P2_scale;
 GtkWidget *P2_label;
+GtkWidget *Q_scale;
+GtkWidget *Q_label;
 GtkWidget *info;
 GtkWidget *cur_mode;
 GtkWidget *grid;
@@ -51,6 +53,7 @@ GtkAdjustment *yaw_adjustment;
 GtkAdjustment *P_adjustment;
 GtkAdjustment *P1_adjustment;
 GtkAdjustment *P2_adjustment;
+GtkAdjustment *Q_adjustment;
 /*------------------------------------------------------------
  * control variables
  *------------------------------------------------------------
@@ -70,6 +73,7 @@ int16_t k_roll = 0, k_pitch = 0, k_yaw = 0;
 int16_t j_roll = 0, j_pitch = 0, j_yaw = 0;
 int16_t roll = 0, pitch = 0, yaw = 0;
 uint8_t P, P1, P2 = 0;
+uint16_t Q = 0;
 uint8_t mode = 0;
 uint8_t frame = 0;
 uint8_t crc = 0;
@@ -263,7 +267,7 @@ void log_file(int c)
                       if (count1 == 3)
                       {
                                if(time2 == -1)
-                               {   
+                               {        fprintf(stderr,"done logging!");
 					rs232_putchar(0xFF);  ready = false;
 					//break;
 			       }
@@ -393,6 +397,7 @@ void update_gui()
 	gtk_adjustment_set_value(P_adjustment,P);
 	gtk_adjustment_set_value(P1_adjustment,P1);
 	gtk_adjustment_set_value(P2_adjustment,P2);
+	gtk_adjustment_set_value(Q_adjustment,Q);
 	gchar *mode_str;
 	switch(mode)
 	{
@@ -462,7 +467,7 @@ bool get_joystick(int fd)
 		j_yaw = axis[2];
 		if(button[0]==1) 
 		{
-			mode = EXIT;   
+			mode = PANIC;   
 			update_gui();
 		}
 		return true;
@@ -484,12 +489,12 @@ bool get_keyboard()
 		switch (c)
 		{
 			case '0':
-				mode = SAFE;
 				if(mode==SAFE)
 				{
 					printf("already in safe mode\n");
 					return false;
 				}
+				mode = SAFE;
 				initialize();
 				update_gui();
 				return true;
@@ -585,13 +590,13 @@ bool get_keyboard()
 				}
 			case '6':
 					if(raw == 0) raw = 1;
-					else raw = 1;
+					else raw = 0;
 					update_gui();
 					return true;
 			case '7':
 
 					if(height == 0) height = 1;
-					else height = 1;
+					else height = 0;
 					update_gui();
 					return true;
 			case '8':
@@ -606,6 +611,45 @@ bool get_keyboard()
 					update_gui();
 					return true;	
 				}
+		}
+		switch(c)
+		{
+			case 'u'://P+
+				if(P!=255) P+=1;
+				gtk_adjustment_set_value(P_adjustment,P);
+				return true;
+			case 'j'://P-
+				if(P<1) P = 0;
+				else P-=1;
+				gtk_adjustment_set_value(P_adjustment,P);
+				return true;
+			case 'i'://P1+
+				if(P1!=255) P1+=1;
+				gtk_adjustment_set_value(P1_adjustment,P1);
+				return true;
+			case 'k'://P1-
+				if (P1<1) P1 = 0;
+				else P1-=1;
+				gtk_adjustment_set_value(P1_adjustment,P1);
+				return true;
+			case 'o'://P2+
+				if(P2!=255) P2+=1;
+				gtk_adjustment_set_value(P2_adjustment,P2);
+				return true;
+			case 'l'://P2-
+				if(P2<1) P2 = 0;
+				else P2-=1;
+				gtk_adjustment_set_value(P2_adjustment,P2);
+				return true;
+			case 'y'://Q+
+				if(Q!=65535) Q+=100;
+				gtk_adjustment_set_value(Q_adjustment,Q);
+				return true;
+			case 'h'://Q-
+				if(Q<100) Q = 0;
+				else Q-=100;
+				gtk_adjustment_set_value(Q_adjustment,Q);
+				return true;
 		}
 		if (mode == SAFE || mode == CALIBRATION) 
 		{
@@ -657,34 +701,7 @@ bool get_keyboard()
 				else k_yaw+=1000;
 				gtk_adjustment_set_value(yaw_adjustment,k_yaw);
 				return true;
-			case 'u'://P+
-				P+=1;
-				gtk_adjustment_set_value(P_adjustment,P);
-				return true;
-			case 'j'://P-
-				if(P<1) P = 0;
-				else P-=1;
-				gtk_adjustment_set_value(P_adjustment,P);
-				return true;
-			case 'i'://P1+
-				P1+=1;
-				gtk_adjustment_set_value(P1_adjustment,P1);
-				return true;
-			case 'k'://P1-
-				if (P1<1) P1 = 0;
-				else P1-=1;
-				gtk_adjustment_set_value(P1_adjustment,P1);
-				return true;
-			case 'o'://P2+
-				P2+=1;
-				gtk_adjustment_set_value(P2_adjustment,P2);
-				return true;
-			case 'l'://P2-
-				if(P2<1) P2 = 0;
-				else P2-=1;
-				gtk_adjustment_set_value(P2_adjustment,P2);
-				return true;
-		}
+			}
 
 	}
 	return false;
@@ -723,6 +740,8 @@ void send_command()
 	rs232_putchar(P);
 	rs232_putchar(P1);
 	rs232_putchar(P2);
+	rs232_putchar(Q>>8);
+	rs232_putchar(Q);
 
         //fprintf(stderr, "send frame: %u mode: %u throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u \n",frame, mode, throttle, roll, pitch, yaw, P, P1, P2, get_crc(0, mode, 1));
 	last_sending_time = mon_time_ms();

@@ -121,10 +121,11 @@ void run_filters_and_control()
 			}	  		  	
         }
 
+        throttle_new = 0;
 	if(height_mode)
 	{
 		int32_t h_err;
-		uint32_t Q = 2;
+		//uint32_t Q = 2;
 		h_err = pressure - fixed_pressure;                  
                	throttle_new = Q * h_err;
 	       	if(throttle_new > 65535) throttle_new = 65535;
@@ -204,10 +205,10 @@ void run_filters_and_control()
 	       if(yaw_new>32767) yaw_new = 32767;
 	       if(yaw_new<-32768) yaw_new = -32768;
            }
-           ae[0] = (int16_t) isqrt(A * throttle + 2 * B * pitch - C * yaw_new)*0.7+160;
-	   ae[1] = (int16_t) isqrt(A * throttle - 2 * B * roll  + C * yaw_new)*0.7+160;
-	   ae[2] = (int16_t) isqrt(A * throttle - 2 * B * pitch - C * yaw_new)*0.7+160;
-	   ae[3] = (int16_t) isqrt(A * throttle + 2 * B * roll  + C * yaw_new)*0.7+160;       
+           ae[0] = (int16_t) isqrt(A * (throttle +  throttle_new) + 2 * B * pitch - C * yaw_new)*0.7+160;
+	   ae[1] = (int16_t) isqrt(A * (throttle +  throttle_new) - 2 * B * roll  + C * yaw_new)*0.7+160;
+	   ae[2] = (int16_t) isqrt(A * (throttle +  throttle_new) - 2 * B * pitch - C * yaw_new)*0.7+160;
+	   ae[3] = (int16_t) isqrt(A * (throttle +  throttle_new) + 2 * B * roll  + C * yaw_new)*0.7+160;       
 	}	
 
  
@@ -230,10 +231,10 @@ void run_filters_and_control()
                 if(roll_new > 32767) roll_new = 32767;
 	}
           
-          ae[0] = (int16_t) isqrt(A * throttle + 2 * B * pitch_new - C * yaw)*0.7 + 160;
-	  ae[1] = (int16_t) isqrt(A * throttle - 2 * B * roll_new  + C * yaw)*0.7 + 160;
-	  ae[2] = (int16_t) isqrt(A * throttle - 2 * B * pitch_new - C * yaw)*0.7 + 160;
-	  ae[3] = (int16_t) isqrt(A * throttle + 2 * B * roll_new  + C * yaw)*0.7 + 160;
+          ae[0] = (int16_t) isqrt(A * (throttle +  throttle_new) + 2 * B * pitch_new - C * yaw)*0.7 + 160;
+	  ae[1] = (int16_t) isqrt(A * (throttle +  throttle_new) - 2 * B * roll_new  + C * yaw)*0.7 + 160;
+	  ae[2] = (int16_t) isqrt(A * (throttle +  throttle_new) - 2 * B * pitch_new - C * yaw)*0.7 + 160;
+	  ae[3] = (int16_t) isqrt(A * (throttle +  throttle_new) + 2 * B * roll_new  + C * yaw)*0.7 + 160;
            
         }
 

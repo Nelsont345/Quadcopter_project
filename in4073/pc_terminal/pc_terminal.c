@@ -40,7 +40,7 @@ void *loop()
         fp = fopen("log.txt", "w");
         
  
-        fprintf(fp, "TIME \t THROTTLE \t ROLL \t PITCH \t YAW \t MODE \t PHI \t THETA \t PSI \t SP \t SQ \t SR \t MOTOR 0 \t MOTOR 1 \t MOTOR 2 \t MOTOR 3 \t LOOP TIME\n");
+        fprintf(fp, "TIME \t THROTTLE ROLL \t PITCH \t YAW \t MODE \t PHI \t THETA \t PSI \t SP \t SQ \t SR \t MOTOR 0\tMOTOR 1\tMOTOR 2\tMOTOR 3\t CYCLE TIME LOOP TIME\n");
 
 	term_puts("Type ^C to exit\n");
 
@@ -117,14 +117,17 @@ void *loop()
                 while(ready )
                 {      
                         c = rs232_getchar(); 
+                        //if(c != 0xFD)
                         log_file(c);
                 }      
         }
    
 	term_exitio();
 	rs232_close();
-	term_puts("\n<exit>\n");
         fclose(fp);
+        fclose(fp2);
+	term_puts("\n<exit>\n");
+
 	return 0;
 }
 

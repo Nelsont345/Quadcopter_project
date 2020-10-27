@@ -314,18 +314,10 @@ P_moved (GtkRange *range,
     * used as a new label for the horizontal scale.
     * %.0f - stands for a double that will have 0 decimal places.
     */
-   if(mode == SAFE || mode == CALIBRATION) 
-   {
-	//printf("can't increase throttle in safe mode!\n");
-        gchar *str = g_strdup_printf ("can't change values in safe/calibration mode!");
-        gtk_label_set_text (GTK_LABEL (info), str);
-	gtk_range_set_value(range,0);
-   }
-   else
-  {
-   	P = gtk_range_get_value (range);
-	send = true;
-  }
+
+
+   P = gtk_range_get_value (range);
+   send = true;
    /* Note: Using g_strdup_printf returns a string that must be freed. 
     * (In which is done below)
     */
@@ -345,18 +337,8 @@ P1_moved (GtkRange *range,
     * used as a new label for the horizontal scale.
     * %.0f - stands for a double that will have 0 decimal places.
     */
-   if(mode == SAFE || mode == CALIBRATION) 
-   {
-        gchar *str = g_strdup_printf ("can't change values in safe/calibration mode!");
-        gtk_label_set_text (GTK_LABEL (info), str);
-	//printf("can't increase throttle in safe mode!\n");
-	gtk_range_set_value(range,0);
-   }
-   else
-  {
-   	P1 = gtk_range_get_value (range);
-	send = true;
-  }
+   P1 = gtk_range_get_value (range);
+   send = true;
    /* Note: Using g_strdup_printf returns a string that must be freed. 
     * (In which is done below)
     */
@@ -376,18 +358,11 @@ P2_moved (GtkRange *range,
     * used as a new label for the horizontal scale.
     * %.0f - stands for a double that will have 0 decimal places.
     */
-   if(mode == SAFE || mode == CALIBRATION) 
-   {
-	//printf("can't increase throttle in safe mode!\n");
-        gchar *str = g_strdup_printf ("can't change values in safe/calibration mode!");
-        gtk_label_set_text (GTK_LABEL (info), str);
-	gtk_range_set_value(range,0);
-   }
-   else
-  {
-   	P2 = gtk_range_get_value (range);
-	send = true;
-  }
+
+
+   P2 = gtk_range_get_value (range);
+   send = true;
+
    /* Note: Using g_strdup_printf returns a string that must be freed. 
     * (In which is done below)
     */
@@ -397,6 +372,26 @@ P2_moved (GtkRange *range,
    g_free(str);
 }
 
+static void
+Q_moved (GtkRange *range,
+              gpointer  user_data)
+{
+   GtkWidget *label = user_data;
+
+   /* Get the value of the range, and convert it into a string which will be
+    * used as a new label for the horizontal scale.
+    * %.0f - stands for a double that will have 0 decimal places.
+    */
+   Q = gtk_range_get_value (range);
+   send = true;
+   /* Note: Using g_strdup_printf returns a string that must be freed. 
+    * (In which is done below)
+    */
+   gchar *str = g_strdup_printf ("Q: %d", Q);
+   gtk_label_set_text (GTK_LABEL (label), str);
+
+   g_free(str);
+}
 
 static void
 activate (GtkApplication *app,
@@ -452,7 +447,7 @@ activate (GtkApplication *app,
   P_label = gtk_label_new (g_strdup_printf ("P: %u", P));
   P1_label = gtk_label_new (g_strdup_printf ("P1: %u", P1));
   P2_label = gtk_label_new (g_strdup_printf ("P2: %u", P2));
-
+  Q_label = gtk_label_new (g_strdup_printf ("Q: %u", Q));
   //vlabel = gtk_label_new ("Move the scale handle...");
 
    
@@ -467,9 +462,10 @@ activate (GtkApplication *app,
   roll_adjustment = gtk_adjustment_new (0, -32768, 32767, 5, 10, 0);
   pitch_adjustment = gtk_adjustment_new (0, -32768, 32767, 5, 10, 0);
   yaw_adjustment = gtk_adjustment_new (0, -32768, 32767, 5, 10, 0);
-  P_adjustment = gtk_adjustment_new (0, 0, 100, 1, 5, 0);
-  P1_adjustment = gtk_adjustment_new (0, 0, 100, 1, 5, 0);
-  P2_adjustment = gtk_adjustment_new (0, 0, 100, 1, 5, 0);
+  P_adjustment = gtk_adjustment_new (0, 0, 255, 1, 5, 0);
+  P1_adjustment = gtk_adjustment_new (0, 0, 255, 1, 5, 0);
+  P2_adjustment = gtk_adjustment_new (0, 0, 255, 1, 5, 0);
+  Q_adjustment = gtk_adjustment_new (0, 0, 65535, 5, 10, 0);
   /* Create the Horizontal scale, making sure the 
    * digits used have no decimals.
    */
@@ -480,6 +476,7 @@ activate (GtkApplication *app,
   P_scale = gtk_scale_new (GTK_ORIENTATION_HORIZONTAL, P_adjustment);
   P1_scale = gtk_scale_new (GTK_ORIENTATION_HORIZONTAL, P1_adjustment);
   P2_scale = gtk_scale_new (GTK_ORIENTATION_HORIZONTAL, P2_adjustment);
+  Q_scale = gtk_scale_new (GTK_ORIENTATION_HORIZONTAL, Q_adjustment);
 
   gtk_scale_set_digits (GTK_SCALE (throttle_scale), 0); 
   gtk_scale_set_digits (GTK_SCALE (roll_scale), 0);
@@ -488,7 +485,7 @@ activate (GtkApplication *app,
   gtk_scale_set_digits (GTK_SCALE (P_scale), 0);
   gtk_scale_set_digits (GTK_SCALE (P1_scale), 0);
   gtk_scale_set_digits (GTK_SCALE (P2_scale), 0);
-
+  gtk_scale_set_digits (GTK_SCALE (Q_scale), 0);
   /* Allow it to expand horizontally (if there's space), and 
    * set the vertical alignment
    */
@@ -506,7 +503,8 @@ activate (GtkApplication *app,
   gtk_widget_set_valign (P1_scale, GTK_ALIGN_START);
   gtk_widget_set_hexpand (P2_scale, TRUE);
   gtk_widget_set_valign (P2_scale, GTK_ALIGN_START);
-  
+  gtk_widget_set_hexpand (Q_scale, TRUE);
+  gtk_widget_set_valign (Q_scale, GTK_ALIGN_START);
   /* Connecting the "value-changed" signal for the horizontal scale 
    * to the appropriate callback function. 
    * take note that GtkRange is part of GtkScale's Object Hierarchy.
@@ -539,6 +537,10 @@ activate (GtkApplication *app,
                     "value-changed", 
                     G_CALLBACK (P2_moved), 
                     P2_label);
+  g_signal_connect (Q_scale, 
+                    "value-changed", 
+                    G_CALLBACK (Q_moved), 
+                    Q_label);
 
   /* Create a grid and arrange everything accordingly */
   grid = gtk_grid_new ();
@@ -558,6 +560,8 @@ activate (GtkApplication *app,
   gtk_grid_attach (GTK_GRID (grid), P1_label, 2, 5, 1, 1);
   gtk_grid_attach (GTK_GRID (grid), P2_scale, 1, 6, 1, 1);
   gtk_grid_attach (GTK_GRID (grid), P2_label, 2, 6, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), Q_scale, 1, 7, 1, 1);
+  gtk_grid_attach (GTK_GRID (grid), Q_label, 2, 7, 1, 1);
 
   gtk_grid_attach (GTK_GRID (grid), b_safe, 0, 0, 1, 1);
   gtk_grid_attach (GTK_GRID (grid), b_panic, 0, 1, 1, 1);
@@ -569,8 +573,8 @@ activate (GtkApplication *app,
   gtk_grid_attach (GTK_GRID (grid), b_height, 0, 7, 1, 1);
   gtk_grid_attach (GTK_GRID (grid), b_exit, 0, 8, 1, 1);
 
-  gtk_grid_attach (GTK_GRID (grid), info, 1, 7, 2, 1);
-  gtk_grid_attach (GTK_GRID (grid), cur_mode, 1, 8, 2, 1);
+  gtk_grid_attach (GTK_GRID (grid), info, 1, 8, 2, 1);
+  gtk_grid_attach (GTK_GRID (grid), cur_mode, 1, 9, 2, 1);
   gtk_container_add (GTK_CONTAINER (window), grid);
 
   gtk_widget_show_all (window);
