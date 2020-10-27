@@ -121,16 +121,17 @@ void run_filters_and_control()
 			}	  		  	
         }
 
+        throttle_new = 0;
 	if(height_mode)
 	{
 		int32_t h_err;
 		uint32_t Q = 5000;
 		h_err = pressure - fixed_pressure;                  
-               	throttle_new =throttle + Q * h_err;
+               	throttle_new = throttle + Q * h_err;
 		    //printf("Change in throttle %ld  throttle %d new throttle %ld\n", Q * h_err,  throttle, throttle_new);
 	       	if(throttle_new > 65535) throttle_new = 65535;
-	       	if(throttle_new < 00) throttle_new = 0;           	
-		//throttle = throttle_new;
+	       	if(throttle_new < 0) throttle_new = 0;           	
+		throttle = throttle_new;
 	}
 
 

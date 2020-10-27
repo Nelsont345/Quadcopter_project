@@ -132,24 +132,36 @@ void flash_data()
    data[20] = (sr & 0xFF); 
 
 
-   data[21] = (motor[0] & 0xFFFF) >> 8;
-   data[22] = motor[0] & 0xFF;
-   data[23] = (motor[1] & 0xFFFF) >> 8;
-   data[24] = motor[1] & 0xFF;
-   data[25] = (motor[2] & 0xFFFF) >> 8;
-   data[26] = motor[2] & 0xFF;
-   data[27] = (motor[3] & 0xFFFF) >> 8;
-   data[28] = motor[3] & 0xFF;
+   data[21] = (sax & 0xFFFF) >> 8;
+   data[22] = (sax) & 0xFF;
+   data[23] = (say & 0xFFFF) >> 8;
+   data[24] = say & 0xFF;
+   data[25] = ((saz) & 0xFFFF) >> 8;
+   data[26] = ((saz) & 0xFF); 
 
-   data[29] = (cycle_time & 0xFFFFFFFF) >> 24;
-   data[30] = (cycle_time & 0xFFFFFF) >> 16; 
-   data[31] = (cycle_time & 0xFFFF) >> 8;
-   data[32] = (cycle_time & 0xFF);
+   data[27] = (motor[0] & 0xFFFF) >> 8;
+   data[28] = motor[0] & 0xFF;
+   data[29] = (motor[1] & 0xFFFF) >> 8;
+   data[30] = motor[1] & 0xFF;
+   data[31] = (motor[2] & 0xFFFF) >> 8;
+   data[32] = motor[2] & 0xFF;
+   data[33] = (motor[3] & 0xFFFF) >> 8;
+   data[34] = motor[3] & 0xFF;
 
-   data[33] = (response_time & 0xFFFFFFFF) >> 24;
-   data[34] = (response_time & 0xFFFFFF) >> 16; 
-   data[35] = (response_time & 0xFFFF) >> 8;
-   data[36] = (response_time & 0xFF);
+   data[35] = (cycle_time & 0xFFFFFFFF) >> 24;
+   data[36] = (cycle_time & 0xFFFFFF) >> 16; 
+   data[37] = (cycle_time & 0xFFFF) >> 8;
+   data[38] = (cycle_time & 0xFF);
+
+   data[38] = (response_time & 0xFFFFFFFF) >> 24;
+   data[40] = (response_time & 0xFFFFFF) >> 16; 
+   data[41] = (response_time & 0xFFFF) >> 8;
+   data[42] = (response_time & 0xFF);
+
+   data[43] = (processed_yaw & 0xFFFFFFFF) >> 24;
+   data[44] = (processed_yaw & 0xFFFFFF) >> 16; 
+   data[45] = (processed_yaw & 0xFFFF) >> 8;
+   data[46] = (processed_yaw & 0xFF); 
 
  
    if(!flash_write_bytes(write_address, data, DATASIZE))
@@ -165,11 +177,11 @@ void flash_data()
 
 void log_data()
 {   
+    uart_put(0x00);
     read_address = 0x00000000;
     while(dequeue(&rx_queue) != 0x00);
     uart_put(0x00);
                   nrf_delay_ms(1000);
-    read_address = 0x00000000;
     while(1)
     { 	    
             if(rx_queue.count && (dequeue(&rx_queue) == 0xFF))
@@ -269,16 +281,9 @@ int main(void)
                 if(mode!=SAFE && cur_time-last_receiving_time > 2000000) mode = PANIC;
                 if(mode == EXIT)
                 {      
-						                        
-//        		        log_data();
-mode = PANIC;
-run_filters_and_control();
-                        uart_put(0x00);
-
-        		        log_data();
-
-
                         demo_done = true;
+       		        log_data();
+                        mode = SAFE;
                 }
 
 
@@ -289,13 +294,10 @@ run_filters_and_control();
 			 //printf("cycle time: %lu \n", cycle_time);
             //printf("Change in throttle %ld  throttle %d new throttle %ld\n", Q * h_err,  throttle, throttle_new);
 
-                        if(counter++%12 == 0)
-                        {               printf(" throttle %d new throttle %ld\t",  throttle, throttle_new);
-										printf("%4d \n", bat_volt);
+                        if(counter++%32 == 0)
+                        {              						                 
 
-
-							//counter++;
-							nrf_gpio_pin_toggle(BLUE);
+                                nrf_gpio_pin_toggle(BLUE);
 	                 	//printf("%10ld	", get_time_us());
 				//printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
 				//printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
@@ -304,8 +306,8 @@ run_filters_and_control();
 				//printf("%4d | %4ld | %6ld |", bat_volt, temperature, pressure);
 				//printf("%6d %6d %6d | %d || %d |||    %d  - %d | %d\n",P, P1, P2, mode, y_err, yaw, sr, raw_mode);
                         }
-            if(bat_volt<1050) mode = PANIC;
-			else if(bat_volt<1100) printf("battery is low\n");
+                        /*if(bat_volt<1050) mode = PANIC;
+			else if(bat_volt<1100) printf("battery is low\n");*/
 			clear_timer_flag();
 		}
 
@@ -345,7 +347,7 @@ run_filters_and_control();
 
 
 	}	
-	printf("\n\t Goodbye \n\n");
+	//printf("\n\t Goodbye \n\n");
 	nrf_delay_ms(100);
 
 	NVIC_SystemReset();

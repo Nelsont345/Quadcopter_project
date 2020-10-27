@@ -16,7 +16,7 @@
 #include "math.h"
 #include "crc.h"
 #include <stdlib.h>
-#define LOG_SIZE 38
+#define LOG_SIZE 48
 int count1 = 0;
 int row = 0;
 int data[0xFFFF];
@@ -201,47 +201,55 @@ void log_file(int c)
                     time2 += (c << ((8 * (3 - count1))));
                     if (count1 == 3)
                     {     
-                            if(time2 - prev_time > 655360 && prev_time !=0)
+                            if(time2 == -1)
                             {   
-									rs232_putchar(0xFF);  ready = false;
-									//break;
-			                }
+				rs232_putchar(0xFF);  ready = false;
+				fprintf(stderr, "done logging!");					//break;
+			    }
 			       			else
-                               		fprintf(fp, "%d\t ", time2);
+                               		fprintf(fp, "%d,", time2);
 							   		prev_time = time2;
                     }
               }
 
               else if(count1 >= 4 && count1 <= 8)
-                      fprintf(fp, "%d\t ", c);
+                      fprintf(fp, "%d,", c);
    
-              else if(count1 <= 28)
+              else if(count1 <= 34)
               {
                       if(count1 % 2 != 0)
                              log_data = (c << 8);
                       else
                       {
                              log_data += c;
-                             fprintf(fp, "%d\t ", log_data);
+                             fprintf(fp, "%d,", log_data);
                       }   
               }   
 
-              else if(count1 >= 29 && count1 <= 32)
+              else if(count1 >= 35 && count1 <= 38)
               { 
-                      if(count1  == 29)
+                      if(count1  == 35)
                               time2 = 0;
-                      time2 += (c << (8 * (32 - count1)));
-                      if (count1 == 32)
-                              fprintf(fp, "%d\t ", time2);
+                      time2 += (c << (8 * (38 - count1)));
+                      if (count1 == 38)
+                              fprintf(fp, "%d,", time2);
               } 
 
-              else if(count1 >= 33 && count1 <= 36)
+              else if(count1 >= 39 && count1 <= 42)
               { 
-                      if(count1  == 33)
+                      if(count1  == 39)
                               time2 = 0;
-                      time2 += (c << (8 * (36 - count1)));
-                      if (count1 == 36)
-                              fprintf(fp, "%d\t ", time2);
+                      time2 += (c << (8 * (42 - count1)));
+                      if (count1 == 42)
+                              fprintf(fp, "%d,", time2);
+              }   
+              else if(count1 >= 43 && count1 <= 46)
+              { 
+                      if(count1  == 43)
+                              time2 = 0;
+                      time2 += (c << (8 * (46 - count1)));
+                      if (count1 == 46)
+                              fprintf(fp, "%d,", time2);
               }      
               count1++;
               if(count1 == LOG_SIZE - 1) 
@@ -687,18 +695,18 @@ int main(int argc, char **argv)
 	term_initio();
 	rs232_open();
 
-	if ((fd = open(JS_DEV, O_RDONLY)) < 0) {
+	/*if ((fd = open(JS_DEV, O_RDONLY)) < 0) {
 		perror("jstest");
 		exit(1);
 	}
 
 	fcntl(fd, F_SETFL, O_NONBLOCK);
-	
+	*/
         fp2 = fopen("log2.txt", "w"); 
-        fp = fopen("log.txt", "w");
+        fp = fopen("log.csv", "w");
         
  
-        fprintf(fp, "TIME \t THROTTLE \t ROLL \t PITCH \t YAW \t MODE \t PHI \t THETA \t PSI \t SP \t SQ \t SR \t MOTOR 0 \t MOTOR 1 \t MOTOR 2 \t MOTOR 3 \t LOOP TIME\n");
+        fprintf(fp, "TIME,THROTTLE, ROLL,PITCH, YAW,MODE,PHI,THETA,PSI,SP,SQ,SR,SAX,SAY,SAZ,MOTOR 0,MOTOR 1, MOTOR 2,MOTOR 3,LOOP TIME\n");
 
 	term_puts("Type ^C to exit\n");
 
@@ -712,12 +720,12 @@ int main(int argc, char **argv)
 	mon_delay_ms(1000);
 	while((c = rs232_getchar_nb()) != -1)
 		term_putchar(c);
-	get_joystick(fd);
+	//get_joystick(fd);
 	while(j_throttle!=0||j_yaw!=0||j_pitch!=0||j_roll!=0)
 	{
 		fprintf(stderr,"please set joystick to neutral\n");
 		mon_delay_ms(500);
-		get_joystick(fd);
+	//	get_joystick(fd);
 	}
 	send_command();
 	while (1)
@@ -731,7 +739,7 @@ int main(int argc, char **argv)
       			exit( EXIT_FAILURE );
     		}
 
-		send = send || get_joystick(fd);
+		//send = send || get_joystick(fd);
 		send = send || get_keyboard();
 		if(miss_count>5) mode = PANIC;
 		if(mode == EXIT) break;
@@ -764,8 +772,8 @@ int main(int argc, char **argv)
         if(mode == EXIT)
         {  
                 while(rs232_getchar() != 0x00);
-                //c = 0;
-                //log_file(c);
+                c = 0;
+                log_file(c);
 
                 rs232_putchar(0x00);
                 while(ready )
@@ -777,8 +785,9 @@ int main(int argc, char **argv)
    
 	term_exitio();
 	rs232_close();
-	term_puts("\n<exit>\n");
         fclose(fp);
+	term_puts("\n<exit>\n");
+
 	return 0;
 }
 

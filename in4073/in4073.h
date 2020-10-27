@@ -36,7 +36,7 @@
 #define RAW		6
 #define HEIGHT		7
 #define EXIT		8
-#define DATASIZE        37
+#define DATASIZE        47
 
 // logging
 void flash_data();
