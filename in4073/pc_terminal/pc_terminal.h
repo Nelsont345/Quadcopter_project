@@ -82,7 +82,7 @@ uint8_t height = 0;
 bool send = false;
 
 
-#define LOG_SIZE 38
+#define LOG_SIZE 48
 int count1 = 0;
 int row = 0;
 int data[0xFFFF];
@@ -272,40 +272,48 @@ void log_file(int c)
 					//break;
 			       }
 			       else
-                               fprintf(fp, "%d\t ", time2);
+                               fprintf(fp, "%d,", time2);
                       }
               }
 
               else if(count1 >= 4 && count1 <= 8)
-                      fprintf(fp, "%d\t ", c);
+                      fprintf(fp, "%d,", c);
    
-              else if(count1 <= 28)
+              else if(count1 <= 34)
               {
                       if(count1 % 2 != 0)
                              log_data = (c << 8);
                       else
                       {
                              log_data += c;
-                             fprintf(fp, "%d\t ", log_data);
+                             fprintf(fp, "%d,", log_data);
                       }   
               }   
 
-              else if(count1 >= 29 && count1 <= 32)
+              else if(count1 >= 35 && count1 <= 38)
               { 
-                      if(count1  == 29)
+                      if(count1  == 35)
                               time2 = 0;
-                      time2 += (c << (8 * (32 - count1)));
-                      if (count1 == 32)
-                              fprintf(fp, "%d\t ", time2);
+                      time2 += (c << (8 * (38 - count1)));
+                      if (count1 == 38)
+                              fprintf(fp, "%d,", time2);
               } 
 
-              else if(count1 >= 33 && count1 <= 36)
+              else if(count1 >= 39 && count1 <= 42)
               { 
-                      if(count1  == 33)
+                      if(count1  == 39)
                               time2 = 0;
-                      time2 += (c << (8 * (36 - count1)));
-                      if (count1 == 36)
-                              fprintf(fp, "%d\t ", time2);
+                      time2 += (c << (8 * (42 - count1)));
+                      if (count1 == 42)
+                              fprintf(fp, "%d,", time2);
+              }   
+              else if(count1 >= 43 && count1 <= 46)
+              { 
+                      if(count1  == 43)
+                              time2 = 0;
+                      time2 += (c << (8 * (46 - count1)));
+                      if (count1 == 46)
+                              fprintf(fp, "%d,", time2);
               }      
               count1++;
               if(count1 == LOG_SIZE - 1) 

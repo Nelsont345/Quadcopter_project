@@ -94,6 +94,7 @@ void get_connection_check()
 }
 void flash_data()
 {
+   
    cur_time = get_time_us();
    data[0] = ((cur_time & 0xFFFFFFFF) >> 24);
    data[1] = ((cur_time & 0xFFFFFF) >> 16);
@@ -112,34 +113,42 @@ void flash_data()
    data[12] = theta & 0xFF;
    data[13] = (psi & 0xFFFF) >> 8;
    data[14] = psi & 0xFF;
-   data[15] = (sp & 0xFFFF) >> 8;
-   data[16] = sp & 0xFF;
-   data[17] = (sq & 0xFFFF) >> 8;
-   data[18] = sq & 0xFF;
-   data[19] = (sr & 0xFFFF) >> 8;
-   data[20] = (sr & 0xFF); 
+   data[15] = ((sp - cal_sp) & 0xFFFF) >> 8;
+   data[16] = (sp - cal_sp) & 0xFF;
+   data[17] = ((sq - cal_sq) & 0xFFFF) >> 8;
+   data[18] = (sq - cal_sq) & 0xFF;
+   data[19] = ((sr - cal_sr) & 0xFFFF) >> 8;
+   data[20] = ((sr - cal_sr) & 0xFF); 
+   data[21] = (sax & 0xFFFF) >> 8;
+   data[22] = (sax) & 0xFF;
+   data[23] = (say & 0xFFFF) >> 8;
+   data[24] = say & 0xFF;
+   data[25] = ((saz) & 0xFFFF) >> 8;
+   data[26] = ((saz) & 0xFF); 
 
+   data[27] = (motor[0] & 0xFFFF) >> 8;
+   data[28] = motor[0] & 0xFF;
+   data[29] = (motor[1] & 0xFFFF) >> 8;
+   data[30] = motor[1] & 0xFF;
+   data[31] = (motor[2] & 0xFFFF) >> 8;
+   data[32] = motor[2] & 0xFF;
+   data[33] = (motor[3] & 0xFFFF) >> 8;
+   data[34] = motor[3] & 0xFF;
 
-   data[21] = (motor[0] & 0xFFFF) >> 8;
-   data[22] = motor[0] & 0xFF;
-   data[23] = (motor[1] & 0xFFFF) >> 8;
-   data[24] = motor[1] & 0xFF;
-   data[25] = (motor[2] & 0xFFFF) >> 8;
-   data[26] = motor[2] & 0xFF;
-   data[27] = (motor[3] & 0xFFFF) >> 8;
-   data[28] = motor[3] & 0xFF;
+   data[35] = (cycle_time & 0xFFFFFFFF) >> 24;
+   data[36] = (cycle_time & 0xFFFFFF) >> 16; 
+   data[37] = (cycle_time & 0xFFFF) >> 8;
+   data[38] = (cycle_time & 0xFF);
 
-   data[29] = (cycle_time & 0xFFFFFFFF) >> 24;
-   data[30] = (cycle_time & 0xFFFFFF) >> 16; 
-   data[31] = (cycle_time & 0xFFFF) >> 8;
-   data[32] = (cycle_time & 0xFF);
+   data[38] = (response_time & 0xFFFFFFFF) >> 24;
+   data[40] = (response_time & 0xFFFFFF) >> 16; 
+   data[41] = (response_time & 0xFFFF) >> 8;
+   data[42] = (response_time & 0xFF);
 
-   data[33] = (response_time & 0xFFFFFFFF) >> 24;
-   data[34] = (response_time & 0xFFFFFF) >> 16; 
-   data[35] = (response_time & 0xFFFF) >> 8;
-   data[36] = (response_time & 0xFF);
-
- 
+   data[43] = (processed_yaw & 0xFFFFFFFF) >> 24;
+   data[44] = (processed_yaw & 0xFFFFFF) >> 16; 
+   data[45] = (processed_yaw & 0xFFFF) >> 8;
+   data[46] = (processed_yaw & 0xFF); 
    if(!flash_write_bytes(write_address, data, DATASIZE))
    {   
        write_address = 0x00000000;

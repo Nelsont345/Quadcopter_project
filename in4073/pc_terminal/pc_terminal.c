@@ -37,10 +37,10 @@ void *loop()
 	fcntl(fd, F_SETFL, O_NONBLOCK);
 	
         fp2 = fopen("log2.txt", "w"); 
-        fp = fopen("log.txt", "w");
+        fp = fopen("log.csv", "w");
         
  
-        fprintf(fp, "TIME \t THROTTLE ROLL \t PITCH \t YAW \t MODE \t PHI \t THETA \t PSI \t SP \t SQ \t SR \t MOTOR 0\tMOTOR 1\tMOTOR 2\tMOTOR 3\t CYCLE TIME LOOP TIME\n");
+        fprintf(fp, "TIME,THROTTLE,ROLL,PITCH,YAW, MODE,PHI,THETA,PSI,SP,SQ,SR,SAX, SAY,SAZ,MOTOR 0,MOTOR 1,MOTOR 2,MOTOR 3,CYCLE TIME,RESPONSE TIME, FILTERED_SR\n");
 
 	term_puts("Type ^C to exit\n");
 
