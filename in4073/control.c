@@ -102,7 +102,7 @@ void run_filters_and_control()
 	// control loops and/or filters
 
 	// ae[0] = xxx, ae[1] = yyy etc etc
-        if(raw_mode)
+        if((mode != SAFE) && (mode != PANIC) && raw_mode)
         {
 
 			if(mode == YAW || mode == FULL)
@@ -122,7 +122,7 @@ void run_filters_and_control()
         }
 
         throttle_new = 0;
-	if(height_mode)
+	if((mode != SAFE) && (mode != PANIC) && height_mode)
 	{
 		int32_t h_err;
 		//uint32_t Q = 2;
@@ -161,8 +161,16 @@ void run_filters_and_control()
 			nrf_delay_ms(750);
 			//printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);
 		}
-		uart_put(0xFD);              
+		uart_put(0xFD);            
 		mode = SAFE;
+                
+		//int k = rx_queue.count;
+                while(rx_queue.count > 0)
+		{
+			dequeue(&rx_queue);		
+                }
+
+
 	}
 	else if (mode == CALIBRATION)
 	{  

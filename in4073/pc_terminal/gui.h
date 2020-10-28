@@ -42,7 +42,7 @@ to_manual (GtkWidget *widget,
      gtk_label_set_text (GTK_LABEL (label), str);
      return;
   }
-  else if(!check_joystick())
+  if(!check_joystick())
   {
      gchar *str = g_strdup_printf ("Please set joystick to origin");
      gtk_label_set_text (GTK_LABEL (label), str);
@@ -66,7 +66,7 @@ to_calibration (GtkWidget *widget,
      gtk_label_set_text (GTK_LABEL (label), str);
      return;
   }
-  else if(!check_joystick())
+  if(!check_joystick())
   {
      gchar *str = g_strdup_printf ("Please set joystick to origin");
      gtk_label_set_text (GTK_LABEL (label), str);
@@ -90,7 +90,7 @@ to_yaw (GtkWidget *widget,
      gtk_label_set_text (GTK_LABEL (label), str);
      return;
   }
-  else if(!check_joystick())
+  if(!check_joystick())
   {
      gchar *str = g_strdup_printf ("Please set joystick to origin");
      gtk_label_set_text (GTK_LABEL (label), str);
@@ -115,7 +115,7 @@ to_full (GtkWidget *widget,
      gtk_label_set_text (GTK_LABEL (label), str);
      return;
   }
-  else if(!check_joystick())
+  if(!check_joystick())
   {
      gchar *str = g_strdup_printf ("Please set joystick to origin");
      gtk_label_set_text (GTK_LABEL (label), str);

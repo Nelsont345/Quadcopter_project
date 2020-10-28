@@ -392,7 +392,7 @@ void initialize()
 {
 	k_throttle = j_throttle = throttle = 0;
 	k_roll = k_pitch = k_yaw = 0;
-	j_roll = j_pitch = j_yaw = 0;
+	//j_roll = j_pitch = j_yaw = 0;
 	roll = pitch = yaw = 0;
 	return;
 }
@@ -802,20 +802,13 @@ void get_data()
 		}
 		else if(c == 0xFC)
 		{
-			int ack_frame = rs232_getchar_nb();
-			if(ack_frame == frame-1)//if it is the ack for the last frame
-			{
-				unsigned int receiving_time = mon_time_ms();
-				//fprintf(stderr,"get ack(check) %d after %ums\n",ack_frame,receiving_time-sending_time[ack_frame]);
-				miss_count = 0;
-				waiting_for_ack = false;
+
 				//fprintf(stderr,"get ack %d\n",next_c);
-				gchar *str = g_strdup_printf ("calibrated!");
-				gtk_label_set_text (GTK_LABEL (info), str);
-				mode = SAFE;
-				initialize();
-				update_gui();
-			}	
+			gchar *str = g_strdup_printf ("calibrated!");
+			gtk_label_set_text (GTK_LABEL (info), str);
+			mode = SAFE;
+			initialize();
+			update_gui();
 		}
 		else if(c == 0xFD)
 		{

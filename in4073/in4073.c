@@ -266,8 +266,8 @@ int main(void)
 		cur_time = get_time_us();
                 if(mode!=SAFE && ((cur_time-last_receiving_time) > 2000000)) 
 		{
-			printf("%lu  %lu\n",cur_time, last_receiving_time);
-			//mode = PANIC;
+			//printf("%lu  %lu\n",cur_time, last_receiving_time);
+			mode = PANIC;
 		}
                 if(mode == EXIT)
                 {       //mode = PANIC;

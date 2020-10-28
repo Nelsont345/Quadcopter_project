@@ -28,12 +28,12 @@ void *loop()
 
 	term_initio();
 	rs232_open();
-/*
+
 	if ((fd = open(JS_DEV, O_RDONLY)) < 0) {
 		perror("jstest");
 		exit(1);
 	}
-*/
+
 	fcntl(fd, F_SETFL, O_NONBLOCK);
 	
         fp2 = fopen("log2.txt", "w"); 
@@ -54,12 +54,12 @@ void *loop()
 	mon_delay_ms(1000);
 	while((c = rs232_getchar_nb()) != -1)
 		term_putchar(c);
-	//get_joystick(fd);
+	get_joystick(fd);
 	while(!check_joystick())
 	{
 		fprintf(stderr,"please set joystick to neutral\n");
 		mon_delay_ms(1000);
-		//get_joystick(fd);
+		get_joystick(fd);
 	}
 	send_command();
 	while (1)
@@ -73,7 +73,7 @@ void *loop()
       			exit( EXIT_FAILURE );
     		}
 
-		//send = send || get_joystick(fd);
+		send = send || get_joystick(fd);
 		send = send || get_keyboard();
 		if(miss_count>5)
 		{
