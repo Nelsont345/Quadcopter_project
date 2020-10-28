@@ -330,7 +330,7 @@ void log_file(int c)
  */
 unsigned int last_sending_time;
 unsigned int previous_time;//last checking time
-unsigned int interval=500;//sending interval
+unsigned int interval=1000;//sending interval
 unsigned int sending_time[256];
 
 #include <time.h>
@@ -390,7 +390,7 @@ uint16_t unsigned_sadd(uint16_t a, uint16_t b)
 
 void initialize()
 {
-	k_throttle = j_throttle = throttle = 0;
+	k_throttle = 0;
 	k_roll = k_pitch = k_yaw = 0;
 	//j_roll = j_pitch = j_yaw = 0;
 	roll = pitch = yaw = 0;
@@ -812,9 +812,9 @@ void get_data()
 		}
 		else if(c == 0xFD)
 		{
-			gchar *str = g_strdup_printf ("recover from PANIC mode");
+			gchar *str = g_strdup_printf ("recovered from PANIC mode");
 			gtk_label_set_text (GTK_LABEL (info), str);
-			fprintf(stderr,"recover from PANIC mode");
+			fprintf(stderr,"recovered from PANIC mode");
 			mode = SAFE;
 			initialize();
 			update_gui();

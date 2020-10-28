@@ -77,7 +77,7 @@ void get_command()
 	printf("frame: %u mode: %u raw_mode:%d height_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u Q: %u crc: %u fixed_pressure %ld throttle_new %d pressure %ld\n\n",frame, mode, raw_mode, height_mode, throttle, roll, pitch, yaw, P, P1, P2, Q, crc, fixed_pressure, throttle_new, pressure);
 
 	if(mode!=8)
-	flash_data();
+	//flash_data();
 	t_access = get_time_us();
 }
 
@@ -87,7 +87,7 @@ void get_connection_check()
 	//printf("frame: %u mode: %u raw_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u sp %d sq %d sr %d sax %d say %d saz %d\n",frame, mode, raw_mode, throttle, roll, pitch, yaw, P, P1, P2, crc, sp, sq, sr, sax, say, saz);
 
 	//printf("frame(check connection): %u\n",frame);
-        flash_data();
+        //flash_data();
 	uart_put(0xFE);
 	uart_put(frame);
 //flash_data();
@@ -157,7 +157,7 @@ void flash_data()
 
 
    write_address += (DATASIZE * 8);
-
+   printf("mode:%d\n", mode);
 }
 
 void log_data()
@@ -267,6 +267,7 @@ int main(void)
                 if(mode!=SAFE && ((cur_time-last_receiving_time) > 2000000)) 
 		{
 			//printf("%lu  %lu\n",cur_time, last_receiving_time);
+			printf("time out panic 1");
 			mode = PANIC;
 		}
                 if(mode == EXIT)
@@ -285,9 +286,15 @@ int main(void)
 			adc_request_sample();
 			read_baro();
 			 //printf("cycle time: %lu \n", cycle_time);
-
+                        cur_time = get_time_us();
+                        if(mode!=SAFE && ((cur_time-last_receiving_time) > 2000000)) 
+		        {
+			       //printf("%lu  %lu\n",cur_time, last_receiving_time);
+			       printf("time out panic 2");
+			       mode = PANIC;
+		        }
                         if(counter++%32 == 0)
-                        {
+                        {               flash_data();
 							//counter++;
 				nrf_gpio_pin_toggle(BLUE);
 				//printf("last%lu\n", last_receiving_time);

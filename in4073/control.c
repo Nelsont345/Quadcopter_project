@@ -17,7 +17,7 @@
 #define C1_SHIFT 7
 #define C2_SHIFT 20
 
-
+uint8_t counter = 0;
 uint16_t isqrt(long x)
 {
 	/*
@@ -213,10 +213,19 @@ void run_filters_and_control()
 	       if(yaw_new>32767) yaw_new = 32767;
 	       if(yaw_new<-32768) yaw_new = -32768;
            }
-           ae[0] = (int16_t) isqrt(A * (throttle) + 2 * B * pitch - C * yaw_new)*0.7+160;
-	   ae[1] = (int16_t) isqrt(A * (throttle) - 2 * B * roll  + C * yaw_new)*0.7+160;
-	   ae[2] = (int16_t) isqrt(A * (throttle) - 2 * B * pitch - C * yaw_new)*0.7+160;
-	   ae[3] = (int16_t) isqrt(A * (throttle) + 2 * B * roll  + C * yaw_new)*0.7+160;       
+
+           if(throttle == 0)
+               ae[0] = ae[1] = ae[2] = ae[3] = 0;
+           else
+           {
+               ae[0] = (int16_t) isqrt(A * (throttle) + 2 * B * pitch - C * yaw_new)*0.7+160;
+	       ae[1] = (int16_t) isqrt(A * (throttle) - 2 * B * roll  + C * yaw_new)*0.7+160;
+	       ae[2] = (int16_t) isqrt(A * (throttle) - 2 * B * pitch - C * yaw_new)*0.7+160;
+	       ae[3] = (int16_t) isqrt(A * (throttle) + 2 * B * roll  + C * yaw_new)*0.7+160;
+           }
+
+	   if(counter++%32==0)
+               printf("ae1 = %d ae2 = %d ae3 = %d ae4 = %d\n",ae[0],ae[1],ae[2],ae[3]);  
 	}	
 
  
@@ -237,23 +246,29 @@ void run_filters_and_control()
                 if(pitch_new > 32767) pitch_new = 32767;
                 if(roll_new < -32768) roll_new = -32768;
                 if(roll_new > 32767) roll_new = 32767;
-	}
-          
-          ae[0] = (int16_t) isqrt(A * (throttle) + 2 * B * pitch_new - C * yaw)*0.7 + 160;
-	  ae[1] = (int16_t) isqrt(A * (throttle) - 2 * B * roll_new  + C * yaw)*0.7 + 160;
-	  ae[2] = (int16_t) isqrt(A * (throttle) - 2 * B * pitch_new - C * yaw)*0.7 + 160;
-	  ae[3] = (int16_t) isqrt(A * (throttle) + 2 * B * roll_new  + C * yaw)*0.7 + 160;
-           
+	    }
+            if(throttle == 0)
+                ae[0] = ae[1] = ae[2] = ae[3] = 0;
+            else
+            {
+                ae[0] = (int16_t) isqrt(A * (throttle) + 2 * B * pitch_new - C * yaw)*0.7 + 160;
+	        ae[1] = (int16_t) isqrt(A * (throttle) - 2 * B * roll_new  + C * yaw)*0.7 + 160;
+	        ae[2] = (int16_t) isqrt(A * (throttle) - 2 * B * pitch_new - C * yaw)*0.7 + 160;
+	        ae[3] = (int16_t) isqrt(A * (throttle) + 2 * B * roll_new  + C * yaw)*0.7 + 160;
+            }           
         }
 	else if(height_mode)
 	{
-
-		int32_t A = 1, B = 1, C = 1; 
+	   int32_t A = 1, B = 1, C = 1; 
+           if(throttle == 0)
+                     ae[0] = ae[1] = ae[2] = ae[3] = 0;
+           else
+           {
 		ae[0] = (int16_t) isqrt(A * (throttle_new) + 2 * B * pitch - C * yaw)*0.7+160;
 		ae[1] = (int16_t) isqrt(A * (throttle_new) - 2 * B * roll + C * yaw)*0.7+160;
 		ae[2] = (int16_t) isqrt(A * (throttle_new) - 2 * B * pitch - C * yaw)*0.7+160;
 		ae[3] = (int16_t) isqrt(A * (throttle_new) + 2 * B * roll + C * yaw)*0.7+160;
-
+           }
 	}
 	else if(mode == SAFE) 
 	{

@@ -1020,7 +1020,7 @@ END GROUP
  *(fs_data)
                 [!provide]                PROVIDE (__stop_fs_data, .)
 
-.text           0x00018000     0xc4bc
+.text           0x00018000     0xc59c
  *(.Vectors)
  .Vectors       0x00018000       0xc0 _build/gcc_startup_nrf51.o
                 0x00018000                __Vectors
@@ -1044,602 +1044,602 @@ END GROUP
  .text.nrf_delay_ms
                 0x000182b8       0x3c _build/nrf_delay.o
                 0x000182b8                nrf_delay_ms
- .text.flash_data
-                0x000182f4      0x1b4 _build/in4073.o
-                0x000182f4                flash_data
  .text.get_command
-                0x000184a8      0x234 _build/in4073.o
-                0x000184a8                get_command
+                0x000182f4      0x234 _build/in4073.o
+                0x000182f4                get_command
  .text.get_connection_check
-                0x000186dc       0x28 _build/in4073.o
-                0x000186dc                get_connection_check
+                0x00018528       0x24 _build/in4073.o
+                0x00018528                get_connection_check
+ .text.flash_data
+                0x0001854c      0x1c0 _build/in4073.o
+                0x0001854c                flash_data
  .text.log_data
-                0x00018704       0xa0 _build/in4073.o
-                0x00018704                log_data
+                0x0001870c       0xa0 _build/in4073.o
+                0x0001870c                log_data
  .text.raw_init
-                0x000187a4       0x80 _build/in4073.o
-                0x000187a4                raw_init
+                0x000187ac       0x80 _build/in4073.o
+                0x000187ac                raw_init
  .text.startup.main
-                0x00018824      0x25c _build/in4073.o
-                0x00018824                main
+                0x0001882c      0x290 _build/in4073.o
+                0x0001882c                main
  .text.kalman_filter
-                0x00018a80       0xc8 _build/control.o
-                0x00018a80                kalman_filter
+                0x00018abc       0xc8 _build/control.o
+                0x00018abc                kalman_filter
  .text.run_filters_and_control
-                0x00018b48      0xe50 _build/control.o
-                0x00018b48                run_filters_and_control
+                0x00018b84      0xe98 _build/control.o
+                0x00018b84                run_filters_and_control
  .text.gpio_init
-                0x00019998       0x8c _build/gpio.o
-                0x00019998                gpio_init
+                0x00019a1c       0x8c _build/gpio.o
+                0x00019a1c                gpio_init
  .text.quadrupel_timer_handler
-                0x00019a24        0xc _build/timers.o
-                0x00019a24                quadrupel_timer_handler
+                0x00019aa8        0xc _build/timers.o
+                0x00019aa8                quadrupel_timer_handler
  .text.TIMER2_IRQHandler
-                0x00019a30       0xb8 _build/timers.o
-                0x00019a30                TIMER2_IRQHandler
+                0x00019ab4       0xb8 _build/timers.o
+                0x00019ab4                TIMER2_IRQHandler
  .text.TIMER1_IRQHandler
-                0x00019ae8       0xac _build/timers.o
-                0x00019ae8                TIMER1_IRQHandler
+                0x00019b6c       0xac _build/timers.o
+                0x00019b6c                TIMER1_IRQHandler
  .text.get_time_us
-                0x00019b94       0x20 _build/timers.o
-                0x00019b94                get_time_us
+                0x00019c18       0x20 _build/timers.o
+                0x00019c18                get_time_us
  .text.check_timer_flag
-                0x00019bb4        0xc _build/timers.o
-                0x00019bb4                check_timer_flag
+                0x00019c38        0xc _build/timers.o
+                0x00019c38                check_timer_flag
  .text.clear_timer_flag
-                0x00019bc0        0xc _build/timers.o
-                0x00019bc0                clear_timer_flag
+                0x00019c44        0xc _build/timers.o
+                0x00019c44                clear_timer_flag
  .text.timers_init
-                0x00019bcc      0x1d4 _build/timers.o
-                0x00019bcc                timers_init
+                0x00019c50      0x1d4 _build/timers.o
+                0x00019c50                timers_init
  .text.uart_put
-                0x00019da0       0x44 _build/uart.o
-                0x00019da0                uart_put
- .text._write   0x00019de4       0x84 _build/uart.o
-                0x00019de4                _write
+                0x00019e24       0x44 _build/uart.o
+                0x00019e24                uart_put
+ .text._write   0x00019e68       0x84 _build/uart.o
+                0x00019e68                _write
  .text.UART0_IRQHandler
-                0x00019e68       0x90 _build/uart.o
-                0x00019e68                UART0_IRQHandler
+                0x00019eec       0x90 _build/uart.o
+                0x00019eec                UART0_IRQHandler
  .text.uart_init
-                0x00019ef8       0xa0 _build/uart.o
-                0x00019ef8                uart_init
+                0x00019f7c       0xa0 _build/uart.o
+                0x00019f7c                uart_init
  .text.init_queue
-                0x00019f98       0x14 _build/queue.o
-                0x00019f98                init_queue
- .text.enqueue  0x00019fac       0x1c _build/queue.o
-                0x00019fac                enqueue
- .text.dequeue  0x00019fc8       0x20 _build/queue.o
-                0x00019fc8                dequeue
+                0x0001a01c       0x14 _build/queue.o
+                0x0001a01c                init_queue
+ .text.enqueue  0x0001a030       0x1c _build/queue.o
+                0x0001a030                enqueue
+ .text.dequeue  0x0001a04c       0x20 _build/queue.o
+                0x0001a04c                dequeue
  .text.i2c_read
-                0x00019fe8       0xc0 _build/twi.o
-                0x00019fe8                i2c_read
+                0x0001a06c       0xc0 _build/twi.o
+                0x0001a06c                i2c_read
  .text.i2c_write
-                0x0001a0a8       0x70 _build/twi.o
-                0x0001a0a8                i2c_write
+                0x0001a12c       0x70 _build/twi.o
+                0x0001a12c                i2c_write
  .text.SPI0_TWI0_IRQHandler
-                0x0001a118       0x70 _build/twi.o
-                0x0001a118                SPI0_TWI0_IRQHandler
+                0x0001a19c       0x70 _build/twi.o
+                0x0001a19c                SPI0_TWI0_IRQHandler
  .text.twi_init
-                0x0001a188       0x84 _build/twi.o
-                0x0001a188                twi_init
+                0x0001a20c       0x84 _build/twi.o
+                0x0001a20c                twi_init
  .text.adc_request_sample
-                0x0001a20c       0x18 _build/adc.o
-                0x0001a20c                adc_request_sample
+                0x0001a290       0x18 _build/adc.o
+                0x0001a290                adc_request_sample
  .text.ADC_IRQHandler
-                0x0001a224       0x24 _build/adc.o
-                0x0001a224                ADC_IRQHandler
+                0x0001a2a8       0x24 _build/adc.o
+                0x0001a2a8                ADC_IRQHandler
  .text.adc_init
-                0x0001a248       0x3c _build/adc.o
-                0x0001a248                adc_init
+                0x0001a2cc       0x3c _build/adc.o
+                0x0001a2cc                adc_init
  .text.read_baro
-                0x0001a284      0x1b4 _build/baro.o
-                0x0001a284                read_baro
+                0x0001a308      0x1b4 _build/baro.o
+                0x0001a308                read_baro
  .text.baro_init
-                0x0001a438       0x34 _build/baro.o
-                0x0001a438                baro_init
+                0x0001a4bc       0x34 _build/baro.o
+                0x0001a4bc                baro_init
  .text.sd_ble_gap_disconnect
-                0x0001a46c        0x4 _build/ble.o
+                0x0001a4f0        0x4 _build/ble.o
  .text.sd_ble_gap_ppcp_set
-                0x0001a470        0x4 _build/ble.o
+                0x0001a4f4        0x4 _build/ble.o
  .text.sd_ble_gap_device_name_set
-                0x0001a474        0x4 _build/ble.o
+                0x0001a4f8        0x4 _build/ble.o
  .text.sd_ble_gap_sec_params_reply
-                0x0001a478        0x4 _build/ble.o
+                0x0001a4fc        0x4 _build/ble.o
  .text.sd_ble_gatts_sys_attr_set
-                0x0001a47c        0x4 _build/ble.o
+                0x0001a500        0x4 _build/ble.o
  .text.sd_ble_enable
-                0x0001a480        0x4 _build/ble.o
+                0x0001a504        0x4 _build/ble.o
  .text.sd_nvic_EnableIRQ
-                0x0001a484        0x4 _build/ble.o
+                0x0001a508        0x4 _build/ble.o
  .text.sd_nvic_ClearPendingIRQ
-                0x0001a488        0x4 _build/ble.o
+                0x0001a50c        0x4 _build/ble.o
  .text.sd_nvic_SetPriority
-                0x0001a48c        0x4 _build/ble.o
+                0x0001a510        0x4 _build/ble.o
  .text.sd_radio_notification_cfg_set
-                0x0001a490        0x4 _build/ble.o
+                0x0001a514        0x4 _build/ble.o
  .text.conn_params_error_handler
-                0x0001a494       0x1c _build/ble.o
+                0x0001a518       0x1c _build/ble.o
  .text.nus_data_handler
-                0x0001a4b0       0x20 _build/ble.o
+                0x0001a534       0x20 _build/ble.o
  .text.ble_evt_dispatch
-                0x0001a4d0       0x94 _build/ble.o
+                0x0001a554       0x94 _build/ble.o
  .text.on_conn_params_evt
-                0x0001a564       0x38 _build/ble.o
+                0x0001a5e8       0x38 _build/ble.o
  .text.SWI1_IRQHandler
-                0x0001a59c       0x10 _build/ble.o
-                0x0001a59c                SWI1_IRQHandler
+                0x0001a620       0x10 _build/ble.o
+                0x0001a620                SWI1_IRQHandler
  .text.ble_init
-                0x0001a5ac      0x204 _build/ble.o
-                0x0001a5ac                ble_init
+                0x0001a630      0x204 _build/ble.o
+                0x0001a630                ble_init
  .text.flash_write_bytes
-                0x0001a7b0      0x248 _build/spi_flash.o
-                0x0001a7b0                flash_write_bytes
+                0x0001a834      0x248 _build/spi_flash.o
+                0x0001a834                flash_write_bytes
  .text.flash_read_bytes
-                0x0001a9f8       0xf0 _build/spi_flash.o
-                0x0001a9f8                flash_read_bytes
+                0x0001aa7c       0xf0 _build/spi_flash.o
+                0x0001aa7c                flash_read_bytes
  .text.spi_flash_init
-                0x0001aae8      0x230 _build/spi_flash.o
-                0x0001aae8                spi_flash_init
+                0x0001ab6c      0x230 _build/spi_flash.o
+                0x0001ab6c                spi_flash_init
  .text.mpu_reset_fifo
-                0x0001ad18      0x15c _build/inv_mpu.o
-                0x0001ad18                mpu_reset_fifo
+                0x0001ad9c      0x15c _build/inv_mpu.o
+                0x0001ad9c                mpu_reset_fifo
  .text.mpu_lp_accel_mode
-                0x0001ae74      0x1b8 _build/inv_mpu.o
-                0x0001ae74                mpu_lp_accel_mode
+                0x0001aef8      0x1b8 _build/inv_mpu.o
+                0x0001aef8                mpu_lp_accel_mode
  .text.mpu_get_accel_fsr
-                0x0001b02c       0x4c _build/inv_mpu.o
-                0x0001b02c                mpu_get_accel_fsr
+                0x0001b0b0       0x4c _build/inv_mpu.o
+                0x0001b0b0                mpu_get_accel_fsr
  .text.mpu_set_lpf
-                0x0001b078       0x78 _build/inv_mpu.o
-                0x0001b078                mpu_set_lpf
+                0x0001b0fc       0x78 _build/inv_mpu.o
+                0x0001b0fc                mpu_set_lpf
  .text.mpu_set_sample_rate
-                0x0001b0f0      0x168 _build/inv_mpu.o
-                0x0001b0f0                mpu_set_sample_rate
+                0x0001b174      0x168 _build/inv_mpu.o
+                0x0001b174                mpu_set_sample_rate
  .text.mpu_configure_fifo
-                0x0001b258       0xd0 _build/inv_mpu.o
-                0x0001b258                mpu_configure_fifo
+                0x0001b2dc       0xd0 _build/inv_mpu.o
+                0x0001b2dc                mpu_configure_fifo
  .text.mpu_set_sensors
-                0x0001b328      0x140 _build/inv_mpu.o
-                0x0001b328                mpu_set_sensors
+                0x0001b3ac      0x140 _build/inv_mpu.o
+                0x0001b3ac                mpu_set_sensors
  .text.mpu_init
-                0x0001b468      0x1f4 _build/inv_mpu.o
-                0x0001b468                mpu_init
+                0x0001b4ec      0x1f4 _build/inv_mpu.o
+                0x0001b4ec                mpu_init
  .text.mpu_read_fifo
-                0x0001b65c      0x26c _build/inv_mpu.o
-                0x0001b65c                mpu_read_fifo
+                0x0001b6e0      0x26c _build/inv_mpu.o
+                0x0001b6e0                mpu_read_fifo
  .text.mpu_read_fifo_stream
-                0x0001b8c8       0xb0 _build/inv_mpu.o
-                0x0001b8c8                mpu_read_fifo_stream
+                0x0001b94c       0xb0 _build/inv_mpu.o
+                0x0001b94c                mpu_read_fifo_stream
  .text.mpu_set_int_level
-                0x0001b978       0x10 _build/inv_mpu.o
-                0x0001b978                mpu_set_int_level
+                0x0001b9fc       0x10 _build/inv_mpu.o
+                0x0001b9fc                mpu_set_int_level
  .text.mpu_set_int_latched
-                0x0001b988       0x68 _build/inv_mpu.o
-                0x0001b988                mpu_set_int_latched
+                0x0001ba0c       0x68 _build/inv_mpu.o
+                0x0001ba0c                mpu_set_int_latched
  .text.mpu_write_mem
-                0x0001b9f0       0x58 _build/inv_mpu.o
-                0x0001b9f0                mpu_write_mem
+                0x0001ba74       0x58 _build/inv_mpu.o
+                0x0001ba74                mpu_write_mem
  .text.mpu_load_firmware
-                0x0001ba48      0x15c _build/inv_mpu.o
-                0x0001ba48                mpu_load_firmware
+                0x0001bacc      0x15c _build/inv_mpu.o
+                0x0001bacc                mpu_load_firmware
  .text.mpu_set_dmp_state
-                0x0001bba4      0x174 _build/inv_mpu.o
-                0x0001bba4                mpu_set_dmp_state
+                0x0001bc28      0x174 _build/inv_mpu.o
+                0x0001bc28                mpu_set_dmp_state
  .text.dmp_load_motion_driver_firmware
-                0x0001bd18       0x1c _build/inv_mpu_dmp_motion_driver.o
-                0x0001bd18                dmp_load_motion_driver_firmware
+                0x0001bd9c       0x1c _build/inv_mpu_dmp_motion_driver.o
+                0x0001bd9c                dmp_load_motion_driver_firmware
  .text.dmp_set_orientation
-                0x0001bd34      0x118 _build/inv_mpu_dmp_motion_driver.o
-                0x0001bd34                dmp_set_orientation
+                0x0001bdb8      0x118 _build/inv_mpu_dmp_motion_driver.o
+                0x0001bdb8                dmp_set_orientation
  .text.dmp_set_fifo_rate
-                0x0001be4c       0x64 _build/inv_mpu_dmp_motion_driver.o
-                0x0001be4c                dmp_set_fifo_rate
+                0x0001bed0       0x64 _build/inv_mpu_dmp_motion_driver.o
+                0x0001bed0                dmp_set_fifo_rate
  .text.dmp_set_tap_thresh
-                0x0001beb0      0x164 _build/inv_mpu_dmp_motion_driver.o
-                0x0001beb0                dmp_set_tap_thresh
+                0x0001bf34      0x164 _build/inv_mpu_dmp_motion_driver.o
+                0x0001bf34                dmp_set_tap_thresh
  .text.dmp_enable_feature
-                0x0001c014      0x28c _build/inv_mpu_dmp_motion_driver.o
-                0x0001c014                dmp_enable_feature
+                0x0001c098      0x28c _build/inv_mpu_dmp_motion_driver.o
+                0x0001c098                dmp_enable_feature
  .text.dmp_read_fifo
-                0x0001c2a0      0x20c _build/inv_mpu_dmp_motion_driver.o
-                0x0001c2a0                dmp_read_fifo
+                0x0001c324      0x20c _build/inv_mpu_dmp_motion_driver.o
+                0x0001c324                dmp_read_fifo
  .text.inv_orientation_matrix_to_scalar
-                0x0001c4ac      0x11c _build/ml.o
-                0x0001c4ac                inv_orientation_matrix_to_scalar
+                0x0001c530      0x11c _build/ml.o
+                0x0001c530                inv_orientation_matrix_to_scalar
  .text.get_dmp_data
-                0x0001c5c8      0x218 _build/mpu_wrapper.o
-                0x0001c5c8                get_dmp_data
+                0x0001c64c      0x218 _build/mpu_wrapper.o
+                0x0001c64c                get_dmp_data
  .text.get_raw_sensor_data
-                0x0001c7e0       0x88 _build/mpu_wrapper.o
-                0x0001c7e0                get_raw_sensor_data
+                0x0001c864       0x88 _build/mpu_wrapper.o
+                0x0001c864                get_raw_sensor_data
  .text.check_sensor_int_flag
-                0x0001c868       0x20 _build/mpu_wrapper.o
-                0x0001c868                check_sensor_int_flag
+                0x0001c8ec       0x20 _build/mpu_wrapper.o
+                0x0001c8ec                check_sensor_int_flag
  .text.imu_init
-                0x0001c888      0x10c _build/mpu_wrapper.o
-                0x0001c888                imu_init
+                0x0001c90c      0x10c _build/mpu_wrapper.o
+                0x0001c90c                imu_init
  .text.app_error_handler
-                0x0001c994       0x40 _build/app_error.o
-                0x0001c994                app_error_handler
+                0x0001ca18       0x40 _build/app_error.o
+                0x0001ca18                app_error_handler
  .text.rtc1_stop
-                0x0001c9d4       0x78 _build/app_timer.o
+                0x0001ca58       0x78 _build/app_timer.o
  .text.RTC1_IRQHandler
-                0x0001ca4c       0xe0 _build/app_timer.o
-                0x0001ca4c                RTC1_IRQHandler
+                0x0001cad0       0xe0 _build/app_timer.o
+                0x0001cad0                RTC1_IRQHandler
  .text.SWI0_IRQHandler
-                0x0001cb2c      0x4cc _build/app_timer.o
-                0x0001cb2c                SWI0_IRQHandler
+                0x0001cbb0      0x4cc _build/app_timer.o
+                0x0001cbb0                SWI0_IRQHandler
  .text.app_timer_init
-                0x0001cff8       0xe4 _build/app_timer.o
-                0x0001cff8                app_timer_init
+                0x0001d07c       0xe4 _build/app_timer.o
+                0x0001d07c                app_timer_init
  .text.app_timer_create
-                0x0001d0dc       0x34 _build/app_timer.o
-                0x0001d0dc                app_timer_create
+                0x0001d160       0x34 _build/app_timer.o
+                0x0001d160                app_timer_create
  .text.app_timer_start
-                0x0001d110       0xec _build/app_timer.o
-                0x0001d110                app_timer_start
+                0x0001d194       0xec _build/app_timer.o
+                0x0001d194                app_timer_start
  .text.app_timer_stop
-                0x0001d1fc       0xc4 _build/app_timer.o
-                0x0001d1fc                app_timer_stop
+                0x0001d280       0xc4 _build/app_timer.o
+                0x0001d280                app_timer_stop
  .text.pstorage_access_status_get
-                0x0001d2c0       0x28 _build/pstorage.o
-                0x0001d2c0                pstorage_access_status_get
+                0x0001d344       0x28 _build/pstorage.o
+                0x0001d344                pstorage_access_status_get
  .text.sd_ble_gap_address_get
-                0x0001d2e8        0x4 _build/ble_advdata.o
+                0x0001d36c        0x4 _build/ble_advdata.o
  .text.sd_ble_gap_adv_data_set
-                0x0001d2ec        0x4 _build/ble_advdata.o
+                0x0001d370        0x4 _build/ble_advdata.o
  .text.sd_ble_gap_appearance_get
-                0x0001d2f0        0x4 _build/ble_advdata.o
+                0x0001d374        0x4 _build/ble_advdata.o
  .text.sd_ble_gap_device_name_get
-                0x0001d2f4        0x4 _build/ble_advdata.o
+                0x0001d378        0x4 _build/ble_advdata.o
  .text.sd_ble_uuid_encode
-                0x0001d2f8        0x4 _build/ble_advdata.o
+                0x0001d37c        0x4 _build/ble_advdata.o
  .text.uuid_list_sized_encode
-                0x0001d2fc       0xf8 _build/ble_advdata.o
+                0x0001d380       0xf8 _build/ble_advdata.o
  .text.adv_data_encode
-                0x0001d3f4      0x5b8 _build/ble_advdata.o
-                0x0001d3f4                adv_data_encode
+                0x0001d478      0x5b8 _build/ble_advdata.o
+                0x0001d478                adv_data_encode
  .text.ble_advdata_set
-                0x0001d9ac       0x68 _build/ble_advdata.o
-                0x0001d9ac                ble_advdata_set
+                0x0001da30       0x68 _build/ble_advdata.o
+                0x0001da30                ble_advdata_set
  .text.sd_ble_gap_adv_start
-                0x0001da14        0x4 _build/ble_advertising.o
+                0x0001da98        0x4 _build/ble_advertising.o
  .text.ble_advertising_start.part.1
-                0x0001da18      0x2a8 _build/ble_advertising.o
+                0x0001da9c      0x2a8 _build/ble_advertising.o
  .text.ble_advertising_init
-                0x0001dcc0      0x144 _build/ble_advertising.o
-                0x0001dcc0                ble_advertising_init
+                0x0001dd44      0x144 _build/ble_advertising.o
+                0x0001dd44                ble_advertising_init
  .text.ble_advertising_start
-                0x0001de04       0x3c _build/ble_advertising.o
-                0x0001de04                ble_advertising_start
+                0x0001de88       0x3c _build/ble_advertising.o
+                0x0001de88                ble_advertising_start
  .text.ble_advertising_on_ble_evt
-                0x0001de40       0xec _build/ble_advertising.o
-                0x0001de40                ble_advertising_on_ble_evt
+                0x0001dec4       0xec _build/ble_advertising.o
+                0x0001dec4                ble_advertising_on_ble_evt
  .text.sd_ble_gap_conn_param_update
-                0x0001df2c        0x4 _build/ble_conn_params.o
+                0x0001dfb0        0x4 _build/ble_conn_params.o
  .text.sd_ble_gap_disconnect
-                0x0001df30        0x4 _build/ble_conn_params.o
+                0x0001dfb4        0x4 _build/ble_conn_params.o
  .text.sd_ble_gap_ppcp_set
-                0x0001df34        0x4 _build/ble_conn_params.o
+                0x0001dfb8        0x4 _build/ble_conn_params.o
  .text.sd_ble_gap_ppcp_get
-                0x0001df38        0x4 _build/ble_conn_params.o
+                0x0001dfbc        0x4 _build/ble_conn_params.o
  .text.update_timeout_handler
-                0x0001df3c       0x78 _build/ble_conn_params.o
+                0x0001dfc0       0x78 _build/ble_conn_params.o
  .text.conn_params_negotiation
-                0x0001dfb4       0x88 _build/ble_conn_params.o
+                0x0001e038       0x88 _build/ble_conn_params.o
  .text.ble_conn_params_init
-                0x0001e03c       0x78 _build/ble_conn_params.o
-                0x0001e03c                ble_conn_params_init
+                0x0001e0c0       0x78 _build/ble_conn_params.o
+                0x0001e0c0                ble_conn_params_init
  .text.ble_conn_params_on_ble_evt
-                0x0001e0b4       0xac _build/ble_conn_params.o
-                0x0001e0b4                ble_conn_params_on_ble_evt
+                0x0001e138       0xac _build/ble_conn_params.o
+                0x0001e138                ble_conn_params_on_ble_evt
  .text.sd_ble_gatts_service_add
-                0x0001e160        0x4 _build/ble_nus.o
+                0x0001e1e4        0x4 _build/ble_nus.o
  .text.sd_ble_gatts_characteristic_add
-                0x0001e164        0x4 _build/ble_nus.o
+                0x0001e1e8        0x4 _build/ble_nus.o
  .text.sd_ble_uuid_vs_add
-                0x0001e168        0x4 _build/ble_nus.o
+                0x0001e1ec        0x4 _build/ble_nus.o
  .text.ble_nus_on_ble_evt
-                0x0001e16c       0x60 _build/ble_nus.o
-                0x0001e16c                ble_nus_on_ble_evt
+                0x0001e1f0       0x60 _build/ble_nus.o
+                0x0001e1f0                ble_nus_on_ble_evt
  .text.ble_nus_init
-                0x0001e1cc      0x208 _build/ble_nus.o
-                0x0001e1cc                ble_nus_init
+                0x0001e250      0x208 _build/ble_nus.o
+                0x0001e250                ble_nus_init
  .text.sd_nvic_EnableIRQ
-                0x0001e3d4        0x4 _build/softdevice_handler.o
+                0x0001e458        0x4 _build/softdevice_handler.o
  .text.sd_evt_get
-                0x0001e3d8        0x4 _build/softdevice_handler.o
+                0x0001e45c        0x4 _build/softdevice_handler.o
  .text.sd_softdevice_enable
-                0x0001e3dc        0x4 _build/softdevice_handler.o
+                0x0001e460        0x4 _build/softdevice_handler.o
  .text.sd_ble_evt_get
-                0x0001e3e0        0x4 _build/softdevice_handler.o
+                0x0001e464        0x4 _build/softdevice_handler.o
  .text.softdevice_assertion_handler
-                0x0001e3e4        0xc _build/softdevice_handler.o
-                0x0001e3e4                softdevice_assertion_handler
+                0x0001e468        0xc _build/softdevice_handler.o
+                0x0001e468                softdevice_assertion_handler
  .text.intern_softdevice_events_execute.part.0
-                0x0001e3f0       0xec _build/softdevice_handler.o
+                0x0001e474       0xec _build/softdevice_handler.o
  .text.softdevice_handler_init
-                0x0001e4dc       0x4c _build/softdevice_handler.o
-                0x0001e4dc                softdevice_handler_init
+                0x0001e560       0x4c _build/softdevice_handler.o
+                0x0001e560                softdevice_handler_init
  .text.softdevice_ble_evt_handler_set
-                0x0001e528       0x14 _build/softdevice_handler.o
-                0x0001e528                softdevice_ble_evt_handler_set
+                0x0001e5ac       0x14 _build/softdevice_handler.o
+                0x0001e5ac                softdevice_ble_evt_handler_set
  .text.SWI2_IRQHandler
-                0x0001e53c       0x34 _build/softdevice_handler.o
-                0x0001e53c                SWI2_IRQHandler
- .text          0x0001e570       0x54 _build/gcc_startup_nrf51.o
-                0x0001e570                Reset_Handler
-                0x0001e5b8                NMI_Handler
-                0x0001e5ba                HardFault_Handler
-                0x0001e5bc                SVC_Handler
-                0x0001e5be                PendSV_Handler
-                0x0001e5c0                SysTick_Handler
-                0x0001e5c2                RTC0_IRQHandler
-                0x0001e5c2                GPIOTE_IRQHandler
-                0x0001e5c2                POWER_CLOCK_IRQHandler
-                0x0001e5c2                RADIO_IRQHandler
-                0x0001e5c2                LPCOMP_IRQHandler
-                0x0001e5c2                SWI4_IRQHandler
-                0x0001e5c2                TEMP_IRQHandler
-                0x0001e5c2                QDEC_IRQHandler
-                0x0001e5c2                SWI5_IRQHandler
-                0x0001e5c2                TIMER0_IRQHandler
-                0x0001e5c2                ECB_IRQHandler
-                0x0001e5c2                Default_Handler
-                0x0001e5c2                SWI3_IRQHandler
-                0x0001e5c2                CCM_AAR_IRQHandler
-                0x0001e5c2                WDT_IRQHandler
-                0x0001e5c2                RNG_IRQHandler
-                0x0001e5c2                SPI1_TWI1_IRQHandler
- .text.fabs     0x0001e5c4        0x8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_fabs.o)
-                0x0001e5c4                fabs
- .text.asin     0x0001e5cc       0xc4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_asin.o)
-                0x0001e5cc                asin
- .text.atan2    0x0001e690        0x8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_atan2.o)
-                0x0001e690                atan2
+                0x0001e5c0       0x34 _build/softdevice_handler.o
+                0x0001e5c0                SWI2_IRQHandler
+ .text          0x0001e5f4       0x54 _build/gcc_startup_nrf51.o
+                0x0001e5f4                Reset_Handler
+                0x0001e63c                NMI_Handler
+                0x0001e63e                HardFault_Handler
+                0x0001e640                SVC_Handler
+                0x0001e642                PendSV_Handler
+                0x0001e644                SysTick_Handler
+                0x0001e646                RTC0_IRQHandler
+                0x0001e646                GPIOTE_IRQHandler
+                0x0001e646                POWER_CLOCK_IRQHandler
+                0x0001e646                RADIO_IRQHandler
+                0x0001e646                LPCOMP_IRQHandler
+                0x0001e646                SWI4_IRQHandler
+                0x0001e646                TEMP_IRQHandler
+                0x0001e646                QDEC_IRQHandler
+                0x0001e646                SWI5_IRQHandler
+                0x0001e646                TIMER0_IRQHandler
+                0x0001e646                ECB_IRQHandler
+                0x0001e646                Default_Handler
+                0x0001e646                SWI3_IRQHandler
+                0x0001e646                CCM_AAR_IRQHandler
+                0x0001e646                WDT_IRQHandler
+                0x0001e646                RNG_IRQHandler
+                0x0001e646                SPI1_TWI1_IRQHandler
+ .text.fabs     0x0001e648        0x8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_fabs.o)
+                0x0001e648                fabs
+ .text.asin     0x0001e650       0xc4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_asin.o)
+                0x0001e650                asin
+ .text.atan2    0x0001e714        0x8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_atan2.o)
+                0x0001e714                atan2
  .text.__ieee754_asin
-                0x0001e698      0x3cc /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o)
-                0x0001e698                __ieee754_asin
+                0x0001e71c      0x3cc /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_asin.o)
+                0x0001e71c                __ieee754_asin
  .text.__ieee754_atan2
-                0x0001ea64      0x178 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_atan2.o)
-                0x0001ea64                __ieee754_atan2
+                0x0001eae8      0x178 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_atan2.o)
+                0x0001eae8                __ieee754_atan2
  .text.__ieee754_sqrt
-                0x0001ebdc      0x1ec /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_sqrt.o)
-                0x0001ebdc                __ieee754_sqrt
- .text.atan     0x0001edc8      0x33c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
-                0x0001edc8                atan
- .text.matherr  0x0001f104        0x4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_matherr.o)
-                0x0001f104                matherr
- .text.nan      0x0001f108        0xc /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_nan.o)
-                0x0001f108                nan
- .text          0x0001f114      0x114 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_udivsi3.o)
-                0x0001f114                __udivsi3
-                0x0001f114                __aeabi_uidiv
-                0x0001f220                __aeabi_uidivmod
- .text          0x0001f228      0x1d4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_divsi3.o)
-                0x0001f228                __aeabi_idiv
-                0x0001f228                __divsi3
-                0x0001f3f4                __aeabi_idivmod
- .text          0x0001f3fc        0x4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_dvmd_tls.o)
-                0x0001f3fc                __aeabi_ldiv0
-                0x0001f3fc                __aeabi_idiv0
- .text          0x0001f400       0x7c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpdf2.o)
-                0x0001f400                __aeabi_cdrcmple
-                0x0001f410                __aeabi_cdcmple
-                0x0001f410                __aeabi_cdcmpeq
-                0x0001f420                __aeabi_dcmpeq
-                0x0001f42c                __aeabi_dcmplt
-                0x0001f440                __aeabi_dcmple
-                0x0001f454                __aeabi_dcmpgt
-                0x0001f468                __aeabi_dcmpge
- .text          0x0001f47c       0x74 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpsf2.o)
-                0x0001f47c                __aeabi_cfrcmple
-                0x0001f484                __aeabi_cfcmple
-                0x0001f484                __aeabi_cfcmpeq
-                0x0001f494                __aeabi_fcmpeq
-                0x0001f4a0                __aeabi_fcmplt
-                0x0001f4b4                __aeabi_fcmple
-                0x0001f4c8                __aeabi_fcmpgt
-                0x0001f4dc                __aeabi_fcmpge
- .text          0x0001f4f0       0x58 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_muldi3.o)
-                0x0001f4f0                __aeabi_lmul
-                0x0001f4f0                __muldi3
- .text          0x0001f548       0x30 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_fixunssfsi.o)
-                0x0001f548                __aeabi_f2uiz
-                0x0001f548                __fixunssfsi
- .text          0x0001f578      0x2ec /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(addsf3.o)
-                0x0001f578                __aeabi_fadd
- .text          0x0001f864      0x234 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
-                0x0001f864                __aeabi_fdiv
- .text          0x0001fa98       0x50 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqsf2.o)
-                0x0001fa98                __nesf2
-                0x0001fa98                __eqsf2
- .text          0x0001fae8       0x88 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gesf2.o)
-                0x0001fae8                __gtsf2
-                0x0001fae8                __gesf2
- .text          0x0001fb70       0x88 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(lesf2.o)
-                0x0001fb70                __lesf2
-                0x0001fb70                __ltsf2
- .text          0x0001fbf8      0x228 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
-                0x0001fbf8                __aeabi_fmul
- .text          0x0001fe20      0x30c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subsf3.o)
-                0x0001fe20                __aeabi_fsub
- .text          0x0002012c       0x44 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixsfsi.o)
-                0x0002012c                __aeabi_f2iz
- .text          0x00020170       0x90 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsisf.o)
-                0x00020170                __aeabi_i2f
- .text          0x00020200       0x7c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatunsisf.o)
-                0x00020200                __aeabi_ui2f
- .text          0x0002027c      0x658 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(adddf3.o)
-                0x0002027c                __aeabi_dadd
- .text          0x000208d4      0x62c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
-                0x000208d4                __aeabi_ddiv
- .text          0x00020f00       0x80 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqdf2.o)
-                0x00020f00                __eqdf2
-                0x00020f00                __nedf2
- .text          0x00020f80       0xc8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gedf2.o)
-                0x00020f80                __gtdf2
-                0x00020f80                __gedf2
- .text          0x00021048       0xd4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(ledf2.o)
-                0x00021048                __ltdf2
-                0x00021048                __ledf2
- .text          0x0002111c      0x4f4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
-                0x0002111c                __aeabi_dmul
- .text          0x00021610      0x6a8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subdf3.o)
-                0x00021610                __aeabi_dsub
- .text          0x00021cb8       0x40 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(unorddf2.o)
-                0x00021cb8                __aeabi_dcmpun
- .text          0x00021cf8       0x6c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixdfsi.o)
-                0x00021cf8                __aeabi_d2iz
- .text          0x00021d64       0x84 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsidf.o)
-                0x00021d64                __aeabi_i2d
- .text          0x00021de8       0xa8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(extendsfdf2.o)
-                0x00021de8                __aeabi_f2d
- .text          0x00021e90       0x3c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_clzsi2.o)
-                0x00021e90                __clzsi2
- .text.__errno  0x00021ecc        0xc /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-errno.o)
-                0x00021ecc                __errno
- .text.memcmp   0x00021ed8       0x1e /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcmp.o)
-                0x00021ed8                memcmp
- .text.memcpy   0x00021ef6       0x12 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
-                0x00021ef6                memcpy
- .text.printf   0x00021f08       0x34 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
-                0x00021f08                printf
-                0x00021f08                iprintf
- .text.sprintf  0x00021f3c       0x44 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sprintf.o)
-                0x00021f3c                sprintf
-                0x00021f3c                siprintf
- .text          0x00021f80        0xe /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-strlen.o)
-                0x00021f80                strlen
- *fill*         0x00021f8e        0x2 
+                0x0001ec60      0x1ec /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-e_sqrt.o)
+                0x0001ec60                __ieee754_sqrt
+ .text.atan     0x0001ee4c      0x33c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
+                0x0001ee4c                atan
+ .text.matherr  0x0001f188        0x4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_matherr.o)
+                0x0001f188                matherr
+ .text.nan      0x0001f18c        0xc /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_nan.o)
+                0x0001f18c                nan
+ .text          0x0001f198      0x114 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_udivsi3.o)
+                0x0001f198                __udivsi3
+                0x0001f198                __aeabi_uidiv
+                0x0001f2a4                __aeabi_uidivmod
+ .text          0x0001f2ac      0x1d4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_divsi3.o)
+                0x0001f2ac                __aeabi_idiv
+                0x0001f2ac                __divsi3
+                0x0001f478                __aeabi_idivmod
+ .text          0x0001f480        0x4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_dvmd_tls.o)
+                0x0001f480                __aeabi_ldiv0
+                0x0001f480                __aeabi_idiv0
+ .text          0x0001f484       0x7c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpdf2.o)
+                0x0001f484                __aeabi_cdrcmple
+                0x0001f494                __aeabi_cdcmple
+                0x0001f494                __aeabi_cdcmpeq
+                0x0001f4a4                __aeabi_dcmpeq
+                0x0001f4b0                __aeabi_dcmplt
+                0x0001f4c4                __aeabi_dcmple
+                0x0001f4d8                __aeabi_dcmpgt
+                0x0001f4ec                __aeabi_dcmpge
+ .text          0x0001f500       0x74 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_arm_cmpsf2.o)
+                0x0001f500                __aeabi_cfrcmple
+                0x0001f508                __aeabi_cfcmple
+                0x0001f508                __aeabi_cfcmpeq
+                0x0001f518                __aeabi_fcmpeq
+                0x0001f524                __aeabi_fcmplt
+                0x0001f538                __aeabi_fcmple
+                0x0001f54c                __aeabi_fcmpgt
+                0x0001f560                __aeabi_fcmpge
+ .text          0x0001f574       0x58 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_muldi3.o)
+                0x0001f574                __aeabi_lmul
+                0x0001f574                __muldi3
+ .text          0x0001f5cc       0x30 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_fixunssfsi.o)
+                0x0001f5cc                __aeabi_f2uiz
+                0x0001f5cc                __fixunssfsi
+ .text          0x0001f5fc      0x2ec /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(addsf3.o)
+                0x0001f5fc                __aeabi_fadd
+ .text          0x0001f8e8      0x234 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
+                0x0001f8e8                __aeabi_fdiv
+ .text          0x0001fb1c       0x50 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqsf2.o)
+                0x0001fb1c                __nesf2
+                0x0001fb1c                __eqsf2
+ .text          0x0001fb6c       0x88 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gesf2.o)
+                0x0001fb6c                __gtsf2
+                0x0001fb6c                __gesf2
+ .text          0x0001fbf4       0x88 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(lesf2.o)
+                0x0001fbf4                __lesf2
+                0x0001fbf4                __ltsf2
+ .text          0x0001fc7c      0x228 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
+                0x0001fc7c                __aeabi_fmul
+ .text          0x0001fea4      0x30c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subsf3.o)
+                0x0001fea4                __aeabi_fsub
+ .text          0x000201b0       0x44 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixsfsi.o)
+                0x000201b0                __aeabi_f2iz
+ .text          0x000201f4       0x90 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsisf.o)
+                0x000201f4                __aeabi_i2f
+ .text          0x00020284       0x7c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatunsisf.o)
+                0x00020284                __aeabi_ui2f
+ .text          0x00020300      0x658 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(adddf3.o)
+                0x00020300                __aeabi_dadd
+ .text          0x00020958      0x62c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
+                0x00020958                __aeabi_ddiv
+ .text          0x00020f84       0x80 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(eqdf2.o)
+                0x00020f84                __eqdf2
+                0x00020f84                __nedf2
+ .text          0x00021004       0xc8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(gedf2.o)
+                0x00021004                __gtdf2
+                0x00021004                __gedf2
+ .text          0x000210cc       0xd4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(ledf2.o)
+                0x000210cc                __ltdf2
+                0x000210cc                __ledf2
+ .text          0x000211a0      0x4f4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
+                0x000211a0                __aeabi_dmul
+ .text          0x00021694      0x6a8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(subdf3.o)
+                0x00021694                __aeabi_dsub
+ .text          0x00021d3c       0x40 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(unorddf2.o)
+                0x00021d3c                __aeabi_dcmpun
+ .text          0x00021d7c       0x6c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(fixdfsi.o)
+                0x00021d7c                __aeabi_d2iz
+ .text          0x00021de8       0x84 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(floatsidf.o)
+                0x00021de8                __aeabi_i2d
+ .text          0x00021e6c       0xa8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(extendsfdf2.o)
+                0x00021e6c                __aeabi_f2d
+ .text          0x00021f14       0x3c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(_clzsi2.o)
+                0x00021f14                __clzsi2
+ .text.__errno  0x00021f50        0xc /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-errno.o)
+                0x00021f50                __errno
+ .text.memcmp   0x00021f5c       0x1e /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcmp.o)
+                0x00021f5c                memcmp
+ .text.memcpy   0x00021f7a       0x12 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memcpy-stub.o)
+                0x00021f7a                memcpy
+ .text.printf   0x00021f8c       0x34 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-printf.o)
+                0x00021f8c                printf
+                0x00021f8c                iprintf
+ .text.sprintf  0x00021fc0       0x44 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sprintf.o)
+                0x00021fc0                sprintf
+                0x00021fc0                siprintf
+ .text          0x00022004        0xe /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-strlen.o)
+                0x00022004                strlen
+ *fill*         0x00022012        0x2 
  .text._cleanup_r
-                0x00021f90       0x10 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00021f90                _cleanup_r
+                0x00022014       0x10 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00022014                _cleanup_r
  .text.std.isra.0
-                0x00021fa0       0x48 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00022024       0x48 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
  .text.__sfmoreglue
-                0x00021fe8       0x2c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00021fe8                __sfmoreglue
- .text.__sinit  0x00022014       0x68 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00022014                __sinit
- .text.__sfp    0x0002207c       0x7c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x0002207c                __sfp
+                0x0002206c       0x2c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x0002206c                __sfmoreglue
+ .text.__sinit  0x00022098       0x68 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00022098                __sinit
+ .text.__sfp    0x00022100       0x7c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00022100                __sfp
  .text._fwalk_reent
-                0x000220f8       0x42 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
-                0x000220f8                _fwalk_reent
- *fill*         0x0002213a        0x2 
+                0x0002217c       0x42 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fwalk.o)
+                0x0002217c                _fwalk_reent
+ *fill*         0x000221be        0x2 
  .text._malloc_r
-                0x0002213c       0xc0 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
-                0x0002213c                _malloc_r
+                0x000221c0       0xc0 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-mallocr.o)
+                0x000221c0                _malloc_r
  .text.__ssputs_r
-                0x000221fc       0xc4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
-                0x000221fc                __ssputs_r
+                0x00022280       0xc4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x00022280                __ssputs_r
  .text._svfprintf_r
-                0x000222c0      0x1fc /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
-                0x000222c0                _svfprintf_r
-                0x000222c0                _svfiprintf_r
+                0x00022344      0x1fc /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x00022344                _svfprintf_r
+                0x00022344                _svfiprintf_r
  .text.__sfputc_r
-                0x000224bc       0x2a /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x00022540       0x2a /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
  .text.__sfputs_r
-                0x000224e6       0x24 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x000224e6                __sfputs_r
- *fill*         0x0002250a        0x2 
+                0x0002256a       0x24 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x0002256a                __sfputs_r
+ *fill*         0x0002258e        0x2 
  .text._vfprintf_r
-                0x0002250c      0x238 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
-                0x0002250c                _vfiprintf_r
-                0x0002250c                _vfprintf_r
+                0x00022590      0x238 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x00022590                _vfiprintf_r
+                0x00022590                _vfprintf_r
  .text._printf_common
-                0x00022744       0xdc /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x00022744                _printf_common
+                0x000227c8       0xdc /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000227c8                _printf_common
  .text._printf_i
-                0x00022820      0x244 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x00022820                _printf_i
- .text._sbrk_r  0x00022a64       0x24 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sbrkr.o)
-                0x00022a64                _sbrk_r
- .text.__sread  0x00022a88       0x28 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x00022a88                __sread
+                0x000228a4      0x244 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000228a4                _printf_i
+ .text._sbrk_r  0x00022ae8       0x24 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-sbrkr.o)
+                0x00022ae8                _sbrk_r
+ .text.__sread  0x00022b0c       0x28 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x00022b0c                __sread
  .text.__swrite
-                0x00022ab0       0x38 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x00022ab0                __swrite
- .text.__sseek  0x00022ae8       0x2c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x00022ae8                __sseek
+                0x00022b34       0x38 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x00022b34                __swrite
+ .text.__sseek  0x00022b6c       0x2c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x00022b6c                __sseek
  .text.__sclose
-                0x00022b14        0xc /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
-                0x00022b14                __sclose
+                0x00022b98        0xc /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-stdio.o)
+                0x00022b98                __sclose
  .text.__swbuf_r
-                0x00022b20       0xb0 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
-                0x00022b20                __swbuf_r
+                0x00022ba4       0xb0 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wbuf.o)
+                0x00022ba4                __swbuf_r
  .text._write_r
-                0x00022bd0       0x28 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-writer.o)
-                0x00022bd0                _write_r
+                0x00022c54       0x28 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-writer.o)
+                0x00022c54                _write_r
  .text.__swsetup_r
-                0x00022bf8       0xec /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
-                0x00022bf8                __swsetup_r
+                0x00022c7c       0xec /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-wsetup.o)
+                0x00022c7c                __swsetup_r
  .text._close_r
-                0x00022ce4       0x24 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-closer.o)
-                0x00022ce4                _close_r
+                0x00022d68       0x24 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-closer.o)
+                0x00022d68                _close_r
  .text.__sflush_r
-                0x00022d08      0x10c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
-                0x00022d08                __sflush_r
+                0x00022d8c      0x10c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
+                0x00022d8c                __sflush_r
  .text._fflush_r
-                0x00022e14       0x58 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
-                0x00022e14                _fflush_r
+                0x00022e98       0x58 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fflush.o)
+                0x00022e98                _fflush_r
  .text._lseek_r
-                0x00022e6c       0x28 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-lseekr.o)
-                0x00022e6c                _lseek_r
+                0x00022ef0       0x28 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-lseekr.o)
+                0x00022ef0                _lseek_r
  .text.__swhatbuf_r
-                0x00022e94       0x4c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
-                0x00022e94                __swhatbuf_r
+                0x00022f18       0x4c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
+                0x00022f18                __swhatbuf_r
  .text.__smakebuf_r
-                0x00022ee0       0x7c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
-                0x00022ee0                __smakebuf_r
- .text.memchr   0x00022f5c       0x16 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr-stub.o)
-                0x00022f5c                memchr
- .text.memmove  0x00022f72       0x2a /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memmove.o)
-                0x00022f72                memmove
+                0x00022f64       0x7c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-makebuf.o)
+                0x00022f64                __smakebuf_r
+ .text.memchr   0x00022fe0       0x16 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memchr-stub.o)
+                0x00022fe0                memchr
+ .text.memmove  0x00022ff6       0x2a /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-memmove.o)
+                0x00022ff6                memmove
  .text.__malloc_lock
-                0x00022f9c        0x2 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
-                0x00022f9c                __malloc_lock
+                0x00023020        0x2 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
+                0x00023020                __malloc_lock
  .text.__malloc_unlock
-                0x00022f9e        0x2 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
-                0x00022f9e                __malloc_unlock
- .text._free_r  0x00022fa0       0x98 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
-                0x00022fa0                _free_r
+                0x00023022        0x2 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-mlock.o)
+                0x00023022                __malloc_unlock
+ .text._free_r  0x00023024       0x98 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-freer.o)
+                0x00023024                _free_r
  .text._realloc_r
-                0x00023038       0x4c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-reallocr.o)
-                0x00023038                _realloc_r
- .text._read_r  0x00023084       0x28 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-readr.o)
-                0x00023084                _read_r
+                0x000230bc       0x4c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-reallocr.o)
+                0x000230bc                _realloc_r
+ .text._read_r  0x00023108       0x28 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-readr.o)
+                0x00023108                _read_r
  .text._fstat_r
-                0x000230ac       0x24 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fstatr.o)
-                0x000230ac                _fstat_r
+                0x00023130       0x24 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-fstatr.o)
+                0x00023130                _fstat_r
  .text._isatty_r
-                0x000230d0       0x24 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-isattyr.o)
-                0x000230d0                _isatty_r
+                0x00023154       0x24 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-isattyr.o)
+                0x00023154                _isatty_r
  .text._malloc_usable_size_r
-                0x000230f4       0x16 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-msizer.o)
-                0x000230f4                _malloc_usable_size_r
- *fill*         0x0002310a        0x2 
- .text._close   0x0002310c       0x10 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(close.o)
-                0x0002310c                _close
- .text._fstat   0x0002311c       0x10 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(fstat.o)
-                0x0002311c                _fstat
- .text._isatty  0x0002312c       0x10 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(isatty.o)
-                0x0002312c                _isatty
- .text._lseek   0x0002313c       0x10 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(lseek.o)
-                0x0002313c                _lseek
- .text._read    0x0002314c       0x10 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(read.o)
-                0x0002314c                _read
- .text._sbrk    0x0002315c       0x1c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(sbrk.o)
-                0x0002315c                _sbrk
+                0x00023178       0x16 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-msizer.o)
+                0x00023178                _malloc_usable_size_r
+ *fill*         0x0002318e        0x2 
+ .text._close   0x00023190       0x10 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(close.o)
+                0x00023190                _close
+ .text._fstat   0x000231a0       0x10 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(fstat.o)
+                0x000231a0                _fstat
+ .text._isatty  0x000231b0       0x10 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(isatty.o)
+                0x000231b0                _isatty
+ .text._lseek   0x000231c0       0x10 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(lseek.o)
+                0x000231c0                _lseek
+ .text._read    0x000231d0       0x10 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(read.o)
+                0x000231d0                _read
+ .text._sbrk    0x000231e0       0x1c /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libnosys.a(sbrk.o)
+                0x000231e0                _sbrk
  *(.init)
- .init          0x00023178        0x4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x00023178                _init
- .init          0x0002317c        0x8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+ .init          0x000231fc        0x4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x000231fc                _init
+ .init          0x00023200        0x8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
  *(.fini)
- .fini          0x00023184        0x4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
-                0x00023184                _fini
- .fini          0x00023188        0x8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
+ .fini          0x00023208        0x4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crti.o
+                0x00023208                _fini
+ .fini          0x0002320c        0x8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -1652,118 +1652,118 @@ END GROUP
  *(.dtors)
  *(.rodata*)
  .rodata.str1.1
-                0x00023190        0x2 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
- *fill*         0x00023192        0x2 
+                0x00023214        0x2 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
+ *fill*         0x00023216        0x2 
  .rodata._global_impure_ptr
-                0x00023194        0x4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
-                0x00023194                _global_impure_ptr
+                0x00023218        0x4 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-impure.o)
+                0x00023218                _global_impure_ptr
  .rodata.str1.4
-                0x00023198       0xaa _build/in4073.o
- *fill*         0x00023242        0x2 
+                0x0002321c       0xdd _build/in4073.o
+ *fill*         0x000232f9        0x3 
  .rodata.crc8_table
-                0x00023244      0x100 _build/in4073.o
+                0x000232fc      0x100 _build/in4073.o
  .rodata.str1.4
-                0x00023344       0x29 _build/control.o
- *fill*         0x0002336d        0x3 
+                0x000233fc       0x51 _build/control.o
+ *fill*         0x0002344d        0x3 
  .rodata.quadrupel_timer.7163
-                0x00023370        0x4 _build/timers.o
+                0x00023450        0x4 _build/timers.o
  .rodata.str1.4
-                0x00023374       0x11 _build/uart.o
- *fill*         0x00023385        0x3 
+                0x00023454       0x11 _build/uart.o
+ *fill*         0x00023465        0x3 
  .rodata.str1.4
-                0x00023388       0x38 _build/twi.o
+                0x00023468       0x38 _build/twi.o
  .rodata.str1.4
-                0x000233c0       0x12 _build/ble.o
- *fill*         0x000233d2        0x2 
- .rodata.test   0x000233d4       0x28 _build/inv_mpu.o
-                0x000233d4                test
+                0x000234a0       0x12 _build/ble.o
+ *fill*         0x000234b2        0x2 
+ .rodata.test   0x000234b4       0x28 _build/inv_mpu.o
+                0x000234b4                test
  .rodata.str1.4
-                0x000233fc       0xa6 _build/inv_mpu.o
- *fill*         0x000234a2        0x2 
- .rodata.hw     0x000234a4        0xc _build/inv_mpu.o
-                0x000234a4                hw
- .rodata.reg    0x000234b0       0x1e _build/inv_mpu.o
-                0x000234b0                reg
- *fill*         0x000234ce        0x2 
- .rodata        0x000234d0       0x4b _build/inv_mpu_dmp_motion_driver.o
- *fill*         0x0002351b        0x1 
+                0x000234dc       0xa6 _build/inv_mpu.o
+ *fill*         0x00023582        0x2 
+ .rodata.hw     0x00023584        0xc _build/inv_mpu.o
+                0x00023584                hw
+ .rodata.reg    0x00023590       0x1e _build/inv_mpu.o
+                0x00023590                reg
+ *fill*         0x000235ae        0x2 
+ .rodata        0x000235b0       0x4b _build/inv_mpu_dmp_motion_driver.o
+ *fill*         0x000235fb        0x1 
  .rodata.dmp_memory
-                0x0002351c      0xbf6 _build/inv_mpu_dmp_motion_driver.o
- *fill*         0x00024112        0x2 
+                0x000235fc      0xbf6 _build/inv_mpu_dmp_motion_driver.o
+ *fill*         0x000241f2        0x2 
  .rodata.str1.4
-                0x00024114      0x14a _build/mpu_wrapper.o
- *fill*         0x0002425e        0x2 
+                0x000241f4      0x14a _build/mpu_wrapper.o
+ *fill*         0x0002433e        0x2 
  .rodata.str1.4
-                0x00024260       0x27 _build/app_error.o
- *fill*         0x00024287        0x1 
+                0x00024340       0x27 _build/app_error.o
+ *fill*         0x00024367        0x1 
  .rodata.m_conn_params_timer_id
-                0x00024288        0x4 _build/ble_conn_params.o
- .rodata        0x0002428c       0x10 _build/ble_nus.o
+                0x00024368        0x4 _build/ble_conn_params.o
+ .rodata        0x0002436c       0x10 _build/ble_nus.o
  .rodata.str1.4
-                0x0002429c        0x8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_asin.o)
+                0x0002437c        0x8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-w_asin.o)
                                   0x9 (size before relaxing)
- *fill*         0x000242a4        0x4 
+ *fill*         0x00024384        0x4 
  .rodata.atanlo
-                0x000242a8       0x20 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
+                0x00024388       0x20 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
  .rodata.atanhi
-                0x000242c8       0x20 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
- .rodata        0x000242e8       0x80 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
- .rodata        0x00024368       0x40 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
- .rodata        0x000243a8       0x40 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
- .rodata        0x000243e8       0x40 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
+                0x000243a8       0x20 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libm.a(lib_a-s_atan.o)
+ .rodata        0x000243c8       0x80 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divsf3.o)
+ .rodata        0x00024448       0x40 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(mulsf3.o)
+ .rodata        0x00024488       0x40 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(divdf3.o)
+ .rodata        0x000244c8       0x40 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/libgcc.a(muldf3.o)
  .rodata.__sf_fake_stdin
-                0x00024428       0x20 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00024428                __sf_fake_stdin
+                0x00024508       0x20 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00024508                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x00024448       0x20 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00024448                __sf_fake_stdout
+                0x00024528       0x20 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00024528                __sf_fake_stdout
  .rodata.__sf_fake_stderr
-                0x00024468       0x20 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
-                0x00024468                __sf_fake_stderr
+                0x00024548       0x20 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-findfp.o)
+                0x00024548                __sf_fake_stderr
  .rodata.str1.1
-                0x00024488       0x11 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
+                0x00024568       0x11 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-svfprintf.o)
  .rodata.str1.1
-                0x00024499       0x11 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
+                0x00024579       0x11 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf.o)
  .rodata.str1.1
-                0x00024499       0x22 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00024579       0x22 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/libc_nano.a(lib_a-nano-vfprintf_i.o)
  *(.eh_frame*)
- *fill*         0x000244bb        0x1 
- .eh_frame      0x000244bc        0x0 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
-                0x000244bc                . = ALIGN (0x4)
+ *fill*         0x0002459b        0x1 
+ .eh_frame      0x0002459c        0x0 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+                0x0002459c                . = ALIGN (0x4)
 
-.glue_7         0x000244bc        0x0
- .glue_7        0x000244bc        0x0 linker stubs
+.glue_7         0x0002459c        0x0
+ .glue_7        0x0002459c        0x0 linker stubs
 
-.glue_7t        0x000244bc        0x0
- .glue_7t       0x000244bc        0x0 linker stubs
+.glue_7t        0x0002459c        0x0
+ .glue_7t       0x0002459c        0x0 linker stubs
 
-.vfp11_veneer   0x000244bc        0x0
- .vfp11_veneer  0x000244bc        0x0 linker stubs
+.vfp11_veneer   0x0002459c        0x0
+ .vfp11_veneer  0x0002459c        0x0 linker stubs
 
-.v4_bx          0x000244bc        0x0
- .v4_bx         0x000244bc        0x0 linker stubs
+.v4_bx          0x0002459c        0x0
+ .v4_bx         0x0002459c        0x0 linker stubs
 
-.iplt           0x000244bc        0x0
- .iplt          0x000244bc        0x0 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.iplt           0x0002459c        0x0
+ .iplt          0x0002459c        0x0 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.ARM.extab      0x000244bc        0x0
+.ARM.extab      0x0002459c        0x0
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000244bc                . = ALIGN (0x4)
-                0x000244bc                __exidx_start = .
+                0x0002459c                . = ALIGN (0x4)
+                0x0002459c                __exidx_start = .
 
-.ARM.exidx      0x000244bc        0x8
+.ARM.exidx      0x0002459c        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x000244bc        0x8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
- .ARM.exidx     0x000244c4        0x0 _build/gcc_startup_nrf51.o
+ .ARM.exidx     0x0002459c        0x8 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv6-m/crt0.o
+ .ARM.exidx     0x000245a4        0x0 _build/gcc_startup_nrf51.o
                                   0x8 (size before relaxing)
-                0x000244c4                . = ALIGN (0x4)
-                0x000244c4                __exidx_end = .
-                0x000244c4                __etext = .
+                0x000245a4                . = ALIGN (0x4)
+                0x000245a4                __exidx_end = .
+                0x000245a4                __etext = .
 
-.rel.dyn        0x000244c4        0x0
- .rel.iplt      0x000244c4        0x0 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
+.rel.dyn        0x000245a4        0x0
+ .rel.iplt      0x000245a4        0x0 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.data           0x20002000       0xb4 load address 0x000244c4
+.data           0x20002000       0xb4 load address 0x000245a4
                 0x20002000                __data_start__ = .
  *(vtable)
  *(.data*)
@@ -1812,10 +1812,10 @@ END GROUP
                 0x200020b4                . = ALIGN (0x4)
                 0x200020b4                __data_end__ = .
 
-.igot.plt       0x200020b4        0x0 load address 0x00024578
+.igot.plt       0x200020b4        0x0 load address 0x00024658
  .igot.plt      0x200020b4        0x0 /home/uma/Desktop/ESL/to_add_log/Quadcopter_project/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/5.4.1/armv6-m/crtbegin.o
 
-.bss            0x200020b4      0xb34 load address 0x00024578
+.bss            0x200020b4      0xb34 load address 0x00024658
                 0x200020b4                . = ALIGN (0x4)
                 0x200020b4                __bss_start__ = .
  *(.bss*)
@@ -1833,7 +1833,9 @@ END GROUP
  .bss.cal_count
                 0x200020dc        0x1 _build/control.o
                 0x200020dc                cal_count
- *fill*         0x200020dd        0x3 
+ .bss.counter   0x200020dd        0x1 _build/control.o
+                0x200020dd                counter
+ *fill*         0x200020de        0x2 
  .bss.APP_TIMER_BUF.7159
                 0x200020e0      0x1c8 _build/timers.o
  .bss.quadrupel_timer_data.7162

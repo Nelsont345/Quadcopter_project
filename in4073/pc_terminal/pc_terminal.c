@@ -67,11 +67,6 @@ void *loop()
 		get_data();
 		send = send || resend();
                
-                if( clock_gettime( CLOCK_REALTIME, &start) == -1 ) 
-		{
-                	perror( "clock gettime" );
-      			exit( EXIT_FAILURE );
-    		}
 
 		send = send || get_joystick(fd);
 		send = send || get_keyboard();
@@ -85,13 +80,7 @@ void *loop()
 		{
 			//fprintf(stderr,"send frame: %u mode: %u throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u\n",frame, mode, throttle, roll, pitch, yaw, P, P1, P2);
 			send_command();
-			if( clock_gettime( CLOCK_REALTIME, &stop) == -1 ) {
-      				perror( "clock gettime" );
-      				exit( EXIT_FAILURE );
-    			}
-    			accum = (float)((float)(stop.tv_sec-start.tv_sec)*MILLION + (float)((stop.tv_nsec- start.tv_nsec)/1000));
-                        fprintf(fp2, "%f \n", accum);
-                        //fprintf(stderr, "time :%f\n", accum);
+
 		}
                 else if(send_period())
                 {
