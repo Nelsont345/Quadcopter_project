@@ -37,10 +37,10 @@ void *loop()
 	fcntl(fd, F_SETFL, O_NONBLOCK);
 	
         fp2 = fopen("log2.txt", "w"); 
-        fp = fopen("log.csv", "w");
+        fp = fopen("log.txt", "w");
         
  
-        fprintf(fp, "TIME,THROTTLE,ROLL,PITCH,YAW, MODE,PHI,THETA,PSI,SP,SQ,SR,SAX, SAY,SAZ,MOTOR 0,MOTOR 1,MOTOR 2,MOTOR 3,CYCLE TIME,RESPONSE TIME, FILTERED_SR\n");
+        fprintf(fp, "TIME \t THROTTLE ROLL \t PITCH \t YAW \t MODE \t PHI \t THETA \t PSI \t SP \t SQ \t SR \t MOTOR 0\tMOTOR 1\tMOTOR 2\tMOTOR 3\t CYCLE TIME LOOP TIME\n");
 
 	term_puts("Type ^C to exit\n");
 
@@ -67,6 +67,11 @@ void *loop()
 		get_data();
 		send = send || resend();
                
+                if( clock_gettime( CLOCK_REALTIME, &start) == -1 ) 
+		{
+                	perror( "clock gettime" );
+      			exit( EXIT_FAILURE );
+    		}
 
 		send = send || get_joystick(fd);
 		send = send || get_keyboard();
@@ -80,7 +85,13 @@ void *loop()
 		{
 			//fprintf(stderr,"send frame: %u mode: %u throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u\n",frame, mode, throttle, roll, pitch, yaw, P, P1, P2);
 			send_command();
-
+			if( clock_gettime( CLOCK_REALTIME, &stop) == -1 ) {
+      				perror( "clock gettime" );
+      				exit( EXIT_FAILURE );
+    			}
+    			accum = (float)((float)(stop.tv_sec-start.tv_sec)*MILLION + (float)((stop.tv_nsec- start.tv_nsec)/1000));
+                        fprintf(fp2, "%f \n", accum);
+                        //fprintf(stderr, "time :%f\n", accum);
 		}
                 else if(send_period())
                 {

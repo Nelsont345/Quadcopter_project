@@ -43,7 +43,7 @@ void UART0_IRQHandler(void)
 		uint8_t k = NRF_UART0->RXD;  
                              
 		enqueue(&rx_queue, k);
-		//last_receiving_time = get_time_us();
+		
 		//printf("last%lu\n", last_receiving_time);
 	}
 

@@ -82,7 +82,7 @@ uint8_t height = 0;
 bool send = false;
 
 
-#define LOG_SIZE 48
+#define LOG_SIZE 38
 int count1 = 0;
 int row = 0;
 int data[0xFFFF];
@@ -272,48 +272,40 @@ void log_file(int c)
 					//break;
 			       }
 			       else
-                               fprintf(fp, "%d,", time2);
+                               fprintf(fp, "%d\t ", time2);
                       }
               }
 
               else if(count1 >= 4 && count1 <= 8)
-                      fprintf(fp, "%d,", c);
+                      fprintf(fp, "%d\t ", c);
    
-              else if(count1 <= 34)
+              else if(count1 <= 28)
               {
                       if(count1 % 2 != 0)
                              log_data = (c << 8);
                       else
                       {
                              log_data += c;
-                             fprintf(fp, "%d,", log_data);
+                             fprintf(fp, "%d\t ", log_data);
                       }   
               }   
 
-              else if(count1 >= 35 && count1 <= 38)
+              else if(count1 >= 29 && count1 <= 32)
               { 
-                      if(count1  == 35)
+                      if(count1  == 29)
                               time2 = 0;
-                      time2 += (c << (8 * (38 - count1)));
-                      if (count1 == 38)
-                              fprintf(fp, "%d,", time2);
+                      time2 += (c << (8 * (32 - count1)));
+                      if (count1 == 32)
+                              fprintf(fp, "%d\t ", time2);
               } 
 
-              else if(count1 >= 39 && count1 <= 42)
+              else if(count1 >= 33 && count1 <= 36)
               { 
-                      if(count1  == 39)
+                      if(count1  == 33)
                               time2 = 0;
-                      time2 += (c << (8 * (42 - count1)));
-                      if (count1 == 42)
-                              fprintf(fp, "%d,", time2);
-              }   
-              else if(count1 >= 43 && count1 <= 46)
-              { 
-                      if(count1  == 43)
-                              time2 = 0;
-                      time2 += (c << (8 * (46 - count1)));
-                      if (count1 == 46)
-                              fprintf(fp, "%d,", time2);
+                      time2 += (c << (8 * (36 - count1)));
+                      if (count1 == 36)
+                              fprintf(fp, "%d\t ", time2);
               }      
               count1++;
               if(count1 == LOG_SIZE - 1) 
@@ -330,7 +322,7 @@ void log_file(int c)
  */
 unsigned int last_sending_time;
 unsigned int previous_time;//last checking time
-unsigned int interval=1000;//sending interval
+unsigned int interval=500;//sending interval
 unsigned int sending_time[256];
 
 #include <time.h>
@@ -390,10 +382,10 @@ uint16_t unsigned_sadd(uint16_t a, uint16_t b)
 
 void initialize()
 {
-	k_throttle = 0;
+	k_throttle  = 0;
 	k_roll = k_pitch = k_yaw = 0;
 	//j_roll = j_pitch = j_yaw = 0;
-	roll = pitch = yaw = 0;
+	//roll = pitch = yaw = 0;
 	return;
 }
 void update_gui()
@@ -597,10 +589,18 @@ bool get_keyboard()
 					return true;
 				}
 			case '6':
+				if(mode!=SAFE)
+				{
+					printf("Please go back to safe mode before exit\n");
+					return false;
+				}
+				else
+				{
 					if(raw == 0) raw = 1;
 					else raw = 0;
 					update_gui();
 					return true;
+				}
 			case '7':
 
 					if(height == 0) height = 1;
@@ -650,12 +650,12 @@ bool get_keyboard()
 				gtk_adjustment_set_value(P2_adjustment,P2);
 				return true;
 			case 'y'://Q+
-				if(Q!=65535) Q+=100;
+				if(Q<2000) Q+=10;
 				gtk_adjustment_set_value(Q_adjustment,Q);
 				return true;
 			case 'h'://Q-
-				if(Q<100) Q = 0;
-				else Q-=100;
+				if(Q<10) Q = 0;
+				else Q-=10;
 				gtk_adjustment_set_value(Q_adjustment,Q);
 				return true;
 		}
@@ -802,19 +802,18 @@ void get_data()
 		}
 		else if(c == 0xFC)
 		{
-
-				//fprintf(stderr,"get ack %d\n",next_c);
+			//fprintf(stderr,"get ack %d\n",next_c);
 			gchar *str = g_strdup_printf ("calibrated!");
 			gtk_label_set_text (GTK_LABEL (info), str);
 			mode = SAFE;
 			initialize();
-			update_gui();
+			update_gui();	
 		}
 		else if(c == 0xFD)
 		{
-			gchar *str = g_strdup_printf ("recovered from PANIC mode");
+			gchar *str = g_strdup_printf ("recover from PANIC mode");
 			gtk_label_set_text (GTK_LABEL (info), str);
-			fprintf(stderr,"recovered from PANIC mode");
+			fprintf(stderr,"recover from PANIC mode");
 			mode = SAFE;
 			initialize();
 			update_gui();

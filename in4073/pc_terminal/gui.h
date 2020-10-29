@@ -42,7 +42,7 @@ to_manual (GtkWidget *widget,
      gtk_label_set_text (GTK_LABEL (label), str);
      return;
   }
-  if(!check_joystick())
+  else if(!check_joystick())
   {
      gchar *str = g_strdup_printf ("Please set joystick to origin");
      gtk_label_set_text (GTK_LABEL (label), str);
@@ -66,7 +66,7 @@ to_calibration (GtkWidget *widget,
      gtk_label_set_text (GTK_LABEL (label), str);
      return;
   }
-  if(!check_joystick())
+  else if(!check_joystick())
   {
      gchar *str = g_strdup_printf ("Please set joystick to origin");
      gtk_label_set_text (GTK_LABEL (label), str);
@@ -90,7 +90,7 @@ to_yaw (GtkWidget *widget,
      gtk_label_set_text (GTK_LABEL (label), str);
      return;
   }
-  if(!check_joystick())
+  else if(!check_joystick())
   {
      gchar *str = g_strdup_printf ("Please set joystick to origin");
      gtk_label_set_text (GTK_LABEL (label), str);
@@ -115,7 +115,7 @@ to_full (GtkWidget *widget,
      gtk_label_set_text (GTK_LABEL (label), str);
      return;
   }
-  if(!check_joystick())
+  else if(!check_joystick())
   {
      gchar *str = g_strdup_printf ("Please set joystick to origin");
      gtk_label_set_text (GTK_LABEL (label), str);
@@ -133,6 +133,13 @@ to_raw (GtkWidget *widget,
              gpointer   data)
 {
   GtkWidget *label = data;
+  if(mode!=SAFE)
+  {
+     gchar *str = g_strdup_printf ("please go back to safe mode first");
+     gtk_label_set_text (GTK_LABEL (label), str);
+     return;
+  }
+
   if(raw == 0) raw = 1;
   else raw = 0;
   send = true;
@@ -465,7 +472,7 @@ activate (GtkApplication *app,
   P_adjustment = gtk_adjustment_new (0, 0, 255, 1, 5, 0);
   P1_adjustment = gtk_adjustment_new (0, 0, 255, 1, 5, 0);
   P2_adjustment = gtk_adjustment_new (0, 0, 255, 1, 5, 0);
-  Q_adjustment = gtk_adjustment_new (0, 0, 65535, 5, 10, 0);
+  Q_adjustment = gtk_adjustment_new (0, 0, 1000, 5, 10, 0);
   /* Create the Horizontal scale, making sure the 
    * digits used have no decimals.
    */

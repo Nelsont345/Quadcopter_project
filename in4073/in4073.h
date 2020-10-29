@@ -36,7 +36,7 @@
 #define RAW		6
 #define HEIGHT		7
 #define EXIT		8
-#define DATASIZE        47
+#define DATASIZE        37
 
 // logging
 void flash_data();
@@ -51,6 +51,7 @@ uint8_t mode;
 uint8_t crc;
 // Control
 uint16_t throttle;
+uint16_t f_throttle;
 int16_t roll, pitch, yaw;
 uint8_t P, P1, P2;
 uint16_t Q;
@@ -61,7 +62,7 @@ int16_t c_phi, c_theta, c_psi, c_sp, c_sq, c_sr;
 int16_t y_err;
 int32_t pitch_new, roll_new;
 //uint32_t t_receive[256];
-
+int32_t pr_err, rr_err;     
 //raw mode
 uint8_t raw_mode;
 int32_t processed_yaw;
@@ -71,7 +72,7 @@ int32_t prev_yaw_y[2];
 
 //height mode
 bool height_mode;
-uint16_t throttle_new;
+int32_t throttle_new;
 int32_t fixed_pressure;
 
 

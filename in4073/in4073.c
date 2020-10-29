@@ -52,6 +52,7 @@ void get_command()
 	uint8_t new_height_mode = dequeue(&rx_queue);
 	throttle = dequeue(&rx_queue);
 	throttle = (throttle<<8)+dequeue(&rx_queue);
+        f_throttle = throttle;
 	roll = dequeue(&rx_queue);
 	roll = (roll<<8)+dequeue(&rx_queue);
 	pitch = dequeue(&rx_queue);
@@ -74,9 +75,9 @@ void get_command()
 	height_mode = new_height_mode;
 	raw_mode = new_raw_mode;
 
-	printf("frame: %u mode: %u raw_mode:%d height_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u Q: %u crc: %u fixed_pressure %ld throttle_new %d pressure %ld\n\n",frame, mode, raw_mode, height_mode, throttle, roll, pitch, yaw, P, P1, P2, Q, crc, fixed_pressure, throttle_new, pressure);
+	printf("frame: %u mode: %u raw_mode:%d height_mode:%d throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u Q: %u crc: %u fixed_pressure %ld throttle_new %ld pressure %ld\n\n",frame, mode, raw_mode, height_mode, throttle, roll, pitch, yaw, P, P1, P2, Q, crc, fixed_pressure, throttle_new, pressure);
 
-	if(mode!=8)
+	//if(mode!=8)
 	//flash_data();
 	t_access = get_time_us();
 }
@@ -94,7 +95,6 @@ void get_connection_check()
 }
 void flash_data()
 {
-   
    cur_time = get_time_us();
    data[0] = ((cur_time & 0xFFFFFFFF) >> 24);
    data[1] = ((cur_time & 0xFFFFFF) >> 16);
@@ -113,42 +113,34 @@ void flash_data()
    data[12] = theta & 0xFF;
    data[13] = (psi & 0xFFFF) >> 8;
    data[14] = psi & 0xFF;
-   data[15] = ((sp - cal_sp) & 0xFFFF) >> 8;
-   data[16] = (sp - cal_sp) & 0xFF;
-   data[17] = ((sq - cal_sq) & 0xFFFF) >> 8;
-   data[18] = (sq - cal_sq) & 0xFF;
-   data[19] = ((sr - cal_sr) & 0xFFFF) >> 8;
-   data[20] = ((sr - cal_sr) & 0xFF); 
-   data[21] = (sax & 0xFFFF) >> 8;
-   data[22] = (sax) & 0xFF;
-   data[23] = (say & 0xFFFF) >> 8;
-   data[24] = say & 0xFF;
-   data[25] = ((saz) & 0xFFFF) >> 8;
-   data[26] = ((saz) & 0xFF); 
+   data[15] = (sp & 0xFFFF) >> 8;
+   data[16] = sp & 0xFF;
+   data[17] = (sq & 0xFFFF) >> 8;
+   data[18] = sq & 0xFF;
+   data[19] = (sr & 0xFFFF) >> 8;
+   data[20] = (sr & 0xFF); 
 
-   data[27] = (motor[0] & 0xFFFF) >> 8;
-   data[28] = motor[0] & 0xFF;
-   data[29] = (motor[1] & 0xFFFF) >> 8;
-   data[30] = motor[1] & 0xFF;
-   data[31] = (motor[2] & 0xFFFF) >> 8;
-   data[32] = motor[2] & 0xFF;
-   data[33] = (motor[3] & 0xFFFF) >> 8;
-   data[34] = motor[3] & 0xFF;
 
-   data[35] = (cycle_time & 0xFFFFFFFF) >> 24;
-   data[36] = (cycle_time & 0xFFFFFF) >> 16; 
-   data[37] = (cycle_time & 0xFFFF) >> 8;
-   data[38] = (cycle_time & 0xFF);
+   data[21] = (motor[0] & 0xFFFF) >> 8;
+   data[22] = motor[0] & 0xFF;
+   data[23] = (motor[1] & 0xFFFF) >> 8;
+   data[24] = motor[1] & 0xFF;
+   data[25] = (motor[2] & 0xFFFF) >> 8;
+   data[26] = motor[2] & 0xFF;
+   data[27] = (motor[3] & 0xFFFF) >> 8;
+   data[28] = motor[3] & 0xFF;
 
-   data[38] = (response_time & 0xFFFFFFFF) >> 24;
-   data[40] = (response_time & 0xFFFFFF) >> 16; 
-   data[41] = (response_time & 0xFFFF) >> 8;
-   data[42] = (response_time & 0xFF);
+   data[29] = (cycle_time & 0xFFFFFFFF) >> 24;
+   data[30] = (cycle_time & 0xFFFFFF) >> 16; 
+   data[31] = (cycle_time & 0xFFFF) >> 8;
+   data[32] = (cycle_time & 0xFF);
 
-   data[43] = (processed_yaw & 0xFFFFFFFF) >> 24;
-   data[44] = (processed_yaw & 0xFFFFFF) >> 16; 
-   data[45] = (processed_yaw & 0xFFFF) >> 8;
-   data[46] = (processed_yaw & 0xFF); 
+   data[33] = (response_time & 0xFFFFFFFF) >> 24;
+   data[34] = (response_time & 0xFFFFFF) >> 16; 
+   data[35] = (response_time & 0xFFFF) >> 8;
+   data[36] = (response_time & 0xFF);
+
+ 
    if(!flash_write_bytes(write_address, data, DATASIZE))
    {   
        write_address = 0x00000000;
@@ -157,7 +149,7 @@ void flash_data()
 
 
    write_address += (DATASIZE * 8);
-   printf("mode:%d\n", mode);
+
 }
 
 void log_data()
@@ -233,8 +225,8 @@ int main(void)
 	uint32_t counter = 0;
 	demo_done = false;
         last_receiving_time = get_time_us();
-	prev_loop_time = last_receiving_time;
-        bool key_press = false;
+	//prev_loop_time = last_receiving_time;
+        //bool key_press = false;
 	while (!demo_done)
 	{      
 		//printf("last%lu\n", last_receiving_time);
@@ -252,7 +244,7 @@ int main(void)
 				{
 					get_command();
 					last_receiving_time = get_time_us();
-					key_press = true;
+					//key_press = true;
 					receiving_data =false;
 				}
 				if(command_type == 0xFE && rx_queue.count>=1)
@@ -264,10 +256,9 @@ int main(void)
 			}
 		}
 		cur_time = get_time_us();
-                if(mode!=SAFE && ((cur_time-last_receiving_time) > 2000000)) 
+                if(mode!=SAFE && (cur_time>2500000+last_receiving_time)) 
 		{
-			//printf("%lu  %lu\n",cur_time, last_receiving_time);
-			printf("time out panic 1");
+			printf("%lu  %lu\n",cur_time, last_receiving_time);
 			mode = PANIC;
 		}
                 if(mode == EXIT)
@@ -276,7 +267,6 @@ int main(void)
                         demo_done = true;
 
         		log_data();
-				mode = SAFE;
 
                 }
 
@@ -286,31 +276,34 @@ int main(void)
 			adc_request_sample();
 			read_baro();
 			 //printf("cycle time: %lu \n", cycle_time);
-                        cur_time = get_time_us();
-                        if(mode!=SAFE && ((cur_time-last_receiving_time) > 2000000)) 
-		        {
-			       //printf("%lu  %lu\n",cur_time, last_receiving_time);
-			       printf("time out panic 2");
-			       mode = PANIC;
-		        }
-                        if(counter++%32 == 0)
-                        {               flash_data();
+				//printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
+			//	printf("%6d %6d %6d | ", phi, theta, psi);
+			//	printf("%6d	%6d	%6d\n	", sp, sq, sr);
+                        if(counter++%20 == 0)
+                        {
 							//counter++;
 				nrf_gpio_pin_toggle(BLUE);
+				//flash_data();
 				//printf("last%lu\n", last_receiving_time);
 	                 	//printf("%10ld	", get_time_us());
 				//printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
 				//printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
 				//printf("%6d %6d %6d | ", phi, theta, psi);
-				//printf("%6d	%6d	%6d	%6ld, %6d	", sp, sq, sr, prev_yaw_x[0], raw_mode);
+				//printf("%6d	%6d	%6d\n	", sp, sq, sr);
 				//printf("%d | %4ld | %6ld |\n", bat_volt, temperature, pressure);
 				//printf("%6d %6d %6d | %d || %d |||    %d  - %d | %d\n",P, P1, P2, mode, y_err, yaw, sr, raw_mode);
                         
 				//if(bat_volt*0.007058824 <= 11) printf("battery is low!\n");
                         }
-			//if(bat_volt*0.007058824<10.5) mode = PANIC;
-			//if(bat_volt<1050) mode = PANIC;
-			//else if(bat_volt<1100) printf("battery is low\n");
+			/*if(bat_volt<1050) 
+			{
+				mode = PANIC;
+				printf("panic because of battery\n");
+			}
+			else if (bat_volt<1100)
+			{
+				printf("battery is low\n");
+			}*/
 			clear_timer_flag();
 		}
 
@@ -323,21 +316,21 @@ int main(void)
 				get_raw_sensor_data();
 
 			run_filters_and_control();
-                        filter_stop_time = get_time_us();
+                //      filter_stop_time = get_time_us();
 		}
                 //sensor_start_time = get_time_us();		  
 
-                loop_time = get_time_us();            
-                cycle_time = (loop_time - prev_loop_time);
+                //loop_time = get_time_us();            
+                //cycle_time = (loop_time - prev_loop_time);
 				
-                prev_loop_time = loop_time;
-		if(key_press)
-		{   if(filter_stop_time  > t_access)				
-			{	
-				response_time = filter_stop_time - t_access;
-				key_press = false;
-			}
-		}
+                //prev_loop_time = loop_time;
+		//if(key_press)
+		//{   if(filter_stop_time  > t_access)				
+		//	{	
+		//		response_time = filter_stop_time - t_access;
+		//		key_press = false;
+		//	}
+		//}
 		
 		//printf("counter, %ld \n", counter);
         if(counter%400 == 0)
@@ -351,7 +344,7 @@ int main(void)
 
 	}	
 
-	//printf("\n\t Goodbye \n\n");
+	printf("\n\t Goodbye \n\n");
 	nrf_delay_ms(100);
 
 	NVIC_SystemReset();

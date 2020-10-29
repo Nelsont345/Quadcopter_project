@@ -1,6 +1,0 @@
-message_packet	32 ms
-279,000000 
-message_packet	19 ms
-139,000000 
-message_packet	10 ms
-message_packet	1001 ms
