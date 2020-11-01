@@ -62,7 +62,9 @@ int16_t c_phi, c_theta, c_psi, c_sp, c_sq, c_sr;
 int16_t y_err;
 int32_t pitch_new, roll_new;
 //uint32_t t_receive[256];
-int32_t pr_err, rr_err;     
+int32_t pitch_rate_err, roll_rate_err;     
+int32_t pitch_angle_err, roll_angle_err;
+
 //raw mode
 uint8_t raw_mode;
 int32_t processed_yaw;

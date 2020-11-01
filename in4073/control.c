@@ -18,6 +18,12 @@
 #define C2_SHIFT 20
          //    int16_t counterb = 0;
 
+//unsigned int getAbs(int n) 
+//{ 
+//    int const mask = n >> (sizeof(int) * CHAR_BIT - 1); 
+//    return ((n ^ mask) - mask); 
+//} 
+
 uint16_t isqrt(long x)
 {
 	/*
@@ -60,6 +66,7 @@ void update_motors(void)
 	motor[2] = ae[2]>0?ae[2]:0;
 	motor[3] = ae[3]>0?ae[3]:0;
 }
+
 
 
 int butterworth(int32_t x0, int32_t x1, int32_t x2, int32_t y1, int32_t y2)
@@ -107,12 +114,12 @@ void run_filters_and_control()
 
 			if(mode == YAW || mode == FULL)
 			{
-				processed_yaw = butterworth(sr, prev_yaw_x[0], prev_yaw_x[1], prev_yaw_y[0], prev_yaw_y[1]);	
-				prev_yaw_x[1] = prev_yaw_x[0];
-				prev_yaw_x[0] = sr;	
-				prev_yaw_y[1] = prev_yaw_y[0];
-				prev_yaw_y[0] = processed_yaw;
-				sr = processed_yaw;
+				//processed_yaw = butterworth(sr, prev_yaw_x[0], prev_yaw_x[1], prev_yaw_y[0], prev_yaw_y[1]);	
+				//prev_yaw_x[1] = prev_yaw_x[0];
+				//prev_yaw_x[0] = sr;	
+				//prev_yaw_y[1] = prev_yaw_y[0];
+				//prev_yaw_y[0] = processed_yaw;
+				//sr = processed_yaw;
 					
 			}
 			if(mode == FULL)   
@@ -211,7 +218,7 @@ void run_filters_and_control()
 	       if(yaw_new<-32768) yaw_new = -32768;
            }
 
-           if(throttle == 0)
+           if(throttle <= 10)
                    ae[0] = ae[1] = ae[2] = ae[3] = 0;
            else{
            ae[0] = (int16_t) isqrt(A * throttle + B * pitch - C * yaw_new)*1.5+160;
@@ -223,49 +230,51 @@ void run_filters_and_control()
  
 	else if(mode == FULL)
 	{
-             int32_t p_err, r_err;
-
+             
 	     int32_t A = 1, B = 1, C = 1; 
              int32_t yaw_new = 0;  
-            y_err = (sr - c_sr) + yaw;
-           if(y_err > 100 || y_err < -100)
-           {
-               yaw_new = P * y_err;
-	       if(yaw_new>32767) yaw_new = 32767;
-	       if(yaw_new<-32768) yaw_new = -32768;
-           }
-             r_err = pitch - (theta - c_theta);
-             p_err = roll - (phi - c_phi);
-             //p_err =  (theta - c_theta) - pitch;
-            //r_err =  (phi - c_phi) - roll ;
-            pr_err =  -(sp - c_sp) ;
-            rr_err =  (sq - c_sq);   
-			if(p_err < 100 && p_err > -100) p_err = 0;
-					if(r_err < 100 && r_err > -100) r_err = 0;
-					if(pr_err < 10 && pr_err > -10) pr_err = 0;
-					if(rr_err < 10 && rr_err > -10) rr_err = 0;
+             y_err = (sr - c_sr) + yaw;
 
-            //if(p_err > 100 || p_err < -100 || r_err < -100 || r_err > 100 || pr_err > 10 || pr_err < -10 || rr_err > 10 || rr_err < -10 )
-            { 
-                pitch_new =   P2 * P1 * r_err  + P2*  rr_err ;
-                roll_new =    P2 * P1 * p_err + P2   * pr_err   ;
-                if(pitch_new < -32768) pitch_new = -32768;
-                if(pitch_new > 32767) pitch_new = 32767;
-                if(roll_new < -32768) roll_new = -32768;
-                if(roll_new > 32767) roll_new = 32767;	
-			//phi = phi_prev;
-	}
+             {
+                 yaw_new = P * y_err;
+	         if(yaw_new>32767) yaw_new = 32767;
+	         if(yaw_new<-32768) yaw_new = -32768;
+             }
+             //sq theta pitch
+             pitch_angle_err = pitch - (theta - c_theta);
+      	     pitch_rate_err = c_sq - sq;
 
-           if(throttle == 0)
+             //sp roll phi   
+             roll_angle_err = roll - (phi - c_phi) ;
+             roll_rate_err =  c_sp - sp ;
+
+             //pitch_new = pitch;
+             //roll_new = roll;
+
+
+             {       pitch_new =   (P2 * P1 * pitch_angle_err)  -  P2*  pitch_rate_err ;
+
+                     if(pitch_new < -32768) pitch_new = -32768;
+                    if(pitch_new > 32767) pitch_new = 32767;
+             }
+
+             {       roll_new = P2 * P1 * roll_angle_err + P2 * roll_rate_err;  
+                     if(roll_new < -32768) roll_new = -32768;
+                     if(roll_new > 32767) roll_new = 32767;
+             }
+
+
+
+           throttle = 11000;
+           if(throttle <= 10)
                    ae[0] = ae[1] = ae[2] = ae[3] = 0;
            else{
           
-          ae[0] = (int16_t) isqrt(A * throttle +  B * pitch_new - C * yaw_new)*1.5 + 160;
+          ae[0] = (int16_t) isqrt(A * throttle + B * pitch_new - C * yaw_new)*1.5 + 160;
 	  ae[1] = (int16_t) isqrt(A * throttle -  B * roll_new  + C * yaw_new)*1.5 + 160;
 	  ae[2] = (int16_t) isqrt(A * throttle -   B * pitch_new - C * yaw_new)*1.5 + 160;
 	  ae[3] = (int16_t) isqrt(A * throttle +  B * roll_new  + C * yaw_new)*1.5 + 160;}
-        //   if(counterb ++ %16 == 0)
-        //     printf("pr_err %d rr_er %d pitc_new %ld roll_new %ld ae %d %d %d %d\n", pr_err, rr_err, pitch_new, roll_new, ae[0], ae[1], ae[2],ae[3]);
+
         }
 
 	else if(mode == SAFE) 

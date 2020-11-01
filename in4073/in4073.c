@@ -42,7 +42,7 @@ void get_command()
 	if(crc != get_crc2(0, new_mode, 1)) 
 	{
 		//printf("wrong! frame: %u mode: %u throttle: %u roll: %d pitch: %d yaw: %d P: %u P1: %u P2: %u crc: %u \n",frame, new_mode, new_throttle, new_roll, new_pitch, new_yaw, new_P, new_P1, new_P2, crc);
-		//printf("wrong command!\n\n");
+		printf("wrong command!\n\n");
 		for(int i=0;i<13;i++) dequeue(&rx_queue); 
 		return;
 	}
@@ -155,16 +155,31 @@ void flash_data()
 void log_data()
 {   uart_put(0x00);
     read_address = 0x00000000;
-    while(rx_queue.count && dequeue(&rx_queue) != 0x00);
-    uart_put(0x00);
+    bool read_rdy = false;
+    while(!read_rdy)
+    {   
+
+        //printf("5");
+        if(rx_queue.count)
+        {     // printf("count\n");
+               if(dequeue(&rx_queue) == 0x00)
+               {     read_rdy = true;
+                     break;
+               }  
+        }
+        uart_put(0x00); 
+        nrf_delay_ms(100);
+    }
+   // while(rx_queue.count && dequeue(&rx_queue) != 0x00)
+   // uart_put(0x00); 
     nrf_delay_ms(1000);
 
     while(1)
-    { 	    
+    { 	    //printf("1\n");
             if(rx_queue.count && (dequeue(&rx_queue) == 0xFF))
                   break;
             if(flash_read_bytes(read_address, data_r, DATASIZE))
-            {    
+            { //   printf("2\n");
                   nrf_delay_ms(500);
                   for(int i = 0; i < DATASIZE; i++)
                   {
@@ -226,7 +241,7 @@ int main(void)
 	demo_done = false;
         last_receiving_time = get_time_us();
 	//prev_loop_time = last_receiving_time;
-        //bool key_press = false;
+        bool key_press = false;
 	while (!demo_done)
 	{      
 		//printf("last%lu\n", last_receiving_time);
@@ -244,7 +259,7 @@ int main(void)
 				{
 					get_command();
 					last_receiving_time = get_time_us();
-					//key_press = true;
+					key_press = true;
 					receiving_data =false;
 				}
 				if(command_type == 0xFE && rx_queue.count>=1)
@@ -264,6 +279,7 @@ int main(void)
                 if(mode == EXIT)
                 {       //mode = PANIC;
                         //run_filters_and_control();
+                        uart_put(0x00);
                         demo_done = true;
 
         		log_data();
@@ -276,12 +292,15 @@ int main(void)
 			adc_request_sample();
 			read_baro();
 			 //printf("cycle time: %lu \n", cycle_time);
-				//printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
+			//	printf("%3d %3d %3d %3d |\n ",ae[0],ae[1],ae[2],ae[3]);
 			//	printf("%6d %6d %6d | ", phi, theta, psi);
-			//	printf("%6d	%6d	%6d\n	", sp, sq, sr);
-                        if(counter++%20 == 0)
-                        {
-							//counter++;
+				//printf("%6d	%6d	%6d\n	", sp, sq, sr);
+                        if(counter++%16 == 0)
+                        {       //plotting help
+                                //printf("sr %6d yaw %3d P %6d\n", sr, yaw, P);
+                                //printf("phi %6d roll %3d sp %6d P1 %6d P2 %6d\n", phi, roll, sp, P1, P2);
+                                //printf("theta %6d pitch %3d sq %6d P1 %6d P2 %6d\n", theta, pitch, sq, P1, P2);
+			printf("%ld %3d %3d %3d %3d |\n ",pitch_angle_err, ae[0],ae[1],ae[2],ae[3]);		//counter++;
 				nrf_gpio_pin_toggle(BLUE);
 				//flash_data();
 				//printf("last%lu\n", last_receiving_time);
@@ -289,7 +308,7 @@ int main(void)
 				//printf("%3d %3d %3d %3d | ",throttle,roll,pitch,yaw);
 				//printf("%3d %3d %3d %3d | ",ae[0],ae[1],ae[2],ae[3]);
 				//printf("%6d %6d %6d | ", phi, theta, psi);
-				//printf("%6d	%6d	%6d\n	", sp, sq, sr);
+				//printf("%6d	%6d	%6d %ld\n	", sp, sq, sr, processed_yaw);
 				//printf("%d | %4ld | %6ld |\n", bat_volt, temperature, pressure);
 				//printf("%6d %6d %6d | %d || %d |||    %d  - %d | %d\n",P, P1, P2, mode, y_err, yaw, sr, raw_mode);
                         
@@ -309,7 +328,7 @@ int main(void)
 
 		if (check_sensor_int_flag()) 
 		{       
-                        filter_start_time = get_time_us();
+                //        filter_start_time = get_time_us();
 			if(!raw_mode)
 			     get_dmp_data();
 			else if(raw_mode) 
@@ -324,17 +343,18 @@ int main(void)
                 //cycle_time = (loop_time - prev_loop_time);
 				
                 //prev_loop_time = loop_time;
-		//if(key_press)
-		//{   if(filter_stop_time  > t_access)				
-		//	{	
-		//		response_time = filter_stop_time - t_access;
-		//		key_press = false;
-		//	}
-		//}
+		/*if(key_press)
+		{   if(filter_stop_time  > t_access)				
+			{	
+				response_time = filter_stop_time - t_access;
+				key_press = false;
+                                printf("%ld %ld\n", response_time, cycle_time); 
+			}
+		}*/
 		
 		//printf("counter, %ld \n", counter);
-        if(counter%400 == 0)
-        {               
+        if(counter%16 == 0)
+        { //     printf("%ld %ld %ld \n", response_time, cycle_time, filter_stop_time - filter_start_time);  
             
 		//	 printf("cycle time: %lu \n", cycle_time);
 
@@ -344,7 +364,7 @@ int main(void)
 
 	}	
 
-	printf("\n\t Goodbye \n\n");
+	//printf("\n\t Goodbye \n\n");
 	nrf_delay_ms(100);
 
 	NVIC_SystemReset();
