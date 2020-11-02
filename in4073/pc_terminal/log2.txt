@@ -1,2 +1,3 @@
-message_packet	31 ms
-message_packet	1000 ms
+message_packet	30 ms
+139,000000 
+message_packet	18 ms

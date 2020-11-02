@@ -206,6 +206,16 @@ void raw_init()
 	prev_yaw_x[1] = 0;
 	prev_yaw_y[0] = 0;
 	prev_yaw_y[1] = 0; 
+	processed_pitch = 0;       
+	prev_pitch_x[0] = 0;
+	prev_pitch_x[1] = 0;
+	prev_pitch_y[0] = 0;
+	prev_pitch_y[1] = 0; 
+	processed_roll = 0;       
+	prev_roll_x[0] = 0;
+	prev_roll_x[1] = 0;
+	prev_roll_y[0] = 0;
+	prev_roll_y[1] = 0; 
 	p_bias = 0;
     phi_error = 0;
     p_kalman = 0;
@@ -241,7 +251,7 @@ int main(void)
 	demo_done = false;
         last_receiving_time = get_time_us();
 	//prev_loop_time = last_receiving_time;
-        bool key_press = false;
+    //bool key_press = false;
 	while (!demo_done)
 	{      
 		//printf("last%lu\n", last_receiving_time);
@@ -259,7 +269,7 @@ int main(void)
 				{
 					get_command();
 					last_receiving_time = get_time_us();
-					key_press = true;
+					//key_press = true;
 					receiving_data =false;
 				}
 				if(command_type == 0xFE && rx_queue.count>=1)
@@ -300,7 +310,7 @@ int main(void)
                                 //printf("sr %6d yaw %3d P %6d\n", sr, yaw, P);
                                 //printf("phi %6d roll %3d sp %6d P1 %6d P2 %6d\n", phi, roll, sp, P1, P2);
                                 //printf("theta %6d pitch %3d sq %6d P1 %6d P2 %6d\n", theta, pitch, sq, P1, P2);
-			printf("%ld %3d %3d %3d %3d |\n ",pitch_angle_err, ae[0],ae[1],ae[2],ae[3]);		//counter++;
+			//printf("%ld %3d %3d %3d %3d |\n ",pitch_angle_err, ae[0],ae[1],ae[2],ae[3]);		//counter++;
 				nrf_gpio_pin_toggle(BLUE);
 				//flash_data();
 				//printf("last%lu\n", last_receiving_time);

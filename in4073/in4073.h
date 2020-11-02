@@ -70,6 +70,12 @@ uint8_t raw_mode;
 int32_t processed_yaw;
 int32_t prev_yaw_x[2];
 int32_t prev_yaw_y[2];
+int32_t processed_pitch;
+int32_t prev_pitch_x[2];
+int32_t prev_pitch_y[2];
+int32_t processed_roll;
+int32_t prev_roll_x[2];
+int32_t prev_roll_y[2];
 
 
 //height mode
