@@ -93,7 +93,7 @@ void kalman_filter()
     phi_error = phi_kalman - sphi;
     phi_kalman = phi_kalman - (phi_error >> C1_SHIFT);// C1;
     p_bias = p_bias + ((phi_error << P2PHI_SHIFT)>>C2_SHIFT);// C2;
-	phi = phi_kalman>>16;
+	phi = phi_kalman>>14;
 
 	stheta = sax << 16;  
     q_kalman = (sq << 16) - q_bias;   
@@ -101,7 +101,7 @@ void kalman_filter()
     theta_error = theta_kalman - stheta;
     theta_kalman = theta_kalman - (theta_error >> C1_SHIFT);// C1;
     q_bias = q_bias + ((theta_error << P2PHI_SHIFT)>>C2_SHIFT);// C2;
-	theta = theta_kalman>>16;
+	theta = theta_kalman>>14;
 }
 void run_filters_and_control()
 {
@@ -114,12 +114,12 @@ void run_filters_and_control()
 
 			if(mode == YAW || mode == FULL)
 			{
-				//processed_yaw = butterworth(sr, prev_yaw_x[0], prev_yaw_x[1], prev_yaw_y[0], prev_yaw_y[1]);	
-				//prev_yaw_x[1] = prev_yaw_x[0];
-				//prev_yaw_x[0] = sr;	
-				//prev_yaw_y[1] = prev_yaw_y[0];
-				//prev_yaw_y[0] = processed_yaw;
-				//sr = processed_yaw;
+				processed_yaw = butterworth(sr, prev_yaw_x[0], prev_yaw_x[1], prev_yaw_y[0], prev_yaw_y[1]);	
+				prev_yaw_x[1] = prev_yaw_x[0];
+				prev_yaw_x[0] = sr;	
+				prev_yaw_y[1] = prev_yaw_y[0];
+				prev_yaw_y[0] = processed_yaw;
+				sr = (processed_yaw * 4);
 					
 			}
 			if(mode == FULL)   
@@ -151,7 +151,9 @@ void run_filters_and_control()
                 ae[0] = ae[1] = ae[2] = ae[3] = 0;
            	else{
 		int32_t A = 1, B = 1, C = 1; 
-           
+                pitch = pitch * 0.8;
+                roll = roll * 0.8;
+                yaw = yaw ;
 		ae[0] = (int16_t) isqrt(A * throttle + B * pitch - C * yaw)*1.5+160;
 		ae[1] = (int16_t) isqrt(A * throttle - B * roll + C * yaw)*1.5+160;
 		ae[2] = (int16_t) isqrt(A * throttle - B * pitch - C * yaw)*1.5+160;
@@ -210,10 +212,10 @@ void run_filters_and_control()
 	   int32_t yaw_new = 0;
            //int8_t x, y;
            int32_t A = 1, B = 1, C = 1; 
-           y_err = (sr - c_sr) + yaw;
-           if(y_err > 100 || y_err < -100)
+           y_err = (sr - c_sr) + 0.3 *yaw;
+          // if(y_err > 100 || y_err < -100)
            {
-               yaw_new = P * y_err;
+               yaw_new = 0.7 * P * y_err;
 	       if(yaw_new>32767) yaw_new = 32767;
 	       if(yaw_new<-32768) yaw_new = -32768;
            }
@@ -221,10 +223,10 @@ void run_filters_and_control()
            if(throttle <= 10)
                    ae[0] = ae[1] = ae[2] = ae[3] = 0;
            else{
-           ae[0] = (int16_t) isqrt(A * throttle + B * pitch - C * yaw_new)*1.5+160;
-	   ae[1] = (int16_t) isqrt(A * throttle - B * roll  + C * yaw_new)*1.5+160;
-	   ae[2] = (int16_t) isqrt(A * throttle- B * pitch - C * yaw_new)*1.5+160;
-	   ae[3] = (int16_t) isqrt(A * throttle +  B * roll  + C * yaw_new)*1.5+160; }      
+           ae[0] = (int16_t) isqrt(A * throttle + B * pitch - 1.25 * C * yaw_new)*1.5+160;
+	   ae[1] = (int16_t) isqrt(A * throttle - B * roll  + 1.25* C * yaw_new)*1.5+160;
+	   ae[2] = (int16_t) isqrt(A * throttle- B * pitch - 1.25 *C * yaw_new)*1.5+160;
+	   ae[3] = (int16_t) isqrt(A * throttle +  B * roll  + 1.25*C * yaw_new)*1.5+160; }      
 	}	
 
  
@@ -232,48 +234,49 @@ void run_filters_and_control()
 	{
              
 	     int32_t A = 1, B = 1, C = 1; 
-             int32_t yaw_new = 0;  
-             y_err = (sr - c_sr) + yaw;
+             //int32_t yaw_new = 0;  
+             y_err = (sr - c_sr) + 0.3* yaw;
 
              {
-                 yaw_new = P * y_err;
+                 yaw_new = 0.7 * P * y_err;
 	         if(yaw_new>32767) yaw_new = 32767;
 	         if(yaw_new<-32768) yaw_new = -32768;
              }
              //sq theta pitch
-             pitch_angle_err = pitch - (theta - c_theta);
+             pitch_angle_err = 0.2 *pitch - (theta - c_theta);
       	     pitch_rate_err = c_sq - sq;
 
              //sp roll phi   
-             roll_angle_err = roll - (phi - c_phi) ;
+             roll_angle_err = 0.2 * roll - (phi - c_phi) ;
              roll_rate_err =  c_sp - sp ;
 
              //pitch_new = pitch;
              //roll_new = roll;
 
 
-             {       pitch_new =   (P2 * P1 * pitch_angle_err)  -  P2*  pitch_rate_err ;
-
+                   pitch_new =   0.5 * 0.3 * (P2 * P1 * pitch_angle_err)  -  0.5 * P2 *  pitch_rate_err ;
+                   pitch_new = 0.8 * pitch_new;
                      if(pitch_new < -32768) pitch_new = -32768;
                     if(pitch_new > 32767) pitch_new = 32767;
-             }
+             
 
-             {       roll_new = P2 * P1 * roll_angle_err + P2 * roll_rate_err;  
-                     if(roll_new < -32768) roll_new = -32768;
+
+                    roll_new =  0.6 *0.3 * P2 * P1 * roll_angle_err + 0.6 * P2 * roll_rate_err;  
+                    roll_new = 0.8 * roll_new;
+                    if(roll_new < -32768) roll_new = -32768;
                      if(roll_new > 32767) roll_new = 32767;
-             }
+             
 
 
-
-           throttle = 11000;
+          // throttle = 11000;
            if(throttle <= 10)
                    ae[0] = ae[1] = ae[2] = ae[3] = 0;
            else{
           
-          ae[0] = (int16_t) isqrt(A * throttle + B * pitch_new - C * yaw_new)*1.5 + 160;
-	  ae[1] = (int16_t) isqrt(A * throttle -  B * roll_new  + C * yaw_new)*1.5 + 160;
-	  ae[2] = (int16_t) isqrt(A * throttle -   B * pitch_new - C * yaw_new)*1.5 + 160;
-	  ae[3] = (int16_t) isqrt(A * throttle +  B * roll_new  + C * yaw_new)*1.5 + 160;}
+          ae[0] = (int16_t) isqrt(A * throttle +  B * pitch_new -  1.25 * C * yaw_new)*1.5 + 160;
+	  ae[1] = (int16_t) isqrt(A * throttle - B * roll_new  + 1.25 * C * yaw_new)*1.5 + 160;
+	  ae[2] = (int16_t) isqrt(A * throttle - B * pitch_new - 1.25 * C * yaw_new)*1.5 + 160;
+	  ae[3] = (int16_t) isqrt(A * throttle + B * roll_new  +  1.25 * C * yaw_new)*1.5 + 160;}
 
         }
 

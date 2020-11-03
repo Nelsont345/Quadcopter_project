@@ -60,7 +60,7 @@ void run_filters_and_control();
 int32_t cal_phi, cal_theta, cal_psi, cal_sp, cal_sq, cal_sr;
 int16_t c_phi, c_theta, c_psi, c_sp, c_sq, c_sr;
 int16_t y_err;
-int32_t pitch_new, roll_new;
+int32_t pitch_new, roll_new, yaw_new;
 //uint32_t t_receive[256];
 int32_t pitch_rate_err, roll_rate_err;     
 int32_t pitch_angle_err, roll_angle_err;

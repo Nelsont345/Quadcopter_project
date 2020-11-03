@@ -241,7 +241,7 @@ int main(void)
 	demo_done = false;
         last_receiving_time = get_time_us();
 	//prev_loop_time = last_receiving_time;
-        bool key_press = false;
+        //bool key_press = false;
 	while (!demo_done)
 	{      
 		//printf("last%lu\n", last_receiving_time);
@@ -259,7 +259,7 @@ int main(void)
 				{
 					get_command();
 					last_receiving_time = get_time_us();
-					key_press = true;
+					//key_press = true;
 					receiving_data =false;
 				}
 				if(command_type == 0xFE && rx_queue.count>=1)
@@ -281,7 +281,7 @@ int main(void)
                         //run_filters_and_control();
                         uart_put(0x00);
                         demo_done = true;
-
+//
         		log_data();
 
                 }
@@ -294,14 +294,23 @@ int main(void)
 			 //printf("cycle time: %lu \n", cycle_time);
 			//	printf("%3d %3d %3d %3d |\n ",ae[0],ae[1],ae[2],ae[3]);
 			//	printf("%6d %6d %6d | ", phi, theta, psi);
-				//printf("%6d	%6d	%6d\n	", sp, sq, sr);
+			//	printf("%6d	%6d	%6d\n	", sp, sq, sr);
                         if(counter++%16 == 0)
                         {       //plotting help
                                 //printf("sr %6d yaw %3d P %6d\n", sr, yaw, P);
                                 //printf("phi %6d roll %3d sp %6d P1 %6d P2 %6d\n", phi, roll, sp, P1, P2);
                                 //printf("theta %6d pitch %3d sq %6d P1 %6d P2 %6d\n", theta, pitch, sq, P1, P2);
-			printf("%ld %3d %3d %3d %3d |\n ",pitch_angle_err, ae[0],ae[1],ae[2],ae[3]);		//counter++;
+
+
+                                //debugging help
+                                //printf("pitch_new %ld pitch_rate_err %ld ae %3d %3d %3d %3d\n", pitch_new, pitch_rate_err, ae[0], ae[1], ae[2], ae[3]);
+                                //printf("pitch_new %ld pitch_angle_err %ld ae %3d %3d %3d %3d\n", pitch_new, pitch_angle_err, ae[0], ae[1], ae[2], ae[3]);
+                                //printf("roll_new %ld pitch_new  %ld yaw_new %ld ae %3d %3d %3d %3d\n", roll_new, pitch_new, yaw_new, ae[0], ae[1], ae[2], ae[3]);
+                                //printf("roll_new %ld roll_angle_err %ld ae %3d %3d %3d %3d\n", roll_new, roll_angle_err, ae[0], ae[1], ae[2], ae[3]);
+			        //printf("%ld %3d %3d %3d %3d |\n ",pitch_angle_err, ae[0],ae[1],ae[2],ae[3]);		//counter++;
 				nrf_gpio_pin_toggle(BLUE);
+
+
 				//flash_data();
 				//printf("last%lu\n", last_receiving_time);
 	                 	//printf("%10ld	", get_time_us());
@@ -312,9 +321,9 @@ int main(void)
 				//printf("%d | %4ld | %6ld |\n", bat_volt, temperature, pressure);
 				//printf("%6d %6d %6d | %d || %d |||    %d  - %d | %d\n",P, P1, P2, mode, y_err, yaw, sr, raw_mode);
                         
-				//if(bat_volt*0.007058824 <= 11) printf("battery is low!\n");
+
                         }
-			/*if(bat_volt<1050) 
+			if(bat_volt<1050) 
 			{
 				mode = PANIC;
 				printf("panic because of battery\n");
@@ -322,7 +331,7 @@ int main(void)
 			else if (bat_volt<1100)
 			{
 				printf("battery is low\n");
-			}*/
+			}
 			clear_timer_flag();
 		}
 
