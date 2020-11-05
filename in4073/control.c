@@ -68,19 +68,14 @@ void update_motors(void)
 }
 
 
-
 int butterworth(int32_t x0, int32_t x1, int32_t x2, int32_t y1, int32_t y2)
 {
     int32_t a[6]; 
     int32_t b[6];
-    //a[0] = 16384; a[1] = -28672; a[2] = 14336; b[0] = 66; b[1] = 136; b[2] = 66; //actual values
-	//a[0] = 14; a[1] = 0; a[2] = 15; a[3] = 10; a[4] = 14; a[5] = 10; //shifts
-    //b[0] = 3; b[1] = 1; b[2] = 4; b[3] = 2; b[4] = 3; b[5] = 1;  
-
-    a[0] = 14; a[1] = 0; a[2] = 15; a[3] = 12; a[4] = 14; a[5] = 11; //shifts
-    b[0] = 6; b[1] = 1; b[2] = 7; b[3] = 3; b[4] = 6; b[5] = 1;      
-    int32_t part1 = (x0<<b[0]) + (x0<<b[1]) + (x1<<b[2]) + (x1<<b[3]) + (x2<<b[4]) +(x2<<b[5]);
-    int32_t part2 = (-y1<<a[2]) + (y1<<a[3]) + (y2<<a[4]) - (y2<<a[5]);
+    a[0] = 14;a[1] = 999;a[2] = 12;a[3] = 11;a[4] = 11;a[5] = 10;
+	b[0] = 12;b[1] = 11;b[2] = 13;b[3] = 12;b[4] = 12;b[5] = 11;
+	int32_t part1 = +(x0<<b[0])+(x0<<b[1])+(x1<<b[2])+(x1<<b[3])+(x2<<b[4])+(x2<<b[5]);
+	int32_t part2 = +(y1<<a[2])+(y1<<a[3])+(y2<<a[4])+(y2<<a[5]);
     int32_t filtered = (part1 - part2) >>14;  //a[0] = 1 or 16384, should be divided or shifted right 
     return filtered;
 }
@@ -120,6 +115,20 @@ void run_filters_and_control()
 				prev_yaw_y[1] = prev_yaw_y[0];
 				prev_yaw_y[0] = processed_yaw;
 				sr = (processed_yaw * 4);
+				
+				processed_pitch = butterworth(sq, prev_pitch_x[0], prev_pitch_x[1], prev_pitch_y[0], prev_pitch_y[1]);	
+				prev_pitch_x[1] = prev_pitch_x[0];
+				prev_pitch_x[0] = sq;	
+				prev_pitch_y[1] = prev_pitch_y[0];
+				prev_pitch_y[0] = processed_pitch;
+				sq = processed_pitch;
+
+				processed_roll = butterworth(sp, prev_roll_x[0], prev_roll_x[1], prev_roll_y[0], prev_roll_y[1]);	
+				prev_roll_x[1] = prev_roll_x[0];
+				prev_roll_x[0] = sp;	
+				prev_roll_y[1] = prev_roll_y[0];
+				prev_roll_y[0] = processed_roll;
+				sp = processed_roll;
 					
 			}
 			if(mode == FULL)   
