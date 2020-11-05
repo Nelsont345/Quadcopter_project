@@ -206,6 +206,16 @@ void raw_init()
 	prev_yaw_x[1] = 0;
 	prev_yaw_y[0] = 0;
 	prev_yaw_y[1] = 0; 
+	processed_pitch = 0;       
+	prev_pitch_x[0] = 0;
+	prev_pitch_x[1] = 0;
+	prev_pitch_y[0] = 0;
+	prev_pitch_y[1] = 0; 
+	processed_roll = 0;       
+	prev_roll_x[0] = 0;
+	prev_roll_x[1] = 0;
+	prev_roll_y[0] = 0;
+	prev_roll_y[1] = 0; 
 	p_bias = 0;
     phi_error = 0;
     p_kalman = 0;
